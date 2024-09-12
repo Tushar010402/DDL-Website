@@ -1,0 +1,37 @@
+.HealthDrinkMainDiv {
+    margin-left: 8%;
+    margin-right: 5%;
+    margin-top: 3rem;
+}
+
+.ThirdDiv h2 {
+    color: #d9242a;
+    font-size: 24px;
+    text-shadow: -3px 2px 2px #ccc;
+    font-weight: 600;
+    margin-top: 3%;
+    text-align: center !important;
+}
+
+.responsive-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.SecondaryDiv {
+    margin-bottom: 2rem;
+}
+
+.FourthDiv {
+    text-align: justify;
+}
+
+@media (max-width: 821px) {
+
+    .HealthDrinkMainDiv{
+        padding-right: 5%;
+    }
+
+  }

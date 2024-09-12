@@ -1,0 +1,274 @@
+.corona-main {
+    text-align: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    margin-top: 2.5rem;
+}
+
+.corona-main a {
+    color: #d9242a;
+    font-weight: 600;
+}
+
+.corona-main h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.corona-main p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+
+.corona-main h2 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+.corona-main .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.corona-main .button {
+    padding: 10px 20px;
+    border: none;
+    font-size: 13px;
+    line-height: 25px;
+    padding: 13px 31px 13px 31px !important;
+    font-style: normal !important;
+    text-align: center;
+    vertical-align: middle;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.button.red {
+    background-color: #d9242a;
+    color: white;
+}
+
+.info-section {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    margin-left: 3rem;
+}
+
+.info-box {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    text-align: center;
+}
+
+.info-box h3, .info-box h4 {
+    margin: 10px 0;
+}
+
+.info-box img {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* Prevention section styles */
+.prevention-section {
+    margin-top: 3rem;
+    text-align: left;
+    margin-left: 8%;
+}
+
+.prevention-section h2 {
+    color: #232323;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+}
+#aaaaaa{
+    color: #d9242a;
+}
+.prevention-section ol {
+  
+    padding: 0;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    color: #6f6f6f;
+    font-weight: 500;
+    list-style-position: outside;
+    line-height: 24px;
+    font-size: 20px;
+    margin-left: 2rem;
+}
+
+.prevention-section ul li {
+    margin: 10px 0;
+}
+
+.prevention-section ul li strong {
+    color: #d9242a;
+}
+
+.prevention-section h3 {
+    font-size: 1.2rem;
+    margin-top: 2rem;
+}
+
+.prevention-section ul li, .prevention-section h3 {
+    text-align: left;
+}
+
+.prevention-section ul li strong {
+    font-weight: bold;
+}
+
+/* Containment section styles */
+.containment-section {
+    margin-top: 3rem;
+    text-align: left;
+    margin-left: 8%;
+}
+
+.containment-section h2 {
+    color: #000;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.containment-section p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    text-align: left;
+}
+
+.containment-section a {
+    color: #d9242a;
+    font-weight: 600;
+}
+
+/* Lockdown section styles */
+.lockdown-section {
+    margin-top: 3rem;
+    text-align: left;
+    margin-left: 8%;
+}
+
+.lockdown-section h2 {
+    color: #000;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.lockdown-section p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    text-align: left;
+}
+
+.lockdown-section a {
+    color: #d9242a;
+    font-weight: 600;
+}
+
+.lockdown-section ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+    font-size: 1rem;
+}
+
+.lockdown-section ul li {
+    margin: 0.5rem 0;
+}
+
+.lockdown-section h3 {
+    font-size: 1.2rem;
+    margin-top: 2rem;
+}
+
+.lockdown-section ul li strong {
+    font-weight: bold;
+}
+
+/* WHO section styles */
+.who-section {
+    margin-top: 3rem;
+    text-align: left;
+}
+
+.who-section h2 {
+    color: #000;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.who-section p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    text-align: left;
+}
+
+.who-section a {
+    color: #d9242a;
+    font-weight: 600;
+}
+
+.date-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.date-section input[type="date"] {
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+.date-section button {
+    padding: 0.5rem 1rem;
+    background-color: #d9242a;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.date-section p {
+    font-size: 1rem;
+    color: red;
+    margin: 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}

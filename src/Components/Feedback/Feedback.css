@@ -1,0 +1,228 @@
+.feedback-form {
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+    font-family: Arial, sans-serif;
+    border-radius: 10px;
+    margin-top: 4rem;
+    background-color: #f7f7f7;
+}
+
+form {
+    padding-inline: 10%;
+    margin-top: 3rem;
+}
+
+.feedback-form h1 {
+    text-align: center !important;
+    font-size: 55px;
+    line-height: 1.2;
+    margin: 27px 0 0;
+    padding: 0;
+    letter-spacing: 0;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    color: #6f6f6f;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-group {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.form-group:last-child {
+    margin-right: 0;
+}
+
+.form-group > div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0rem;
+}
+
+.form-group label {
+    font-size: 14px;
+    color: #6f6f6f;
+    line-height: 24px;
+    text-align: justify;
+    font-family: 'Roboto', sans-serif;
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    padding: 12px 12px;
+    font-size: 14px;
+    border-radius: 0;
+    font-family: Arial, sans-serif;
+    border: 1px solid #d1d1d1;
+    margin: 0 0 20px 0;
+    max-width: 100%;
+    resize: none;
+    font-family: inherit;
+}
+
+.radio-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.radio-group label {
+    font-weight: normal;
+    color: #000;
+}
+
+.rating-group {
+    display: flex;
+}
+
+.rating-group label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 700;
+    text-align: justify;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #6f6f6f;
+    line-height: 24px;
+    height: 100%;
+    -webkit-font-smoothing: antialiased;
+}
+
+textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+.submit-button {
+    width: 12%;
+    padding: 20px;
+    background-color: #d9242a;
+    color: white;
+    border: none;
+    border-radius: 0px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.submit-button:hover {
+    background-color: #b81e25;
+}
+
+.form-row .form-group label {
+    color: #6f6f6f;
+}
+
+#MainLabelFeedback {
+    color: #b81e25;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    font-size: 18px;
+}
+
+.rating-group .react-stars {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.FeedbackLabel {
+    width: 50%;
+}
+
+.FeedbackFormSubmitButton {
+    width: 100%;
+    text-align: center;
+}
+
+.error {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+.thank-you-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    z-index: 1000;
+}
+
+.thank-you-popup h2 {
+    margin-bottom: 10px;
+}
+
+.thank-you-popup p {
+    margin-bottom: 0;
+}
+
+.react-datepicker__input-container input {
+    width: 95.4%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    form {
+        padding-inline: 5%;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+
+    .form-group {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .feedback-form h1 {
+        font-size: 40px;
+    }
+
+    .submit-button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    form {
+        padding-inline: 2%;
+    }
+
+    .feedback-form h1 {
+        font-size: 30px;
+    }
+
+    .submit-button {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    #MainLabelFeedback {
+        font-size: 16px;
+    }
+}

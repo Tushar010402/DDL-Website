@@ -1,0 +1,110 @@
+.hg-container {
+    padding: 40px;
+    text-align: center;
+    background-color: #f8f8f8;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding-top: 5rem;
+}
+
+.hg-title {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: bold;
+    position: relative;
+    margin-bottom: 5rem;
+}
+
+.hg-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: red;
+    margin: 10px auto;
+}
+
+.hg-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.hg-card:hover {
+    transform: translateY(-5px);
+}
+
+.hg-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hg-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.hg-date-overlay {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+.hg-blog-title {
+    font-size: 18px;
+    margin: 15px 10px;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+}
+
+.hg-read-more-button {
+    display: inline-block;
+    width: auto;
+    margin: 10px 0 15px;
+    padding: 10px 20px;
+    background-color: #ff0000;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.hg-read-more-button:hover {
+    background-color: #cc0000;
+}
+
+.swiper-pagination-bullet {
+    background: #ff0000;
+    opacity: 1;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    color: #333;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+}

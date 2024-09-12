@@ -1,0 +1,145 @@
+.career-form {
+    margin: 0 auto;
+    margin-left: 6%;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    margin-top: 5%;
+    text-align: center;
+    padding-inline: 5rem;
+    max-width: 1200px;
+}
+
+.career-form h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 55px;
+    letter-spacing: 0;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    color: #6f6f6f;
+}
+
+.career-form p {
+    text-align: left;
+    margin: 18px 0 20px;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 1.75;
+    color: #6f6f6f;
+    text-align: justify;
+    font-family: 'Roboto', sans-serif;
+}
+
+.career-form form {
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    padding-inline: 0px;
+}
+
+.career-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.career-form input {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-family: 'Roboto', sans-serif;
+}
+
+.career-form button {
+    padding: 10px;
+    background: #d9534f;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.career-form button:hover {
+    background: #c9302c;
+}
+
+.CareerFormMaindIv {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: space-between;
+}
+
+.CareerFormInnerDIv {
+    width: 30%;
+    display: grid;
+    margin-bottom: 20px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .career-form {
+        padding-inline: 3rem;
+    }
+
+    .CareerFormInnerDIv {
+        width: 45%; /* Make input fields wider on medium screens */
+    }
+
+    .career-form h2 {
+        font-size: 45px;
+    }
+
+    .career-form p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .career-form {
+        padding-inline: 1.5rem;
+    }
+
+    .CareerFormInnerDIv {
+        width: 100%; /* Make input fields full width on small screens */
+    }
+
+    .career-form h2 {
+        font-size: 35px;
+    }
+
+    .career-form p {
+        font-size: 13px;
+    }
+
+    .career-form button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .career-form {
+        padding-inline: 1rem;
+    }
+
+    .career-form h2 {
+        font-size: 30px;
+    }
+
+    .career-form p {
+        font-size: 12px;
+    }
+
+    .career-form input {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .career-form button {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
