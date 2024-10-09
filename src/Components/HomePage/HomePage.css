@@ -12,7 +12,7 @@ body, html {
 .MainHomePageBanners{
     width: 90%;
     height: 80%;
-    background-color: wheat;
+    background-color: transparent;
 }
 .MainHomePageBanners img {
     width: 98vw;
@@ -327,26 +327,32 @@ color: white;
     border: 1px solid #d9242a;
     margin-top: 1.5rem;
 }
-.SHouldKNowVideOPLusIMagess{
+.SHouldKNowVideOPLusIMagess {
     height: 500px;
+    background-attachment: scroll; /* Change from 'fixed' to 'scroll' for iOS */
+    position: relative;
+    background-size: cover; /* Ensure the image covers the container */
+    background-position: center; /* Center the background image */
+    margin-left: 6%;
+    overflow: hidden;
+    -webkit-background-size: cover; /* Ensures iOS renders the background correctly */
+    background-repeat: no-repeat;
+    -webkit-filter: none; /* Remove any unintended blur on iOS */
+    filter: none; /* Ensures no filter is applied */
 }
-.SHouldKNowVideOPLusIMage{
+
+.SHouldKNowVideOPLusIMage {
     text-align: center;
     margin-top: 4rem;
 }
-.SHouldKNowVideOPLusIMagess img{
+
+.SHouldKNowVideOPLusIMagess img {
     width: 12%;
     height: auto;
     position: relative;
     margin-top: 9rem;
 }
-.SHouldKNowVideOPLusIMagess{
-    background-attachment: fixed;
-    position: relative;
-    background-size: cover;
-    margin-left: 6%;
-    overflow: hidden;
-}
+
 .overlay {
     position: fixed;
     top: 0;
@@ -367,6 +373,7 @@ color: white;
     border: none!important;
 }
 
+
 .closeButton {
     position: absolute;
     top: 20px;
@@ -383,12 +390,25 @@ color: white;
 .content.blur {
     filter: blur(8px); /* Apply blur when video is visible */
 }
-
-@media (max-width: 1000px) {
+.SSSSSSSSSSSSSAAAAAAAAAAAAA{
+    display: flex;
+}
+@media (max-width: 1200px) {
+    .FrontMainPageMainContents {
+        position: relative;
+        width: 90vw;
+        margin-left: 8vw;
+    }
     .NABLLogoAndDrsImageMainDivHomepage {
         flex-direction: column;
         align-items: center;
-        width: 100%;
+        width: 90%;
+    }
+    .SSSSSSSSSSSSSAAAAAAAAAAAAA{
+        display: block;
+    }
+    .HomePageOurServicesMainDivSliders {
+        padding-left: 5rem;
     }
 
     .NablLogoNDrsImagesHomePage,
@@ -399,12 +419,21 @@ color: white;
 
     .NablLogoNDrsImagesHomePage {
         margin-bottom: 2rem;
+        justify-content: center;
     }
-
+.OurPromisesFLex{
+    justify-content: center;
+}
     .DrsOnlyImageHomePageNABL1 img,
+    .NABLlogoOnHomePage,
     .NABLlogoOnHomePage img {
-        width: 70%;
-        max-width: 250px;
+        width: 80%;
+        max-width: 350px;
+        margin-bottom: 1rem;
+    }
+    .NABLlogoOnHomePage {
+        width: 60%;
+        max-width: 300px;
         margin-bottom: 1rem;
     }
 
@@ -469,6 +498,8 @@ color: white;
     .NABLESECONDARYCONTENT p {
         font-size: 0.9rem;
     }
+
+    
 }
 
 /* Adjust layout for smaller mobile screens */
@@ -481,13 +512,43 @@ color: white;
 
     }
     .MainHomePageBanners img{
-        width: 100vw;
+        width: 155vw;
+        height: 85vh;
+    }
+    .QualityDiagnosticsDiv h1 {
+        font-size: 25px;
+    }
+    .nablLEGACYficciMAINDIV{
+        display: block;
+        margin-inline: 29vw;
+    }
+    .NABLMainHeading h2,.FICCIMainHeading h2,.L38MainHeading h2 {
+        font-size: 25px;
+    }
+    .NablLogoNDrsImagesHomePage{
+        display: block;
+    }
+    .NablLogoNDrsImagesHomePage {
+        display: block;
+        text-align: -webkit-center;
+        margin-left: 0px;
     }
 
     .DrsOnlyImageHomePageNABL1 img,
     .NABLlogoOnHomePage img {
         width: 90%;
-        max-width: 180px;
+        max-width: 320px;
+    }
+    .NABLlogoOnHomePage {
+        margin-inline: 0%;
+        width: 100%;
+        /* width: 90%; */
+        max-width: 350px;
+        /* margin-bottom: 1rem; */
+    }
+    .DrsOnlyImageHomePageNABL1 {
+        margin-inline: 0%;
+        width: 100%;
     }
 
     .NABLESECONDARYCONTENT h2 {
@@ -503,7 +564,18 @@ color: white;
     }
 
     .HomePageNABLBotton a {
-        font-size: 0.9rem;
+        font-size: 0.5rem;
         padding: 0.8rem 1.5rem;
     }
+    .slick-slide img {
+        display: block;
+        width: 80vw!important;
+        margin-inline: 1rem;
+    }
+    .NABLMainDIv,.NABLMainDIv{
+        margin-bottom: 3rem;
+    }
+
+
+  
 }

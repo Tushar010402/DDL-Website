@@ -115,4 +115,27 @@
     .HomeCollectionLists li {
         font-size: 1rem;
     }
+    .HomeCollectionMainDivHomePage::before{
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+    .HomeCollectionMainDivHomePage{
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+}
+
+@media(max-width:480px){
+    .HomeCollectionInnerdiv {
+        padding: 1rem;
+        max-width: 90%;
+        margin-inline: 3rem;
+    }
+    .HomeCollectionInnerdiv p{
+        font-size: 1rem;
+    }
+    .HomeCollectionLists li{
+        font-size: .9rem;
+    }
+    .HomeCollectionMainDivHomePage::before{
+        background-color: rgba(0, 0, 0, 0.3);
+    }
 }

@@ -35,21 +35,21 @@
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
     padding: 5px 15px;
-    border: 1px solid #ddd;
+    border: 1px solid #000000;
     transition: background-color 0.3s ease, border-color 0.3s ease;
-    border-radius: 5px;
+    border-radius: 1px;
     display: inline-block;
     font-size: 1rem;
 }
 
 .HorizontalNavbarLinks a:hover {
     background-color: #eaeaea;
-    border-color: #bbb;
+    border-color: #000000;
 }
 
 .HorizontalNavbarMenuIcon {
     display: none;
-    flex: 1;
+  
     justify-content: flex-end;
     margin-right: 1rem;
 }
@@ -122,9 +122,24 @@
     color: #0073e6;
 }
 
+.horizontal-search-bar {
+    width: 90%;
+    padding: 8px;
+    margin: 10px auto;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+
 @media(max-width: 821px) {
     .navbar {
         display: none;
+    }
+    .HorizontalNavbarLogo{
+
+        flex: none;
     }
 
     .HorizontalNavbarLinks a {
@@ -134,6 +149,10 @@
 
     .HorizontalNavbarMenuIcon {
         display: flex;
+        width: 5%;
+    }
+    .HorizontalNavbarLogo{
+        width: 15%;
     }
 
     .HorizontalNavbarMainDiv {
@@ -143,7 +162,7 @@
     .HorizontalNavbarLinks {
         flex: 2 1;
         display: flex;
-        justify-content: end;
+        justify-content: center;
         gap: 1rem;
         margin-right: -9rem;
     }
@@ -154,11 +173,16 @@
         display: block;
         transition: color 0.3s ease;
     }
+    .HorizontalNavbarMenuIcon {
+        display: flex;
+        width: 10%;
+        margin-right: 3%;
+    }
 }
 
 @media(max-width: 520px) {
     .HorizontalNavbarLinks a {
-        font-size: 0.7rem;
+        font-size: 0.8rem;
     }
 
     .horizontal-options ul li {
@@ -176,15 +200,33 @@
 
 @media(max-width: 480px) {
     .HorizontalNavbarLogo img {
-        height: 2rem;
+        height: 3.5rem;
     }
 
     .HorizontalNavbarLinks a {
-        font-size: 0.6rem;
-        padding: 3px 8px;
+        font-size: 0.9rem;
+        padding: 4px 10px;
     }
 
     .HorizontalNavbarMenuIcon span {
-        font-size: 1.2rem;
+        font-size: 1.6rem;
+    }
+    .HorizontalNavbarLinks {
+        margin-right: 1rem;
+        display: flex;
+        justify-content: end;
+        gap: 1rem;
+       
+    }
+    .HorizontalNavbarMenuIcon {
+        display: flex;
+        width: 4%;
+        margin-right: 3%;
+    }
+}
+@media(max-width:391px){
+    .HorizontalNavbarLinks a {
+        font-size: 0.8rem;
+        padding: 3px 8px;
     }
 }

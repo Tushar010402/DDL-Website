@@ -168,16 +168,30 @@
       padding: 8px 20px;
       font-size: 11px;
   }
+  .BelowPromise1stBackground1 {
+    position: absolute;
+    top: 12%;
+    left: 7%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    color: white; /* White text color */
+    padding: 5rem;
+    max-width: 26%;
+    text-align: center;
+  }
 }
 
 /* Small Mobile */
 @media (max-width: 480px) {
   .BelowPromise1stBackground1, 
   #BelowPromise1stBackground1ID {
-      padding: 1.5rem;
-      max-width: 95%;
-      left: 2.5%;
-      top: 5%;
+    padding: 1.5rem;
+    max-width: 80%;
+    left: 4.5%;
+    top: 5%;
+    height: 27vh;
+  }
+  #BelowPromise1stBackground1ID p{
+    font-size: 10px;
   }
 
   .BelowPromise1stBackground1 h2 {
@@ -195,4 +209,7 @@
       padding: 6px 15px;
       font-size: 10px;
   }
+  .swiper-wrapper {
+    height: 550px !important;
+}
 }

@@ -1,4 +1,6 @@
-import React from 'react';
+
+import React, { useState, useEffect } from 'react';
+
 import './Recognition.css';
 import OurLegacyHeaderImage from '../../PhotosAndLogos/OurLagacy.png';
 import RecognizationImage1 from '../../PhotosAndLogos/Recognization1.webp';
@@ -7,12 +9,29 @@ import RecognizationImage3 from '../../PhotosAndLogos/Recognization3.webp';
 import RecognizationImage4 from '../../PhotosAndLogos/Recognization4.webp';
 import RecognizationImage5 from '../../PhotosAndLogos/Recognization5.webp';
 import RecognizationImage6 from '../../PhotosAndLogos/Recognization6.webp';
+import MobileOurLegacyHeaderImage from '../../PhotosAndLogos/ourlegacy-mob.webp';
 
 const Recognition = () => {
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  // Update the state when window is resized
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup the event listener on unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
     return (
         <div className='RecognitionMainDiv'>
             <div className='Recognition-main-banner'>
-                <img src={OurLegacyHeaderImage} alt='Recognition' className='Recognition-background-image' />
+      
+            <img src={isMobile ? MobileOurLegacyHeaderImage : OurLegacyHeaderImage} alt='Recognition' className='Recognition-background-image' />
                 <div className='Recognition-overlay'></div>
                 <div className='Recognition-content-container'>
                     <div className='Recognition-text-content'>

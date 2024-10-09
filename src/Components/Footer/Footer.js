@@ -9,6 +9,7 @@ import Twitter from '../../PhotosAndLogos/twitter-footer-smo.png';
 import YouTube from '../../PhotosAndLogos/youtube-footer-smo.png';
 import LinkedIn from '../../PhotosAndLogos/linkedin-footer-smo.png';
 
+
 const Footer = () => {
     const [formData, setFormData] = useState({
         name: '',
@@ -18,9 +19,10 @@ const Footer = () => {
         comment: ''
     });
     const [userIp, setUserIp] = useState('');
+    const [captcha, setCaptcha] = useState({ question: '', answer: '' });
+    const [userCaptcha, setUserCaptcha] = useState('');
 
     useEffect(() => {
-        // Fetch the user's IP address
         const fetchIp = async () => {
             try {
                 const response = await axios.get('https://api.ipify.org?format=json');
@@ -31,6 +33,7 @@ const Footer = () => {
         };
 
         fetchIp();
+        generateCaptcha();
     }, []);
 
     const handleChange = (e) => {
@@ -40,14 +43,30 @@ const Footer = () => {
         });
     };
 
+    const generateCaptcha = () => {
+        const num1 = Math.floor(Math.random() * 10);
+        const num2 = Math.floor(Math.random() * 10);
+        const question = `${num1} + ${num2} = ?`;
+        const answer = (num1 + num2).toString();
+        setCaptcha({ question, answer });
+        setUserCaptcha('');
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
+        if (userCaptcha !== captcha.answer) {
+            alert('Incorrect CAPTCHA. Please try again.');
+            return;
+        }
         try {
-            const response = await axios.post('https://api.dangsccg.co.in/api/api/enquiries/', { ...formData, ip: userIp }, {
-                headers: {
-                    'Content-Type': 'application/json'
+            const response = await axios.post('https://api.dangsccg.co.in/api/api/enquiries/', 
+                { ...formData, ip: userIp },
+                {
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
                 }
-            });
+            );
             if (response.status === 201) {
                 alert('Message sent successfully!');
                 setFormData({
@@ -57,10 +76,16 @@ const Footer = () => {
                     subject: '',
                     comment: ''
                 });
+                setUserCaptcha('');
+                generateCaptcha();
             }
         } catch (error) {
             console.error('Error sending message:', error);
-            alert('Failed to send message. Please try again later.');
+            if (error.response && error.response.status === 429) {
+                alert('Too many requests. Please try again later.');
+            } else {
+                alert('Failed to send message. Please try again later.');
+            }
         }
     };
 
@@ -224,7 +249,27 @@ const Footer = () => {
                                 onChange={handleChange}
                                 required
                             ></textarea>
-                            <button type="submit">Send Message</button>
+                         <div className="footer-row1">
+    <div className="footer-inputFeild">
+        <label>CAPTCHA</label>
+        <div className="footer-captchaContainer">
+            <span className="footer-captchaText">{captcha.question}</span>
+            <button type="button" onClick={generateCaptcha} className="refreshButton">
+                Refresh
+            </button>
+        </div>
+        <input
+            type="text"
+            value={userCaptcha}
+            onChange={(e) => setUserCaptcha(e.target.value)}
+            placeholder="Enter the answer"
+            className="footer-captchaInput"
+        />
+    </div>
+</div>
+                            <div className="Footer-Submit-Button">
+                            <button type="submit" >Send Message</button>
+                            </div>
                         </form>
                     </div>
                     <div className="ThirdcolumnFOoter">

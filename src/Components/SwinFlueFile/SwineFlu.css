@@ -258,6 +258,12 @@ hr {
     .InnerMain1stLeftDiv h2 {
         font-size: 35px; /* Adjust font size further */
     }
+    .SwineFLueImageDIv{
+        padding-left: 0rem;
+    }
+    .SwineFlueMainDiv{
+        margin-left: 0px;
+    }
 
     .InnerDivForm h3 {
         font-size: 18px;
@@ -266,7 +272,7 @@ hr {
 
 @media (max-width: 480px) {
     .SwineFlueMainDiv {
-        margin-left: 2%;
+        margin-left: 0%;
         margin-right: 2%;
     }
 

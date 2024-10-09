@@ -29,10 +29,26 @@ import Microbiology from '../../PhotosAndLogos/Home-Microbiology.webp';
 import AllergyHome from '../../PhotosAndLogos/Home-Allergy-Intolerance.webp';
 import Molecular from '../../PhotosAndLogos/Home-Molecular-Biology.webp';
 import FlowCytromatary from '../../PhotosAndLogos/Home-Flow-Cytometry.webp';
+import MobileBanner from '../../PhotosAndLogos/bannerFormobile.webp';
 
 const YourComponent = () => {
   const [videoVisible, setVideoVisible] = useState(false);
   const [isFlipped, setIsFlipped] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  // Update the state when window is resized
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup the event listener on unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const handleMouseEnter = () => {
       setIsFlipped(true);
@@ -161,9 +177,8 @@ const YourComponent = () => {
 
            
             <div className='MainHomePageBanners'>
-
-            <img src={MainBanner} alt="My Image" />
-            </div>
+      <img src={isMobile ? MobileBanner : MainBanner} alt="My Image" />
+    </div>
         {/* <br></br> */}
           
 
@@ -324,9 +339,10 @@ const YourComponent = () => {
                     <button className="closeButton" onClick={handleVideoToggle}>Close</button>
                 </div>
             )}
-            <div className={`content ${videoVisible ? 'blur' : ''}`}>
-                {/* All other page content goes here */}
-            </div>
+        <div className={`content ${videoVisible ? 'blur' : ''}`}>
+    {/* All other page content goes here */}
+</div>
+
         </div>
             </div>
                 </div>

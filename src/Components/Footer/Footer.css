@@ -68,7 +68,7 @@
     resize: none;
 }
 
-.footer-contact-form button {
+.footer-contact-form .Footer-Submit-Button button {
     padding: 10px;
     background-color: #000000;
     color: #ffffff;
@@ -88,7 +88,7 @@
     transition: color 200ms ease-in-out, background-color 200ms ease-in-out, border-color 200ms ease-in-out;
 }
 
-.footer-contact-form button:hover {
+.footer-contact-form .Footer-Submit-Button button:hover {
     background-color: white;
     color: #000000;
     border: 2px solid #000000;
@@ -224,7 +224,7 @@
     background: transparent;
     border: none;
 }
-@media (max-width: 1025px) {
+@media (max-width: 1300px) {
 
     .LocationsFooterMainDiv{
         display: flex;
@@ -275,3 +275,121 @@
         margin-bottom: 20px;
     }
 }
+@media(max-width:480px){
+    .LocationsFooterMainDiv {
+        display: block;
+    }
+    .FooterSocialIcon {
+        width: 90vw;
+        padding-left: 0rem;
+    }
+}
+
+/* Container for the CAPTCHA input field */
+.footer-inputFeild {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Label styling */
+.footer-inputFeild label {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+/* CAPTCHA container */
+.footer-captchaContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+/* CAPTCHA question text */
+.footer-captchaText {
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+    background-color: #f1f1f1;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Refresh button */
+.footer-refreshButton {
+    font-size: 14px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.footer-refreshButton:hover {
+    background-color: #0056b3;
+}
+
+/* CAPTCHA input field */
+.footer-captchaInput {
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    transition: border 0.3s ease;
+}
+
+.footer-captchaInput:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .footer-inputFeild {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .footer-captchaText, .footer-refreshButton, .footer-captchaInput {
+        font-size: 14px;
+    }
+
+    .footer-refreshButton {
+        padding: 6px 10px;
+    }
+}
+.refreshButton {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  .refreshButton:hover {
+    background-color: #45a049;
+  }
+  

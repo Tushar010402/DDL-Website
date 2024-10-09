@@ -34,12 +34,12 @@ const Navbar = () => {
 
   const options = [
     { name: "Book Routine Tests At Home", href: "/HomeCollectionServices" },
-    { name: "Test Results/Payment", href: "#" },
+    { name: "Test Results/Payment", href: "https://reports.drdangslab.com/drdangs/design/PatientPortal/PatientLogin.aspx" },
     { name: "Health Packages", href: "/health-checkup-packages" },
     { name: "Bacteriophage Sensitivity Test", href: "/ServiceBacteriophageSenstivityTesting" },
-    { name: "Allergy & Intolerance", href: "#" },
+    { name: "Allergy & Intolerance", href: "/ServiceAllergytesting" },
     { name: "Legacy", href: "/Legacy" },
-    { name: "Services", href: "#" },
+    { name: "Services", href: "/Services" },
     { name: "Quality Assurance", href: "/QualityAssurance" },
     { name: "Virtual Tour", href: "/VirtalTour" },
     { name: "Research & Trials", href: "/ResearchAndTrials" },

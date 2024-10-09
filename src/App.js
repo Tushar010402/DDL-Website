@@ -34,17 +34,35 @@ import QualityAssurance from './Components/QualityAssurance/QualityAssurance.js'
 import VirtalTour from './Components/VirtualTour/VirtualTour.js';
 import ResearchAndTrials from './Components/ResearchAndTrials/ResearchAndTrials.js';
 import Recognition from './Components/Recognition/Recognition.js';
-
-
+import AllergyWeb from './Components/AllergyWeb/AllergyWeb.js';
+import ServicesWeb from './Components/Services/Services.js';
+import ServiceHaematology from './Components/Services/Haematology/Haematology.js';
+import ServiceBiochemistry from './Components/Services/Biochemistry/Biochemistry.js';
+import ServiceClinicalPathology from './Components/Services/ClinicalPathology/ClinicalPathology.js';
+import ServiceMicrobiology from './Components/Services/Microbiology/Microbiology.js';
+import ServiceHistocytopathology from './Components/Services/Histocytopathology/Histocytopathology.js';
+import ServiceMolecularbiology from './Components/Services/MolecularBiology/MolecularBiology.js';
+import ServiceFlowcytometry from './Components/Services/FlowCytometry/FlowCytometry.js';
+import SpecializedTesting from './Components/Services/SpecializedTesting/SpecializedTesting.js';
 const App = () => {
   return (
     <Router>
-      <TestPackageProvider> {/* Wrapping components with context provider */}
+      <TestPackageProvider> {/* Wrapping components with context provider  */}
         <div>
           <Navbar />
           <HorizontalNavbar />
           <RightSideButton />
           <Routes>
+          <Route path="/ServiceSpecializedTestingForHospitals" element={<SpecializedTesting />} />
+          <Route path="/ServiceFlowcytometry" element={<ServiceFlowcytometry />} />
+          <Route path="/ServiceMolecularbiology" element={<ServiceMolecularbiology />} />
+          <Route path="/ServiceHistocytopathology" element={<ServiceHistocytopathology />} />
+          <Route path="/ServiceMicrobiology" element={<ServiceMicrobiology />} />
+          <Route path="/ServiceClinicalpathology" element={<ServiceClinicalPathology />} />
+          <Route path="/ServiceBiochemistry" element={<ServiceBiochemistry />} />
+          <Route path="/ServiceHaematology" element={<ServiceHaematology />} />
+          <Route path="/Services" element={<ServicesWeb />} />
+          <Route path="/ServiceAllergytesting" element={<AllergyWeb />} />
           <Route path="/Recognition" element={<Recognition />} />
           <Route path="/ResearchAndTrials" element={<ResearchAndTrials />} />
           <Route path="/VirtalTour" element={<VirtalTour />} />

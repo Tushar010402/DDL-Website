@@ -18,7 +18,7 @@ const BelowOurPromise = () => {
             <Swiper
                 spaceBetween={30}
                 pagination={{ clickable: true }}
-                autoplay={{ delay: 5000, disableOnInteraction: false }}
+                autoplay={{ delay: 500000, disableOnInteraction: false }}
                 className="mySwiper"
             >
                 <SwiperSlide>

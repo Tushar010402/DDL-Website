@@ -40,6 +40,11 @@
     font-weight: 600;
 }
 
+
+.home-collection-style {
+    margin-right: -2rem;
+}
+
 @media (max-width: 1200px) {
     .right-button {
         font-size: 12px;
@@ -53,21 +58,45 @@
     }
 
     .right-button {
-        font-size: 10px;
-        padding: 6px 4px;
+        font-size: 15px;
+        padding: 10px 20px;
+        background-color: #d9242a;
+        color: white;
     }   
     .right-side-buttons{
         margin-right: -5rem;
     }
+    .right-button {
+        font-size: 10px;
+        padding: 7px 12px;
+    }
+    
+    
 }
 
 @media (max-width: 480px) {
     .right-side-buttons {
-        top: 30%;
+        top: 16rem;
+    }
+    .right-side-buttons {
+        margin-right: -7rem;
     }
 
     .right-button {
-        font-size: 8px;
-        padding: 4px 2px;
+        font-size: 13px;
+        padding: 10px 15px;
+    }
+}
+
+@media(max-width: 391px){
+    .right-side-buttons {
+        top: 18rem;
+    }
+    .right-side-buttons {
+        margin-right: -6.5rem;
+    }
+    .right-button {
+        font-size: 12px;
+        padding: 8px 13px;
     }
 }

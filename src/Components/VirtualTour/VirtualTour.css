@@ -219,4 +219,17 @@
         height: 580px;
         padding-bottom: .5rem;
     }
+    .VirtualTourMainDiv{
+        margin-left: 0px;
+    }
+    .VirtualTour-text-content h2{
+        font-size: 2rem!important;
+    }
+    #VirtualTourFirstImageID31{
+        max-width: 100%!important;
+    }
+    #VirtualTourFirstImageID31 img,#VirtualTourFirstImageID32,#VirtualTourFirstImageID33,#VirtualTourFirstImageID41,#VirtualTourFirstImageID42{
+        max-width: 100%!important;
+    }
 }
+

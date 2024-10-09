@@ -136,6 +136,9 @@
         line-height: 50px;
     font-size: 55px;
     }
+    .ResearchAndTrialsMainDiv{
+        margin-left: 0px;
+    }
 }
 
 @media (max-width: 480px) {

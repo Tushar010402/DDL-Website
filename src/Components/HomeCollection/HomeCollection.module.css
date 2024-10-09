@@ -1,67 +1,53 @@
-/* Base Styles for Desktop */
+/* General Improvements for Desktop and Mobile */
 .addbooking {
   margin-top: 3%;
   background-color: #f7f7f7;
   padding: 2rem;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
 }
 
 .addbooking h2 {
-  background: transparent;
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 600;
   color: #333;
+  margin-bottom: 2rem;
   font-family: 'Roboto', sans-serif;
-  margin-bottom: 1.5rem;
 }
 
 .addbooking form {
   width: 90%;
-  max-width: 1500px;
-  padding: 2rem 1rem;
+  max-width: 1200px;
+  padding: 2rem;
   background: #ffffff;
-  border-radius: 2rem;
-  margin: 1rem auto;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin-left: 6.3rem;
+  border-radius: 1rem;
+  margin: 0 auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
-.FirstrowOnBookingForm {
+/* Responsive Flexbox for Form Layout */
+.row1 {
   display: flex;
-  width: 100%;
   flex-wrap: wrap;
+  justify-content: space-between;
   gap: 1rem;
-}
-
-.preferredTimeInputOnBookingPage,
-.DateFOrCollectIonInBookingPage {
-  width: 48%;
-}
-
-#inputFeild22 {
-  width: 75%;
-}
-
-#inputFeild23 {
-  width: 20%;
 }
 
 .inputFeild {
   width: 48%;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem; /* Adjusted for better spacing */
 }
 
 .inputFeild input,
 .inputFeild select,
 .inputFeild textarea {
-  width: 92%;
-  padding: 0.75rem;
+  width: 100%;
+  padding: 0.85rem;
   font-size: 1rem;
   border: 1px solid #ccc;
-  border-radius: 4px;
-  transition: border-color 0.2s;
+  border-radius: 6px;
+  transition: border-color 0.2s ease-in-out;
 }
 
 .inputFeild input:focus,
@@ -71,41 +57,23 @@
   outline: none;
 }
 
+/* Labels */
 .inputFeild label {
   color: #333;
-  margin-bottom: 0.5rem;
   font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: block;
 }
 
-.row1 {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-#inputtextarea textarea {
-  height: 5rem;
-}
-
-#time_slots {
-  padding: 0.75rem;
-  font-size: 1rem;
-  color: #333;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.css-b62m3t-container {
-  width: 100%;
-}
-
+/* Error Message Styling */
 .errorMessage {
   color: red;
-  font-size: 0.9em;
-  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+  font-style: italic;
 }
 
+/* Button Styling */
 .AddButtonInAddBooking {
   text-align: center;
   margin-top: 2rem;
@@ -114,85 +82,41 @@
 .AddButtonInAddBooking button {
   background-color: #d9242a;
   color: #ffffff;
-  cursor: pointer;
-  font-size: 13px;
-  padding: 13px 31px;
-  font-style: normal;
-  text-align: center;
+  padding: 12px 35px;
+  font-size: 15px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
-  vertical-align: middle;
-  border: 2px solid transparent;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.2s;
 }
 
 .AddButtonInAddBooking button:hover {
-  background: #0056b3;
+  background-color: #0056b3;
+  transform: scale(1.05);
 }
 
-.react-datepicker-wrapper {
-  width: 100%;
-}
-
-.react-datepicker__input-container {
-  display: block;
-}
-
+/* For DatePicker and Select Styling */
 .react-datepicker__input-container input {
-  width: 100%;
   padding: 0.75rem;
   font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  transition: border-color 0.2s;
 }
 
-.react-datepicker__input-container input:focus {
-  border-color: #007bff;
-  outline: none;
+.css-b62m3t-container {
+  width: 100%;
 }
 
-#ATAgeBookingStandardId {
-  text-decoration: underline;
-  color: red;
-}
-
-#BookIngStandardPackageID {
-  position: relative;
-  right: 0;
-  margin-left: 29%;
-  font-size: 14px;
-  font-weight: 600;
-  color: red;
-  text-decoration: underline;
-}
-
-/* Medium Devices (Tablets) */
-@media screen and (max-width: 1000px) {
-  .addbooking {
-    padding: 20px;
-  }
-
+/* Tablet Screens (Up to 1000px) */
+@media screen and (max-width: 1300px) {
   .addbooking form {
-    width: 96%;
-    margin: 0;
-    padding: 1rem;
+    padding: 1.5rem;
+    width: 85%;
+    margin-left: 6%;
+    padding-right: 4rem;
   }
 
-  .FirstrowOnBookingForm,
-  .row1 {
-    flex-direction: column;
-  }
-
-  .inputFeild,
-  .preferredTimeInputOnBookingPage,
-  .DateFOrCollectIonInBookingPage,
-  #inputFeild22,
-  #inputFeild23 {
-    width: 94%;
+  .inputFeild {
+    width: 100%;
   }
 
   .addbooking h2 {
@@ -201,62 +125,41 @@
 
   .AddButtonInAddBooking button {
     font-size: 14px;
-    padding: 12px 28px;
-  }
-
-  #BookIngStandardPackageID {
-    margin-left: 20%;
-    font-size: 13px;
+    padding: 10px 25px;
   }
 }
 
-/* Small Devices (Mobile Phones) */
+/* Mobile Screens (Up to 600px) */
 @media screen and (max-width: 600px) {
   .addbooking {
-    padding: 10px;
+    padding: 1rem;
   }
-  .addbooking {
-    margin-top: 6%;
-  }
+
   .addbooking h2 {
     font-size: 1.5rem;
+    margin-top: 3rem;
   }
 
   .addbooking form {
     padding: 1rem;
   }
-  .addbooking form {
-    width: 94%;
-    margin: 0;
-    padding: 1rem;
-  }
-  .inputFeild {
-    width: 94%;
-    margin-bottom: 1rem;
-  }
 
-  #inputFeild20 {
-    padding: 0.5rem;
-    font-size: 0.9rem;
+  .inputFeild input,
+  .inputFeild select,
+  .inputFeild textarea {
+    padding: 0.75rem;
+    font-size: 0.95rem;
+    width: 90%;
   }
 
   .AddButtonInAddBooking button {
     padding: 10px 20px;
-    font-size: 12px;
-  }
-
-  #BookIngStandardPackageID {
-    margin-left: 10%;
-    font-size: 12px;
+    font-size: 13px;
   }
 }
 
-/* Extra Small Devices (Very Small Mobile Phones) */
+/* Extra Small Devices (Up to 400px) */
 @media screen and (max-width: 400px) {
-  .addbooking {
-    padding: 8px;
-  }
-
   .addbooking h2 {
     font-size: 1.25rem;
   }
@@ -265,18 +168,184 @@
     padding: 0.75rem;
   }
 
-  .inputFeild {
-    width: 100%;
-    margin-bottom: 0.75rem;
+  .inputFeild input,
+  .inputFeild select,
+  .inputFeild textarea {
+    padding: 0.65rem;
   }
 
   .AddButtonInAddBooking button {
-    padding: 8px 16px;
-    font-size: 11px;
+    padding: 8px 18px;
+    font-size: 12px;
+  }
+}
+
+/* Test / Package Name Styles */
+/* Test / Package Name Container */
+.testPackageContainer {
+  position: relative;
+  margin-bottom: 1.5rem; /* Consistent spacing */
+}
+
+/* Link Above the Input Field */
+.testPackageLinksAbove {
+  position: absolute;
+  right: 0;
+  top: -.5rem; /* Place the link above */
+  font-size: 0.85rem;
+  color: red;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.testPackageLinksAbove:hover {
+  color: #0056b3;
+}
+
+/* Link Below the Input Field */
+.testPackageLinksBelow {
+  position: absolute;
+  right: 0;
+  bottom: -1.5rem; /* Place the link below */
+  font-size: 0.85rem;
+  color: red;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.testPackageLinksBelow:hover {
+  color: #0056b3;
+}
+
+/* Ensure the input matches the width of other fields */
+.testPackageInput {
+  width: 100%;  /* Full width for consistency */
+  padding: 0.85rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.testPackageInput:focus {
+  border-color: #007bff;
+  outline: none;
+}
+#BUTTON1ID{
+  display: none;
+}
+.captchaContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.captchaText {
+  font-family: 'Courier New', monospace;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  padding: 10px 15px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-right: 10px;
+  user-select: none;
+}
+
+.refreshButton {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.refreshButton:hover {
+  background-color: #45a049;
+}
+
+.captchaInput {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.captchaInput:focus {
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+/* You can also style the thank you card */
+.thankYouCard {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.thankYouCard h2 {
+  color: #4CAF50;
+  margin-bottom: 15px;
+}
+
+.thankYouCard p {
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .testPackageLinksAbove,
+  .testPackageLinksBelow {
+    right: 0;
+    font-size: 0.8rem;
+  }
+  .testPackageInput {
+    width: 90%;  /* Full width for consistency */
+    padding: 0.85rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: border-color 0.2s ease-in-out;
+  }
+  .testPackageContainer {
+    flex-direction: column;
   }
 
-  #BookIngStandardPackageID {
-    margin-left: 5%;
-    font-size: 11px;
+  .testPackageLinks {
+    position: static;
+    margin-top: 5px;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .testPackageLinks a {
+    font-size: 0.8rem;
+    margin-bottom: 0;
+  }
+}
+
+@media(max-width:450px){
+  .testPackageLinksAbove,
+  .testPackageLinksBelow {
+    right: 0;
+    font-size: 0.6rem;
   }
 }

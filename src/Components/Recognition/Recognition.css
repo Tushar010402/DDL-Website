@@ -300,4 +300,8 @@
     .Recognition-text-content h2 {
         font-size: 50px;
     }
+    .Recognition-overlay,.Recognition-background-image{
+        margin-top: -7rem;
+    }
+
 }

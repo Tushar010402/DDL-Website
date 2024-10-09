@@ -22,26 +22,26 @@ import LegacySupport5 from '../../PhotosAndLogos/LegacySupportSlider5.png';
 import LegacySupport6 from '../../PhotosAndLogos/LegacySupportSlider6.png';
  
 
-import SwiperCore, { Navigation, Pagination } from 'swiper';
+import SwiperCore, { Navigation, Pagination,Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.min.css';
 import './Legacy.css';
 
-SwiperCore.use([Navigation, Pagination]);
+SwiperCore.use([Navigation, Pagination, Autoplay]);
 
 const Legacy = () => {
     return (
       <>
         <div className='LegacyMainDiv'>
-          <div className='Legacy-main-banner'>
-            <img src={OurLegacyHeaderImage} alt='Legacy' className='Legacy-background-image' />
-            <div className='Legacy-content-container'>
-              <div className='Legacy-text-content'>
-                <h2>OUR LEGACY</h2>
-                <p>Our Family, Caring for Yours</p>
-              </div>
-            </div>
-          </div>
+        <div className='Legacy-main-banner'>
+    <div className='Legacy-content-container'>
+      <div className='Legacy-text-content'>
+        <h2>OUR LEGACY</h2>
+        <p>Our Family, Caring for Yours</p>
+      </div>
+    </div>
+  </div>
+
   
           <div className='LegacyAfterHeader'>
             <div className='LegacyContentSection'>
@@ -132,72 +132,91 @@ const Legacy = () => {
 
           {/* New Swiper Section */}
           <div className='SwiperSection'>
-            <h2>Meet Our Team of Specialists</h2>
-            <Swiper
-              spaceBetween={50}
-              slidesPerView={4}
-              navigation
-              pagination={{ clickable: true }}
-              loop={false}  // No looping
-              className='TeamSwiper'
-              
-            >
-
-
-<SwiperSlide>
-                <div className='Specialist'>
-                  <img src={Legacy2} alt='Dr. Manik Agarwal' />
-                  <h3>Prof (Dr.) Navin Dang</h3>
-                  <p>Director & Founder</p>
-                </div>
-              </SwiperSlide>
-
-
-              <SwiperSlide>
-                <div className='Specialist'>
-                  <img src={DRManju} alt='Dr. Manik Agarwal' />
-                  <h3>Dr. Manju Dang</h3>
-                  <p>Director & Founder</p>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className='Specialist'>
-                  <img src={DrManvi} alt='Dr. Manik Agarwal' />
-                  <h3>Dr. Manavi Dang</h3>
-                  <p>CEO & Partners</p>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className='Specialist'>
-                  <img src={DrArjun} alt='Dr. Manik Agarwal' />
-                  <h3>Dr. Arjun Dang</h3>
-                  <p>CEO & Partners</p>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className='Specialist'>
-                  <img src={DrVisvjeet} alt='Dr. Manik Agarwal' />
-                  <h3>Dr. Biswajit Sen</h3>
-                  <p>Sr. Director – Histocytopathology & Autoimmune</p>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className='Specialist'>
-                  <img src={DrLeena} alt='Dr. Manik Agarwal' />
-                  <h3>Dr. Leena Chatterjee</h3>
-                  <p>President – Strategy & Operations</p>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className='Specialist'>
-                  <img src={DrBineesh} alt='Dr. Manik Agarwal' />
-                  <h3>Dr. Binish Jawed</h3>
-                  <p>Head – Molecular Biology  & Sr. Manager - Quality Assurance</p>
-                </div>
-              </SwiperSlide>
-              
-            </Swiper>
+      <h2>Meet Our Team of Specialists</h2>
+      <Swiper
+        spaceBetween={30}
+        navigation
+        pagination={{ clickable: true }}
+        autoplay={{ delay: 3000 }}
+        loop={true}
+        className='TeamSwiper'
+        breakpoints={{
+          320: {
+            slidesPerView: 1,   // Show 1 slide on very small screens
+            spaceBetween: 10,
+          },
+          480: {
+            slidesPerView: 1,   // Show 2 slides on small devices
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 3,   // Show 3 slides on tablets
+            spaceBetween: 30,
+          },
+          1024: {
+            slidesPerView: 4,   // Show 4 slides on large desktops
+            spaceBetween: 40,
+          },
+        }}
+      >
+        <SwiperSlide>
+          <div className='Specialist'>
+            <img src={Legacy2} alt='Prof (Dr.) Navin Dang' />
+            <h3>Prof (Dr.) Navin Dang</h3>
+            <p>Director & Founder</p>
           </div>
+        </SwiperSlide>
+
+        <SwiperSlide>
+          <div className='Specialist'>
+            <img src={DRManju} alt='Dr. Manju Dang' />
+            <h3>Dr. Manju Dang</h3>
+            <p>Director & Founder</p>
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide>
+          <div className='Specialist'>
+            <img src={DrManvi} alt='Dr. Manavi Dang' />
+            <h3>Dr. Manavi Dang</h3>
+            <p>CEO & Partner</p>
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide>
+          <div className='Specialist'>
+            <img src={DrArjun} alt='Dr. Arjun Dang' />
+            <h3>Dr. Arjun Dang</h3>
+            <p>CEO & Partner</p>
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide>
+          <div className='Specialist'>
+            <img src={DrVisvjeet} alt='Dr. Biswajit Sen' />
+            <h3>Dr. Biswajit Sen</h3>
+            <p>Sr. Director – Histocytopathology & Autoimmune</p>
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide>
+          <div className='Specialist'>
+            <img src={DrLeena} alt='Dr. Leena Chatterjee' />
+            <h3>Dr. Leena Chatterjee</h3>
+            <p>President – Strategy & Operations</p>
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide>
+          <div className='Specialist'>
+            <img src={DrBineesh} alt='Dr. Binish Jawed' />
+            <h3>Dr. Binish Jawed</h3>
+            <p>Head – Molecular Biology & Sr. Manager - Quality Assurance</p>
+          </div>
+        </SwiperSlide>
+
+      </Swiper>
+    </div>
 
 
           <div className='LegacyOurFamilyText'>
@@ -206,38 +225,56 @@ const Legacy = () => {
           </div>
             {/* Supported Foundations Section */}
             <div className='SupportedFoundationsSection'>
-            
-            <Swiper
-              spaceBetween={30}
-              slidesPerView={3}
-              navigation
-              pagination={{ clickable: true }}
-              autoplay={{ delay: 3000 }}
-              loop={true}
-              className='FoundationSwiper'
-            >
-              <SwiperSlide>
-                <img src={LegacySupport0} alt='Foundation 1' className='FoundationImage' />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src={LegacySupport1} alt='Foundation 2' className='FoundationImage' />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src={LegacySupport2} alt='Foundation 3' className='FoundationImage' />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src={LegacySupport3} alt='Foundation 3' className='FoundationImage' />
-              </SwiperSlide>
-          
-              <SwiperSlide>
-                <img src={LegacySupport5} alt='Foundation 3' className='FoundationImage' />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src={LegacySupport6} alt='Foundation 3' className='FoundationImage' />
-              </SwiperSlide>
-
-            </Swiper>
-          </div>
+      <Swiper
+        spaceBetween={30}
+        navigation
+        pagination={{ clickable: true }}
+        autoplay={{ delay: 3000 }}
+        loop={true}
+        className='FoundationSwiper'
+        breakpoints={{
+          // when window width is >= 320px
+          320: {
+            slidesPerView: 1,   // Show 1 slide on very small screens
+            spaceBetween: 10,
+          },
+          // when window width is >= 480px
+          480: {
+            slidesPerView: 1,   // Show 2 slides on mobile devices
+            spaceBetween: 20,
+          },
+          // when window width is >= 768px
+          768: {
+            slidesPerView: 3,   // Show 3 slides on tablets and above
+            spaceBetween: 30,
+          },
+          // when window width is >= 1024px
+          1024: {
+            slidesPerView: 4,   // Show 4 slides on large desktops
+            spaceBetween: 40,
+          }
+        }}
+      >
+        <SwiperSlide>
+          <img src={LegacySupport0} alt='Foundation 1' className='FoundationImage' />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={LegacySupport1} alt='Foundation 2' className='FoundationImage' />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={LegacySupport2} alt='Foundation 3' className='FoundationImage' />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={LegacySupport3} alt='Foundation 4' className='FoundationImage' />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={LegacySupport5} alt='Foundation 5' className='FoundationImage' />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={LegacySupport6} alt='Foundation 6' className='FoundationImage' />
+        </SwiperSlide>
+      </Swiper>
+    </div>
 
 
 

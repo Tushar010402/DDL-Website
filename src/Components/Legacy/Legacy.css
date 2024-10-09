@@ -372,3 +372,102 @@
 .LegacyOurFamilyText hr{
     width: 300px;
 }
+.Legacy-main-banner {
+    background-image: url('../../PhotosAndLogos/OurLagacy.png'); /* Desktop image */
+    background-size: cover;
+    background-position: center;
+    height: 60vh; /* Adjust as per your design */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 822px) {
+    .Legacy-main-banner {
+        background-image: url('../../PhotosAndLogos/ourlegacy-mob.webp'); /* Mobile image */
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        overflow: hidden;
+        visibility: visible;
+        height: 46vh;
+        background-repeat: no-repeat;
+        width: 100vw;
+    }
+    .LegacyMainDiv{
+        margin-left: 0px;
+    }
+    .Legacy-content-container{
+        margin-top: -10vh;
+    }
+    .Legacy-text-content h2{
+        font-size: 2rem;
+    }
+    .Legacy-text-content p{
+        font-size: 1.2rem;
+    }
+    .LegacyAfterHeader{
+        padding-inline: 0rem;
+    }
+    .LegacyContentSection .LegacyText{
+        width: 85%;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    .LegacyContentSection .LegacyImage{
+        width: 100%;
+    }
+    .LegacyContentSection{
+        display: block;
+    }
+    .DrDangLegacyContent{
+        display: block;
+    }
+    .DrDangLegacyText{
+        width: 85%;
+    }
+    .DrDangImage{
+        width: 100%;
+    }
+    .GroupPhotoContainer{
+        display: block;
+    }
+    .Legact-Group1 img,.Legact-Group2 img{
+        width: 100%;
+    }
+    .PromiseContent{
+        display: block;
+    }
+    .PromiseContent ul{
+        width: 85%;
+    }
+    .WhatsNewSection{
+        display: block;
+    }
+    .WhatsNewContent{
+        width: 85%;
+    }
+    .WhatsNewImages{
+        display: block;
+        width: 100%;
+    }
+    .WhatsNewImage{
+        width: 100%;
+    }
+}
+
+
+.Legacy-content-container {
+    /* Your other content styles */
+}
+
+.Legacy-text-content {
+    color: white;
+    text-align: center;
+}
+
+@media(max-width:600px){
+    .Legacy-main-banner{
+        background-image: url(../../PhotosAndLogos/ourlegacy-mob.webp);
+    }
+}

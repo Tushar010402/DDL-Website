@@ -129,3 +129,9 @@
         padding: 0 3%;
     }
 }
+
+@media(max-width:480px){
+    .SSSSSSSSSSSSSAAAAAAAAAAAAA {
+        display: block;
+    }
+}

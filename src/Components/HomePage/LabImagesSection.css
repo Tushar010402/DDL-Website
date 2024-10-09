@@ -98,14 +98,19 @@
 /* Media Queries for Responsiveness */
 
 /* Tablet */
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
     .LabImageGridMainDiv {
         justify-content: space-around;
     }
 
     .LabImage1stimage {
-        width: 45%; /* Adjust image width to fit two per row */
+        width: 95%; /* Adjust image width to fit two per row */
         margin-bottom: 10px;
+    }
+    .LabImage1stimage .ImageOverlay {
+        position: absolute;
+        top: 0;
+        left: 30px;
     }
 
     .LabImage1stimage img {
@@ -120,7 +125,19 @@
         height: auto;
     }
 }
-
+@media(max-width:824px){
+    .LabImage1stimage .ImageOverlay {
+        position: absolute;
+        top: 0;
+        left: 75px;
+    }
+    .LabImage1stimage .ImageOverlay {
+        position: absolute;
+        top: 0;
+    
+        width: 89.7%;
+    }
+}
 /* Mobile */
 @media (max-width: 768px) {
     .LabImageGridMainDiv {
@@ -173,5 +190,11 @@
 
     .ImageOverlay p {
         font-size: 12px;
+    }
+    .LabImage1stimage .ImageOverlay {
+        position: absolute;
+        top: 0;
+        left: 0px;
+        width: 100%;
     }
 }

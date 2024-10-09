@@ -29,6 +29,30 @@ const Feedback = () => {
     const [errors, setErrors] = useState({});
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [countdown, setCountdown] = useState(3);
+    const [captcha, setCaptcha] = useState({ question: '', answer: '' });
+    const [userCaptcha, setUserCaptcha] = useState('');
+
+    useEffect(() => {
+        generateCaptcha();
+    }, []);
+
+    useEffect(() => {
+        if (isSubmitted) {
+            const countdownInterval = setInterval(() => {
+                setCountdown(prev => prev - 1);
+            }, 1000);
+            return () => clearInterval(countdownInterval);
+        }
+    }, [isSubmitted]);
+
+    const generateCaptcha = () => {
+        const num1 = Math.floor(Math.random() * 10);
+        const num2 = Math.floor(Math.random() * 10);
+        const question = `${num1} + ${num2} = ?`;
+        const answer = (num1 + num2).toString();
+        setCaptcha({ question, answer });
+        setUserCaptcha('');
+    };
 
     const validateForm = () => {
         const newErrors = {};
@@ -39,6 +63,7 @@ const Feedback = () => {
         if (ratings.timely_delivery === 0) newErrors.timely_delivery = 'Please rate our Timely Delivery of Reports';
         if (ratings.quality_report === 0) newErrors.quality_report = 'Please rate our Quality of Report';
         if (ratings.satisfaction_level === 0) newErrors.satisfaction_level = 'Please rate our Satisfaction Level';
+        if (userCaptcha !== captcha.answer) newErrors.captcha = 'Incorrect CAPTCHA. Please try again.';
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
     };
@@ -91,29 +116,22 @@ const Feedback = () => {
         };
 
         try {
-            await axios.post('https://api.dangsccg.co.in/api/api/feedback/', dataToSubmit);
+            await axios.post('http://127.0.0.1:8000/api/api/feedback/', dataToSubmit);
             setIsSubmitted(true);
             setCountdown(3);
             setTimeout(() => {
                 window.location.href = '/';
             }, 3000);
         } catch (error) {
-            if (error.response && error.response.data) {
+            if (error.response && error.response.status === 429) {
+                setErrors({ ...errors, general: 'Too many requests. Please try again later.' });
+            } else if (error.response && error.response.data) {
                 setErrors(error.response.data);
             } else {
                 console.error('Error submitting feedback', error);
             }
         }
     };
-
-    useEffect(() => {
-        if (isSubmitted) {
-            const countdownInterval = setInterval(() => {
-                setCountdown(prev => prev - 1);
-            }, 1000);
-            return () => clearInterval(countdownInterval);
-        }
-    }, [isSubmitted]);
 
     return (
         <>
@@ -257,6 +275,26 @@ const Feedback = () => {
                             <label htmlFor="comments">Suggestion for further improvements</label>
                             <textarea id="comments" value={formData.comments} onChange={handleChange} placeholder="Comment"></textarea>
                             {errors.comments && <div className="error">{errors.comments}</div>}
+                        </div>
+                    </div>
+                    
+                    <div className="form-group">
+                        <div>
+                            <label>CAPTCHA</label>
+                            <div className="captcha-container">
+                                <span className="captcha-text">{captcha.question}</span>
+                                <button type="button" onClick={generateCaptcha} className="refresh-button">
+                                    Refresh
+                                </button>
+                            </div>
+                            <input
+                                type="text"
+                                value={userCaptcha}
+                                onChange={(e) => setUserCaptcha(e.target.value)}
+                                placeholder="Enter the answer"
+                                className="captcha-input"
+                            />
+                            {errors.captcha && <div className="error">{errors.captcha}</div>}
                         </div>
                     </div>
               

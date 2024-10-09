@@ -1,0 +1,201 @@
+.SpecializedTesting-Main-Pages-main-banner {
+    position: relative;
+    margin-left: 6%;
+    width: 94%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.SpecializedTesting-Main-Pages-background-image {
+    position: absolute; /* Change to absolute instead of fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Add the overlay using ::before */
+.SpecializedTesting-Main-Pages-main-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Black overlay with 0.4 opacity */
+    z-index: 0; /* Ensure it's below the text content */
+}
+
+.HaemotologymainTableDIv {
+    background-color: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+.SpecializedTesting-Main-Pages-content-container {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.SpecializedTesting-Main-Pages-left-content h2 {
+    font-size: 4.5rem;
+    margin: 0;
+}
+
+.SpecializedTesting-Main-Pages-left-content p {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+/* Table Section */
+.SpecializedTesting-Main-Pages-table-container {
+    margin: 50px 6%;
+    overflow-x: auto;
+    margin-left: 12%;
+}
+
+.SpecializedTesting-Main-Pages-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    text-align: left;
+}
+
+.SpecializedTesting-Main-Pages-table th, .SpecializedTesting-Main-Pages-table td {
+    padding: 12px 20px;
+    border: 1px solid #ddd;
+    font-family: 'Roboto';
+}
+
+.SpecializedTesting-Main-Pages-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.SpecializedTesting-Main-Pages-table tr {
+    background-color: #fff;
+}
+
+.SpecializedTesting-Main-Pages-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.SpecializedTesting-Main-Pages-table td {
+    font-size: 1rem;
+}
+
+.SpecializedTesting-Main-Pages-table-container h3 {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    -webkit-transition-timing-function: ease-in-out;
+    -webkit-transition-duration: .2s;
+    color: #232323;
+}
+
+.SpecializedTesting-Main-Pages-content-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .SpecializedTesting-Main-Pages-left-content {
+    width: 50%;
+    text-align: left;
+    margin-left: 10%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+  }
+  .specialized-list li{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    line-height: 30px;
+  }
+  
+  .specialized-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
+  .SpecializedTesting-Main-Pages-right-content {
+    width: 40%;
+    
+  }
+  
+  .specialized-image {
+    width: 50%;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .SpecializedTesting-Main-Pages-content-container{
+        display: block;
+    }
+    .SpecializedTesting-Main-Pages-left-content{
+        margin-left: 5px;
+        width: 85%;
+    }
+    .SpecializedTesting-Main-Pages-left-content h2 {
+        font-size: 2.5rem;
+    }
+
+    .SpecializedTesting-Main-Pages-left-content p {
+        font-size: 1rem;
+    }
+    .SpecializedTesting-Main-Pages-right-content{
+        width: 100%;
+    }
+    .specialized-image{
+        width: 90%;
+    }
+
+    .SpecializedTesting-Main-Pages-table th, .SpecializedTesting-Main-Pages-table td {
+        font-size: 0.9rem;
+        padding: 8px 10px;
+    }
+
+    .SpecializedTesting-Main-Pages-main-banner {
+        margin-left: 0px;
+        width: 100%;
+        height: 50vh;
+    }
+
+    .SpecializedTesting-Main-Pages-table-container {
+        margin-left: 3%;
+        margin-right: 3%;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .SpecializedTesting-Main-Pages-left-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .SpecializedTesting-Main-Pages-left-content p {
+        font-size: .9rem;
+    }
+
+    .SpecializedTesting-Main-Pages-table th, .SpecializedTesting-Main-Pages-table td {
+        font-size: 0.8rem;
+        padding: 6px 8px;
+    }
+}
+
+@media (max-width: 393px) {
+    .SpecializedTesting-Main-Pages-table th, .SpecializedTesting-Main-Pages-table td {
+        font-size: 0.6rem;
+    }
+}

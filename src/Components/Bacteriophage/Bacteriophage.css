@@ -137,3 +137,28 @@
         font-family: 'Roboto', sans-serif;
         text-decoration: none;
   }
+
+
+  @media(max-width:1200px){
+    .bacteriophage-left-content h2{
+      font-size: 3.5rem;
+    }
+  }
+
+  @media(max-width:800px){
+    .bacteriophage-left-content h2{
+      font-size: 2.5rem;
+    }
+    .bacteriophage-main-banner{
+      margin-left: 0px;
+      width: 99%;
+    }
+    .bacteriophage-info-steps .step{
+      width: 75%;
+    }
+  }
+  @media(max-width:450px){
+    .bacteriophage-left-content h2{
+      font-size: 1.5rem;
+    }
+  }
