@@ -1,0 +1,582 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto&family=Roboto+Serif:ital,opsz,wght@0,8..144,100;0,8..144,300;1,8..144,200;1,8..144,400&display=swap');
+*{
+    -webkit-transition-timing-function: ease-in-out;
+}
+
+body, html {
+
+    overflow-y: none; /* Prevents horizontal scroll during transitions */
+}
+.MainHomePageBanners{
+    width: 90%;
+    height: 80%;
+    background-color: transparent;
+}
+.MainHomePageBanners img {
+    width: 98vw;
+  }
+
+  
+  .HomePageMainDiv{
+     display: flex;
+  }
+  .NavBarAtHomePage1{
+    width: 4.6vw;
+  }
+  .ExceptthenNavBarWHoleMainPage{
+    width: 95.4vw;
+  }
+  .MainHomePageBanners {
+    width: 70vw;
+  }
+  .MainHomePageBanners img{
+    margin-top: 5vh;
+    width: 94vw;
+  }
+  .FrontMainPageMainContents{
+    width: 90vw;
+    margin-left: 5vw;
+  }
+  .QualityDiagnosticsDiv{
+    width: 90vw;
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  .QualityDiagnosticsDiv h1{
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    color: #232323;
+    font-size: 50px;
+
+}
+.nablLEGACYficciMAINDIV {
+    margin-inline: 5vw;
+    display: flex;
+    margin-bottom: 10rem;
+    transition-timing-function: ease-in-out;
+    -webkit-transition-timing-function: ease-in-out;
+    opacity: 0; /* Initially set opacity to 0 */
+    transform: translateY(-50px); /* Move the element up by 50 pixels */
+    animation-name: fadeInFromTop; /* Use the defined animation */
+    animation-duration: 1s; /* Animation duration in seconds */
+    animation-delay: 0.5s; /* Delay before the animation starts */
+    animation-fill-mode: forwards; /* Keep the final state after animation */
+  }
+  
+
+
+  @keyframes fadeInFromTop {
+    from {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .QualityDiagnosticsDiv {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInUp 1s forwards;
+    animation-duration: 2s; /* Animation duration in seconds */
+}
+
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+  
+.NABLMainDIv{
+    width: 33vw;
+    text-align: center;
+}
+.L38MainDIv{
+    width: 33vw;
+    text-align: center;
+}
+.FICCIMainDIv {
+    width: 33vw;
+    text-align: center;
+}
+.NABLMainHeading h2{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: #232323;;
+    margin-bottom: 5px;
+}
+
+.NABLSecondaryDiv p{
+    font-size: 14px;
+    color: #6f6f6f;
+    font-weight: 400;
+    line-height: 24px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.NABLVerticalLine{
+    width: 50%;
+    border-right:1px solid #d9242a;;
+    height: 20px;
+}
+
+.L38MainHeading h2{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: #232323;;
+    margin-bottom: 5px;
+}
+
+.L38SecondaryDiv p{
+    font-size: 14px;
+    color: #6f6f6f;
+    font-weight: 400;
+    line-height: 24px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.L38VerticalLine{
+    width: 50%;
+    border-right:1px solid #d9242a;;
+    height: 20px;
+}
+.FICCIMainHeading h2{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: #232323;;
+    margin-bottom: 5px;
+}
+
+.FICCISecondaryDiv p{
+    font-size: 14px;
+    color: #6f6f6f;
+    font-weight: 400;
+    line-height: 24px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.FICCIVerticalLine{
+    width: 50%;
+    border-right:1px solid #d9242a;;
+    height: 20px;
+}
+.NABLLogoAndDrsImageMainDivHomepage{
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    padding: 2rem 5%;
+    margin-bottom: 3rem;
+}
+.slick-dots li button:before{
+    margin-top: 1rem;
+    font-size: 10px;
+}
+.HomePageOurServiceMainHeading{
+    margin-bottom: 4rem;
+}
+.NablLogoNDrsImagesHomePage{
+    padding-left: 0rem;
+    display: flex;
+    width: 50%;
+}
+.DrsOnlyImageHomePageNABL1{
+    margin-inline: 5%;
+  
+}
+.DrsOnlyImageHomePageNABL1 img{
+    width: 16vw;
+    box-shadow: 0px 0px 28px -4px rgba(130,130,130,1);
+    padding-bottom: 15px;
+
+}
+.NABLlogoOnHomePage{
+    margin-inline: 5%;
+}
+.ContentsOFNABLHomePage{
+    width: 50%;
+    
+}
+.NABLlogoOnHomePage img{
+    width: 16vw;
+    box-shadow: 0px 0px 28px -4px rgba(130,130,130,1);
+    padding-bottom: 15px;
+}
+
+
+.NABLESECONDARYCONTENT{
+    padding-left: 3rem;
+    padding-right: 4rem;
+    text-align: center;
+
+}
+.NABLESECONDARYCONTENT h2{
+    font-size: 29px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -1px;
+    line-height: 1.2;
+    
+    color: #232323;
+}
+.NABLESECONDARYCONTENT h4{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 26px;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(217, 36, 42);
+}
+.NABLESECONDARYCONTENT p{
+    margin: 18px 0px 0px 0px;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 1.75;
+    font-family: 'Montserrat', sans-serif;
+    
+    color: #6f6f6f;
+    
+}
+.HomePageNABLBotton{
+    text-align: center;
+    padding-top: 50px !important;
+}
+.HomePageNABLBotton a{
+    background: #232323;
+    border-color: #232323;
+    color: #fff;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 1rem 2rem 1rem 2rem;
+    border-radius: 2px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .5px;
+    line-height: inherit;
+    border: 2px solid transparent;
+
+}
+.HomePageNABLBotton a:hover{
+background-color: #d9242a;
+color: white;
+
+}
+
+.HomePageOurServicesMainDiv{
+    margin-left: 5vw;
+    width: 90vw;
+    margin-bottom: 7rem;
+}
+.HomePageOurServicesMainDiv .HomePageOurServiceMainHeading{
+    text-align: center;
+}
+.HomePageOurServicesMainDiv .HomePageOurServiceMainHeading h3{
+    font-family: 'Montserrat', sans-serif;
+    color: #232323;
+    margin-bottom: 20px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 700;
+
+
+}
+.HomePageOurServicesMainDiv .HomePageOurServiceMainHeading hr{
+    width: 6vw;
+    background-color: #d9242a;
+    height: 1px;
+    border: none;
+}
+/* .HomePageOurServicesMainDivSliders{
+    display: flex;
+}
+.HomePageOurServicesMainDivSlidersImagesInRow{
+    margin-right: 5vw;
+    transition-duration: 300ms;
+    transform: translate3d(0px, 0px, 0px);
+    
+} */
+
+.HomePageOurServicesMainDivSliders{
+    padding-left: 7rem;
+}
+.serVicesText{
+    text-align: center;
+    margin-top: 1rem;
+    font-size: .8rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.SHouldKnowHomePageDIVText p{
+    text-align: center;
+    font-weight: 600;
+}
+.SHouldKnowHomePageDIVText hr{
+    width: 8rem;
+
+    color: #d9242a;
+    border: 1px solid #d9242a;
+    margin-top: 1.5rem;
+}
+.SHouldKNowVideOPLusIMagess {
+    height: 500px;
+    background-attachment: scroll; /* Change from 'fixed' to 'scroll' for iOS */
+    position: relative;
+    background-size: cover; /* Ensure the image covers the container */
+    background-position: center; /* Center the background image */
+    margin-left: 6%;
+    overflow: hidden;
+    -webkit-background-size: cover; /* Ensures iOS renders the background correctly */
+    background-repeat: no-repeat;
+    -webkit-filter: none; /* Remove any unintended blur on iOS */
+    filter: none; /* Ensures no filter is applied */
+}
+
+.SHouldKNowVideOPLusIMage {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.SHouldKNowVideOPLusIMagess img {
+    width: 12%;
+    height: auto;
+    position: relative;
+    margin-top: 9rem;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 10; /* Make sure it's above other content */
+}
+
+.playButton {
+    cursor: pointer; /* Indicates the image can be clicked */
+    z-index: 2; /* Higher than content but below overlay */
+    background: none!important;
+    border: none!important;
+}
+
+
+.closeButton {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.content {
+    transition: filter 0.3s ease;
+}
+
+.content.blur {
+    filter: blur(8px); /* Apply blur when video is visible */
+}
+.SSSSSSSSSSSSSAAAAAAAAAAAAA{
+    display: flex;
+}
+@media (max-width: 1200px) {
+    .FrontMainPageMainContents {
+        position: relative;
+        width: 90vw;
+        margin-left: 8vw;
+    }
+    .NABLLogoAndDrsImageMainDivHomepage {
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+    }
+    .SSSSSSSSSSSSSAAAAAAAAAAAAA{
+        display: block;
+    }
+    .HomePageOurServicesMainDivSliders {
+        padding-left: 5rem;
+    }
+
+    .NablLogoNDrsImagesHomePage,
+    .ContentsOFNABLHomePage {
+        width: 100%;
+        text-align: center;
+    }
+
+    .NablLogoNDrsImagesHomePage {
+        margin-bottom: 2rem;
+        justify-content: center;
+    }
+.OurPromisesFLex{
+    justify-content: center;
+}
+    .DrsOnlyImageHomePageNABL1 img,
+    .NABLlogoOnHomePage,
+    .NABLlogoOnHomePage img {
+        width: 80%;
+        max-width: 350px;
+        margin-bottom: 1rem;
+    }
+    .NABLlogoOnHomePage {
+        width: 60%;
+        max-width: 300px;
+        margin-bottom: 1rem;
+    }
+
+    .NABLESECONDARYCONTENT h2 {
+        font-size: 1.5rem;
+    }
+
+    .NABLESECONDARYCONTENT h4 {
+        font-size: 1.2rem;
+    }
+
+    .NABLESECONDARYCONTENT p {
+        font-size: 1rem;
+    }
+}
+
+/* Adjust layout for mobile screens */
+@media (max-width: 768px) {
+    #root{
+        overflow-x: hidden;
+    }
+    .NABLLogoAndDrsImageMainDivHomepage {
+        padding: 1rem;
+    }
+    .HomePageOurServicesMainDivSliders {
+        padding-left: 1rem;
+    }
+    .SHouldKNowVideOPLusIMagess{
+        margin-left: 0;
+    }
+
+    .DrsOnlyImageHomePageNABL1{
+        width: 40%;
+    }
+    .DrsOnlyImageHomePageNABL1 img,
+    .NABLlogoOnHomePage img {
+        width: 210px;
+        max-width: 350px;
+    }
+
+    .NABLESECONDARYCONTENT h2 {
+        font-size: 1.4rem;
+    }
+
+    .NABLESECONDARYCONTENT h4 {
+        font-size: 1rem;
+    }
+
+    .NavBarAtHomePage1{
+        width: 0px;
+
+    }
+    .MainHomePageBanners img{
+        width: 100vw;
+    }
+    .QualityDiagnosticsDiv h1{
+        font-size: 40px;
+    }
+    .NABLMainHeading h2{
+        font-size: 28px;
+    }
+    .NABLESECONDARYCONTENT p {
+        font-size: 0.9rem;
+    }
+
+    
+}
+
+/* Adjust layout for smaller mobile screens */
+@media (max-width: 480px) {
+    .NABLLogoAndDrsImageMainDivHomepage {
+        padding: 1rem;
+    }
+    .NavBarAtHomePage1{
+        width: 0px;
+
+    }
+    .MainHomePageBanners img{
+        width: 155vw;
+        height: 85vh;
+    }
+    .QualityDiagnosticsDiv h1 {
+        font-size: 25px;
+    }
+    .nablLEGACYficciMAINDIV{
+        display: block;
+        margin-inline: 29vw;
+    }
+    .NABLMainHeading h2,.FICCIMainHeading h2,.L38MainHeading h2 {
+        font-size: 25px;
+    }
+    .NablLogoNDrsImagesHomePage{
+        display: block;
+    }
+    .NablLogoNDrsImagesHomePage {
+        display: block;
+        text-align: -webkit-center;
+        margin-left: 0px;
+    }
+
+    .DrsOnlyImageHomePageNABL1 img,
+    .NABLlogoOnHomePage img {
+        width: 90%;
+        max-width: 320px;
+    }
+    .NABLlogoOnHomePage {
+        margin-inline: 0%;
+        width: 100%;
+        /* width: 90%; */
+        max-width: 350px;
+        /* margin-bottom: 1rem; */
+    }
+    .DrsOnlyImageHomePageNABL1 {
+        margin-inline: 0%;
+        width: 100%;
+    }
+
+    .NABLESECONDARYCONTENT h2 {
+        font-size: 1.2rem;
+    }
+
+    .NABLESECONDARYCONTENT h4 {
+        font-size: 0.9rem;
+    }
+
+    .NABLESECONDARYCONTENT p {
+        font-size: 0.8rem;
+    }
+
+    .HomePageNABLBotton a {
+        font-size: 0.5rem;
+        padding: 0.8rem 1.5rem;
+    }
+    .slick-slide img {
+        display: block;
+        width: 80vw!important;
+        margin-inline: 1rem;
+    }
+    .NABLMainDIv,.NABLMainDIv{
+        margin-bottom: 3rem;
+    }
+
+
+  
+}

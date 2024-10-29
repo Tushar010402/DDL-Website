@@ -1,0 +1,59 @@
+.HealthGummiesMainDiv{
+    margin-left: 8%;
+    margin-right: 5%;
+    margin-top: 3rem;
+}
+
+.HealthGummiesMainDiv .ThirdDiv h2{
+    color: #d9242a;
+    font-size: 24px;
+    text-shadow: -3px 2px 2px #ccc;
+    font-weight: 600;
+    margin-top: 3%;
+    text-align: center !important;
+}
+
+.FourthDiv a{
+    color: #d9242a;
+    font-weight: 600;
+    font-style: italic;
+    text-decoration: none;
+}
+.FourthDiv a{
+    color: #595959;
+    font-weight: 600;
+    font-style: italic;
+    text-decoration: none;
+}
+.FourthDiv li{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #595959;
+}
+.FourthDiv h3{
+    font-weight: 700;
+    color: #232323;
+    text-align: justify;
+    word-wrap: break-word;
+    font-size: 17px;
+    line-height: 40px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
+    font-family: 'Roboto', sans-serif;
+}
+.FourthDiv h4{
+    font-weight: 700;
+    color: #232323;
+    text-align: justify;
+    word-wrap: break-word;
+    font-size: 17px;
+    line-height: 40px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
+    font-family: 'Roboto', sans-serif;
+}
+.Fifth h3{
+    text-align: center;
+}

@@ -1,0 +1,102 @@
+.right-side-buttons {
+    position: fixed;
+    top: 30%;
+    right: 0;
+    transform: translateY(-30%);
+    display: flex;
+    flex-direction: row; /* Arrange buttons inline horizontally */
+    align-items: center; /* Align buttons vertically */
+    gap: 10px; /* Space between buttons */
+    z-index: 1000;
+    margin-right: -6rem;
+    transform: rotate(90deg);
+}
+
+.right-button {
+    background-color: #ffffff;
+    color: #000;
+    border: 1px solid #ccc;
+    border-radius: 0 1px 1px 0;
+    padding: 10px 8px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    transform: rotate(0deg); /* No rotation needed for horizontal buttons */
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1.35px solid #444;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+    font-family: "MrEavesXLSanAltBRegular", Helvetica, Arial, sans-serif;
+}
+
+.right-button:hover {
+    background-color: red;
+    color: white;
+    font-weight: 600;
+}
+
+
+.home-collection-style {
+    margin-right: -2rem;
+}
+
+@media (max-width: 1200px) {
+    .right-button {
+        font-size: 12px;
+        padding: 8px 6px;
+    }
+}
+
+@media (max-width: 768px) {
+    .right-side-buttons {
+        top: 30%;
+    }
+
+    .right-button {
+        font-size: 15px;
+        padding: 10px 20px;
+        background-color: #d9242a;
+        color: white;
+    }   
+    .right-side-buttons{
+        margin-right: -5rem;
+    }
+    .right-button {
+        font-size: 10px;
+        padding: 7px 12px;
+    }
+    
+    
+}
+
+@media (max-width: 480px) {
+    .right-side-buttons {
+        top: 16rem;
+    }
+    .right-side-buttons {
+        margin-right: -7rem;
+    }
+
+    .right-button {
+        font-size: 13px;
+        padding: 10px 15px;
+    }
+}
+
+@media(max-width: 391px){
+    .right-side-buttons {
+        top: 18rem;
+    }
+    .right-side-buttons {
+        margin-right: -6.5rem;
+    }
+    .right-button {
+        font-size: 12px;
+        padding: 8px 13px;
+    }
+}

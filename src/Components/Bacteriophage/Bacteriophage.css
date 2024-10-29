@@ -1,0 +1,164 @@
+.bacteriophage-main-banner {
+    position: relative;
+    margin-left: 6%;
+    width: 94%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .bacteriophage-background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  
+  .bacteriophage-content-container {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: white;
+    padding: 20px;
+  }
+  
+  .bacteriophage-left-content h2 {
+    font-size: 4.5rem;
+    margin: 0;
+  }
+  
+  .bacteriophage-left-content p {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+  
+  .bacteriophage-content-below-header {
+    position: relative; /* Ensure this section stays in the normal flow of the document */
+    background-color: white; /* Set a background color to make sure it's separate from the image */
+    padding: 40px;
+    text-align: left;
+    margin-left: 6%;
+    z-index: 0; /* Lower z-index to ensure it doesn't overlap the header image */
+  }
+  
+  .Backteriophagecontentss{
+    text-align: center;
+  }
+  .Backteriophagecontentss h2{
+    color: #232323;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 30px;
+  }
+  .bacteriophage-content-below-header h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  .bacteriophage-content-below-header p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 20px;
+  }
+  
+
+  
+  .bacteriophage-buttons {
+    margin: 20px 0;
+  }
+  
+  .bacteriophage-buttons button {
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .bacteriophage-buttons button:hover {
+    background-color: #b71c1c;
+  }
+  
+  .bacteriophage-info-steps {
+    margin-top: 40px;
+    text-align: center;
+  }
+  
+  .bacteriophage-info-steps .step {
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 10px auto;
+    width: 50%;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    font-size: 1.25rem;
+    font-size: 15px;
+    line-height: 1.75;
+    font-family: 'Roboto', sans-serif;
+    color: #6f6f6f;
+    font-weight: 600;
+  }
+  
+  .bacteriophage-info-steps .arrow {
+    font-size: 1.5rem;
+    color: #6f6f6f;
+  }
+  #FAQON-Bacteriophage{
+    margin-left: 8%;
+  }
+  .bacteriophageLastpageDivContent{
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+  }
+  
+  .bacteriophageLastpageDivContent p{
+    color: #d9242a;
+    font-weight: 600;
+
+  }
+  .bacteriophage-button a{
+    text-decoration: none;
+    color: white;
+  }
+  .bacteriophageLastpageDivContent a{
+        color: #d9242a;
+        font-weight: 600;
+        font-family: 'Roboto', sans-serif;
+        text-decoration: none;
+  }
+
+
+  @media(max-width:1200px){
+    .bacteriophage-left-content h2{
+      font-size: 3.5rem;
+    }
+  }
+
+  @media(max-width:800px){
+    .bacteriophage-left-content h2{
+      font-size: 2.5rem;
+    }
+    .bacteriophage-main-banner{
+      margin-left: 0px;
+      width: 99%;
+    }
+    .bacteriophage-info-steps .step{
+      width: 75%;
+    }
+  }
+  @media(max-width:450px){
+    .bacteriophage-left-content h2{
+      font-size: 1.5rem;
+    }
+  }

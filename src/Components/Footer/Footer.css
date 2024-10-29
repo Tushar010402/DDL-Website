@@ -1,0 +1,395 @@
+@import 'et-line/style.css'; /* Import the et-line CSS */
+
+.footer-main-div {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    background-color: #1c1c1c;
+    color: #ffffff;
+    margin-left: 6%;
+    padding-right: 5rem;
+    padding-bottom: 20px;
+}
+.FirstRowInFooterLocations{
+    margin-right: 2rem;
+}
+.Main{
+    margin-top: 1.2rem;
+}
+
+
+.footer-locations {
+    width: 90%;
+    padding-right: 2rem;
+}
+
+.LocationsFooterMainDiv{
+    display: flex;
+}
+.footer-contact-form {
+    width: 40%;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 25px;
+    border-radius: 5px;
+    width: 23rem;
+    
+}
+
+.footer-contact-form h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    --bs-text-opacity: 1;
+    color: rgba(var(--bs-white-rgb), 1) !important;
+    font-weight: 600;
+    font-size: 18px;
+    color: #232323;
+    line-height: 26px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer-contact-form form {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.footer-contact-form input, .footer-contact-form textarea {
+    background-color: #f7f7f7;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, .1);
+    padding: 10px 20px;
+    margin-bottom: 15px;
+    font-size: 15px;
+    font-family: inherit;
+    line-height: inherit;
+    margin: 0 0 20px 0;
+    max-width: 100%;
+    resize: none;
+}
+
+.footer-contact-form .Footer-Submit-Button button {
+    padding: 10px;
+    background-color: #000000;
+    color: #ffffff;
+    border: 2px solid #000000;
+    border-radius: 2px;
+    cursor: pointer;
+    text-transform: uppercase;
+    background: #000000;
+    border-color: #000000;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    width: 150px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-inline: 1rem;
+    transition: color 200ms ease-in-out, background-color 200ms ease-in-out, border-color 200ms ease-in-out;
+}
+
+.footer-contact-form .Footer-Submit-Button button:hover {
+    background-color: white;
+    color: #000000;
+    border: 2px solid #000000;
+    transition: color 200ms ease-in-out, background-color 200ms ease-in-out, border-color 200ms ease-in-out;
+}
+
+.location-item {
+    margin-bottom: 20px;
+}
+
+.icon-map {
+    color: #d9242a; /* Customize the icon color */
+    margin-right: 10px;
+}
+
+.icon-medium {
+    font-size: 2.2em; /* Adjust the size as needed */
+}
+
+.text-deep-pink {
+    color: #d9242a; /* Customize the color */
+}
+
+.padding-5px-top {
+    padding-top: 5px;
+}
+
+.location-item h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 1rem;
+}
+
+.location-item p {
+    margin: 5px 0;
+    text-align: left;
+    margin: 5px 0;
+    font-size: 14px;
+    color: #6f6f6f;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 25px;
+    width: 350px;
+}
+
+.footer-locations h2 {
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    text-decoration: underline !important;
+}
+
+.footer-locations h2 .icon-map {
+    margin-left: 10px;
+}
+
+.closed-text {
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+.FooterNAmeMainDIv{
+    display: flex;
+}
+
+.LocationsFooterMainDiv a{
+    color: white;
+}
+
+
+
+.ThirdcolumnFOoter{
+    margin-top: 4rem;
+}
+.ThirdcolumnFOoter h3{
+    color: #fff;
+    text-decoration: underline;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 40px;
+
+
+}
+.ThirdcolumnFOoter p{
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 40px;
+}
+.FooterSocialIcon{
+    padding-left: 3rem;
+}
+.FooterSocialIcon img{
+    width: 50px;
+    margin-inline: 7px;
+}
+.FooterNAmeMainDIv{
+    border-bottom: 1px solid #474747;
+}
+.FooterNameDIv{
+    margin-right: 1rem;
+}
+.DisclaimerBelowFooter{
+    margin-left: 6%;
+    background-color: #1c1c1c;
+    color: #d9242a;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    padding-left: 3rem;
+    padding-bottom: 4rem;
+}
+.LastInFooterDIvv{
+    vertical-align: initial;
+    font-size: 12px;
+    line-height: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    padding-top: .5rem;
+    margin-left: 9%;
+}
+.link-button{
+    background: transparent;
+    border: none;
+}
+@media (max-width: 1300px) {
+
+    .LocationsFooterMainDiv{
+        display: flex;
+    }
+    .footer-main-div{
+        display: block;
+    }
+    .Main {
+        text-align: -webkit-center;
+        margin-top: 1.2rem;
+    }
+    .location-item p{
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 821px) {
+
+    .footer-main-div{
+        margin-left: 0px;
+    }
+    
+}
+
+@media (max-width: 1025px) {
+
+ 
+    .DisclaimerBelowFooter{
+        margin-left: 0px;
+    }
+}
+
+
+
+
+@media (max-width: 768px) {
+    .footer-main-div {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-locations, .footer-contact-form {
+        width: 100%;
+    }
+
+    .footer-locations {
+        margin-bottom: 20px;
+    }
+}
+@media(max-width:480px){
+    .LocationsFooterMainDiv {
+        display: block;
+    }
+    .FooterSocialIcon {
+        width: 90vw;
+        padding-left: 0rem;
+    }
+}
+
+/* Container for the CAPTCHA input field */
+.footer-inputFeild {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Label styling */
+.footer-inputFeild label {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+/* CAPTCHA container */
+.footer-captchaContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+/* CAPTCHA question text */
+.footer-captchaText {
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+    background-color: #f1f1f1;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Refresh button */
+.footer-refreshButton {
+    font-size: 14px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.footer-refreshButton:hover {
+    background-color: #0056b3;
+}
+
+/* CAPTCHA input field */
+.footer-captchaInput {
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    transition: border 0.3s ease;
+}
+
+.footer-captchaInput:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .footer-inputFeild {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .footer-captchaText, .footer-refreshButton, .footer-captchaInput {
+        font-size: 14px;
+    }
+
+    .footer-refreshButton {
+        padding: 6px 10px;
+    }
+}
+.refreshButton {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  .refreshButton:hover {
+    background-color: #45a049;
+  }
+  

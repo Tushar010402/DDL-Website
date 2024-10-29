@@ -1,0 +1,151 @@
+.Microbiology-Main-Pages-main-banner {
+    position: relative;
+    margin-left: 6%;
+    width: 94%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.Microbiology-Main-Pages-background-image {
+    position: absolute; /* Change to absolute instead of fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Add the overlay using ::before */
+.Microbiology-Main-Pages-main-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Black overlay with 0.4 opacity */
+    z-index: 0; /* Ensure it's below the text content */
+}
+
+.HaemotologymainTableDIv {
+    background-color: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+.Microbiology-Main-Pages-content-container {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.Microbiology-Main-Pages-left-content h2 {
+    font-size: 4.5rem;
+    margin: 0;
+}
+
+.Microbiology-Main-Pages-left-content p {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+/* Table Section */
+.Microbiology-Main-Pages-table-container {
+    margin: 50px 6%;
+    overflow-x: auto;
+    margin-left: 12%;
+}
+
+.Microbiology-Main-Pages-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    text-align: left;
+}
+
+.Microbiology-Main-Pages-table th, .Microbiology-Main-Pages-table td {
+    padding: 12px 20px;
+    border: 1px solid #ddd;
+    font-family: 'Roboto';
+}
+
+.Microbiology-Main-Pages-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.Microbiology-Main-Pages-table tr {
+    background-color: #fff;
+}
+
+.Microbiology-Main-Pages-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.Microbiology-Main-Pages-table td {
+    font-size: 1rem;
+}
+
+.Microbiology-Main-Pages-table-container h3 {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    -webkit-transition-timing-function: ease-in-out;
+    -webkit-transition-duration: .2s;
+    color: #232323;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .Microbiology-Main-Pages-left-content h2 {
+        font-size: 3rem;
+    }
+
+    .Microbiology-Main-Pages-left-content p {
+        font-size: 1.2rem;
+    }
+
+    .Microbiology-Main-Pages-table th, .Microbiology-Main-Pages-table td {
+        font-size: 0.9rem;
+        padding: 8px 10px;
+    }
+
+    .Microbiology-Main-Pages-main-banner {
+        margin-left: 0px;
+        width: 100%;
+        height: 50vh;
+    }
+
+    .Microbiology-Main-Pages-table-container {
+        margin-left: 3%;
+        margin-right: 3%;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .Microbiology-Main-Pages-left-content h2 {
+        font-size: 2.5rem;
+    }
+
+    .Microbiology-Main-Pages-left-content p {
+        font-size: 1rem;
+    }
+
+    .Microbiology-Main-Pages-table th, .Microbiology-Main-Pages-table td {
+        font-size: 0.8rem;
+        padding: 6px 8px;
+    }
+}
+
+@media (max-width: 393px) {
+    .Microbiology-Main-Pages-table th, .Microbiology-Main-Pages-table td {
+        font-size: 0.6rem;
+    }
+}

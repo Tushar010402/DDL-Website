@@ -1,0 +1,313 @@
+.SwineFlueMainDiv {
+    margin-left: 6%;
+    margin-right: 6%;
+    margin-top: 3.5rem;
+}
+
+.SwineFLueImageDIv {
+    position: relative;
+    width: 100%;
+    height: 800px;
+    background-size: cover;
+    overflow: hidden;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: space-between; /* Ensure content is spaced out */
+    align-items: center;
+    flex-wrap: wrap; /* Allow content to wrap for smaller screens */
+}
+
+.backgroundImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: -1;
+}
+
+.SwinefluTimeSLots{
+    padding-block: .7rem;
+  margin-bottom: 0.5rem;
+}
+.SwineInnerMAinDivForFlex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding-inline: 4rem;
+    flex-wrap: wrap;
+}
+
+.InnerMain1stLeftDiv {
+    width: 50%;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.InnerMain1stLeftDiv h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 55px;
+    color: white;
+    margin-top: 50px;
+}
+
+.InnerMain1stLeftDiv a {
+    background: #d9242a;
+    padding: 10px 29px;
+    border-radius: 50px;
+    font-size: 11px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+.InnerMain1stLeftDiv img {
+    margin-top: 0rem;
+    margin-bottom: -0.4rem;
+    margin-right: 0.4rem;
+    width: 20px;
+}
+
+.InnerSecondDiv {
+    width: 40%;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+
+.InnerDivForm h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.InnerDivForm form {
+    display: flex;
+    flex-direction: column;
+}
+
+.InnerDivForm input,
+.InnerDivForm button,
+.datePicker {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.InnerDivForm button {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.callButton {
+    display: inline-block;
+    background: #d9242a;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.datePicker {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Additional styles for the Overview section */
+.OverviewSection {
+    padding: 20px;
+    background: #f9f9f9;
+    margin-top: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+hr {
+    border: 1px solid rgb(192, 192, 192);
+}
+
+.OverviewSection h2,
+.OverviewSection h3 {
+    font-weight: 600;
+    color: #333;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.OverviewSection h3 {
+    margin-top: 2rem;
+}
+
+.OverviewSection p,
+.OverviewSection ul,
+.OverviewSection li {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.OverviewSection a {
+    color: #d9242a;
+    text-decoration: none;
+}
+
+.OverviewSection a:hover {
+    text-decoration: underline;
+}
+
+/* Styles for the FAQ section */
+.FAQSection {
+    padding: 20px;
+    background: #fff;
+    margin-top: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.FAQSection h2 {
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.accordion {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.accordion-item {
+    border-bottom: 1px solid #ccc;
+}
+
+.accordion-header {
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion-body {
+    padding: 0 15px;
+    font-size: 14px;
+    line-height: 1.6;
+    background-color: #fff;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+}
+
+.accordion-body.show {
+    max-height: 2500px; /* Adjust max-height according to content */
+    padding: 15px;
+}
+
+/* Media Queries for Tablet Responsiveness */
+@media (max-width: 1024px) {
+    .SwineFLueImageDIv {
+        height: auto; /* Allow height to adjust naturally */
+        padding-inline: 2rem; /* Reduce padding for tablets */
+    }
+
+    .InnerMain1stLeftDiv,
+    .InnerSecondDiv {
+        width: 100%; /* Ensure elements take full width on tablets */
+        margin-top: 1rem; /* Add space between stacked elements */
+    }
+
+    .InnerMain1stLeftDiv h2 {
+        font-size: 40px; /* Adjust font size for better fit */
+    }
+
+    .InnerDivForm h3 {
+        font-size: 20px; /* Adjust font size */
+    }
+
+    .InnerSecondDiv {
+        margin-top: 20px; /* Space between sections */
+        padding: 15px; /* Adjust padding */
+    }
+
+    .SwineInnerMAinDivForFlex {
+        flex-direction: column; /* Stack elements vertically */
+    }
+}
+
+/* Further adjustments for smaller screens */
+@media (max-width: 768px) {
+    .SwineFlueMainDiv {
+        margin-left: 4%;
+        margin-right: 4%;
+    }
+
+    .InnerMain1stLeftDiv h2 {
+        font-size: 35px; /* Adjust font size further */
+    }
+    .SwineFLueImageDIv{
+        padding-left: 0rem;
+    }
+    .SwineFlueMainDiv{
+        margin-left: 0px;
+    }
+
+    .InnerDivForm h3 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .SwineFlueMainDiv {
+        margin-left: 0%;
+        margin-right: 2%;
+    }
+
+    .InnerMain1stLeftDiv h2 {
+        font-size: 28px;
+    }
+
+    .InnerDivForm h3 {
+        font-size: 16px;
+    }
+
+    .callButton {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+
+    .OverviewSection p,
+    .OverviewSection ul,
+    .OverviewSection li {
+        font-size: 12px;
+    }
+
+    .FAQSection h2 {
+        font-size: 20px;
+    }
+
+    .accordion-header {
+        font-size: 14px;
+    }
+
+    .accordion-body {
+        font-size: 12px;
+    }
+}
