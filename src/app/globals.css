@@ -1,21 +1,187 @@
+/* styles/globals.css */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --background: #ffffff;
+    --foreground: #171717;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+    :root {
+        --background: #0a0a0a;
+        --foreground: #ededed;
+    }
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+    color: var(--foreground);
+    background: var(--background);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#VideoHomePage {
+    width: 93vw;
+    max-width: 93vw;
+}
+
+#QualityDiagnosticsDiv h1 {
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    color: #232323;
+    font-size: 50px;
+}
+
+#OurServiceImages img {
+    border-radius: 0px;
+    width: 300px !important;
+}
+
+#BelowTextsOurServices {
+    width: 300px !important;
+}
+
+/* Swiper Slide */
+.swiper-slide {
+    height: 780px !important;
+}
+
+/* Swiper Pagination */
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+    bottom: 100px !important;
+}
+
+/* Swiper Pagination Bullets Active */
+.swiper-pagination-bullet-active {
+    background: #000 !important;
+}
+
+/* Swiper Buttons */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #000;
+    display: none;
+}
+
+/* Slick Slider */
+.slick-slider {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Slick List */
+.slick-list {
+    margin: 0 -10px;
+}
+
+/* Slick Slide */
+.slick-slide > div {
+    padding: 0 10px;
+}
+
+/* Slick Dots */
+.slick-dots {
+    bottom: -30px;
+}
+
+.slick-dots li button:before {
+    font-size: 10px;
+}
+
+.slick-dots li.slick-active button:before {
+    color: #d9242a;
+}
+
+/* Swiper Container */
+.swiper {
+    height: 100%;
+}
+
+/* Swiper Pagination Bullets */
+.swiper-pagination-bullet {
+    width: 8px !important;
+    height: 8px !important;
+    background: #000 !important;
+    opacity: 0.5 !important;
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1 !important;
+}
+
+/* Modal Overlay When Open */
+body.modal-open {
+    overflow: hidden;
+}
+
+/* Additional Swiper Overrides for Smaller Screens */
+@media(max-width:821px){
+    .swiper {
+        height: 150%;
+    }
+
+    .swiper-wrapper {
+        height: 150%;
+    }
+    #MainDivForMobileViews{
+      padding-left: 0px;
+      padding-top: 0px;
+    }
+}
+
+
+.seo-content {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    left: -9999px !important;
+}
+
+.blog-article > *:not(script),
+.article-content > *:not(script) {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    left: -9999px !important;
+}
+
+/* src/app/globals.css */
+.seo-only {
+  display: none !important;
+  visibility: hidden !important;
+  position: absolute !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  z-index: -1 !important;
+  clip: rect(0 0 0 0) !important;
+  clip-path: inset(50%) !important;
+  white-space: nowrap !important;
+}
+/* globals.css */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.swiper-horizontal{
+    height: 650px!important;
 }

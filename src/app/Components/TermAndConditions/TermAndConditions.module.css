@@ -1,0 +1,68 @@
+/* src/app/Components/TermAndConditions/TermAndConditions.module.css */
+
+.termAndConditionsMainDiv {
+    margin-left: 0%;
+    padding-inline: 5rem;
+    margin-top: 4rem;
+}
+
+.innerTermAndConditionDiv h1 {
+    font-size: 35px;
+    font-weight: 600;
+    color: #232323;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase !important;
+    text-align: center !important;
+    line-height: 1.2;
+}
+
+.innerTermAndConditionDiv p {
+    margin: 18px 0 0 0;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 1.75;
+    color: #6f6f6f;
+}
+
+.innerTermAndConditionDiv h5 {
+    color: #6f6f6f;
+    margin: 18px 0 0 0;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 1.75;
+}
+
+.innerTermAndConditionDiv h2,
+.innerTermAndConditionDiv h3 {
+    font-weight: 600;
+    color: #232323;
+    text-align: left;
+    word-wrap: break-word;
+    font-size: 17px;
+    line-height: 40px;
+}
+
+.innerTermAndConditionDiv li {
+    text-align: justify;
+    word-wrap: break-word;
+    font-family: 'Roboto', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: 14px;
+    color: #6f6f6f;
+    font-weight: 400;
+    line-height: 24px;
+    height: 100%;
+}
+
+.innerTermAndConditionDiv h4 {
+    text-align: center;
+    color: red;
+}
+
+@media (max-width: 768px) {
+    .termAndConditionsMainDiv {
+        margin-left: 0%;
+        padding-inline: 2rem;
+        margin-top: 4rem;
+    }
+}

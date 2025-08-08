@@ -1,0 +1,157 @@
+/* src/app/Components/Histocytopathology/Histocytopathology.module.css */
+
+.HistocytopathologyMainPagesMainBanner {
+    position: relative;
+    margin-left: 0%;
+    width: 99%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.HistocytopathologyMainPagesBackgroundImage {
+    position: absolute; /* Change to absolute instead of fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Add the overlay using ::before */
+.HistocytopathologyMainPagesMainBanner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Black overlay with 0.4 opacity */
+    z-index: 0; /* Ensure it's below the text content */
+}
+
+.HaemotologymainTableDiv {
+    background-color: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+.HistocytopathologyMainPagesContentContainer {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.HistocytopathologyMainPagesLeftContent h2 {
+    font-size: 4.5rem;
+    margin: 0;
+}
+
+.HistocytopathologyMainPagesLeftContent p {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+/* Table Section */
+.HistocytopathologyMainPagesTableContainer {
+    margin: 50px 6%;
+    overflow-x: auto;
+    margin-left: 2%;
+}
+
+.HistocytopathologyMainPagesTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    text-align: left;
+}
+
+.HistocytopathologyMainPagesTable th,
+.HistocytopathologyMainPagesTable td {
+    padding: 12px 20px;
+    border: 1px solid #ddd;
+    font-family: 'Roboto';
+}
+
+.HistocytopathologyMainPagesTable th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.HistocytopathologyMainPagesTable tr {
+    background-color: #fff;
+}
+
+.HistocytopathologyMainPagesTable tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.HistocytopathologyMainPagesTable td {
+    font-size: 1rem;
+}
+
+.HistocytopathologyMainPagesTableContainer h3 {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    -webkit-transition-timing-function: ease-in-out;
+    -webkit-transition-duration: 0.2s;
+    color: #232323;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .HistocytopathologyMainPagesLeftContent h2 {
+        font-size: 3rem;
+    }
+
+    .HistocytopathologyMainPagesLeftContent p {
+        font-size: 1.2rem;
+    }
+
+    .HistocytopathologyMainPagesTable th,
+    .HistocytopathologyMainPagesTable td {
+        font-size: 0.9rem;
+        padding: 8px 10px;
+    }
+
+    .HistocytopathologyMainPagesMainBanner {
+        margin-left: 0px;
+        width: 100%;
+        height: 50vh;
+    }
+
+    .HistocytopathologyMainPagesTableContainer {
+        margin-left: 3%;
+        margin-right: 3%;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .HistocytopathologyMainPagesLeftContent h2 {
+        font-size: 2.5rem;
+    }
+
+    .HistocytopathologyMainPagesLeftContent p {
+        font-size: 1rem;
+    }
+
+    .HistocytopathologyMainPagesTable th,
+    .HistocytopathologyMainPagesTable td {
+        font-size: 0.8rem;
+        padding: 6px 8px;
+    }
+}
+
+@media (max-width: 393px) {
+    .HistocytopathologyMainPagesTable th,
+    .HistocytopathologyMainPagesTable td {
+        font-size: 0.6rem;
+    }
+}

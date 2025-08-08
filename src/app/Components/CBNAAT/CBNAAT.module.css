@@ -1,0 +1,180 @@
+
+/* H3N2.module.css */
+.H3N2MainDiv {
+    margin-left: 0%;
+    margin-right: 0%;
+    position: relative;
+    background-color: white;
+}
+
+.H3N2FirstInnerDiv {
+    background-image: url('/PhotosAndLogos/cbnaat3.jpg');
+    width: 100%;
+    height: 700px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    overflow: hidden;
+}
+
+.H3N2BelowMainDIv h3{
+    color: #333333;
+}
+.H3N2FirstInnerDiv h1 {
+    font-size: 2.5rem;
+    padding: 1rem;
+    margin: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.H3N2FirstInnerDiv a {
+    background: #d9242a;
+    padding: 10px 29px;
+    border-radius: 50px;
+    font-size: 14px;
+    margin-top: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    z-index: 1;
+}
+
+.H3N2DOwnload {
+    margin-left: 8px;
+}
+
+.H3N2BelowMainDIv {
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.H3N2BelowMainDIv h2 {
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: #333333;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.H3N2BelowMainDIv p, 
+.H3N2BelowMainDIv li {
+    font-size: 16px;
+    color: #6f6f6f;
+    font-weight: 400;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .H3N2FirstInnerDiv {
+        height: 500px;
+        flex-direction: column;
+    }
+
+    .H3N2FirstInnerDiv h1 {
+        font-size: 2rem;
+        padding: 0.5rem;
+    }
+
+    .H3N2BelowMainDIv {
+        padding: 1.5rem;
+    }
+
+    .H3N2FirstInnerDiv a {
+        font-size: 12px;
+        padding: 8px 20px;
+    }
+
+    .H3N2BelowMainDIv h2 {
+        font-size: 16px;
+    }
+
+    .H3N2BelowMainDIv p, 
+    .H3N2BelowMainDIv li {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .H3N2MainDiv {
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+    .H3N2FirstInnerDiv {
+        height: 400px;
+    }
+
+    .H3N2FirstInnerDiv h1 {
+        font-size: 1.75rem;
+    }
+
+    .H3N2BelowMainDIv {
+        padding: 1rem;
+    }
+
+    .H3N2FirstInnerDiv a {
+        font-size: 11px;
+        padding: 6px 16px;
+    }
+
+    .H3N2BelowMainDIv h2 {
+        font-size: 14px;
+    }
+
+    .H3N2BelowMainDIv p, 
+    .H3N2BelowMainDIv li {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .H3N2MainDiv {
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+
+     .H3N2FirstInnerDiv {
+        padding: 2rem 0;
+        background-size: contain;
+        margin-top: 3rem;
+        height: 40vh;
+    }
+
+    .H3N2FirstInnerDiv h1 {
+        font-size: 1.5rem;
+        padding: 0.3rem;
+    }
+
+    .H3N2BelowMainDIv {
+        padding: 0.5rem;
+    }
+
+    .H3N2FirstInnerDiv a {
+        font-size: 10px;
+        padding: 4px 12px;
+    }
+
+    .H3N2BelowMainDIv h2 {
+        font-size: 13px;
+    }
+
+    .H3N2BelowMainDIv p, 
+    .H3N2BelowMainDIv li {
+        font-size: 12px;
+    }
+}

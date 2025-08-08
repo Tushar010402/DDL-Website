@@ -1,0 +1,490 @@
+/* src/app/Components/Homepage/Homepage.module.css */
+
+/* Force light mode for homepage */
+#HomePageMainDivforbackground {
+    background-color: #ffffff !important;
+}
+#NableforDark1{
+    color: #232323;
+    font-size: 15px;
+    
+}
+
+#VideoHomePage {
+    width: 93vw;
+    max-width: 93vw;
+    background-color: #ffffff !important;
+}
+
+#QualityDiagnosticsDiv h1 {
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    color: #232323;
+    font-size: 50px;
+}
+
+#OurServiceImages img {
+    border-radius: 0px;
+    width: 300px !important;
+}
+
+#BelowTextsOurServices {
+    width: 300px !important;
+}
+
+/* Mobile Styles */
+@media (max-width: 480px) {
+    .NABLLogoAndDrsImageMainDivHomepage {
+        padding: 1rem;
+        background-color: #ffffff !important;
+    }
+    .NavBarAtHomePage1 {
+        width: 0px;
+    }
+    #NableforDark1{
+    color: #232323;
+    font-size: 12px;
+    
+}
+    .MainHomePageBanners img {
+        width: 155vw !important;
+        height: 85vh !important;
+    }
+    .QualityDiagnosticsDiv h1 {
+        font-size: 25px;
+        color: #232323 !important;
+    }
+    .nablLEGACYficciMAINDIV {
+        display: block;
+        margin-inline: 29vw;
+    }
+    .NABLMainHeading h2,
+    .FICCIMainHeading h2,
+    .L38MainHeading h2 {
+        font-size: 25px;
+        color: #232323 !important;
+    }
+    .NablLogoNDrsImagesHomePage {
+        display: block;
+        text-align: -webkit-center;
+        margin-left: 0px;
+        background-color: #ffffff !important;
+    }
+    .DrsOnlyImageHomePageNABL1 img,
+    .NABLlogoOnHomePage img {
+        width: 90% !important;
+        max-width: 320px;
+    }
+    .NABLlogoOnHomePage {
+        margin-inline: 0%;
+        width: 100%;
+        max-width: 350px;
+        background-color: #ffffff !important;
+    }
+    .DrsOnlyImageHomePageNABL1 {
+        margin-inline: 0%;
+        width: 100%;
+        background-color: #ffffff !important;
+    }
+    .NABLESECONDARYCONTENT h2 {
+        font-size: 1.2rem;
+        color: #232323 !important;
+    }
+    .NABLESECONDARYCONTENT h4 {
+        font-size: 0.9rem;
+        color: rgb(217, 36, 42) !important;
+    }
+    .NABLESECONDARYCONTENT p {
+        font-size: 0.8rem;
+        color: #6f6f6f !important;
+    }
+    .HomePageNABLBotton a {
+        font-size: 0.5rem;
+        padding: 0.8rem 1.5rem;
+    }
+    .slick-slide img {
+        display: block;
+        width: 80vw !important;
+        margin-inline: 1rem;
+    }
+    .NABLMainDIv,
+    .L38MainDIv {
+        margin-bottom: 3rem;
+    }
+}
+
+/* Next.js Image Component Fixes */
+.bannerImage {
+    object-fit: cover !important;
+    object-position: center !important;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.bannerImage.loaded {
+    opacity: 1;
+}
+
+.serviceImage {
+    width: 100% !important;
+    height: auto !important;
+    position: relative !important;
+    object-fit: cover !important;
+}
+
+/* Next.js Image Wrapper Fixes */
+.DrsOnlyImageHomePageNABL1 > span,
+.NABLlogoOnHomePage > span,
+.MainHomePageBanners > span {
+    position: unset !important;
+    background-color: transparent !important;
+}
+
+/* Video Section Styles */
+.SHouldKNowVideOPLusIMagess {
+    background-image: url('/PhotosAndLogos/SHouldKnowBackground.JPG');
+}
+
+.videoContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease-in-out;
+    background-color: #ffffff !important;
+}
+
+/* Responsive Images */
+.DrsOnlyImageHomePageNABL1 img,
+.NABLlogoOnHomePage img,
+.serviceImage {
+    max-width: 100%;
+    height: auto !important;
+    position: relative !important;
+}
+
+/* Video Modal */
+.overlay iframe {
+    max-width: 90vw;
+    max-height: 90vh;
+    border: none;
+}
+
+/* Interactive Elements */
+.HomePageNABLBotton a,
+.playButton,
+.closeButton {
+    transition: all 0.3s ease;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Layout Sections */
+.HomePageMainDiv,
+.FrontMainPageMainContents,
+.NABLLogoAndDrsImageMainDivHomepage,
+.HomePageOurServicesMainDiv,
+.ShouldKnowDivHOmePage {
+    position: relative;
+    width: 100%;
+    background-color: #ffffff !important;
+}
+
+/* Safari Video Fix */
+@supports (-webkit-touch-callout: none) {
+    .overlay iframe {
+        width: 90vw;
+        height: 50.625vw;
+    }
+}
+
+/* Small Screen Fixes */
+@media (max-width: 360px) {
+    .HomePageNABLBotton a {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.45rem;
+    }
+    
+    .QualityDiagnosticsDiv h1 {
+        font-size: 22px;
+        color: #232323 !important;
+    }
+    
+    
+    .NABLMainHeading h2,
+    .FICCIMainHeading h2,
+    .L38MainHeading h2 {
+        font-size: 22px;
+        color: #232323 !important;
+    }
+}
+
+/* Z-index Handling */
+.overlay {
+    z-index: 9999;
+}
+
+/* Modal Scroll Prevention */
+body.modal-open {
+    overflow: hidden;
+}
+
+/* Layout Elements */
+.relative {
+    height: 90vh;
+    background-color: #ffffff !important;
+}
+
+.object-cover {
+    height: 90vh !important;
+}
+
+/* Custom HR */
+.customhr {
+    width: 30px;
+    border: 1px solid red;
+    transform: rotate(90deg);
+    margin-top: 0px;
+    display: flex;
+}
+
+/* Layout Components */
+.DiscoverIconsAndDrdangsImage {
+    display: flex;
+    background-color: #ffffff !important;
+}
+
+.NABLLogoAndDrsImageMainDivHomepage {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 2rem 5%;
+    margin-bottom: 3rem;
+    
+    background-color: #ffffff !important;
+}
+
+/* Slick Slider */
+.slick-dots li button:before {
+    margin-top: 1rem;
+    font-size: 10px;
+}
+
+.HomePageOurServiceMainHeading {
+    margin-bottom: 4rem;
+    background-color: #ffffff !important;
+}
+
+/* NABL Section */
+.NablLogoNDrsImagesHomePage {
+    padding-left: 0rem;
+    display: flex;
+    width: 50%;
+    background-color: #ffffff !important;
+}
+
+.DrsOnlyImageHomePageNABL1 {
+    margin-inline: 5%;
+    background-color: #ffffff !important;
+}
+
+.DrsOnlyImageHomePageNABL1 img {
+    width: 16vw;
+    box-shadow: 0px 0px 28px -4px rgba(130,130,130,1);
+    padding-bottom: 15px;
+}
+
+.NABLlogoOnHomePage {
+    margin-inline: 5%;
+    background-color: #ffffff !important;
+}
+
+.ContentsOFNABLHomePage {
+    width: 50%;
+    align-items: center;
+    background-color: #ffffff !important;
+}
+
+.NABLlogoOnHomePage img {
+    width: 16vw;
+    box-shadow: 0px 0px 28px -4px rgba(130,130,130,1);
+    padding-bottom: 15px;
+}
+
+/* Content Section */
+.NABLESECONDARYCONTENT {
+    padding-left: 3rem;
+    padding-right: 4rem;
+    text-align: center;
+    background-color: #ffffff !important;
+}
+
+.NABLESECONDARYCONTENT h2 {
+    font-size: 29px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -1px;
+    line-height: 1.2;
+    color: #232323 !important;
+}
+
+.NABLESECONDARYCONTENT h4 {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 26px;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(217, 36, 42) !important;
+}
+
+.NABLESECONDARYCONTENT p {
+    margin: 18px 0px 0px 0px;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 1.75;
+    font-family: 'Montserrat', sans-serif;
+    color: #6f6f6f !important;
+}
+
+/* Button Styles */
+.HomePageNABLBotton {
+    text-align: center;
+    justify-content: center;
+    padding-top: 50px !important;
+    background-color: #ffffff !important;
+    display:flex;
+}
+
+.HomePageNABLBotton a {
+    background: #232323;
+    border-color: #232323;
+    color: #fff;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    
+    border-radius: 2px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .5px;
+    line-height: inherit;
+    border: 2px solid transparent;
+}
+
+.HomePageNABLBotton a:hover {
+    background-color: #d9242a;
+    color: white;
+}
+
+.discoverimageIcon {
+    width: 285px !important;
+}
+
+/* Tablet and Smaller Desktop */
+@media(max-width:821px) {
+    .NABLLogoAndDrsImageMainDivHomepage {
+        display: block;
+        width: 100%;
+        background-color: #ffffff !important;
+    }
+    
+
+    .NablLogoNDrsImagesHomePage {
+        display: block;
+        width: 90%;
+        background-color: #ffffff !important;
+    }
+    .ContentsOFNABLHomePage {
+        width: 100%;
+        margin-top: 3rem;
+        background-color: #ffffff !important;
+    }
+    #OurServiceMobile {
+        margin-inline: 3rem;
+    }
+    #VideoHomePage {
+        width: 100vw;
+        max-width: 100vw;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    #VideoPageText {
+        padding-inline: 1rem;
+    }
+    .NABLESECONDARYCONTENT h2 {
+        font-size: 25px;
+        font-weight: 600;
+        font-family: 'Montserrat', sans-serif;
+        letter-spacing: -1px;
+        line-height: 1.2;
+        color: #232323 !important;
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Loading States */
+.loadingPlaceholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #f3f4f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Force light theme in dark mode */
+@media (prefers-color-scheme: dark) {
+    #HomePageMainDivforbackground,
+    .NABLLogoAndDrsImageMainDivHomepage,
+    .NablLogoNDrsImagesHomePage,
+    .ContentsOFNABLHomePage,
+    .NABLESECONDARYCONTENT,
+    #VideoHomePage,
+    .HomePageMainDiv,
+    .FrontMainPageMainContents,
+    .HomePageOurServicesMainDiv,
+    .ShouldKnowDivHOmePage,
+    .relative,
+    .DiscoverIconsAndDrdangsImage,
+    .HomePageOurServiceMainHeading,
+    .HomePageNABLBotton {
+        background-color: #ffffff !important;
+    }
+
+    .NABLESECONDARYCONTENT h2,
+    #QualityDiagnosticsDiv h1,
+    .NABLMainHeading h2,
+    .FICCIMainHeading h2,
+    .L38MainHeading h2 {
+        color: #232323 !important;
+    }
+
+    .NABLESECONDARYCONTENT h4 {
+        color: rgb(217, 36, 42) !important;
+    }
+
+    .NABLESECONDARYCONTENT p {
+        color: #6f6f6f !important;
+    }
+    #OurServiceAs{
+        background-color: #ffffff;
+    }
+    #OurServiceAs h3{
+        color: #232323;
+    }
+}
+#VideoPageText,#NableforDark{
+    color: #232323;
+    font-size: -5.8rem;
+    
+}
+

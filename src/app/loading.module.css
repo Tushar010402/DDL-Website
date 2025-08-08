@@ -1,0 +1,47 @@
+/* src/app/loading.module.css */
+@keyframes slideIn {
+    from {
+      transform: translateY(10px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInScale {
+    0% {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+  
+  .loadingContainer {
+    animation: fadeInScale 0.3s ease-out;
+  }
+  
+  .loadingText {
+    animation: slideIn 0.3s ease-out;
+  }
+  
+  .progressBar {
+    transition: width 0.3s ease-out;
+  }
+  
+  .loadingLogo {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }

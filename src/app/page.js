@@ -1,101 +1,81 @@
-import Image from "next/image";
+import Homepage from './Components/Homepage/Homepage';
+
+export const metadata = {
+  title: 'Best Pathology Lab | Diagnostic Centre in Delhi & Gurgaon | Dr. Dangs Lab',
+  description: 'Dr. Dangs Lab - Best Pathology Lab & Diagnostic Centre in Delhi & Gurgaon. Our expert team consists of highly qualified and experienced Pathologists and Microbiologists in the field of diagnostics.',
+  keywords: 'Best Pathology lab, Best Pathology lab in Delhi, top 10 Pathology labs in Delhi, diagnostic centre delhi',
+  metadataBase: new URL('https://www.drdangslab.com'),
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: "Dr.Dangs Lab | Best Path Lab | Diagnostic Centre in New Delhi",
+    siteName: "Dr. Dangs Lab",
+    url: 'https://drdangslab.com/',
+    description: "Dr.Dangs lab's expert team consists of highly qualified and experienced Pathologists, Microbiologists, and Biochemists in the field of diagnostics.",
+    type: 'website',
+    images: [{
+      url: '/DrdangsRedIcon.png',
+    }],
+  },
+  twitter: {
+    card: 'summary',
+    site: '@drdangslab.com',
+    title: 'Dr. Dangs Lab | Best Path Lab | Diagnostic Centre in New Delhi',
+    description: "Dr. Dangs lab's expert team consists of highly qualified and experienced Pathologists, Microbiologists, and Biochemists in the field of diagnostics.",
+    images: ['/DrdangsRedIcon.png'],
+  },
+  verification: {
+    google: '-zaXZTD2xZIQtVF8l05uDtVDLV7UoBKGqzlIhXvX2ZM',
+  },
+  other: {
+    "application-ld+json": JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Dr. Dangs Lab",
+      "image": "https://www.drdangslab.com/DrdangsRedIcon.png",
+      "@id": "https://www.drdangslab.com/DrdangsRedIcon.png",
+      "url": "https://www.drdangslab.com/",
+      "telephone": "+91-9999992020",
+      "priceRange": "$$$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "C2/1, S.D.A. Aurobindo Marg Next to Aurobindo Market",
+        "addressLocality": "New Delhi",
+        "postalCode": "110016",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 28.5501371,
+        "longitude": 77.2012616
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "07:30",
+        "closes": "19:00"
+      },
+      "sameAs": [
+        "https://www.facebook.com/DrDangsLab/",
+        "https://twitter.com/drdangslab",
+        "https://www.youtube.com/channel/UCt-iw59KbbSVMRNdzQsorTg",
+        "https://www.slideshare.net/drdangslab",
+        "https://in.pinterest.com/drdangslab/?autologin=true",
+        "https://www.drdangslab.com/"
+      ]
+    })
+  }
+};
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+  return <Homepage />;
 }

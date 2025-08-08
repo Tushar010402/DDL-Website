@@ -1,0 +1,158 @@
+/* src/app/Components/News/News.module.css */
+
+.newsContainer {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 4rem;
+  background:#fff;
+}
+
+.newsContainer h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 32px;
+  font-weight: bold;
+  color: #555;
+}
+
+.newsArticle {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 20px;
+}
+
+.newsImage {
+  flex-basis: 30%; /* Image takes up 30% of the width */
+  max-width: 30%;
+  margin-right: 20px;
+}
+
+.newsImage img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.newsDetails {
+  flex-basis: 70%; /* Text takes up the remaining 70% */
+}
+
+.newsHeading {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #d32f2f;
+  font-weight: bold;
+}
+
+.newsContent {
+  font-size: 16px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+  color: #555;
+}
+
+.newsReleased {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 15px;
+}
+
+.newsReadMore {
+  color: #d32f2f;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.newsReadMore:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .newsArticle {
+    flex-direction: row;
+  }
+
+  .newsImage {
+    flex-basis: 30%;
+    max-width: 30%;
+    margin-right: 15px;
+  }
+
+  .newsDetails {
+    flex-basis: 70%;
+  }
+}
+
+@media (max-width: 768px) {
+  .newsContainer {
+    padding: 15px;
+    padding-top: 2rem;
+    background: #fff;
+  }
+
+
+  .newsContainer h2 {
+    font-size: 28px;
+    margin-top: 3rem;
+  }
+
+  .newsHeading {
+    font-size: 20px;
+  }
+
+  .newsContent {
+    font-size: 14px;
+  }
+
+  .newsArticle {
+    flex-direction: row;
+  }
+
+  .newsImage {
+    flex-basis: 30%;
+    max-width: 30%;
+    margin-right: 10px;
+  }
+
+  .newsDetails {
+    flex-basis: 70%;
+  }
+}
+
+@media (max-width: 480px) {
+  .newsContainer {
+    padding: 10px;
+    background: #fff;
+  }
+
+  .newsContainer h2 {
+    font-size: 24px;
+  }
+
+  .newsHeading {
+    font-size: 18px;
+  }
+
+  .newsContent {
+    font-size: 13px;
+  }
+
+  .newsArticle {
+    flex-direction: row;
+  }
+
+  .newsImage {
+    flex-basis: 30%;
+    max-width: 30%;
+    margin-right: 5px;
+  }
+
+  .newsDetails {
+    flex-basis: 70%;
+  }
+}

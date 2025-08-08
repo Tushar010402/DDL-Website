@@ -1,0 +1,105 @@
+.rightSideButtons {
+    position: fixed;
+    top: 30%;
+    right: 0;
+    transform: translateY(-30%) rotate(90deg);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    z-index: 1000;
+    margin-right: -6rem;
+  }
+  
+  .rightButton {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #000;
+    border: 1.35px solid #444;
+    border-radius: 0 1px 1px 0;
+    padding: 10px 8px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transform: rotate(0deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+    font-family: "MrEavesXLSanAltBRegular", Helvetica, Arial, sans-serif;
+  }
+  
+  .rightButton:hover {
+    background-color: #d9242a;
+    color: white;
+    font-weight: 600;
+  }
+  
+  .homeCollectionStyle {
+    margin-right: -2rem;
+  }
+  
+  @media (max-width: 1200px) {
+    .rightButton {
+      font-size: 12px;
+      padding: 8px 6px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .rightSideButtons {
+      top: 30%;
+      margin-right: -5rem;
+    }
+  
+    .rightButton {
+      font-size: 10px;
+      padding: 7px 12px;
+      background-color: #d9242a;
+      color: white;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .rightSideButtons {
+      top: 16rem;
+      margin-right: -7rem;
+    }
+  
+    .rightButton {
+      font-size: 13px;
+      padding: 10px 15px;
+    }
+  }
+  
+  @media (max-width: 391px) {
+    .rightSideButtons {
+      top: 18rem;
+      margin-right: -6.5rem;
+    }
+  
+    .rightButton {
+      font-size: 12px;
+      padding: 8px 13px;
+    }
+  }
+  
+  /* Handle potential button hiding */
+  .rightButton[style*="display: none"] {
+    display: none !important;
+  }
+  
+  /* Add hover effect transition */
+  .rightButton {
+    transition: 
+      background-color 0.3s ease,
+      color 0.3s ease,
+      font-weight 0.3s ease;
+  }
+  
+  /* Ensure buttons stay above other content but below navbars */
+  .rightSideButtons {
+    z-index: 999;
+  }

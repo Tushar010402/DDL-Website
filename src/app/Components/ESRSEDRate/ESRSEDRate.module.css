@@ -1,0 +1,369 @@
+/* Test Pages - Complete Responsive CSS */
+
+.H3N2MainDiv {
+    margin-left: 0%;
+    margin-right: 0%;
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.H3N2FirstInnerDiv {
+    background-image: url('/PhotosAndLogos/OurLabC.jpg');
+    width: 100%;
+    height: 600px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    overflow: hidden;
+}
+
+.H3N2FirstInnerDiv h1 {
+    font-size: 2.5rem;
+    padding: 1rem;
+    margin: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.H3N2FirstInnerDiv a {
+    background: #d9242a;
+    padding: 10px 29px;
+    border-radius: 50px;
+    font-size: 14px;
+    margin-top: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    z-index: 1;
+}
+
+.H3N2DOwnload {
+    margin-left: 8px;
+}
+
+.H3N2BelowMainDIv {
+    padding: 2rem;
+    margin-top: 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.H3N2BelowMainDIv h2 {
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    color: #333333;
+    text-align: left;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+}
+
+.H3N2BelowMainDIv h3 {
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: #333333;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.H3N2BelowMainDIv h4 {
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: #444444;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.H3N2BelowMainDIv p, 
+.H3N2BelowMainDIv li {
+    font-size: 16px;
+    color: #6f6f6f;
+    font-weight: 400;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.H3N2BelowMainDIv strong {
+    color: #555555;
+    font-weight: 600;
+}
+
+.H3N2BelowMainDIv ul,
+.H3N2BelowMainDIv ol {
+    padding-left: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.H3N2BelowMainDIv ul li,
+.H3N2BelowMainDIv ol li {
+    margin-bottom: 0.5rem;
+}
+
+/* FAQ specific styling */
+.H3N2BelowMainDIv ol li {
+    margin-bottom: 1.5rem;
+}
+
+.H3N2BelowMainDIv ol li p:first-child {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #444444;
+}
+
+.H3N2BelowMainDIv ol li p:not(:first-child) {
+    margin-top: 0;
+}
+
+/* Table styling */
+.resultTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0 2rem;
+    font-size: 16px;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.05);
+}
+
+.resultTable th, 
+.resultTable td {
+    border: 1px solid #e0e0e0;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.resultTable th {
+    background-color: #f8f8f8;
+    color: #333333;
+    font-weight: 600;
+}
+
+.resultTable tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.resultTable tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .H3N2FirstInnerDiv {
+        height: 500px;
+    }
+
+    .H3N2FirstInnerDiv h1 {
+        font-size: 2rem;
+        padding: 0.75rem;
+    }
+
+    .H3N2BelowMainDIv {
+        padding: 1.5rem;
+    }
+
+    .H3N2BelowMainDIv h2 {
+        font-size: 20px;
+    }
+    
+    .H3N2BelowMainDIv h3 {
+        font-size: 17px;
+    }
+
+    .H3N2FirstInnerDiv a {
+        font-size: 13px;
+        padding: 8px 20px;
+    }
+
+    .H3N2BelowMainDIv p, 
+    .H3N2BelowMainDIv li {
+        font-size: 15px;
+    }
+    
+    .resultTable {
+        font-size: 15px;
+    }
+    
+    .resultTable th, 
+    .resultTable td {
+        padding: 10px 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .H3N2MainDiv {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .H3N2FirstInnerDiv {
+        height: 400px;
+    }
+
+    .H3N2FirstInnerDiv h1 {
+        font-size: 1.75rem;
+        padding: 0.6rem;
+    }
+
+    .H3N2BelowMainDIv {
+        padding: 1.25rem;
+    }
+    
+    .H3N2BelowMainDIv h2 {
+        font-size: 18px;
+    }
+    
+    .H3N2BelowMainDIv h3 {
+        font-size: 16px;
+        margin-top: 1.5rem;
+    }
+    
+    .H3N2BelowMainDIv h4 {
+        font-size: 15px;
+    }
+
+    .H3N2FirstInnerDiv a {
+        font-size: 12px;
+        padding: 7px 18px;
+    }
+
+    .H3N2BelowMainDIv p, 
+    .H3N2BelowMainDIv li {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    
+    .H3N2BelowMainDIv ul,
+    .H3N2BelowMainDIv ol {
+        padding-left: 1.5rem;
+    }
+    
+    .resultTable {
+        font-size: 14px;
+    }
+    
+    .resultTable th, 
+    .resultTable td {
+        padding: 8px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .H3N2MainDiv {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .H3N2FirstInnerDiv {
+        height: 40vh;
+        min-height: 220px;
+        padding: 1rem 0;
+        margin-top: 2rem;
+    }
+
+    .H3N2FirstInnerDiv h1 {
+        font-size: 1.4rem;
+        padding: 0.5rem;
+    }
+
+    .H3N2BelowMainDIv {
+        padding: 1rem;
+        margin-top: 1rem;
+    }
+    
+    .H3N2BelowMainDIv h2 {
+        font-size: 16px;
+        margin-bottom: 1rem;
+    }
+    
+    .H3N2BelowMainDIv h3 {
+        font-size: 15px;
+        margin-top: 1.25rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .H3N2BelowMainDIv h4 {
+        font-size: 14px;
+        margin-top: 1rem;
+    }
+
+    .H3N2FirstInnerDiv a {
+        font-size: 11px;
+        padding: 5px 14px;
+    }
+
+    .H3N2BelowMainDIv p, 
+    .H3N2BelowMainDIv li {
+        font-size: 13px;
+        margin-bottom: 0.75rem;
+        line-height: 1.4;
+    }
+    
+    .H3N2BelowMainDIv ul,
+    .H3N2BelowMainDIv ol {
+        padding-left: 1.25rem;
+        margin-bottom: 1rem;
+    }
+    
+    .H3N2BelowMainDIv ol li {
+        margin-bottom: 1rem;
+    }
+    
+    .resultTable {
+        font-size: 12px;
+        margin: 1rem 0;
+    }
+    
+    .resultTable th, 
+    .resultTable td {
+        padding: 6px 8px;
+    }
+    
+    /* Fix for tables on very small screens */
+    .resultTable {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+/* Extremely small screens */
+@media (max-width: 360px) {
+    .H3N2FirstInnerDiv {
+        height: 180px;
+    }
+    
+    .H3N2FirstInnerDiv h1 {
+        font-size: 1.2rem;
+        padding: 0.4rem;
+    }
+    
+    .H3N2BelowMainDIv h2 {
+        font-size: 15px;
+    }
+    
+    .H3N2BelowMainDIv h3 {
+        font-size: 14px;
+    }
+    
+    .H3N2BelowMainDIv h4 {
+        font-size: 13px;
+    }
+    
+    .H3N2BelowMainDIv p, 
+    .H3N2BelowMainDIv li {
+        font-size: 12px;
+    }
+}

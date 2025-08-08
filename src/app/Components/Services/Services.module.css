@@ -1,0 +1,205 @@
+/* src/app/Components/Services/Services.module.css */
+
+/* Banner Section */
+.ServicesMainPagesMainBanner {
+  position: relative;
+  margin-left: 0%;
+  width: 99%;
+  height: 110vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0rem;
+  background: url('/PhotosAndLogos/servicessC.webp');
+  background-size: cover;
+  background-position: center;
+}
+
+.ServicesMainPagesBackgroundImage {
+  display: none; /* Background handled by CSS */
+}
+
+.ServicesMainPagesContentContainer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+.ServicesMainPagesLeftContent h2 {
+  font-size: 4.5rem;
+  margin: 0;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0);
+}
+
+.ServicesMainPagesLeftContent p {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-top: 20px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0);
+}
+
+/* Responsive font sizes */
+@media (max-width: 1200px) {
+  .ServicesMainPagesLeftContent h2 {
+    font-size: 4rem;
+  }
+
+  .ServicesMainPagesLeftContent p {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .ServicesMainPagesLeftContent h2 {
+    font-size: 3.5rem;
+  }
+
+  .ServicesMainPagesLeftContent p {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .ServicesMainPagesLeftContent h2 {
+    font-size: 3rem;
+  }
+
+  .ServicesMainPagesLeftContent p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .ServicesMainPagesLeftContent h2 {
+    font-size: 2.5rem;
+  }
+
+  .ServicesMainPagesLeftContent p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ServicesMainPagesLeftContent h2 {
+    font-size: 2rem;
+  }
+
+  .ServicesMainPagesLeftContent p {
+    font-size: 1rem;
+  }
+}
+
+/* Navigation Section */
+.ServicesMainPagesNavigation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* Changed from space-between to flex-start */
+  margin-left: 2%;
+  margin-right: 2%;
+  padding: 2rem;
+  background-color: #f7f7f7;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.ServicesMainPagesLink {
+  text-decoration: none;
+  width: 30%; /* Ensures three items per row */
+  min-width: 280px;
+  margin: 1%; /* Adjusted margin for spacing */
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.ServicesMainPagesLink:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.ServicesMainPagesLinkContent {
+  padding: 20px;
+  text-align: center;
+  color: #333;
+}
+
+.ServicesMainPagesLinkContent h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #d9242a;
+}
+
+.ServicesMainPagesLinkContent p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.ServicesMainPagesImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #e0e0e0;
+  border-radius: 10px 10px 0 0; /* Rounded top corners */
+  transition: all 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .ServicesMainPagesLink {
+    width: 47%; /* Two items per row on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .ServicesMainPagesLink {
+    width: 100%; /* One item per row on small screens */
+  }
+
+  .ServicesMainPagesMainBanner {
+    margin-left: 0;
+    width: 100%;
+    height: 30vh;
+    margin-top: 2rem;
+  }
+
+  .ServicesMainPagesImage {
+    height: 150px;
+  }
+
+  .ServicesMainPagesNavigation {
+    margin-left: 0px;
+  }
+}
+
+@media (max-width: 576px) {
+  .ServicesMainPagesLinkContent h3 {
+    font-size: 1.1rem;
+  }
+
+  .ServicesMainPagesLinkContent p {
+    font-size: 0.75rem;
+  }
+
+  .ServicesMainPagesImage {
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ServicesMainPagesLinkContent h3 {
+    font-size: 1rem;
+  }
+
+  .ServicesMainPagesImage {
+    height: 120px;
+  }
+
+  .ServicesMainPagesLinkContent p {
+    font-size: 0.7rem;
+  }
+}

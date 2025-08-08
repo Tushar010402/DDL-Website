@@ -1,0 +1,156 @@
+.navbar {
+    -webkit-box-shadow: 0 0 1px #888;
+    box-shadow: 0 0 1px #888;
+    position: fixed;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: #fff;
+    width: 90px;
+    z-index: 1000;
+  }
+  
+  .logo {
+    font-size: 30px;
+    font-weight: 600;
+    transition: color 0.3s;
+    padding: 30px 32px;
+    cursor: pointer;
+    color: #333;
+  }
+  
+  .logo:hover {
+    color: rgb(145, 44, 44);
+    font-weight: 600;
+  }
+  
+  .options {
+    display: none;
+    height: 100vh;
+    flex-direction: column;
+    position: absolute;
+    bottom: 1px;
+    left: 90px;
+    background-color: #ffffff;
+    z-index: 1500;
+    -webkit-box-shadow: 0 0 1px #888;
+    box-shadow: 0px 0 2px #888;
+  }
+  
+  .show {
+    display: flex;
+  }
+  
+  .navbar:hover .options {
+    display: flex;
+  }
+  
+  .OptionsOnTheNavbarMainDiv a {
+    font-size: 18px;
+    display: block;
+    padding: 0;
+    color: #0f0f0f;
+    text-transform: none;
+    margin: 0;
+    line-height: 13px;
+    font-weight: 600;
+    position: relative;
+    width: 20.5rem;
+    text-decoration: none;
+  }
+  
+  .OptionsOnTheNavbarMainDiv ul li {
+    margin: 0;
+    float: none;
+    padding: 10px 0;
+    width: 291px;
+    word-break: break-all;
+    position: initial;
+  }
+  
+  .OptionsOnTheNavbarMainDiv ul {
+    list-style: none;
+    height: 55vh;
+    overflow-x: hidden;
+    margin-top: 20vh;
+    margin-left: 2rem;
+  }
+  
+  .OptionsOnTheNavbarMainDiv ul input {
+    padding: .5rem 3rem .5rem 1rem;
+    border: 1px solid gray;
+    margin-bottom: .7rem;
+    border-radius: .2rem;
+  }
+  
+  .NavBarLogoRed img {
+    width: 90px !important;
+    height: auto !important;
+  }
+  
+  .NameOnTheNavBar {
+    position: relative;
+    margin-top: 25vh;
+  }
+  
+  .NameOnTheNavBar img {
+    position: absolute;
+    top: 35.3%;
+    left: 20px;
+    width: auto !important;
+    height: auto !important;
+  }
+  
+  .OptionsOnNavbar {
+    position: fixed;
+    bottom: 0;
+    -webkit-box-shadow: 0 0 1px #888;
+    box-shadow: -1px 0 1px #888;
+  }
+  
+  .OptionsOnTheNavbarMainDiv {
+    height: 96vh;
+  }
+  
+  .socialIcons {
+    -webkit-box-shadow: 0 0 1px #888;
+    box-shadow: 0px 0px 1px #888;
+    padding-top: 2rem;
+    padding-inline: 3rem;
+    padding-bottom: 2rem;
+    height: 4vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .icon {
+    font-size: 1rem;
+    width: 2rem;
+    height: 2rem;
+    margin-inline: 1.6rem;
+    fill: currentColor;
+    cursor: pointer;
+  }
+  
+  /* Add hover effects for social icons */
+  .icon:hover {
+    color: rgb(145, 44, 44);
+  }
+  
+  /* Add this to preserve Next.js Image component dimensions */
+  .NavBarLogoRed span,
+  .NameOnTheNavBar span {
+    position: unset !important;
+  }
+  
+  .NavBarLogoRed img,
+  .NameOnTheNavBar img {
+    position: relative !important;
+    height: auto !important;
+  }
+  @media(max-width:821px){
+    .navbar{
+        display: none;
+    }
+  }

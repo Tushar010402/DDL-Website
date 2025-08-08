@@ -1,0 +1,157 @@
+/* src/app/Components/Haematology/Haematology.module.css */
+
+.HaematologyMainPagesMainBanner {
+    position: relative;
+    margin-left: 0%;
+    width: 99%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.HaematologyMainPagesBackgroundImage {
+    position: absolute; /* Change to absolute instead of fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Add the overlay using ::before */
+.HaematologyMainPagesMainBanner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Black overlay with 0.4 opacity */
+    z-index: 0; /* Ensure it's below the text content */
+}
+
+.HaemotologymainTableDiv {
+    background-color: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+.HaematologyMainPagesContentContainer {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.HaematologyMainPagesLeftContent h2 {
+    font-size: 4.5rem;
+    margin: 0;
+}
+
+.HaematologyMainPagesLeftContent p {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+/* Table Section */
+.HaematologyMainPagesTableContainer {
+    margin: 50px 6%;
+    overflow-x: auto;
+    margin-left: 2%;
+}
+
+.HaematologyMainPagesTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    text-align: left;
+}
+
+.HaematologyMainPagesTable th,
+.HaematologyMainPagesTable td {
+    padding: 12px 20px;
+    border: 1px solid #ddd;
+    font-family: 'Roboto';
+}
+
+.HaematologyMainPagesTable th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.HaematologyMainPagesTable tr {
+    background-color: #fff;
+}
+
+.HaematologyMainPagesTable tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.HaematologyMainPagesTable td {
+    font-size: 1rem;
+}
+
+.HaematologyMainPagesTableContainer h3 {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    -webkit-transition-timing-function: ease-in-out;
+    -webkit-transition-duration: 0.2s;
+    color: #232323;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .HaematologyMainPagesLeftContent h2 {
+        font-size: 3rem;
+    }
+
+    .HaematologyMainPagesLeftContent p {
+        font-size: 1.2rem;
+    }
+
+    .HaematologyMainPagesTable th,
+    .HaematologyMainPagesTable td {
+        font-size: 0.9rem;
+        padding: 8px 10px;
+    }
+
+    .HaematologyMainPagesMainBanner {
+        margin-left: 0px;
+        width: 100%;
+        height: 50vh;
+    }
+
+    .HaematologyMainPagesTableContainer {
+        margin-left: 3%;
+        margin-right: 3%;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .HaematologyMainPagesLeftContent h2 {
+        font-size: 2.5rem;
+    }
+
+    .HaematologyMainPagesLeftContent p {
+        font-size: 1rem;
+    }
+
+    .HaematologyMainPagesTable th,
+    .HaematologyMainPagesTable td {
+        font-size: 0.8rem;
+        padding: 6px 8px;
+    }
+}
+
+@media (max-width: 393px) {
+    .HaematologyMainPagesTable th,
+    .HaematologyMainPagesTable td {
+        font-size: 0.6rem;
+    }
+}

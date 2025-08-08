@@ -1,0 +1,398 @@
+/* src/app/Components/Homepage/Homepage.module.css */
+
+/* Main Container */
+.BelowPromiseMainDiv {
+  margin-left: 0%;
+  width: 100%;
+  background-color: #ffffff;
+  object-fit: contain;
+}
+
+/* Image Containers */
+.BelowPromiseImageDIv,
+.BelowPromiseImageDIv2 {
+  height: 400px;
+  position: relative;
+  width: 100%;
+}
+
+/* Image Wrapper */
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 700px;
+  
+}
+
+
+
+/* Background Overlay */
+.BelowPromise1stBackground1 {
+  position: absolute;
+  top: 9%;
+  left: 7%;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: white;
+  padding: 5rem;
+  max-width: 35%;
+  text-align: center;
+  z-index: 2;
+ 
+}
+
+.BelowPromise1stBackground1 h2 {
+  margin: 0;
+  font-size: 17px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  line-height: 40px;
+  margin-bottom: 1.5rem;
+}
+
+.BelowPromise1stBackground1 p {
+  margin: 10px 0;
+  font-size: 13px;
+  color: #f7f5f5;
+  font-family: 'Montserrat', sans-serif;
+  padding-inline: 1rem;
+  line-height: 30px;
+  font-weight: 600;
+  margin-bottom: 3rem;
+}
+
+.BelowPromise1stBackground1 a {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  background: #ffffff;
+  border: 2px solid #232323;
+  color: #232323;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 13px 31px;
+  text-align: center;
+  border-radius: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.BelowPromise1stBackground1 a:hover {
+  background-color: #232323 !important;
+  color: white !important;
+  border: 2px solid white;
+}
+
+/* Special styling for the first slide */
+.BelowPromise1stBackground1ID p {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #efebeb;
+  font-family: 'Montserrat', sans-serif;
+  padding-inline: 1rem;
+  line-height: 30px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.BelowPromise1stBackground1ID {
+  position: absolute;
+  top: 12%;
+  left: 7%;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: white;
+  padding: 5rem;
+  max-width: 35%;
+  text-align: center;
+  padding-bottom: 4rem;
+ 
+}
+
+/* Video Section Background */
+.SHouldKNowVideOPLusIMagess {
+  background-image: url('/PhotosAndLogos/SHouldKnowBackground.JPG');
+}
+
+/* Video Overlay */
+.videoContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Responsive Images */
+.DrsOnlyImageHomePageNABL1 img,
+.NABLlogoOnHomePage img,
+.serviceImage {
+  max-width: 100%;
+  height: auto !important;
+  position: relative !important;
+}
+
+/* Iframe in Video Modal */
+.overlay iframe {
+  max-width: 90vw;
+  max-height: 90vh;
+  border: none;
+}
+
+/* Hover States */
+.HomePageNABLBotton a,
+.playButton,
+.closeButton {
+  transition: all 0.3s ease;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Ensure Proper Spacing for All Sections */
+.HomePageMainDiv,
+.FrontMainPageMainContents,
+.NABLLogoAndDrsImageMainDivHomepage,
+.HomePageOurServicesMainDiv,
+.ShouldKnowDivHOmePage {
+  position: relative;
+  width: 100%;
+}
+
+/* Safari Video Fix */
+@supports (-webkit-touch-callout: none) {
+  .overlay iframe {
+    width: 90vw;
+    height: 50.625vw; /* 16:9 Aspect Ratio */
+  }
+}
+
+/* Additional Responsive Fixes */
+@media (max-width: 360px) {
+  .HomePageNABLBotton a {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.45rem;
+  }
+  
+  .QualityDiagnosticsDiv h1 {
+    font-size: 22px;
+  }
+
+
+  
+  .NABLMainHeading h2,
+  .FICCIMainHeading h2,
+  .L38MainHeading h2 {
+    font-size: 22px;
+  }
+}
+
+/* Stacking Context */
+.overlay {
+  z-index: 9999;
+}
+
+/* Prevent Body Scroll When Modal is Open */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* Utility Classes */
+.relative {
+  height: 90vh;
+}
+
+.object-cover {
+  height: 90vh !important;
+}
+
+/* Custom Horizontal Rule */
+.customhr {
+  width: 30px;
+  border: 1px solid red;
+  margin-left: 48%;
+  transform: rotate(90deg);
+  margin-top: 30px;
+}
+
+/* Discover Icons and Images */
+.DiscoverIconsAndDrdangsImage {
+  display: flex;
+}
+
+.NABLLogoAndDrsImageMainDivHomepage {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  padding: 2rem 5%;
+  margin-bottom: 3rem;
+}
+
+.slick-dots li button:before {
+  margin-top: 1rem;
+  font-size: 10px;
+}
+
+.HomePageOurServiceMainHeading {
+  margin-bottom: 4rem;
+}
+
+.NablLogoNDrsImagesHomePage {
+  padding-left: 0rem;
+  display: flex;
+  width: 50%;
+}
+
+.DrsOnlyImageHomePageNABL1 {
+  margin-inline: 5%;
+}
+
+.DrsOnlyImageHomePageNABL1 img {
+  width: 16vw;
+  box-shadow: 0px 0px 28px -4px rgba(130,130,130,1);
+  padding-bottom: 15px;
+}
+
+.NABLlogoOnHomePage {
+  margin-inline: 5%;
+}
+
+.ContentsOFNABLHomePage {
+  width: 50%;
+}
+
+.NABLlogoOnHomePage img {
+  width: 16vw;
+  box-shadow: 0px 0px 28px -4px rgba(130,130,130,1);
+  padding-bottom: 15px;
+}
+
+.NABLESECONDARYCONTENT {
+  padding-left: 3rem;
+  padding-right: 4rem;
+  text-align: center;
+}
+
+.NABLESECONDARYCONTENT h2 {
+  font-size: 29px;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: -1px;
+  line-height: 1.2;
+  color: #232323;
+}
+
+.NABLESECONDARYCONTENT h4 {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+  font-family: 'Montserrat', sans-serif;
+  color: rgb(217, 36, 42);
+}
+
+.NABLESECONDARYCONTENT p {
+  margin: 18px 0px 0px 0px;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.75;
+  font-family: 'Montserrat', sans-serif;
+  color: #6f6f6f;
+}
+
+.HomePageNABLBotton {
+  text-align: center;
+  padding-top: 50px !important;
+}
+
+.HomePageNABLBotton a {
+  background: #232323;
+  border-color: #232323;
+  color: #fff;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 1rem 2rem 1rem 2rem;
+  border-radius: 2px;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: .5px;
+  line-height: inherit;
+  border: 2px solid transparent;
+}
+
+.HomePageNABLBotton a:hover {
+  background-color: #d9242a;
+  color: white;
+}
+
+.discoverimageIcon {
+  width: 285px !important;
+}
+
+@media(max-width:821px){
+  .BelowPromise1stBackground1 {
+    position: absolute;
+    top: 12%;
+    left: 7%;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 1rem;
+    max-width: 80%;
+    text-align: center;
+    z-index: 2;
+    
+  }
+  
+  .BelowPromise1stBackground1 h2 {
+    margin: 0;
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    line-height: 20px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .BelowPromise1stBackground1 p {
+    margin: 10px 0;
+    font-size: 11px;
+    color: #edecec;
+    font-family: 'Montserrat', sans-serif;
+    padding-inline: 1rem;
+    line-height: 20px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  .BelowPromise1stBackground1 a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    background: #ffffff;
+    border: 2px solid #232323;
+    color: #232323;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 13px 31px;
+    text-align: center;
+    border-radius: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .BelowPromise1stBackground1 a:hover {
+    background-color: #232323 !important;
+    color: white !important;
+    border: 2px solid white;
+  }
+}

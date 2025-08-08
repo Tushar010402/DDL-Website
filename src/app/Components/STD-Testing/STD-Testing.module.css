@@ -1,0 +1,481 @@
+/* SwineFlu.module.css */
+.SwineFlueMainDiv {
+    margin-left: 0%;
+    margin-right: 0%;
+    margin-top: 0rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.SwineFLueImageDIv {
+    position: relative;
+    width: 100%;
+    height: 1100px;
+    background-size: cover;
+    overflow: hidden;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.backgroundImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: -1;
+}
+
+.SwineInnerMAinDivForFlex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding-inline: 4rem;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.InnerMain1stLeftDiv {
+    width: 50%;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.InnerMain1stLeftDiv h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 55px;
+    color: white;
+    margin-top: 50px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.InnerMain1stLeftDiv a {
+    background: #d9242a;
+    padding: 10px 29px;
+    border-radius: 50px;
+    font-size: 11px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.InnerMain1stLeftDiv a:hover {
+    background: #b81c21;
+}
+
+.H3N2Download {
+    margin-left: 8px;
+}
+
+.InnerSecondDiv {
+    width: 40%;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+
+.InnerDivForm {
+    padding: 20px;
+}
+
+.InnerDivForm h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.InnerDivForm form {
+    display: flex;
+    flex-direction: column;
+}
+
+.InnerDivForm input,
+.InnerDivForm select,
+.datePicker {
+    margin-bottom: 15px;
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    transition: border-color 0.3s ease;
+    color:#000
+}
+
+.InnerDivForm input:focus,
+.InnerDivForm select:focus,
+.datePicker:focus {
+    outline: none;
+    border-color: #d9242a;
+    box-shadow: 0 0 0 2px rgba(217, 36, 42, 0.1);
+}
+
+.SwinefluTimeSLots {
+    padding-block: 0.7rem;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    background-color: white;
+}
+
+.captchaContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #f8f8f8;
+    border-radius: 5px;
+}
+
+.captchaText {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.refreshButton {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background: #000;
+    color:#fff;
+}
+
+.refreshButton:hover {
+    background: #545353;
+}
+
+.captchaInput {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    color:#333
+}
+
+.errorMessage {
+    color: #d9242a;
+    font-size: 12px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+/* Continue to Part 2... */
+.submitButton {
+    background-color: #000;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.submitButton:hover {
+    background-color: #333;
+}
+
+.submitButton:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.callButton {
+    display: block;
+    background: #d9242a;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.callButton:hover {
+    background-color: #b81c21;
+}
+
+/* Overview Section Styles */
+.OverviewSection {
+    padding: 40px;
+    background: #f9f9f9;
+    margin-top: 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.OverviewSection h2 {
+    font-weight: 600;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.OverviewSection h3 {
+    font-weight: 600;
+    color: #444;
+    font-size: 18px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.OverviewSection p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.OverviewSection ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 15px 0;
+}
+
+.OverviewSection li {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.OverviewSection a {
+    color: #d9242a;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.OverviewSection a:hover {
+    color: #b81c21;
+    text-decoration: underline;
+}
+
+/* FAQ Section Styles */
+.FAQSection {
+    padding: 40px;
+    margin-top: 40px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.FAQSection h2 {
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #333;
+}
+
+.accordion {
+    border: 1px solid #eee;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.accordionItem {
+    border-bottom: 1px solid #eee;
+}
+
+.accordionItem:last-child {
+    border-bottom: none;
+}
+
+.accordionHeader {
+    padding: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.accordionHeader:hover {
+    background-color: #f0f0f0;
+}
+
+.accordionHeader span {
+    flex: 1;
+}
+
+.accordionBody {
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-out;
+    background-color: white;
+}
+
+.accordionBody.show {
+    padding: 20px;
+    max-height: 1000px;
+}
+
+.accordionBody strong {
+    display: block;
+    margin-bottom: 15px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.accordionBody ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 15px 0;
+}
+
+.accordionBody li {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.accordionBody h4 {
+    font-weight: 600;
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Thank You Card Styles */
+.thankYouCard {
+    text-align: center;
+    padding: 40px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    margin: 40px auto;
+    max-width: 500px;
+}
+
+.thankYouCard h2 {
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.thankYouCard p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .InnerMain1stLeftDiv h2 {
+        font-size: 45px;
+    }
+
+    .InnerSecondDiv {
+        width: 45%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .SwineInnerMAinDivForFlex {
+        padding-inline: 2rem;
+    }
+
+    .InnerMain1stLeftDiv {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .InnerSecondDiv {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .SwineFLueImageDIv {
+        height: auto;
+        padding: 40px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .SwineFlueMainDiv {
+        margin-left: 4%;
+        margin-right: 4%;
+    }
+
+    .InnerMain1stLeftDiv h2 {
+        font-size: 35px;
+    }
+
+    .OverviewSection,
+    .FAQSection {
+        padding: 20px;
+    }
+
+    .accordionHeader {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .SwineFlueMainDiv {
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+    .InnerMain1stLeftDiv h2 {
+        font-size: 28px;
+    }
+
+    .InnerDivForm h3 {
+        font-size: 20px;
+    }
+
+    .callButton {
+        font-size: 12px;
+        padding: 10px 16px;
+    }
+
+    .OverviewSection,
+    .FAQSection {
+        padding: 15px;
+    }
+
+    .captchaContainer {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .refreshButton {
+        width: 100%;
+    }
+}

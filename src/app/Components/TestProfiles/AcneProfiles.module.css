@@ -1,0 +1,127 @@
+/* Main container styling */
+.healthCheckupSection {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .testProfiles {
+    padding: 20px;
+  }
+  
+  .profilesRow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  /* Profile Card Styling */
+  .profileCard {
+    width: 30%;
+    border: 1px solid #eaeaea;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profileCard h2 {
+    font-size: 20px;
+    color: #486284;
+    margin-bottom: 10px;
+  }
+  
+  .profileCard p {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 10px;
+  }
+  
+  .profileCard h3 {
+    font-size: 18px;
+    color: #333;
+    margin-top: 15px;
+  }
+  
+  .profileCard ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 10px 0;
+  }
+  
+  .price {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .PriceInTestProfiles h3, .ProfilesPriceValue h3 {
+    margin: 0;
+    font-weight: 600;
+  }
+  
+  .bookButton {
+    background-color: #ff4c4c;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .bookButton:hover {
+    background-color: #e04141;
+  }
+  
+  /* Features section styling */
+  .features {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+  }
+  
+  .featureItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .featureImage {
+    margin-bottom: 5px;
+  }
+  
+  .subtitle, .description {
+    color: #777;
+    font-size: 16px;
+  }
+  
+  .downloadButton {
+    display: inline-block;
+    background-color: #486284;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 15px 0;
+    text-decoration: none;
+    border-radius: 4px;
+  }
+  
+  .downloadButton:hover {
+    background-color: #36576a;
+  }
+  
+  .TestProfileHeaderImagae {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  #TestProfileInP {
+    color: #486284;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  

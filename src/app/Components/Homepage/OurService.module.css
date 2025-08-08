@@ -1,0 +1,194 @@
+.OurPromiseHomePageMainHeading {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.OurPromisesHomePage {
+    padding-top: 4rem;
+    padding-bottom: 10rem;
+}
+
+.OurPromiseHomePageMainHeading h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+}
+
+.OurPromiseHomePageMainHeading hr {
+    width: 8rem;
+    border: 1px solid #d9242a;
+    margin: 0 auto;
+}
+
+.OurFirstPromiseDivIConSIde {
+    width: 85px;
+    height: 130px;
+    border: 1px solid #d5d5d5;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 1.4rem;
+}
+
+.OurFirstPromiseDIvMain {
+    padding-inline: 1rem;
+    text-align: center;
+    display: flex;
+    position: relative;
+    width: 280px;
+    height: 250px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.OurPromisesFLex {
+    padding-left: 4rem;
+    margin-left: 0%;
+    display: flex;
+}
+
+.OurFirstPromiseDivIConSIde img {
+    width: 80px !important;
+    height: auto !important;
+}
+
+.OurFirstPromiseTextDIv {
+    margin-left: 1rem;
+    text-align: left;
+    width: 190px;
+}
+
+.OurFirstPromiseTextDIv h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 23px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.OurFirstPromiseDIvMain p {
+    font-size: .9rem;
+    color: #6f6f6f;
+    margin-top: 0;
+    line-height: 23px;
+}
+
+.flipContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.flipFront,
+.flipBack {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flipFront {
+    background-color: #fff;
+    z-index: 80;
+}
+
+.flipBack {
+    background-color: #232323;
+    color: white;
+    transform: rotateX(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+.flipBack h2 {
+    padding-top: 0;
+    padding-inline: 3rem;
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.flipBack ul {
+    padding-inline: 3rem;
+    font-size: 11px;
+    line-height: 16px;
+    list-style-type: none;
+    margin: 0;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.OurFirstPromiseDIvMain:hover .flipContainer {
+    transform: rotateX(180deg);
+}
+
+/* Fix for Next.js Image component */
+.OurFirstPromiseDivIConSIde span {
+    position: unset !important;
+}
+.SSSSSSSSSSSSSAAAAAAAAAAAAA{
+    display: flex;
+}
+
+@media (max-width: 1000px) {
+    .SSSSSSSSSSSSSAAAAAAAAAAAAA {
+        display: flex;
+    }
+
+    .OurPromisesFLex {
+        display: block;
+        padding: 0 17%;
+    }
+}
+
+@media (max-width: 768px) {
+    .SSSSSSSSSSSSSAAAAAAAAAAAAA {
+        display: flex;
+    }
+
+    .OurPromisesFLex {
+        display: block;
+        padding: 0 3%;
+    }
+}
+
+@media (max-width: 480px) {
+    .SSSSSSSSSSSSSAAAAAAAAAAAAA {
+        display: block;
+    }
+
+    .OurFirstPromiseDIvMain {
+        margin: 1rem auto;
+    }
+}
+
+/* Animation improvements */
+.flipContainer {
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Ensure images maintain aspect ratio */
+.OurFirstPromiseDivIConSIde img {
+    object-fit: contain;
+}
+
+.OurPromisesHomePage{
+    background-color: #fff;
+}
+.OurPromiseHomePageMainHeading h1{
+    color: #232323;
+}
+.OurPromiseHomePageMainHeading hr{
+    color: #d9242a;
+}
+.OurFirstPromiseTextDIv h2{
+    color: #232323;
+}

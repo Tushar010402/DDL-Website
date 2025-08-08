@@ -1,0 +1,384 @@
+/* Main container styles */
+.feedbackForm {
+    width: 100%;
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 2.5rem;
+    background: linear-gradient(to bottom right, #ffffff, #f8f9fa);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+}
+
+.feedbackForm::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(to right, #d9242a, #ff4d4d);
+}
+
+.feedbackForm h1 {
+    text-align: center;
+    font-size: 2.8rem;
+    color: #2d3748;
+    margin-bottom: 2.5rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+/* Form Layout */
+.formRow {
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.formGroup {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Form Elements */
+.formGroup label {
+    font-size: 0.95rem;
+    color: #4a5568;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea,
+.datePicker {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #2d3748;
+    background-color: #fff;
+    transition: all 0.2s ease;
+}
+
+.formGroup input:hover,
+.formGroup select:hover,
+.formGroup textarea:hover,
+.datePicker:hover {
+    border-color: #cbd5e0;
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus,
+.datePicker:focus {
+    outline: none;
+    border-color: #d9242a;
+    box-shadow: 0 0 0 3px rgba(217, 36, 42, 0.1);
+}
+
+.formGroup textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Radio Buttons */
+.radioGroup {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 0.75rem;
+}
+
+.radioLabel {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 8px 16px;
+    background: #f7fafc;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.radioLabel:hover {
+    background: #edf2f7;
+}
+
+.radioLabel input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #d9242a;
+}
+
+/* Rating Section */
+.ratingSection {
+    background: #f8fafc;
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+}
+
+.rateServicesTitle {
+    color: #d9242a;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.ratingContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.ratingRow {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.InnerRatingRow {
+    width: 50%;
+    padding-right: 1rem;
+}
+
+.ratingLabel {
+    font-size: 1rem;
+    color: #4a5568;
+    font-weight: 500;
+}
+
+/* Star Rating */
+.starRating {
+    display: flex;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.star {
+    font-size: 28px;
+    color: #cbd5e0;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    user-select: none;
+}
+
+.star:hover {
+    color: #ffd700;
+}
+
+.star.selected {
+    color: #ffd700;
+}
+
+.starsWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 40px;
+    width: 50%;
+}
+
+/* CAPTCHA Section */
+.captchaContainer {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: #f8fafc;
+    border-radius: 12px;
+    margin: 1rem 0;
+}
+
+.captchaText {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #2d3748;
+    background: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    border: 1.5px solid #e2e8f0;
+}
+
+.refreshButton {
+    background-color: #38a169;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.refreshButton:hover {
+    background-color: #2f855a;
+    transform: translateY(-1px);
+}
+
+.captchaInput {
+    padding: 12px 16px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+/* Submit Button */
+.feedbackFormSubmitButton {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.submitButton {
+    padding: 1rem 3rem;
+    background: linear-gradient(to right, #d9242a, #ff4d4d);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 200px;
+}
+
+.submitButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(217, 36, 42, 0.2);
+}
+
+/* Error Messages */
+.error {
+    color: #e53e3e;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Thank You Popup */
+.thankYouPopup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 3rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    text-align: center;
+    z-index: 1000;
+    max-width: 90%;
+    width: 400px;
+}
+
+.thankYouPopup h2 {
+    font-size: 1.8rem;
+    color: #2d3748;
+    margin-bottom: 1rem;
+}
+
+.thankYouPopup p {
+    color: #4a5568;
+    font-size: 1.1rem;
+}
+
+.blurred {
+    filter: blur(5px);
+    pointer-events: none;
+}
+
+/* DatePicker Styles */
+.DateLabelDivBLock {
+    position: relative;
+}
+
+.datePicker {
+    width: 100% !important;
+    padding: 12px 16px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #2d3748;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .feedbackForm {
+        margin: 1.5rem;
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .formRow {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .ratingRow {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .feedbackForm {
+        margin: .2rem;
+        width: 100%;
+        padding: 2rem;
+        margin-top: 2rem;
+        padding-right: 10%;
+    }
+
+    .InnerRatingRow,
+    .starsWrapper {
+        width: 100%;
+    }
+
+    .captchaContainer {
+        flex-direction: column;
+    }
+
+    .submitButton {
+        width: 100%;
+    }
+
+    .starRating {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .feedbackForm h1 {
+        font-size: 2rem;
+    }
+
+    .radioGroup {
+        gap: 0.75rem;
+    }
+
+    .radioLabel {
+        width: 100%;
+    }
+
+    .captchaText {
+        width: 100%;
+        text-align: center;
+    }
+}

@@ -1,0 +1,287 @@
+/* src/app/Components/Navbar2/Navbar2.module.css */
+
+.navbar2 {
+  box-shadow: 0 0 1px #888;
+  position: fixed;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: #fff;
+  width: 90px;
+  z-index: 1000;
+}
+
+.NavbarMainDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.navBarLogoRed {
+  width: 90px;
+  height: 90px;
+}
+
+.navBarLogoRed span,
+.nameOnTheNavBar span {
+  position: unset !important;
+}
+
+.navBarLogoRed img,
+.nameOnTheNavBar img {
+  position: relative !important;
+  height: auto !important;
+  margin-right: 2rem;
+}
+
+.nameOnTheNavBar {
+  position: relative;
+  margin-top: 25vh;
+}
+
+.nameOnTheNavBar img {
+  position: absolute;
+  top: 35.3%;
+  left: 20px;
+  width: auto !important;
+  height: auto !important;
+}
+
+.OptionsOnNavbar {
+  position: fixed;
+  bottom: 0;
+  box-shadow: -1px 0 1px #888;
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: 600;
+  transition: color 0.3s;
+  padding: 30px 32px;
+  cursor: pointer;
+  color: #333;
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo:hover {
+  color: rgb(145, 44, 44);
+}
+
+.options {
+  display: none;
+  height: 100vh;
+  flex-direction: column;
+  position: absolute;
+  bottom: 1px;
+  left: 90px;
+  background-color: #ffffff;
+  z-index: 1500;
+  box-shadow: -1px 0 1px #888;
+  width: 330px;
+}
+
+.show {
+  display: flex;
+}
+
+.navbar2:hover .options {
+  display: flex;
+}
+
+.mainSearchContainer {
+  position: relative;
+  padding: 20px;
+  margin-top: 20vh;
+  background: white;
+  border-bottom: 1px solid #eee;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 32px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 8px 35px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.2s;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: #0070f3;
+}
+
+.optionsMainDiv {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 20px;
+}
+
+.listItem {
+  padding: 0;
+  margin-bottom: 12px;
+}
+
+.link {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #0f0f0f;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 0;
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.link:hover {
+  color: #0070f3;
+}
+
+.dropdownItem {
+  position: relative;
+}
+
+.subMenu {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 16px;
+  border-left: 2px solid #eee;
+  margin-left: 4px;
+  margin-top: 8px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.subMenu.open {
+  max-height: 1000px;
+  overflow-y: auto;
+}
+
+.subMenuItem {
+  margin: 4px 0;
+}
+
+.subMenuLink {
+  display: block;
+  padding: 8px 16px;
+  color: #333;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+}
+
+.subMenuLink:hover {
+  background: #f5f5f5;
+  color: #0070f3;
+}
+
+.chevron {
+  transition: transform 0.3s ease;
+  margin-left: 8px;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+.socialIcons {
+  box-shadow: 0 -1px 0 #eee;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background: white;
+}
+
+.socialLink {
+  color: #666;
+  transition: color 0.2s;
+}
+
+.socialLink:hover {
+  color: rgb(145, 44, 44);
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* SEO Content Styles */
+.seoContent {
+  position: absolute;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.seoContent a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Custom Scrollbar */
+.optionsMainDiv::-webkit-scrollbar,
+.subMenu::-webkit-scrollbar {
+  width: 6px;
+}
+
+.optionsMainDiv::-webkit-scrollbar-track,
+.subMenu::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.optionsMainDiv::-webkit-scrollbar-thumb,
+.subMenu::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.optionsMainDiv::-webkit-scrollbar-thumb:hover,
+.subMenu::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+/* No Results Message */
+.noResults {
+  padding: 10px 16px;
+  color: #666;
+  font-style: italic;
+  text-align: center;
+}
+
+@media (max-width: 821px) {
+  .navbar2 {
+      display: none;
+  }
+}

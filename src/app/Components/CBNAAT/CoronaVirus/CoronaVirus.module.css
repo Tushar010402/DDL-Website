@@ -1,0 +1,257 @@
+/* CoronaVirus.module.css */
+.corona-main {
+    text-align: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    margin-top: 2.5rem;
+}
+
+.link {
+    color: #d9242a;
+    font-weight: 600;
+}
+
+.title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.text {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.button {
+    padding: 13px 31px;
+    border: none;
+    font-size: 13px;
+    line-height: 25px;
+    text-align: center;
+    vertical-align: middle;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: #d9242a;
+    color: white;
+}
+
+.info-section {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+.info-box {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    text-align: center;
+}
+
+.info-title {
+    margin: 10px 0;
+    color: #333;
+}
+
+.info-subtitle {
+    margin: 10px 0;
+    color: #333;
+}
+
+.image-wrapper {
+    width: 100%;
+    margin-top: 15px;
+    position: relative;
+}
+
+.image {
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Prevention section styles */
+.prevention-section {
+    margin-top: 3rem;
+    text-align: left;
+    margin-left: 4%;
+}
+
+.prevention-title {
+    color: #232323;
+    font-size: 24px;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+}
+
+.prevention-highlight {
+    color: #d9242a;
+}
+
+.prevention-list {
+    padding: 0;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    color: #6f6f6f;
+    font-weight: 500;
+    list-style-position: outside;
+    line-height: 24px;
+    margin-left: 2rem;
+}
+
+.prevention-item {
+    margin: 10px 0;
+}
+
+.prevention-subtitle {
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    text-align: left;
+}
+
+/* Containment section styles */
+.containment-section {
+    margin-top: 3rem;
+    text-align: left;
+    margin-left: 8%;
+}
+
+.containment-title {
+    color: #000;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.containment-text {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    text-align: left;
+}
+
+/* Lockdown section styles */
+.lockdown-section {
+    margin-top: 3rem;
+    text-align: left;
+    margin-left: 8%;
+}
+
+.lockdown-title {
+    color: #000;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.lockdown-text {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    text-align: left;
+}
+
+.lockdown-list {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+    font-size: 1rem;
+}
+
+.lockdown-item {
+    margin: 0.5rem 0;
+}
+
+.lockdown-subtitle {
+    font-size: 1.2rem;
+    margin-top: 2rem;
+}
+
+/* Table styles */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+}
+
+.tableCell {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.tableHeader {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.tableRow {
+    background-color: #f9f9f9;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .info-section {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .info-box {
+        width: 100%;
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 768px) {
+    .info-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .button-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .button {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .prevention-section,
+    .containment-section,
+    .lockdown-section {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
+
+/* Helper classes */
+.textCenter {
+    text-align: center;
+}
+
+.mt3 {
+    margin-top: 3rem;
+}
+
+.mb3 {
+    margin-bottom: 3rem;
+}

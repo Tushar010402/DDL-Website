@@ -1,0 +1,147 @@
+.blogDetailContainer {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 8px;
+    color: #616161;
+    font-size: 14px;
+    line-height: 25px;
+    font-family: 'Roboto', sans-serif;
+    padding-top: 4rem;
+}
+
+.imageWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.blogDetailImage {
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.blogContent h4,
+.blogHeading4 {
+    font-size: 24px;
+    color: #d9242a;
+    text-shadow: -3px 2px 2px #ccc;
+    text-transform: capitalize !important;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 12px;
+}
+
+.blogContent h5,
+.blogHeading5 {
+    font-size: 16px;
+    color: #232323;
+    font-weight: 600;
+    margin-top: 20px;
+    font-family: 'Roboto', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 30px;
+    margin-bottom: 0;
+}
+
+.blogContent p,
+.blogContent li,
+.blogParagraph,
+.blogListItem {
+    font-size: 14px;
+    color: #616161;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.blogList {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.blogListItem {
+    margin-left: 20px;
+}
+
+/* Utility Classes */
+.textCenter {
+    text-align: center;
+}
+
+.fontRed {
+    color: red;
+}
+
+.textShadow {
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.marginThreeTop {
+    margin-top: 30px;
+}
+
+.textExtraDarkGray {
+    color: #333;
+}
+
+.fontWeight600 {
+    font-weight: 600;
+}
+
+.textCapitalize {
+    text-transform: capitalize;
+}
+
+/* Loading and Error States */
+.loadingContainer,
+.errorContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.loadingMessage,
+.errorMessage {
+    font-size: 16px;
+    color: #616161;
+}
+
+.errorMessage {
+    color: #d9242a;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .blogDetailContainer {
+        padding: 15px;
+    }
+
+    .blogDetailImage {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .blogDetailContainer {
+        padding: 10px;
+        padding-top: 4rem;
+    }
+
+    .blogDetailImage {
+        width: 100%;
+    }
+
+    .blogContent h4,
+    .blogHeading4 {
+        font-size: 20px;
+    }
+
+    .blogContent h5,
+    .blogHeading5 {
+        font-size: 14px;
+    }
+}

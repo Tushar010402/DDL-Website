@@ -1,0 +1,151 @@
+/* src/app/Components/ClinicalPathology/ClinicalPathology.module.css */
+
+.ClinicalPathologyMainPagesMainBanner {
+  position: relative;
+  margin-left: 0%;
+  width: 99%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.ClinicalPathologyMainPagesBackgroundImage {
+  width: 100%;
+  height: 150%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* Add the overlay using ::before */
+.ClinicalPathologyMainPagesMainBanner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Black overlay with 0.4 opacity */
+  z-index: 0; /* Ensure it's below the text content */
+}
+
+.ClinicalPathologyMainPagesContentContainer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+.ClinicalPathologyMainPagesLeftContent h2 {
+  font-size: 4.5rem;
+  margin: 0;
+}
+
+.ClinicalPathologyMainPagesLeftContent p {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+/* Table Section */
+.ClinicalPathologyMainPagesTableContainer {
+  margin: 50px 6%;
+  overflow-x: auto;
+  margin-left: 2%;
+}
+
+.ClinicalPathologyMainPagesTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  text-align: left;
+}
+
+.ClinicalPathologyMainPagesTable th,
+.ClinicalPathologyMainPagesTable td {
+  padding: 12px 20px;
+  border: 1px solid #ddd;
+  font-family: 'Roboto';
+}
+
+.ClinicalPathologyMainPagesTable th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.ClinicalPathologyMainPagesTable tr {
+  background-color: #fff;
+}
+
+.ClinicalPathologyMainPagesTable tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.ClinicalPathologyMainPagesTable td {
+  font-size: 1rem;
+}
+
+.ClinicalPathologyMainPagesTableContainer h3 {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  -webkit-transition-timing-function: ease-in-out;
+  -webkit-transition-duration: 0.2s;
+  color: #232323;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .ClinicalPathologyMainPagesLeftContent h2 {
+    font-size: 3rem;
+  }
+
+  .ClinicalPathologyMainPagesLeftContent p {
+    font-size: 1.2rem;
+  }
+
+  .ClinicalPathologyMainPagesTable th,
+  .ClinicalPathologyMainPagesTable td {
+    font-size: 0.9rem;
+    padding: 8px 10px;
+  }
+
+  .ClinicalPathologyMainPagesMainBanner {
+    margin-left: 0px;
+    width: 100%;
+    height: 50vh;
+  }
+
+  .ClinicalPathologyMainPagesTableContainer {
+    margin-left: 3%;
+    margin-right: 3%;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ClinicalPathologyMainPagesLeftContent h2 {
+    font-size: 2.5rem;
+  }
+
+  .ClinicalPathologyMainPagesLeftContent p {
+    font-size: 1rem;
+  }
+
+  .ClinicalPathologyMainPagesTable th,
+  .ClinicalPathologyMainPagesTable td {
+    font-size: 0.8rem;
+    padding: 6px 8px;
+  }
+}
+
+@media (max-width: 393px) {
+  .ClinicalPathologyMainPagesTable th,
+  .ClinicalPathologyMainPagesTable td {
+    font-size: 0.6rem;
+  }
+}

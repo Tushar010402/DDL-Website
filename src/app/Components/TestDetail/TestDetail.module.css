@@ -1,0 +1,182 @@
+.testDetailContainer {
+    max-width: 1200px;
+    margin: 100px auto 40px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.thumbnailContainer {
+    margin-bottom: 24px;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+
+.thumbnailImage {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.overlayHeading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 15px 30px;
+    margin: 0;
+    font-size: 2.5rem;
+    text-align: center;
+    border-radius: 4px;
+    z-index: 2;
+    width: auto;
+    min-width: 300px;
+}
+
+.testContent {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #444;
+}
+
+.imageWrapper {
+    margin: 24px 0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.testDetailImage {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.testHeading4 {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 24px 0 16px;
+}
+
+.testHeading5 {
+    font-size: 1.25rem;
+    color: #444;
+    margin: 20px 0 12px;
+}
+
+.testParagraph {
+    margin: 16px 0;
+}
+
+.testList {
+    margin: 16px 0;
+    padding-left: 20px;
+}
+
+.testListItem {
+    margin: 8px 0;
+}
+
+.bookingSection {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+
+.bookButton {
+    background-color: #e41f1f;
+    color: white;
+    padding: 12px 32px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.bookButton:hover {
+    background-color: #c41818;
+}
+
+.errorContainer {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.errorMessage {
+    color: #e41f1f;
+    font-size: 1.2rem;
+}
+
+.loadingContainer {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.loadingSpinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #e41f1f;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loadingMessage {
+    color: #666;
+    font-size: 1.2rem;
+}
+
+/* SEO content styling */
+.seoContent {
+    display: none;
+}
+
+/* Add a subtle overlay gradient for better text readability */
+.thumbnailContainer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.3) 100%);
+    z-index: 1;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .testDetailContainer {
+        margin: 80px auto 20px;
+        padding: 16px;
+    }
+
+    .overlayHeading {
+        font-size: 2rem;
+        padding: 12px 24px;
+        min-width: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .overlayHeading {
+        font-size: 1.5rem;
+        padding: 10px 20px;
+        min-width: 200px;
+    }
+
+    .testDetailContainer {
+        margin: 60px auto 20px;
+        padding: 12px;
+    }
+}

@@ -1,0 +1,310 @@
+.testProfiles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    margin-left: 0%;
+    padding-top: 3rem;
+    font-family: 'Montserrat', sans-serif;
+    background: lightgrey;
+    padding-top: 5rem;
+}
+.testProfiles ul{
+    list-style: disc;
+}
+
+.profilesRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    max-width: calc(3 * 480px + 2 * 20px);
+}
+.PriceInTestProfiles{
+    margin-top: 1rem;
+    font-weight: 700;
+}
+
+
+.profileCard {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    width: 370px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+
+.TestProfileHeaderImagae {
+    margin-left: 0%;
+    background-color: #c1c1c1;
+    text-align: center;
+}
+
+.TestProfileHeaderImagae img {
+    width: 1000px;
+    width: 96%;
+}
+
+.profileCard h2 {
+    color: #4d6789;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: .3rem !important;
+    margin-top: 0px;
+    text-align: justify;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 24px;
+}
+
+.profileCard h3 {
+    -webkit-font-smoothing: antialiased;
+    font-size: 14px;
+    color: #6f6f6f;
+    margin-top: .7rem;
+    margin-bottom: .4rem;
+}
+
+.profileCard ul {
+    margin-top: .2rem;
+    padding-left: 1.3rem;
+}
+
+.profileCard p {
+    font-size: 13px !important;
+    margin: 0 !important;
+    font-family: 'Montserrat', sans-serif;
+    color: #6f6f6f;
+    font-weight: 400;
+    text-align: justify;
+    line-height: 24px;
+}
+.testProfiles h6{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.testProfiles h5{
+font-size: 2rem;
+font-weight: 600;
+color: #000;
+}
+.profileCard li {
+    font-size: 13px;
+    color: #6f6f6f;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.noteSection {
+    margin-top: 10px;
+}
+
+.noteTitle {
+    font-weight: bold;
+}
+
+.price {
+    font-size: 1.2em;
+    margin-top: 1rem;
+    font-weight: 700;
+}
+
+.bookButton {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1em;
+    transition: background-color 0.3s;
+    margin-top: auto;
+    width: 100%;
+    align-self: center;
+    font-size: 13px;
+    font-weight: 600 !important;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.bookButton:hover {
+    background-color: #cc0000;
+}
+
+.ProfilesPriceValue h3 {
+    color: #198754 !important;
+    margin-top: -0.5rem !important;
+}
+
+.healthCheckupSection {
+    padding: 40px;
+    text-align: center;
+    background-color: #ffffff;
+    margin-left: 6%;
+    padding-right: 4rem;
+}
+
+.healthCheckupSection h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #000;
+}
+
+.downloadButton {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff3e3e;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-bottom: 40px;
+}
+
+.description {
+    font-size: 1rem;
+    margin-bottom: 40px;
+    color: #666;
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.featureItem {
+    text-align: center;
+    width: 250px;
+    display: flex;
+}
+
+.featureImage {
+    width: 60px;
+    margin-bottom: 10px;
+}
+
+#TestProfileInP {
+    text-align: left;
+    margin-left: 15px;
+    color: #000;
+    padding-top: 1rem;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .healthCheckupSection h2 {
+        font-size: 2rem;
+    }
+
+    .TestProfileHeaderImagae img {
+        width: 100%;
+        height: 45vh;
+    }
+
+    .downloadButton {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    .features {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .featureItem {
+        width: auto;
+    }
+}
+
+@media(max-width:480px) {
+    .TestProfileHeaderImagae {
+        margin-left: 0px;
+    }
+
+    .TestProfileHeaderImagae img {
+        width: 100%;
+        height: 30vh!important;
+        margin-top: 3rem;
+    }
+
+    .healthCheckupSection {
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    .features {
+        padding: 0 10px;
+    }
+
+    .testProfiles {
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    .profilesRow {
+        gap: 15px;
+    }
+
+    .profileCard {
+        width: 100%;
+        margin: 0 10px;
+    }
+
+    .bookButton {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+
+    .featureItem {
+        width: 100%;
+        justify-content: center;
+    }
+
+    #TestProfileInP {
+        font-size: 14px;
+    }
+}
+
+/* Additional responsive fixes */
+@media (max-width: 1024px) {
+    .profilesRow {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    .healthCheckupSection {
+        padding: 30px;
+    }
+}
+
+/* Fix for image display in Next.js */
+.TestProfileHeaderImagae span {
+    position: unset !important;
+}
+
+.TestProfileHeaderImagae img {
+    position: relative !important;
+    height: unset !important;
+    object-fit: contain;
+}
+
+.featureImage {
+    position: relative !important;
+    height: unset !important;
+}
+
+

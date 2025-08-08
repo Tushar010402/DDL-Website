@@ -1,0 +1,252 @@
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.heroSection {
+  text-align: center;
+  margin-bottom: 4rem;
+  padding: 3rem 0;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+}
+
+.title {
+  font-size: 50px;
+  font-weight: 600;
+  color: #232323;
+  margin-bottom: 1rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #6f6f6f;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.closedNotice {
+  font-size: 16px;
+  color: #d9242a;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.locationsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.locationCard {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.locationCard:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.iconContainer {
+  margin-right: 1rem;
+}
+
+.locationIcon {
+  color: #d9242a;
+  width: 2.5em;
+  height: 2.5em;
+}
+
+.locationTitle {
+  font-size: 24px;
+  font-weight: 700;
+  color: #232323;
+  margin: 0;
+}
+
+.cardContent {
+  padding: 0;
+}
+
+.address {
+  font-size: 15px;
+  color: #6f6f6f;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.phoneNumbers {
+  margin-bottom: 1rem;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.phoneLink {
+  color: #d9242a;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.phoneLink:hover {
+  color: #a01e23;
+  text-decoration: underline;
+}
+
+.timing {
+  font-size: 14px;
+  color: #6f6f6f;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.cardActions {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.mapButton {
+  padding: 0.75rem 2rem;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background-color: #d9242a;
+  color: #ffffff;
+  border: 2px solid #d9242a;
+  display: inline-block;
+}
+
+.mapButton:hover {
+  background-color: #ffffff;
+  color: #d9242a;
+}
+
+.ctaSection {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: #1c1c1c;
+  color: #ffffff;
+  border-radius: 10px;
+  margin-top: 4rem;
+}
+
+.ctaSection h2 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.ctaSection p {
+  font-size: 18px;
+  margin-bottom: 2rem;
+  color: #cccccc;
+}
+
+.ctaButton {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: #d9242a;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  border: 2px solid #d9242a;
+}
+
+.ctaButton:hover {
+  background-color: #ffffff;
+  color: #d9242a;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .locationsGrid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .title {
+    font-size: 36px;
+  }
+  
+  .subtitle {
+    font-size: 16px;
+  }
+  
+  .locationsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .locationCard {
+    padding: 1.5rem;
+  }
+  
+  .cardActions {
+    flex-direction: column;
+  }
+  
+  .ctaSection {
+    padding: 3rem 1.5rem;
+  }
+  
+  .ctaSection h2 {
+    font-size: 24px;
+  }
+  
+  .ctaSection p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 28px;
+  }
+  
+  .locationTitle {
+    font-size: 20px;
+  }
+  
+  .address,
+  .phoneNumbers {
+    font-size: 14px;
+  }
+  
+  .timing {
+    font-size: 13px;
+  }
+}

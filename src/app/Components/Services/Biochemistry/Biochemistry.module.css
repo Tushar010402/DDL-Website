@@ -1,0 +1,151 @@
+/* src/app/Components/Biochemistry/Biochemistry.module.css */
+
+.BiochemistryMainPagesMainBanner {
+  position: relative;
+  margin-left: 0%;
+  width: 99%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.BiochemistryMainPagesBackgroundImage {
+  width: 100%;
+  height: 150%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* Add the overlay using ::before */
+.BiochemistryMainPagesMainBanner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Black overlay with 0.4 opacity */
+  z-index: 0; /* Ensure it's below the text content */
+}
+
+.BiochemistryMainPagesContentContainer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+.BiochemistryMainPagesLeftContent h2 {
+  font-size: 4.5rem;
+  margin: 0;
+}
+
+.BiochemistryMainPagesLeftContent p {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+/* Table Section */
+.BiochemistryMainPagesTableContainer {
+  margin: 50px 2%;
+  overflow-x: auto;
+  margin-left: 2%;
+}
+
+.BiochemistryMainPagesTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  text-align: left;
+}
+
+.BiochemistryMainPagesTable th,
+.BiochemistryMainPagesTable td {
+  padding: 12px 20px;
+  border: 1px solid #ddd;
+  font-family: 'Roboto';
+}
+
+.BiochemistryMainPagesTable th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.BiochemistryMainPagesTable tr {
+  background-color: #fff;
+}
+
+.BiochemistryMainPagesTable tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.BiochemistryMainPagesTable td {
+  font-size: 1rem;
+}
+
+.BiochemistryMainPagesTableContainer h3 {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  -webkit-transition-timing-function: ease-in-out;
+  -webkit-transition-duration: 0.2s;
+  color: #232323;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .BiochemistryMainPagesLeftContent h2 {
+    font-size: 3rem;
+  }
+
+  .BiochemistryMainPagesLeftContent p {
+    font-size: 1.2rem;
+  }
+
+  .BiochemistryMainPagesTable th,
+  .BiochemistryMainPagesTable td {
+    font-size: 0.9rem;
+    padding: 8px 10px;
+  }
+
+  .BiochemistryMainPagesMainBanner {
+    margin-left: 0px;
+    width: 100%;
+    height: 50vh;
+  }
+
+  .BiochemistryMainPagesTableContainer {
+    margin-left: 3%;
+    margin-right: 3%;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .BiochemistryMainPagesLeftContent h2 {
+    font-size: 2.5rem;
+  }
+
+  .BiochemistryMainPagesLeftContent p {
+    font-size: 1rem;
+  }
+
+  .BiochemistryMainPagesTable th,
+  .BiochemistryMainPagesTable td {
+    font-size: 0.8rem;
+    padding: 6px 8px;
+  }
+}
+
+@media (max-width: 393px) {
+  .BiochemistryMainPagesTable th,
+  .BiochemistryMainPagesTable td {
+    font-size: 0.6rem;
+  }
+}
