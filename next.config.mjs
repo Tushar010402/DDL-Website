@@ -19,6 +19,10 @@ const nextConfig = {
         imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
         formats: ['image/webp'],
         minimumCacheTTL: 60,
+        // Performance optimizations
+        dangerouslyAllowSVG: true,
+        contentDispositionType: 'attachment',
+        contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     },
     
     async redirects() {
@@ -66,6 +70,7 @@ const nextConfig = {
             {source: '/SwineFlue', destination: '/Swine-Flu-H1n1-Test.aspx', permanent:true},
             {source: '/H3N2Tests', destination: '/H3N2-Tests', permanent:true},
 	    {source: '/DiagnosticsInGurgaon', destination: '/health-checkup-packages/diagnostic-centre-and-pathology-lab-gurgaon.html', permanent:true},
+	    {source: '/health-checkup-packages/helicobacter-pylorit-test.html', destination: '/health-checkup-packages/helicobacter-pylori-test.html', permanent:true},
 
 
 

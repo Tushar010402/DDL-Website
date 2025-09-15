@@ -5,8 +5,10 @@ import { Suspense, lazy } from 'react';
 import Script from 'next/script';
 import './globals.css';
 import LoaderWrapper from './Components/loader/loader-wrapper';
+import WhatsAppFloatingButton from './Components/Whatsapp-Button/whatsapp';
 
 // Lazy load components
+
 const DynamicNavbar = lazy(() => import('./Components/DynamicNavbar/DynamicNavbar'));
 const RightSideButton = lazy(() => import('./Components/RightSideButton/RightSideButton'));
 const Footer = lazy(() => import('./Components/Footer/Footer'));
@@ -52,11 +54,13 @@ export default function RootLayout({ children }) {
             
             <RightSideButton />
             <ScrollToTop />
-
+           
             <main className="pt-[53px] pl-[90px] min-h-screen relative" id="MainDivForMobileViews">
              <LoaderWrapper>{children}</LoaderWrapper> 
             </main>
-
+            <WhatsAppFloatingButton />
+            
+            {/* Lazy loaded components */}
             <Footer />
           </div>
       

@@ -160,7 +160,7 @@ const H3N2 = () => {
         If <span class="italic">Helicobacter pylori</span> is present, it breaks down the urea and releases carbon dioxide, which is then measured in the patient's breath sample.
       </p>
       <p class="mb-4">
-        The entire procedure takes approximately <strong>15–20 minutes</strong>.
+        The entire sample collection process takes approximately <strong>15–20 minutes</strong>.
       </p>
       <p class="mb-4">
         No blood tests, no discomfort—just a simple drink and breath sample. It's like doing a health check with a sip and a breath.
@@ -173,7 +173,7 @@ const H3N2 = () => {
           (Always consult your doctor before stopping any medications.)
         </li>
         <li class="mb-2">
-          <strong>Fast for at least 6 hours before the test.</strong>
+          <strong>Fast for at least 3 hours before the test.</strong>
         </li>
       </ul>
       <p class="mb-4">

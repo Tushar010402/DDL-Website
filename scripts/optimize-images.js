@@ -2,121 +2,148 @@ const sharp = require('sharp');
 const fs = require('fs').promises;
 const path = require('path');
 
-const INPUT_DIR = path.join(__dirname, '..', 'public', 'PhotosAndLogos');
-const OUTPUT_DIR = path.join(__dirname, '..', 'public', 'PhotosAndLogos');
-
-// Quality settings for different image types
 const QUALITY_SETTINGS = {
-  webp: 85,
-  jpeg: 85,
-  png: 90
+  webp: 80,
+  jpeg: 80,
+  png: { compressionLevel: 9 }
 };
 
-// Maximum dimensions
-const MAX_WIDTH = 2048;
-const MAX_HEIGHT = 2048;
+const MAX_WIDTH = 1920;
+const MAX_HEIGHT = 1920;
 
 async function optimizeImage(inputPath, outputPath) {
   try {
     const metadata = await sharp(inputPath).metadata();
     const { width, height, format } = metadata;
     
-    // Calculate new dimensions maintaining aspect ratio
-    let newWidth = width;
-    let newHeight = height;
+    console.log(`Processing: ${path.basename(inputPath)}`);
+    console.log(`  Original: ${width}x${height}, Format: ${format}`);
     
+    let pipeline = sharp(inputPath);
+    
+    // Resize if image is too large
     if (width > MAX_WIDTH || height > MAX_HEIGHT) {
-      const widthRatio = MAX_WIDTH / width;
-      const heightRatio = MAX_HEIGHT / height;
-      const ratio = Math.min(widthRatio, heightRatio);
-      
-      newWidth = Math.round(width * ratio);
-      newHeight = Math.round(height * ratio);
+      pipeline = pipeline.resize(MAX_WIDTH, MAX_HEIGHT, {
+        fit: 'inside',
+        withoutEnlargement: true
+      });
     }
     
-    // Convert to WebP for better compression (except GIFs)
-    if (format !== 'gif') {
-      const webpPath = outputPath.replace(/\.(jpg|jpeg|png)$/i, '.webp');
+    // Convert and optimize based on format
+    if (format === 'jpeg' || format === 'jpg') {
+      pipeline = pipeline.jpeg({ 
+        quality: QUALITY_SETTINGS.jpeg,
+        progressive: true,
+        mozjpeg: true
+      });
+    } else if (format === 'png') {
+      pipeline = pipeline.png(QUALITY_SETTINGS.png);
+    } else if (format === 'webp') {
+      pipeline = pipeline.webp({ 
+        quality: QUALITY_SETTINGS.webp,
+        effort: 6
+      });
+    }
+    
+    await pipeline.toFile(outputPath);
+    
+    const originalStats = await fs.stat(inputPath);
+    const optimizedStats = await fs.stat(outputPath);
+    const reduction = ((1 - optimizedStats.size / originalStats.size) * 100).toFixed(2);
+    
+    console.log(`  Optimized: ${(optimizedStats.size / 1024 / 1024).toFixed(2)}MB (${reduction}% reduction)`);
+    
+    return {
+      original: originalStats.size,
+      optimized: optimizedStats.size,
+      reduction: parseFloat(reduction)
+    };
+  } catch (error) {
+    console.error(`Error optimizing ${inputPath}:`, error);
+    throw error;
+  }
+}
+
+async function optimizeAllImages() {
+  const publicDir = path.join(__dirname, '..', 'public', 'PhotosAndLogos');
+  
+  // List of images to optimize (prioritizing largest ones)
+  const imagesToOptimize = [
+    'bannerFormobile.webp',
+    'Recognization1.webp',
+    'DDL-wallpaper.webp',
+    'DDL-FRONT.webp',
+    'DDL-wallpaper.jpg',
+    'DDL-FRONT.jpg',
+    'Research8.webp',
+    'Research7.webp',
+    'Recognization6.webp',
+    'Research10.webp',
+    'MainBanner.JPG',
+    'PB2.jpg',
+    'MainBanner.webp',
+    'PB2.webp',
+    'Research6.webp',
+    'Research4.webp',
+    'VirtualTOur21.webp',
+    'gglab7.jpg',
+    'gglab7.webp',
+    'hpylori.jpeg'
+  ];
+  
+  // Create backup directory
+  const backupDir = path.join(publicDir, 'original-backup');
+  try {
+    await fs.mkdir(backupDir, { recursive: true });
+  } catch (error) {
+    console.log('Backup directory already exists or error creating it');
+  }
+  
+  let totalOriginal = 0;
+  let totalOptimized = 0;
+  
+  for (const image of imagesToOptimize) {
+    const inputPath = path.join(publicDir, image);
+    const backupPath = path.join(backupDir, image);
+    const tempPath = path.join(publicDir, `temp_${image}`);
+    
+    try {
+      // Check if file exists
+      await fs.access(inputPath);
       
-      await sharp(inputPath)
-        .resize(newWidth, newHeight, {
-          fit: 'inside',
-          withoutEnlargement: true
-        })
-        .webp({ quality: QUALITY_SETTINGS.webp })
-        .toFile(webpPath);
-        
-      const originalSize = (await fs.stat(inputPath)).size;
-      const optimizedSize = (await fs.stat(webpPath)).size;
-      const savings = ((originalSize - optimizedSize) / originalSize * 100).toFixed(2);
-      
-      console.log(`✓ ${path.basename(inputPath)} → ${path.basename(webpPath)} (${savings}% smaller)`);
-      
-      // Also create an optimized version in original format
-      if (format === 'jpeg' || format === 'jpg') {
-        await sharp(inputPath)
-          .resize(newWidth, newHeight, {
-            fit: 'inside',
-            withoutEnlargement: true
-          })
-          .jpeg({ quality: QUALITY_SETTINGS.jpeg, progressive: true })
-          .toFile(outputPath);
-      } else if (format === 'png') {
-        await sharp(inputPath)
-          .resize(newWidth, newHeight, {
-            fit: 'inside',
-            withoutEnlargement: true
-          })
-          .png({ quality: QUALITY_SETTINGS.png, compressionLevel: 9 })
-          .toFile(outputPath);
+      // Skip GIF files as Sharp doesn't handle animated GIFs well
+      if (image.endsWith('.gif')) {
+        console.log(`Skipping GIF file: ${image}`);
+        continue;
       }
-    }
-    
-  } catch (error) {
-    console.error(`✗ Error processing ${inputPath}:`, error.message);
-  }
-}
-
-async function processDirectory(dir) {
-  try {
-    const files = await fs.readdir(dir);
-    const imageFiles = files.filter(file => 
-      /\.(jpg|jpeg|png|webp)$/i.test(file) && !file.includes('-optimized')
-    );
-    
-    console.log(`Found ${imageFiles.length} images to optimize in ${dir}`);
-    
-    for (const file of imageFiles) {
-      const inputPath = path.join(dir, file);
-      const outputPath = path.join(dir, file.replace(/\.(jpg|jpeg|png)$/i, '-optimized.$1'));
       
-      await optimizeImage(inputPath, outputPath);
+      // Create backup
+      await fs.copyFile(inputPath, backupPath);
+      
+      // Optimize to temp file
+      const result = await optimizeImage(inputPath, tempPath);
+      
+      // Replace original with optimized version
+      await fs.rename(tempPath, inputPath);
+      
+      totalOriginal += result.original;
+      totalOptimized += result.optimized;
+      
+    } catch (error) {
+      console.error(`Failed to process ${image}:`, error.message);
+      // Clean up temp file if it exists
+      try {
+        await fs.unlink(tempPath);
+      } catch {}
     }
-    
-    console.log('\nOptimization complete!');
-    console.log('\nNext steps:');
-    console.log('1. Review the optimized images');
-    console.log('2. Replace original images with optimized versions');
-    console.log('3. Update your code to use .webp images where possible');
-    
-  } catch (error) {
-    console.error('Error:', error);
   }
+  
+  console.log('\n=== Optimization Complete ===');
+  console.log(`Total Original Size: ${(totalOriginal / 1024 / 1024).toFixed(2)}MB`);
+  console.log(`Total Optimized Size: ${(totalOptimized / 1024 / 1024).toFixed(2)}MB`);
+  console.log(`Total Reduction: ${((1 - totalOptimized / totalOriginal) * 100).toFixed(2)}%`);
+  console.log(`\nOriginal files backed up in: ${backupDir}`);
 }
 
-// Create scripts directory if it doesn't exist
-async function ensureScriptsDir() {
-  const scriptsDir = path.dirname(__filename);
-  try {
-    await fs.access(scriptsDir);
-  } catch {
-    await fs.mkdir(scriptsDir, { recursive: true });
-  }
-}
-
-async function main() {
-  await ensureScriptsDir();
-  await processDirectory(INPUT_DIR);
-}
-
-main();
+// Run the optimization
+optimizeAllImages().catch(console.error);

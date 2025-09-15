@@ -36,7 +36,7 @@ const customStyles = {
 const stateOptions = [
   { value: 'Haryana', label: 'Haryana' },
   { value: 'Uttar Pradesh', label: 'Uttar Pradesh' },
-  { value: 'Delhi [National Capital Territory (NCT)]', label: 'Delhi [National Capital Territory (NCT)]' },
+  { value: 'Delhi', label: 'Delhi' },
 ];
 
 // Custom Input Component for DatePicker
