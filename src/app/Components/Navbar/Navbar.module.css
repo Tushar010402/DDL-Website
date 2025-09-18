@@ -131,6 +131,7 @@
     margin-inline: 1.6rem;
     fill: currentColor;
     cursor: pointer;
+    color: #333;
   }
   
   /* Add hover effects for social icons */

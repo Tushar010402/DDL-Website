@@ -6,6 +6,7 @@ import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './Navbar.module.css';
+import { FaInstagram } from 'react-icons/fa';
 
 const Navbar = () => {
  const [isOptionsVisible, setOptionsVisible] = useState(false);
@@ -72,6 +73,7 @@ const Navbar = () => {
     { name: "Swine Flu(H1N1) Test", href: "/Swine-Flu-H1n1-Test.aspx" },
   
     // New test pages inserted here
+    { name: "Dendrite Dx – Alzheimer’s Test", href: "/dendrite-dx-alzheimers-diagnosis-delhi" },
     { name: "STD Testing", href: "/STD-Testing" },
     { name: "Blood Tests for Cardiac Health", href: "/4-Key-Blood-Tests-for-Cardiac-Health" },
     { name:"Vitamin C Blood Test", href: "/vitamin-c-blood-test-in-delhi-ncr" },
@@ -158,9 +160,8 @@ const Navbar = () => {
                      </div>
                      <div className={styles.socialIcons}>
                                                      <a href="https://www.instagram.com/drdangs/" className={styles.socialLink} aria-label="Instagram">
-                                                         <svg className={styles.icon} viewBox="0 0 24 24">
-                                                             <path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/>
-                                                         </svg>
+                                                         
+                                                         <FaInstagram className={styles.icon} />
                                                      </a>
                                                      <a href="https://x.com/drdangslab" className={styles.socialLink} aria-label="Twitter">
                                                          <svg className={styles.icon} viewBox="0 0 24 24">
