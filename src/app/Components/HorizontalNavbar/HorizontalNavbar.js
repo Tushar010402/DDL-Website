@@ -33,6 +33,7 @@ const HorizontalNavbar = () => {
       
         // -- New Test Pages --
         { name: "STD Testing", href: "/STD-Testing" },
+         { name: "Dendrite Dx – Alzheimer’s Test", href: "/dendrite-dx-alzheimers-diagnosis-delhi" },
         { name: "Blood Tests for Cardiac Health", href: "/4-Key-Blood-Tests-for-Cardiac-Health" },
         { name:"Vitamin C Blood Test", href: "/vitamin-c-blood-test-in-delhi-ncr" },
         { name: "H3N2 Virus Infection Test", href: "/H3N2" },
