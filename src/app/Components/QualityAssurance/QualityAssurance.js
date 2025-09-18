@@ -78,34 +78,7 @@ const QualityAssurance = () => {
                 </div>
 
                 {/* Section for Annual Reports */}
-                <div className={styles.qualityAssuranceLastDiv}>
-                    <h3>BMW ANNUAL REPORT</h3>
-                    <div>
-                        <a href="/BMW Annual report for website _Main Lab.pdf" target="_blank" rel="noopener noreferrer">
-                            BMW Annual Report Dr. Dangs Lab LLP Jan-2019 to Dec-2019
-                        </a>
-                    </div>
-                    <div>
-                        <a href="/BMW Annual Report for website _Gurugram2.pdf" target="_blank" rel="noopener noreferrer">
-                            BMW Annual Report Gurugram Jan-2019 to Dec-2019
-                        </a>
-                    </div>
-                    <div>
-                        <a href="/BMW annual report 2020_GGN PSC3.pdf" target="_blank" rel="noopener noreferrer">
-                            BMW Annual Report GGN PSC Jan-2020 to Dec-2020
-                        </a>
-                    </div>
-                    <div>
-                        <a href="/BMW annual report 2020_SDA Lab4.pdf" target="_blank" rel="noopener noreferrer">
-                            BMW Annual Report PB PSC Jan-2020 to Dec-2020
-                        </a>
-                    </div>
-                    <div>
-                        <a href="/BMW Annual Report SDA Lab Jan-2021 to Dec-20216.pdf" target="_blank" rel="noopener noreferrer">
-                            BMW Annual Report SDA Lab Jan-2021 to Dec-2021
-                        </a>
-                    </div>
-                </div>
+                
             </div>
         </>
     );
