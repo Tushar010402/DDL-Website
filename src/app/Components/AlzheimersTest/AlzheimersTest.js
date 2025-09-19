@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Link from "next/link";
 
 const DendriteDx = () => {
   return (
@@ -15,7 +16,7 @@ const DendriteDx = () => {
 <style jsx>{`
   /* Default (Desktop) */
   .banner {
-    background-image: url('/PhotosAndLogos/Alzheimer-Page-Banner1.webp');
+    background-image: url('/PhotosAndLogos/Alzheimer-Banner-Image.webp');
   }
 
   /* Tablet (iPad Portrait & Landscape) */
@@ -123,14 +124,15 @@ const DendriteDx = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm mb-4">
             <div>
               <p className="text-gray-600 mb-2"><strong>Cognition specific:</strong> Ferritin, Homocysteine</p>
-              <p className="text-gray-600 mb-2"><strong>Hormonal:</strong> Thyroid (TSH, Free T3, Free T4), Cortisol, PTH, Calcium/Phosphate</p>
-              <p className="text-gray-600 mb-2"><strong>Inflammatory:</strong> hs-CRP, Magnesium</p>
+              <p className="text-gray-600 mb-2"><strong>Hormonal:</strong><Link href="https://drdangslab.com/health-checkup-packages/thyroid-profile-with-FT3,-FT4-test.html" target="_blank" rel="noopener noreferrer" ><span className="text-blue-500   font-bold"   > Thyroid (TSH, Free T3, Free T4)</span></Link>, Cortisol, PTH, Calcium/Phosphate</p>
+              <p className="text-gray-600 mb-2"><strong>Inflammatory:</strong> hs-CRP, <Link href="https://drdangslab.com/health-checkup-packages/magnesium-test.html" target="_blank"rel="noopener noreferrer" ><span className="font-bold text-blue-500">Magnesium</span></Link></p>
             </div>
             <div>
-              <p className="text-gray-600 mb-2"><strong>Metabolic:</strong> HbA1c, Insulin, Lipid Profile (ApoB), Uric Acid, LFTs</p>
-              <p className="text-gray-600 mb-2"><strong>Nutritional:</strong> Vitamin B12, Folate, Vitamin D, Protein/Albumin</p>
+              <p className="text-gray-600 mb-2"><strong>Metabolic:</strong> <Link href="https://drdangslab.com/health-checkup-packages/glycosylated-haemoglobin-HBA1c.html" target="_blank" rel="noopener noreferrer" className="text-blue-500 font-bold">HbA1c</Link>, Insulin, <Link href="https://drdangslab.com/health-checkup-packages/Lipid-Profile-Test.html" target="_blank"
+            rel="noopener noreferrer"className="font-bold text-blue-500">Lipid Profile (Apo B)</Link>, Uric Acid, LFTs</p>
+              <p className="text-gray-600 mb-2"><strong>Nutritional:</strong> <Link href="https://drdangslab.com/health-checkup-packages/Vitamin-B12-Test.html" target="_blank" rel="noopener noreferrer" className="text-blue-500 font-bold">Vitamin B12</Link>, Folate, <Link href="https://drdangslab.com/health-checkup-packages/Vitamin-D-test.html"target="_blank"rel="noopener noreferrer" className="font-bold text-blue-500">Vitamin D</Link>, Protein/Albumin</p>
               <p className="text-gray-600 mb-2"><strong>Renal:</strong> Creatinine/eGFR</p>
-              <p className="text-gray-600 mb-2"><strong>General Health:</strong> CBC</p>
+              <p className="text-gray-600 mb-2"><strong>General Health:</strong> <Link href="https://drdangslab.com/health-checkup-packages/complete-blood-count-test.html" target="_blank"rel="noopener noreferrer" className="font-bold text-blue-500">CBC</Link></p>
             </div>
           </div>
           <p className="text-green-700 mt-3">These tests look at different aspects of your body that directly impact how your brain works—things like vitamin and hormone balance, blood sugar control, inflammation, and even kidney health. When any of these are off, it can show up as poor memory, low focus, mood changes, or a higher risk of long-term cognitive decline.</p>
@@ -138,10 +140,10 @@ const DendriteDx = () => {
 
         <div className="bg-purple-50 p-6 rounded-lg mb-6">
           <h4 className="text-xl font-bold text-purple-700 mb-3">Final Confirmation via PrecivityAD2™ (C2N Diagnostics) — Add-On Not Included in Standard Packages</h4>
-          <p className="text-gray-600 mb-4">The <span className="font-bold">PrecivityAD2™ test</span> is a clinically available multi-analyte blood test for Alzheimer's, performed by liquid chromatography-tandem mass spectrometry, that determines whether a patient is likely positive or negative for the presence of brain amyloid plaques — one of the neuropathological findings of Alzheimer's disease.</p>
+          <p className="text-gray-600 mb-4">The <span className="font-bold">PrecivityAD2™ test</span> is a clinically available multi-analyte C2N blood test for Alzheimer's, performed by liquid chromatography-tandem mass spectrometry, that determines whether a patient is likely positive or negative for the presence of brain amyloid plaques — one of the neuropathological findings of Alzheimer's disease.</p>
           <p className="text-gray-600 mb-4">The testing process uses highly sensitive and specialized laboratory technologies to identify and measure certain proteins that are found in blood and that are known to be associated with the presence of brain amyloid plaques. The main test result is a score, called the <span className="font-bold">Amyloid Probability Score 2 (APS2)</span> — a key metric used in cutting-edge blood tests for Alzheimer's.</p>
           <p className="italic text-gray-600 mb-4">Note: For a complete diagnostic pathway that begins with clinical evaluation and progresses through to definitive confirmation, the PrecivityAD2™ test plays an essential role in establishing the likelihood of amyloid pathology.</p>
-          <p className="text-gray-600 mb-4">At Dr. Dangs Lab, we've partnered with C2N Diagnostics, a global leader in brain health testing, to bring to India the revolutionary <span>The PrecivityAD2™ Blood Test.</span></p>
+          <p className="text-gray-600 mb-4">At Dr. Dangs Lab, we've partnered with C2N Diagnostics for Alzheimer's Test, a global leader in brain health testing, to bring to India the revolutionary <span>The PrecivityAD2™ Blood Test.</span></p>
           <p className="text-gray-600 mb-4">Offers a 360° brain & body health evaluation, helping detect both neurodegenerative and reversible causes of memory issues.</p>
           <ul className="list-disc pl-5 mt-3">
             <li className="text-gray-600 mb-2">Detects Amyloid Beta & pTau-217 proteins linked to brain plaque buildup</li>
@@ -159,15 +161,15 @@ const DendriteDx = () => {
           <li className="text-gray-600 mb-2">Supports research & trials – enables participation in disease-modifying therapies.</li>
         </ul>
 
-        <h2 className="text-gray-900 text-lg mb-2">Who Should Get Tested?</h2>
+        <h2 className="text-gray-900 font-bold text-lg mb-2">Who Should Get Tested?</h2>
         <ul className="list-disc pl-5 mb-6">
           <li className="text-gray-600 mb-2">Adults with a family history of Alzheimer's/dementia</li>
           <li className="text-gray-600 mb-2">Those with brain fog, memory lapses, or poor concentration</li>
-          <li className="text-gray-600 mb-2">Patients with lifestyle risks (diabetes, hypertension, obesity)</li>
+          <li className="text-gray-600 mb-2">Patients with lifestyle risks (<Link href="https://drdangslab.com/health-checkup-packages/blood-glucose-fasting-test.html" target="_blank" rel="noopener noreferrer" className="text-blue-500 font-bold">diabetes</Link>, hypertension, obesity)</li>
           <li className="text-gray-600 mb-2">Adults 45+ years for proactive cognitive health</li>
         </ul>
 
-        <h2 className="text-lg font-semibold text-gray-800 mb-4">Reduce Your Risk of Alzheimer's with Dr. Dangs Lab</h2>
+        <h2 className="text-lg font-bold text-gray-800 mb-4">Reduce Your Risk of Alzheimer's with Dr. Dangs Lab</h2>
         <p className="text-gray-600 mb-4">You can lower your risk of Alzheimer's by keeping your brain, body, and heart healthy:</p>
         <ul className="list-disc pl-5 mb-6">
           <li className="text-gray-600 mb-2">Regular exercise</li>
