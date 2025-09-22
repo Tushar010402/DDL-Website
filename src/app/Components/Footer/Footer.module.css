@@ -183,11 +183,13 @@
 }
 
 .locationsHeader {
-    text-decoration: none;
-    display: inline-block;
+  position: relative;   /* required for z-index to work */
+  text-decoration: none;
+  z-index: 100;        /* safely brings it to the top */
+    /* ensures text isn’t cut off */
 }
 
-.locationsHeader:hover h2 {
+.locationsHeader:hover h2 {     
     color: #d9242a;
     transition: color 0.3s ease;
 }

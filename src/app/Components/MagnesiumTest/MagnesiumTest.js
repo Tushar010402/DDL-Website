@@ -15,12 +15,12 @@ const H3N2 = () => {
                 <div className={styles.H3N2BelowMainDIv}>
                     <h2>Magnesium Test in Delhi and Gurgaon</h2>
                     
-                    <h3>What is a Magnesium Test?</h3>
+                    <h2>What is a Magnesium Test?</h2>
                     <p>
                         A magnesium test measures the level of magnesium in the blood. Magnesium is an essential
                         mineral that plays a vital role in various body functions, including:
                     </p>
-                    <ul>
+                    <ul className='list-disc pl-5'>
                         <li>Muscle and nerve function</li>
                         <li>Blood pressure regulation</li>
                         <li>DNA, protein, and energy production</li>
@@ -32,20 +32,20 @@ const H3N2 = () => {
                         affecting magnesium levels can indicate the need for this test.
                     </p>
 
-                    <h3>How is the Magnesium Test Done?</h3>
+                    <h2>How is the Magnesium Test Done?</h2>
                     <p>
                         The test requires a blood sample, which is collected from a vein, usually in the arm, using a
                         small needle. The sample is then sent to a diagnostic lab for analysis.
                     </p>
 
-                    <h3>Do You Need to Fast?</h3>
+                    <h2>Do You Need to Fast?</h2>
                     <p>
                         In most cases, fasting is not required before a magnesium test. However, it is always best to
                         follow the specific instructions provided by your doctor or the diagnostic lab.
                     </p>
 
-                    <h3>Understanding Magnesium Test Results</h3>
-                    <ul>
+                    <h2>Understanding Magnesium Test Results</h2>
+                    <ul className='list-disc pl-5'>
                         <li>If your magnesium level is within the reference range, it is considered normal.</li>
                         <li>Low magnesium levels may indicate conditions like malnutrition, gastrointestinal
                             disorders, or certain medications affecting absorption.</li>
@@ -56,11 +56,11 @@ const H3N2 = () => {
                         Your doctor may recommend additional tests if your magnesium levels are abnormal.
                     </p>
 
-                    <h3>Factors That Can Affect Magnesium Levels</h3>
+                    <h2>Factors That Can Affect Magnesium Levels</h2>
                     <p>
                         Several factors can influence magnesium levels in the body:
                     </p>
-                    <ul>
+                    <ul className='list-disc pl-5'>
                         <li>Medications (diuretics, certain antibiotics, antacids)</li>
                         <li>Medical conditions (kidney disease, diabetes, digestive disorders)</li>
                         <li>Lifestyle habits (excessive alcohol consumption, poor diet)</li>
@@ -70,7 +70,7 @@ const H3N2 = () => {
                         further medical evaluation.
                     </p>
 
-                    <h3>Home Collection Service for Magnesium Test in Delhi & Gurgaon</h3>
+                    <h2>Home Collection Service for Magnesium Test in Delhi & Gurgaon</h2>
                     <p>
                         For your convenience, Dr. Dangs Lab offers a home sample collection service in Delhi and
                         Gurgaon. You can book an appointment, and a trained phlebotomist will visit your location
@@ -78,8 +78,8 @@ const H3N2 = () => {
                         from the best pathology lab in Delhi NCR.
                     </p>
 
-                    <h3>FAQs About the Magnesium Test</h3>
-                    <ol>
+                    <h2>FAQs About the Magnesium Test</h2>
+                    <ol className='list-decimal pl-5'>
                         <li>
                             <p><strong>Why is a magnesium test needed?</strong></p>
                             <p>It helps diagnose magnesium imbalances that may affect muscle function, heart health, or
@@ -110,7 +110,7 @@ const H3N2 = () => {
                         </li>
                     </ol>
 
-                    <h3>Book Your Magnesium Test in Delhi & Gurgaon Today!</h3>
+                    <h2>Book Your Magnesium Test in Delhi & Gurgaon Today!</h2>
                     <p>
                         If you need a magnesium test, book your home collection or visit Dr. Dangs Lab for reliable
                         and accurate results. Our advanced pathology services ensure the highest quality standards

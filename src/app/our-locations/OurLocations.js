@@ -17,7 +17,7 @@ const locations = [
     address: '1/51, Ground Floor, Opposite Central Market, West Punjabi Bagh, New Delhi– 110026',
     phone: ['+91-9810678165'],
     timing: 'Timing: 8:00am to 6:00pm <br />(Monday-Saturday)',
-    mapUrl: "https://www.google.com/maps/place/Dr.+Dangs+Lab+-+Punjabi+Bagh/@28.6313393,77.0063422,17z/data=!3m1!4b1!4m6!3m5!1s0x390d03778f197c6d:0x12bdda00a1d6b4aa!8m2!3d28.6313393!4d77.0089171!16s%2Fg%2F11hy_6cvmw?entry=ttu&g_ep=EgoyMDI1MDcyOS4wIKXMDSoASAFQAw%3D%3D"
+    mapUrl: "https://share.google/7ekU3yZQ9nyaGzn8P"
   },
   {
     title: 'Vasant Kunj',

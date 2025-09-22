@@ -32,6 +32,15 @@
     display: inline-block;
 }
 
+.H3N2BelowMainDIv h3{
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    color: #333333;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
 .H3N2FirstInnerDiv a {
     background: #d9242a;
     padding: 10px 29px;
@@ -59,7 +68,7 @@
 .H3N2BelowMainDIv h2 {
     font-weight: 600;
     font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
+    font-size: 22px;
     color: #333333;
     text-align: left;
     margin-bottom: 1rem;

@@ -17,7 +17,7 @@ const H3N2 = () => {
 
                 <div className={styles.H3N2BelowMainDIv}>
              
-  <h2>Thyroid Profile with FT3, FT4, TSH in Delhi & Gurgaon</h2>
+  <h2 className='text-3xl'>Thyroid Profile with FT3, FT4, TSH in Delhi & Gurgaon</h2>
 
   <p><strong>Free Triiodothyronine (FT3):</strong> The amount of the T3 hormone in blood indicates over or underactivity of the thyroid gland. High T3 levels may indicate over-function of thyroid gland while reduced levels may be indicative of underactivity of thyroid, known as hypothyroidism.</p>
   
@@ -31,24 +31,24 @@ const H3N2 = () => {
     <li>TSH levels may be deranged in various cases of thyroiditis or inflammation of thyroid gland.</li>
   </ul>
 
-  <h3>Understanding Thyroid Profile Tests: Evaluating Thyroid Function</h3>
+  <h2>Understanding Thyroid Profile Tests: Evaluating Thyroid Function</h2>
   <p>The Thyroid Profile test is a comprehensive evaluation that assesses thyroid gland function by measuring various hormone levels in the blood. This test typically includes measurements of Thyroid Stimulating Hormone (TSH) and additional markers like Free T3 and Free T4. The thyroid gland plays a pivotal role in regulating metabolism, energy production, and various bodily functions, making the Thyroid Profile test an essential tool for assessing thyroid health.</p>
 
-  <h3>Importance of Thyroid Profile Tests:</h3>
+  <h2>Importance of Thyroid Profile Tests:</h2>
   <ul>
     <li><strong>Metabolism Regulation:</strong> Thyroid hormones govern metabolism, influencing energy levels, body temperature regulation, and calorie expenditure.</li>
     <li><strong>Heart and Muscle Function:</strong> Optimal thyroid function is crucial for maintaining a healthy heart rate, muscle strength, and overall cardiovascular well-being.</li>
     <li><strong>Mental Health and Weight Management:</strong> Proper thyroid hormone levels are essential for mental well-being, weight management, and hormonal balance.</li>
   </ul>
 
-  <h3>Reference Ranges:</h3>
+  <h2>Reference Ranges:</h2>
   <p><strong>Interpretation of Thyroid Profile Results:</strong> TSH Levels: Elevated TSH levels may indicate hypothyroidism (underactive thyroid), while low TSH levels could suggest hyperthyroidism (overactive thyroid).</p>
   <p><strong>FT3 and FT4 Levels:</strong> Deviations from the normal range could indicate hypo- or hyperthyroidism, affecting metabolism and overall health.</p>
 
-  <h3>What to Expect During a Thyroid Profile Test:</h3>
+  <h2>What to Expect During a Thyroid Profile Test:</h2>
   <p>The Thyroid Profile test involves a blood draw to measure thyroid hormone levels. It's usually performed in the morning, and fasting might be recommended for certain tests within the profile.</p>
 
-  <h3>FAQs about Thyroid Profile Test:</h3>
+  <h2>FAQs about Thyroid Profile Test:</h2>
   <p><strong>Question:</strong> Is fasting necessary before a Thyroid Profile test?<br />
     <strong>Answer:</strong> Fasting requirements vary based on the specific tests included in the profile. Your healthcare provider will provide guidance if fasting is necessary.</p>
 
@@ -79,7 +79,7 @@ const H3N2 = () => {
   <p><strong>Question:</strong> How long does it take for thyroid medication to show effects on test results?<br />
     <strong>Answer:</strong> The effects of thyroid medication can vary among individuals. Your healthcare provider will advise on when to recheck levels after starting or adjusting medication.</p>
 
-  <h3>Thyroid Disorders and Treatment Options:</h3>
+  <h2>Thyroid Disorders and Treatment Options:</h2>
   <p>Thyroid disorders encompass conditions like hypothyroidism, hyperthyroidism, Hashimoto's thyroiditis, Graves' disease, and thyroid nodules. Treatment approaches vary based on the specific disorder and may include:</p>
   <ul>
     <li><strong>Hypothyroidism Treatment:</strong> Typically involves synthetic thyroid hormone replacement (levothyroxine) to restore hormone levels.</li>
@@ -88,8 +88,8 @@ const H3N2 = () => {
     <li><strong>Thyroid Nodules:</strong> Treatment depends on the nature of the nodules, which might involve monitoring, medication, or, in some cases, surgical removal.</li>
   </ul>
 
-  <h3>Additional Questions to Ask Your Doctor:</h3>
-  <ul>
+  <h2>Additional Questions to Ask Your Doctor:</h2>
+  <ul className='list-disc pl-5'>
     <li>Risk Factors and Triggers: What factors contribute to thyroid issues, and how can they be managed or minimized?</li>
     <li>Long-term Management: What can I expect regarding managing thyroid health in the long term?</li>
     <li>Effects on Mental Health: How might thyroid disorders impact mental health and cognitive function?</li>

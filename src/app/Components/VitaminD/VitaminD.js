@@ -27,14 +27,14 @@ const H3N2 = () => {
     <p>Vitamin D, often referred to as the "sunshine vitamin," is a crucial nutrient that plays a multifaceted role in various bodily functions, including bone health, immune system regulation, and cellular processes. The Vitamin D test measures the levels of vitamin D in the blood, specifically focusing on 25-hydroxyvitamin D [25(OH)D]. This test is pivotal for assessing vitamin D sufficiency and diagnosing deficiencies or insufficiencies, offering insights into health and well-being.</p>
 
     <h3>Importance of Vitamin D Test:</h3>
-    <ul>
+    <ul className="list-disc pl-5">
         <li><strong>Bone Health:</strong> Adequate Vitamin D is crucial for calcium absorption and maintaining strong bones. Low levels may lead to weakened bones and an increased risk of fractures and bone diseases like osteoporosis.</li>
         <li><strong>Immune Function:</strong> Vitamin D plays a significant role in supporting a healthy immune system, potentially reducing the risk of infections and autoimmune diseases.</li>
         <li><strong>Overall Well-being:</strong> Beyond bone health, Vitamin D impacts various bodily functions, including muscle function, cardiovascular health, and mental well-being.</li>
     </ul>
 
     <h3>Vitamin D Deficiency:</h3>
-    <ul>
+    <ul className='list-disc pl-5'>
         <li><strong>Deficient Levels:</strong> Levels below the normal range indicate a vitamin D deficiency, leading to bone issues, fatigue, muscle weakness, and other health problems.</li>
         <li><strong>Insufficient Levels:</strong> Marginal deficiencies or levels on the lower end of normal still pose health risks and require attention.</li>
     </ul>
@@ -63,7 +63,7 @@ const H3N2 = () => {
 
     <h3>Questions to Ask Your Doctor about Vitamin D Test:</h3>
     <p>When discussing your Vitamin D test results with your doctor, consider asking:</p>
-    <ul>
+    <ul className='list-disc pl-5'>
         <li>Interpretation of Results: What do my Vitamin D test results reveal about my Vitamin D status? Are there any deficiencies or concerns identified?</li>
         <li>Optimal Range: Are my Vitamin D levels within the optimal range for my health and age group?</li>
         <li>Treatment Plan: Do my results indicate a Vitamin D deficiency or insufficiency? Should I start or alter Vitamin D supplementation based on these results?</li>

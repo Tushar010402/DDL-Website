@@ -1,38 +1,19 @@
-"use client";
 import React from "react";
 import Link from "next/link";
 
-const DendriteDx = () => {
+const DendriteDx = ({ pageTitle }) => {
   return (
     <div className="relative bg-white">
       {/* Hero Section with Background Image */}
       <div
-  className="w-full h-[600px] bg-cover mt-5 bg-center bg-no-repeat relative flex justify-center items-center text-white overflow-hidden banner"
-  role="img"
-  aria-label="Dendrite Dx – Advanced Alzheimer’s Diagnosis in Delhi NCR"
->
-</div>
-
-<style jsx>{`
-  /* Default (Desktop) */
-  .banner {
-    background-image: url('/PhotosAndLogos/Alzheimer-Banner-Image.webp');
-  }
-
-  /* Tablet (iPad Portrait & Landscape) */
-  @media (min-width: 769px) and (max-width: 1024px) {
-    .banner {
-      background-image: url('/PhotosAndLogos/Alzheimer-Tablet-Banner-Image.webp');
-    }
-  }
-
-  /* Mobile */
-  @media (max-width: 768px) {
-    .banner {
-      background-image: url('/PhotosAndLogos/Alzheimer-Page-Mobile-Banner1.webp');
-    }
-  }
-`}</style>
+        className="w-full h-[600px] mt-5 bg-center bg-no-repeat bg-cover relative flex justify-center items-center text-white overflow-hidden
+                   bg-[url('/PhotosAndLogos/Alzheimer-Banner-Image.webp')]
+                   md:max-lg:bg-[url('/PhotosAndLogos/Alzheimer-Tablet-Banner-Image.webp')]
+                   max-md:bg-[url('/PhotosAndLogos/Alzheimer-Page-Mobile-Banner1.webp')]"
+        role="img"
+        aria-label="Dendrite Dx – Advanced Alzheimer's Diagnosis in Delhi NCR"
+      >
+      </div>
 
 
 
@@ -60,7 +41,7 @@ const DendriteDx = () => {
           <li className="text-gray-600 mb-2">Dendrite Dx bridges this gap by offering a non-invasive, affordable, and scientifically validated diagnostic pathway — combining a digital cognitive assessment with advanced blood biomarkers to detect risks years earlier.</li>
         </ol>
 
-        <h2 className="text-xl font-semibold text-gray-800 mb-4">Why Choose Dendrite Dx?</h2>
+        <h2 className="text-xl font-semibold text-gray-800 mb-4">Why Choose Dendrite Dx for Alzheimer Test ?</h2>
         <ul className="list-disc pl-5 mb-6">
           <li className="text-gray-600 mb-2">15–20 minute digital brain cognitive assessment (FDA cleared, ISO 13485:2016, ISO 27001:2013 certified)</li>
           <li className="text-gray-600 mb-2">Scientifically validated, FDA-cleared biomarkers (pTau-217, Amyloid Beta 1-42 and APO E)</li>
@@ -101,7 +82,7 @@ const DendriteDx = () => {
         <h2 className="text-xl font-semibold text-gray-800 mb-4">Our Packages</h2>
         
         <div className="bg-blue-50 p-6 rounded-lg mb-6">
-          <h4 className="text-xl font-bold text-purple-700 mb-3">Basic – Dendrite Dx</h4>
+          <h4 className="text-xl font-bold text-purple-700 mb-3">Basic – Dendrite Dx for Alzheimer's Test</h4>
           <ul className="list-disc pl-5 mb-4">
             <li className="text-gray-600 mb-2"><strong>pTau-217</strong> – Highly specific Alzheimer's marker</li>
             <li className="text-gray-600 mb-2"><strong>Amyloid Beta 1-42</strong> – Linked to amyloid plaque buildup</li>
@@ -112,7 +93,7 @@ const DendriteDx = () => {
         </div>
 
         <div className="bg-green-50 p-6 rounded-lg mb-6">
-          <h4 className="text-xl font-bold text-purple-700 mb-3">Advanced – Dendrite Dx</h4>
+          <h4 className="text-xl font-bold text-purple-700 mb-3">Advanced – Dendrite Dx for Alzheimer's Test</h4>
           <ul className="list-disc pl-5 mb-4">
             <li className="text-gray-600 mb-2"><strong>pTau-217</strong> – Highly specific Alzheimer's marker</li>
             <li className="text-gray-600 mb-2"><strong>Amyloid Beta 1-42</strong> – Linked to amyloid plaque buildup</li>
@@ -183,7 +164,7 @@ const DendriteDx = () => {
         <p className="font-bold text-gray-800 mb-4">In short: what's good for your heart is good for your brain.</p>
         <p className="text-gray-600 mb-6">The FDA has approved two treatments that slow the progression of early-stage Alzheimer's by clearing amyloid plaques. Very soon, they will be launched in India.</p>
 
-        <h2 className="text-lg font-semibold text-gray-800 mb-4">Why Dr. Dangs Lab?</h2>
+        <h2 className="text-lg font-semibold text-gray-800 mb-4">Why Dr. Dangs Lab for Alzheimer Test ?</h2>
         <ul className="list-disc pl-5 mb-6">
           <li className="text-gray-600 mb-2">4 decades of diagnostic excellence in India</li>
           <li className="text-gray-600 mb-2">Available pan-India</li>
@@ -208,5 +189,14 @@ const DendriteDx = () => {
     </div>
   );
 };
+
+// ✅ Server-Side Rendering
+export async function getServerSideProps() {
+  return {
+    props: {
+      pageTitle: "Dendrite Dx – Advanced Alzheimer's Diagnosis in Delhi NCR",
+    },
+  };
+}
 
 export default DendriteDx;
