@@ -147,7 +147,7 @@ const DendriteDx = ({ pageTitle }) => {
           <li className="text-gray-600 mb-2">Adults with a family history of Alzheimer's/dementia</li>
           <li className="text-gray-600 mb-2">Those with brain fog, memory lapses, or poor concentration</li>
           <li className="text-gray-600 mb-2">Patients with lifestyle risks (<Link href="https://drdangslab.com/health-checkup-packages/blood-glucose-fasting-test.html" target="_blank" rel="noopener noreferrer" className="text-blue-500 font-bold">diabetes</Link>, hypertension, obesity)</li>
-          <li className="text-gray-600 mb-2">Adults 45+ years for proactive cognitive health</li>
+          <li className="text-gray-600 mb-2">Adults 55+ years for proactive cognitive health</li>
         </ul>
 
         <h2 className="text-lg font-bold text-gray-800 mb-4">Reduce Your Risk of Alzheimer's with Dr. Dangs Lab</h2>
