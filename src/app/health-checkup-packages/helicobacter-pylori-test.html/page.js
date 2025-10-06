@@ -5,14 +5,14 @@ export const metadata = {
   description: 'Book Helicobacter Pylori IgG Antibodies Test in Delhi and Gurgaon with NABL-accredited Dr Dangs Lab. One-stop destination for various medical tests',
   keywords: 'H pylori test, Helicobacter pylori test, H pylori IgG test, stomach infection test, H pylori test delhi, H pylori test gurgaon',
   authors: [{ name: 'Dr. Dangs Lab' }],
-  metadataBase: new URL('https://drdangslab.com'),
+  metadataBase: new URL('https://www.drdangslab.com'),
   alternates: {
     canonical: 'https://www.drdangslab.com/health-checkup-packages/helicobacter-pylorit-test.html'
   },
   openGraph: {
     title: 'Helicobacter Pylori Test in Delhi, H Pylori IgG Test in Gurgaon, Gurugram',
     description: 'Book Helicobacter Pylori IgG Antibodies Test in Delhi and Gurgaon with NABL-accredited Dr Dangs Lab. One-stop destination for various medical tests',
-    url: 'https://drdangslab.com',
+    url: 'https://www.drdangslab.com',
     siteName: 'Dr. Dangs Lab',
     images: [
       {

@@ -5,14 +5,14 @@ export const metadata = {
   description: 'Dr.Dangs Lab offers CBNAAT Test for Tuberculosis Test in Delhi & Gurgaon. Fast, Accurate and Reliable CBNAAT Testing for Tuberculosis: GeneXpert Test',
   keywords: 'CBNAAT test, tuberculosis test, TB test, GeneXpert test, CBNAAT test in delhi, CBNAAT test in gurgaon',
   authors: [{ name: 'Dr. Dangs Lab' }],
-  metadataBase: new URL('https://drdangslab.com'),
+  metadataBase: new URL('https://www.drdangslab.com'),
   alternates: {
     canonical: 'https://www.drdangslab.com/health-checkup-packages/CBNAAT.html',
   },
   openGraph: {
     title: 'CBNAAT Testing for Tuberculosis in Delhi & Gurgaon, NCR',
     description: 'Dr.Dangs Lab offers CBNAAT Test for Tuberculosis Test in Delhi & Gurgaon. Fast, Accurate and Reliable CBNAAT Testing for Tuberculosis: GeneXpert Test',
-    url: 'https://drdangslab.com',
+    url: 'https://www.drdangslab.com',
     siteName: 'Dr. Dangs Lab',
     images: [
       {

@@ -6,7 +6,7 @@ export const metadata = {
   openGraph: {
     title: 'Thyroid Profile Test (FT3, FT4, TSH) in Delhi & Gurgaon | Dr. Dangs Lab',
     description: 'Get comprehensive Thyroid Profile testing with FT3, FT4, and Ultra-sensitive TSH at Dr. Dangs Lab in Delhi & Gurgaon. Accurate results, NABL accredited lab, home sample collection available.',
-    url: 'https://drdangslab.com/',
+    url: 'https://www.drdangslab.com/',
     siteName: 'Dr. Dangs Lab',
     type: 'website',
     images: [

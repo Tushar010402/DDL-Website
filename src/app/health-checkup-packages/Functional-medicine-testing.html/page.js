@@ -5,14 +5,14 @@ export const metadata = {
   description: 'At Dr. Dangs Lab, we offer a wide range of functional medicine tests in house & also with various lab partners in Delhi and Gurgaon.',
   keywords: 'functional medicine test, functional medicine delhi, functional medicine gurgaon, dr dangs lab, medical testing gurugram',
   authors: [{ name: 'Dr. Dangs Lab' }],
-  metadataBase: new URL('https://drdangslab.com'),
+  metadataBase: new URL('https://www.drdangslab.com'),
   alternates: {
     canonical: 'https://www.drdangslab.com/health-checkup-packages/Functional-medicine-testing.html'
   },
   openGraph: {
     title: 'Functional Medicine Testing in Gurgaon, Delhi, Gurugram',
     description: 'At Dr. Dangs Lab, we offer a wide range of functional medicine tests in house & also with various lab partners in Delhi and Gurgaon.',
-    url: 'https://drdangslab.com',
+    url: 'https://www.drdangslab.com',
     siteName: 'Dr. Dangs Lab',
     images: [
       {

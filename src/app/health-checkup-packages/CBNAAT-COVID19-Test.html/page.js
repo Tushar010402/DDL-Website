@@ -5,14 +5,14 @@ export const metadata = {
   description: 'Dr.Dangs Lab offers CBNAAT COVID19 Test in Delhi & Gurgaon. CBNAAT is a diagnostic tool used to test for the presence of COVID-19.',
   keywords: 'CBNAAT test, COVID19 test, CBNAAT test in delhi, CBNAAT test in gurgaon, dr dangs lab',
   authors: [{ name: 'Dr. Dangs Lab' }],
-  metadataBase: new URL('https://drdangslab.com'),
+  metadataBase: new URL('https://www.drdangslab.com'),
   alternates: {
-    canonical: 'https://drdangslab.com/health-checkup-packages/CBNAAT-COVID19-Test.html'
+    canonical: 'https://www.drdangslab.com/health-checkup-packages/CBNAAT-COVID19-Test.html'
   },
   openGraph: {
     title: 'CBNAAT Test in Delhi, CBNAAT COVID19 Test in Delhi NCR & Gurgaon',
     description: 'Dr.Dangs Lab offers CBNAAT COVID19 Test in Delhi & Gurgaon. CBNAAT is a diagnostic tool used to test for the presence of COVID-19.',
-    url: 'https://drdangslab.com',
+    url: 'https://www.drdangslab.com',
     siteName: 'Dr. Dangs Lab',
     images: [
       {

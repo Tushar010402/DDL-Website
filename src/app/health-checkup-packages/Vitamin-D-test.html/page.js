@@ -5,14 +5,14 @@ export const metadata = {
   description: 'Dr Dangs Lab provides Vitamin D Test in Delhi & Gurgaon. Vitamin D Test measures the level of Vitamin D3 (Total 25-OH) in your blood',
   keywords: 'vitamin D test, vitamin D3 test, 25-OH vitamin D test, vitamin D level test, vitamin D test delhi, vitamin D3 test gurgaon',
   authors: [{ name: 'Dr. Dangs Lab' }],
-  metadataBase: new URL('https://drdangslab.com'),
+  metadataBase: new URL('https://www.drdangslab.com'),
   alternates: {
     canonical: 'https://www.drdangslab.com/health-checkup-packages/Vitamin-D-test.html',
   },
   openGraph: {
     title: 'Vitamin D Test in Delhi & Gurgaon | Vitamin D3 Level (25-OH) Test in Delhi NCR',
     description: 'Dr Dangs Lab provides Vitamin D Test in Delhi & Gurgaon. Vitamin D Test measures the level of Vitamin D3 (Total 25-OH) in your blood',
-    url: 'https://drdangslab.com',
+    url: 'https://www.drdangslab.com',
     siteName: 'Dr. Dangs Lab',
     images: [
       {

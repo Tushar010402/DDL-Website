@@ -6,7 +6,7 @@ export const metadata = {
   openGraph: {
     title: 'Biofire Respiratory Panel 2.1 Test in Delhi & Gurgaon',
     description: 'The BioFire Respiratory Panel is a diagnostic tool designed to quickly and accurately identify respiratory infections in patients.',
-    url: 'https://drdangslab.com/',
+    url: 'https://www.drdangslab.com/',
     siteName: 'Dr. Dangs Lab',
     images: [{
       url: '/DrdangsRedIcon.png',

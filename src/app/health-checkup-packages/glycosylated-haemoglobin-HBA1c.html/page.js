@@ -5,14 +5,14 @@ export const metadata = {
   description: 'HbA1c Glycated Haemoglobin Test is often used as a diagnostic test for diabetes. Dr Dangs Lab provides HbA1c Test in Delhi & Gurgaon. Book your test today at Dr. Dangs Lab.',
   keywords: 'HbA1c test, glycated hemoglobin, diabetes test, HbA1c test delhi, HbA1c test gurgaon, glycosylated hemoglobin test',
   authors: [{ name: 'Dr. Dangs Lab' }],
-  metadataBase: new URL('https://drdangslab.com'),
+  metadataBase: new URL('https://www.drdangslab.com'),
   alternates: {
     canonical: 'https://www.drdangslab.com/health-checkup-packages/glycosylated-haemoglobin-HBA1c.html'
   },
   openGraph: {
     title: 'HbA1c Test in Delhi NCR & Gurgaon | Glycosylated Haemoglobin in Delhi NCR',
     description: 'HbA1c Glycated Haemoglobin Test is often used as a diagnostic test for diabetes. Dr Dangs Lab provides HbA1c Test in Delhi & Gurgaon. Book your test today at Dr. Dangs Lab.',
-    url: 'https://drdangslab.com',
+    url: 'https://www.drdangslab.com',
     siteName: 'Dr. Dangs Lab',
     images: [
       {

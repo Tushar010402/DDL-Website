@@ -5,14 +5,14 @@ export const metadata = {
   description: 'Dr. Dangs Lab - Best Diagnostic Centres & Pathology Labs near you in Gurgaon. Get facility of Home Sample Collection, Download Test Reports Online',
   keywords: 'diagnostic centre gurgaon, pathology lab gurugram, diagnostic lab near me, best diagnostic centre, dr dangs lab',
   authors: [{ name: 'Dr. Dangs Lab' }],
-  metadataBase: new URL('https://drdangslab.com'),
+  metadataBase: new URL('https://www.drdangslab.com'),
   alternates: {
     canonical: 'https://www.drdangslab.com/health-checkup-packages/diagnostic-centre-and-pathology-lab-gurgaon.html'
   },
   openGraph: {
     title: 'Best Diagnostic Centres In Gurgaon | Pathology Labs Gurugram',
     description: 'Dr. Dangs Lab - Best Diagnostic Centres & Pathology Labs near you in Gurgaon. Get facility of Home Sample Collection, Download Test Reports Online',
-    url: 'https://drdangslab.com',
+    url: 'https://www.drdangslab.com',
     siteName: 'Dr. Dangs Lab',
     images: [
       {

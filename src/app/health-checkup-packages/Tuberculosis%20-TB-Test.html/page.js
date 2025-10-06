@@ -5,14 +5,14 @@ export const metadata = {
   description: 'Book TB (Tuberculosis) TB Gold, TB PCR Test in Delhi & Gurgaon online at Dr Dangs Lab. It is a blood test that helps detect Mycobacterium tuberculosis',
   keywords: 'TB test, tuberculosis test, TB Gold test, TB PCR test, TB test delhi, tuberculosis test gurgaon, Mycobacterium tuberculosis test',
   authors: [{ name: 'Dr. Dangs Lab' }],
-  metadataBase: new URL('https://drdangslab.com'),
+  metadataBase: new URL('https://www.drdangslab.com'),
   alternates: {
     canonical: 'https://www.drdangslab.com/health-checkup-packages/Tuberculosis%20-TB-Test.html',
   },
   openGraph: {
     title: 'TB Test in Delhi & Gurgaon | TB Gold, PCR, Tuberculosis Test Lab in Delhi NCR',
     description: 'Book TB (Tuberculosis) TB Gold, TB PCR Test in Delhi & Gurgaon online at Dr Dangs Lab. It is a blood test that helps detect Mycobacterium tuberculosis',
-    url: 'https://drdangslab.com',
+    url: 'https://www.drdangslab.com',
     siteName: 'Dr. Dangs Lab',
     images: [
       {

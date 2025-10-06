@@ -6,7 +6,7 @@ export const metadata = {
   openGraph: {
     title: 'Blood Sugar Test in Delhi NCR, Fasting Blood Glucose Test in Gurgaon, Delhi NCR',
     description: 'Blood Glucose test measures the amount of glucose in your blood. We at Dr Dangs Lab provides Blood Sugar Test in Delhi and Gurgaon centre.',
-    url: 'https://drdangslab.com/health-checkup-packages/blood-glucose-fasting-test.html',
+    url: 'https://www.drdangslab.com/health-checkup-packages/blood-glucose-fasting-test.html',
     siteName: 'Dr. Dangs Lab',
     images: [{
       url: '/DrdangsRedIcon.png',

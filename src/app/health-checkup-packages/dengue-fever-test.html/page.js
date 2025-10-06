@@ -5,14 +5,14 @@ export const metadata = {
   description: 'Book Dengue Fever NS1 Antigen test online at Dr. Dangs Lab from the most trusted pathology lab in Delhi NCR. A Dengue Fever NS1 Antigen test measures the NS-1 protein of the dengue virus',
   keywords: 'Dengue test Delhi NCR, NS1 antigen test, dengue fever test, Dr Dangs Lab, dengue virus test',
   authors: [{ name: 'Dr. Dangs Lab' }],
-  metadataBase: new URL('https://drdangslab.com'),
+  metadataBase: new URL('https://www.drdangslab.com'),
   alternates: {
     canonical: 'https://www.drdangslab.com/health-checkup-packages/dengue-fever-test.html'
   },
   openGraph: {
     title: 'Dengue Test in Delhi NCR & Gurgaon | Dengue Fever Test, NS 1 Antigen Test',
     description: 'Book Dengue Fever NS1 Antigen test online at Dr. Dangs Lab from the most trusted pathology lab in Delhi NCR. A Dengue Fever NS1 Antigen test measures the NS-1 protein of the dengue virus',
-    url: 'https://drdangslab.com',
+    url: 'https://www.drdangslab.com',
     siteName: 'Dr. Dangs Lab',
     images: [
       {

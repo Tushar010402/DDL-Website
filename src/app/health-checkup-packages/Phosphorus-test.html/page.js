@@ -5,14 +5,14 @@ export const metadata = {
   description: 'Book Phosphorus Test (serum phosphorus / phosphate test) in Delhi & Gurgaon online at Dr Dangs Lab with home sample collection facility. Book your test today at Dr. Dangs Lab.',
   keywords: 'phosphorus test, serum phosphate test, phosphate blood test, phosphorus test delhi, phosphate test gurgaon, serum phosphorus test',
   authors: [{ name: 'Dr. Dangs Lab' }],
-  metadataBase: new URL('https://drdangslab.com'),
+  metadataBase: new URL('https://www.drdangslab.com'),
   alternates: {
     canonical: 'https://www.drdangslab.com/health-checkup-packages/Phosphorus-test.html',
   },
   openGraph: {
     title: 'Phosphorus Test in Delhi NCR & Gurgaon | Serum phosphorus / phosphate test',
     description: 'Book Phosphorus Test (serum phosphorus / phosphate test) in Delhi & Gurgaon online at Dr Dangs Lab with home sample collection facility. Book your test today at Dr. Dangs Lab.',
-    url: 'https://drdangslab.com',
+    url: 'https://www.drdangslab.com',
     siteName: 'Dr. Dangs Lab',
     images: [
       {

@@ -5,14 +5,14 @@ export const metadata = {
   description: 'Book Vitamin B12 (Vit- B12) (Cyanocobalamin) Test in Delhi & Gurgaon online at Dr Dangs Lab with home sample collection facility. Book your test today at Dr. Dangs Lab.',
   keywords: 'vitamin b12 test, cyanocobalamin test, B12 deficiency test, vitamin B12 test delhi, B12 test gurgaon, cobalamin test',
   authors: [{ name: 'Dr. Dangs Lab' }],
-  metadataBase: new URL('https://drdangslab.com'),
+  metadataBase: new URL('https://www.drdangslab.com'),
   alternates: {
     canonical: 'https://www.drdangslab.com/health-checkup-packages/Vitamin-B12-Test.html',
   },
   openGraph: {
     title: 'Vitamin B12 Test in Delhi & Gurgaon | Vitamin B-12 Test Lab in Delhi NCR',
     description: 'Book Vitamin B12 (Vit- B12) (Cyanocobalamin) Test in Delhi & Gurgaon online at Dr Dangs Lab with home sample collection facility.',
-    url: 'https://drdangslab.com',
+    url: 'https://www.drdangslab.com',
     siteName: 'Dr. Dangs Lab',
     images: [
       {

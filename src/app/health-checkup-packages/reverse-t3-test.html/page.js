@@ -5,14 +5,14 @@ export const metadata = {
   description: 'Book REVERSE T3 Test @ ₹7,700 online with home sample collection in Delhi &amp; Gurgaon at Dr Dangs Lab. Reverse T3 (rT3) is the Inactive Form of T3 hormone produced by thyroid gland.',
   keywords: 'reverse T3 test, rT3 test, thyroid test, T3 hormone test, reverse T3 test delhi, rT3 test gurgaon',
   authors: [{ name: 'Dr. Dangs Lab' }],
-  metadataBase: new URL('https://drdangslab.com'),
+  metadataBase: new URL('https://www.drdangslab.com'),
   alternates: {
     canonical: 'https://www.drdangslab.com/health-checkup-packages/reverse-t3-test.html',
   },
   openGraph: {
     title: 'Reverse T3 Test in Delhi &amp; Gurgaon | rT3 Test @ ₹7,700',
     description: 'Book REVERSE T3 Test @ ₹7,700 online with home sample collection in Delhi &amp; Gurgaon at Dr Dangs Lab. Reverse T3 (rT3) is the Inactive Form of T3 hormone produced by thyroid gland.',
-    url: 'https://drdangslab.com',
+    url: 'https://www.drdangslab.com',
     siteName: 'Dr. Dangs Lab',
     images: [
       {

@@ -5,14 +5,14 @@ export const metadata = {
   description: 'Dr.Dangs Lab offers Complete Blood Count Test in Delhi & Gurgaon. CBC Test is used to diagnose anaemia, infections, leukemias, clotting disorders and more',
   keywords: 'CBC test, complete blood count, blood test in delhi, CBC test in gurgaon, dr dangs lab, blood count test',
   authors: [{ name: 'Dr. Dangs Lab' }],
-  metadataBase: new URL('https://drdangslab.com'),
+  metadataBase: new URL('https://www.drdangslab.com'),
   alternates: {
     canonical: 'https://www.drdangslab.com/health-checkup-packages/complete-blood-count-test.html'
   },
   openGraph: {
     title: 'CBC Test in Delhi & Gurgaon, Complete Blood Count Test Lab in Delhi NCR',
     description: 'Dr.Dangs Lab offers Complete Blood Count Test in Delhi & Gurgaon. CBC Test is used to diagnose anaemia, infections, leukemias, clotting disorders and more',
-    url: 'https://drdangslab.com',
+    url: 'https://www.drdangslab.com',
     siteName: 'Dr. Dangs Lab',
     images: [
       {

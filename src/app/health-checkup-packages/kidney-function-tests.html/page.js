@@ -5,14 +5,14 @@ export const metadata = {
   description: 'The kidney function test (KFT) is also known Renal function test (RFT). Dr Dangs Lab provides Kidney Function Test in Delhi & Gurgaon. Book your test today at Dr. Dangs Lab.',
   keywords: 'kidney function test, KFT test, renal function test, RFT test, kidney test delhi, KFT test gurgaon',
   authors: [{ name: 'Dr. Dangs Lab' }],
-  metadataBase: new URL('https://drdangslab.com'),
+  metadataBase: new URL('https://www.drdangslab.com'),
   alternates: {
     canonical: 'https://www.drdangslab.com/health-checkup-packages/kidney-function-tests.html'
   },
   openGraph: {
     title: 'Kidney Function Test in Delhi & Gurgaon | KFT Test in Delhi NCR',
     description: 'The kidney function test (KFT) is also known Renal function test (RFT). Dr Dangs Lab provides Kidney Function Test in Delhi & Gurgaon. Book your test today at Dr. Dangs Lab.',
-    url: 'https://drdangslab.com',
+    url: 'https://www.drdangslab.com',
     siteName: 'Dr. Dangs Lab',
     images: [
       {

@@ -11,7 +11,7 @@ export const metadata = {
   openGraph: {
     title: "Our Locations | Dr Dangs Lab - Multiple Centers Across Delhi NCR",
     siteName: "Dr. Dangs Lab",
-    url: 'https://drdangslab.com/our-locations',
+    url: 'https://www.drdangslab.com/our-locations',
     description: "Find Dr Dangs Lab locations near you. We have multiple pathology labs and diagnostic centers across Delhi NCR with state-of-the-art facilities.",
     type: 'website',
     images: [{

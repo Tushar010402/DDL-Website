@@ -6,7 +6,7 @@ export const metadata = {
   openGraph: {
     title: 'H3N2 Test in Delhi, H3N2 Virus infection Test in Delhi & Gurgaon',
     description: 'Dr.Dangs Lab offers H3N2 Virus infection Test in Delhi & Gurgaon. • H3 N2 is a variant of Influenza A virus that is responsible for causing flu',
-    url: 'https://drdangslab.com/',
+    url: 'https://www.drdangslab.com/',
     siteName: 'Dr. Dangs Lab',
     images: [{
       url: '/DrdangsRedIcon.png',
@@ -28,7 +28,7 @@ export const metadata = {
     site: '@drdangslab',
   },
   alternates: {
-    canonical: 'https://drdangslab.com/H3N2'
+    canonical: 'https://www.drdangslab.com/H3N2'
   }
 };
 

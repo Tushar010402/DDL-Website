@@ -5,14 +5,14 @@ export const metadata = {
   description: 'Dr.Dangs Lab offers H3N2 Virus infection Test in Delhi & Gurgaon. H3 N2 is a variant of Influenza A virus that is responsible for causing flu',
   keywords: 'H3N2 test, H3N2 virus test, influenza test, flu test delhi, H3N2 test gurgaon, virus infection test',
   authors: [{ name: 'Dr. Dangs Lab' }],
-  metadataBase: new URL('https://drdangslab.com'),
+  metadataBase: new URL('https://www.drdangslab.com'),
   alternates: {
     canonical: 'https://www.drdangslab.com/health-checkup-packages/H3N2-Test.html'
   },
   openGraph: {
     title: 'H3N2 Test in Delhi, H3N2 Virus infection Test in Delhi & Gurgaon',
     description: 'Dr.Dangs Lab offers H3N2 Virus infection Test in Delhi & Gurgaon. H3 N2 is a variant of Influenza A virus that is responsible for causing flu',
-    url: 'https://drdangslab.com',
+    url: 'https://www.drdangslab.com',
     siteName: 'Dr. Dangs Lab',
     images: [
       {

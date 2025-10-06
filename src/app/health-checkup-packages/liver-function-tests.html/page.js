@@ -5,14 +5,14 @@ export const metadata = {
   description: 'Dr Dangs Lab provides Liver Function Test (LFT) in Delhi & Gurgaon. Book Liver Function Blood Test online at Dr. Dangs Lab with home sample collection facility.',
   keywords: 'liver function test, LFT test, liver blood test, liver panel test, LFT test delhi, liver test gurgaon',
   authors: [{ name: 'Dr. Dangs Lab' }],
-  metadataBase: new URL('https://drdangslab.com'),
+  metadataBase: new URL('https://www.drdangslab.com'),
   alternates: {
     canonical: 'https://www.drdangslab.com/health-checkup-packages/liver-function-tests.html',
   },
   openGraph: {
     title: 'Liver Function Test in Delhi & Gurgaon | LFT Test in Delhi NCR',
     description: 'Dr Dangs Lab provides Liver Function Test (LFT) in Delhi & Gurgaon. Book Liver Function Blood Test online at Dr. Dangs Lab with home sample collection facility.',
-    url: 'https://drdangslab.com',
+    url: 'https://www.drdangslab.com',
     siteName: 'Dr. Dangs Lab',
     images: [
       {

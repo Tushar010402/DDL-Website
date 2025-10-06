@@ -6,7 +6,7 @@ export const metadata = {
   openGraph: {
     title: 'Biofire GI Panel Test in Delhi & Gurgaon | Gastrointestinal | Intestinal Infection',
     description: 'We at Dr Dangs Lab offers BioFire Gastrointestinal Panel test in Delhi and Gurgaon. BioFire Gastrointestinal Panel is a diagnostic tool designed to quickly and accurately identify the cause of gastrointestinal infections.',
-    url: 'https://drdangslab.com/',
+    url: 'https://www.drdangslab.com/',
     siteName: 'Dr. Dangs Lab',
     images: [{
       url: '/DrdangsRedIcon.png',

@@ -11,7 +11,7 @@ export const metadata = {
   openGraph: {
     title: 'Health Checkup Packages in Delhi & Gugraon | Full Body Checkup Prices',
     description: "Dr Dangs Lab provides wide range of Health Checkup Packages for men and women in Delhi & Gurugram. Book your test today at Dr. Dangs Lab.",
-    url: 'https://drdangslab.com/',
+    url: 'https://www.drdangslab.com/',
     siteName: "Dr. Dangs Lab",
     images: [
       {

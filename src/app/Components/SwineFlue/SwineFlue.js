@@ -698,11 +698,11 @@ const Swineflu = () => {
                         <p>
                             Swine Flu test in Delhi can be booked here –{' '}
                             <a
-                                href="https://drdangslab.com/Swine-Flu-H1n1-Test.aspx"
+                                href="https://www.drdangslab.com/Swine-Flu-H1n1-Test.aspx"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                https://drdangslab.com/Swine-Flu-H1n1-Test.aspx
+                                https://www.drdangslab.com/Swine-Flu-H1n1-Test.aspx
                             </a>
                         </p>
 

@@ -5,14 +5,14 @@ export const metadata = {
   description: 'Serum magnesium test measures the level of magnesium in the blood. Dr Dangs Lab provides Magnesium Test in Delhi & Gurugram. Book your test today at Dr. Dangs Lab.',
   keywords: 'magnesium test, serum magnesium test, blood magnesium test, magnesium test delhi, magnesium test gurgaon, serum Mg test',
   authors: [{ name: 'Dr. Dangs Lab' }],
-  metadataBase: new URL('https://drdangslab.com'),
+  metadataBase: new URL('https://www.drdangslab.com'),
   alternates: {
     canonical: 'https://www.drdangslab.com/health-checkup-packages/magnesium-test.html',
   },
   openGraph: {
     title: 'Magnesium Test in Delhi NCR & Gurgaon | Serum Magnesium Test in Delhi',
     description: 'Serum magnesium test measures the level of magnesium in the blood. Dr Dangs Lab provides Magnesium Test in Delhi & Gurugram. Book your test today at Dr. Dangs Lab.',
-    url: 'https://drdangslab.com',
+    url: 'https://www.drdangslab.com',
     siteName: 'Dr. Dangs Lab',
     images: [
       {

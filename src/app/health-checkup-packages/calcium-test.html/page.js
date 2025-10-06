@@ -5,14 +5,14 @@ export const metadata = {
   description: 'Dr.Dangs Lab offers Calcium Test in Delhi & Gurgaon. We offer home sample collection for calcium score tests with accurate and reliable results.',
   keywords: 'calcium test, calcium score test, calcium test in delhi, calcium test in gurgaon, dr dangs lab',
   authors: [{ name: 'Dr. Dangs Lab' }],
-  metadataBase: new URL('https://drdangslab.com'),
+  metadataBase: new URL('https://www.drdangslab.com'),
   alternates: {
     canonical: 'https://www.drdangslab.com/health-checkup-packages/calcium-test.html'
   },
   openGraph: {
     title: 'Calcium Test in Delhi NCR, Total Calcium Test Lab in Gurgaon',
     description: 'Dr.Dangs Lab offers Calcium Test in Delhi & Gurgaon. We offer home sample collection for calcium score tests with accurate and reliable results.',
-    url: 'https://drdangslab.com',
+    url: 'https://www.drdangslab.com',
     siteName: 'Dr. Dangs Lab',
     images: [
       {

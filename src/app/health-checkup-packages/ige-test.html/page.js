@@ -5,14 +5,14 @@ export const metadata = {
   description: 'Book IGE (TOTAL) Test in Delhi & Gurgaon with Home Sample Collection from Dr. Dangs Lab at the best price.',
   keywords: 'total IgE test, immunoglobulin E test, allergy test, IgE test delhi, IgE test gurgaon, allergy blood test',
   authors: [{ name: 'Dr. Dangs Lab' }],
-  metadataBase: new URL('https://drdangslab.com'),
+  metadataBase: new URL('https://www.drdangslab.com'),
   alternates: {
     canonical: 'https://www.drdangslab.com/health-checkup-packages/ige-test.html'
   },
   openGraph: {
     title: 'Total IgE Test in Delhi NCR & Gurgaon | Total IgE Test Price on Delhi NCR',
     description: 'Book IGE (TOTAL) Test in Delhi & Gurgaon with Home Sample Collection from Dr. Dangs Lab at the best price.',
-    url: 'https://drdangslab.com',
+    url: 'https://www.drdangslab.com',
     siteName: 'Dr. Dangs Lab',
     images: [
       {

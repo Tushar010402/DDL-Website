@@ -5,14 +5,14 @@ export const metadata = {
   description: 'Book Lipid Profile Test, Cholesterol Test at Dr. Dangs Lab in Delhi & Gurgaon. Get Free Sample Collection at Home',
   keywords: 'lipid profile test, cholesterol test, lipid test delhi, cholesterol test gurgaon, lipid panel test, triglycerides test',
   authors: [{ name: 'Dr. Dangs Lab' }],
-  metadataBase: new URL('https://drdangslab.com'),
+  metadataBase: new URL('https://www.drdangslab.com'),
   alternates: {
     canonical: 'https://www.drdangslab.com/health-checkup-packages/Lipid-Profile-Test.html',
   },
   openGraph: {
     title: 'Lipid Profile Test in Delhi & Gurgaon, Cholesterol Test in Delhi NCR',
     description: 'Book Lipid Profile Test, Cholesterol Test at Dr. Dangs Lab in Delhi & Gurgaon. Get Free Sample Collection at Home',
-    url: 'https://drdangslab.com',
+    url: 'https://www.drdangslab.com',
     siteName: 'Dr. Dangs Lab',
     images: [
       {

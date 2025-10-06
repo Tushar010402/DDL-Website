@@ -9,7 +9,7 @@ export const metadata = {
     openGraph: {
       title: "Dr.Dangs Lab | Best Path Lab | Diagnostic Centre in New Delhi",
       siteName: "Dr. Dangs Lab",
-      url: 'https://drdangslab.com/',
+      url: 'https://www.drdangslab.com/',
       description: "Dr.Dangs lab's expert team consists of highly qualified and experienced Pathologists, Microbiologists, and Biochemists in the field of diagnostics.",
       type: 'website',
       images: [{

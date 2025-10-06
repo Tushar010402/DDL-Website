@@ -5,14 +5,14 @@ export const metadata = {
   description: 'Book Folic Acid (Vitamin B9) Test in Delhi & Gurgaon online at Dr Dangs Lab with home sample collection facility. Book your test today at Dr. Dangs Lab.',
   keywords: 'vitamin b9 test, folic acid test, vitamin b9 test delhi, folic acid test gurgaon, dr dangs lab',
   authors: [{ name: 'Dr. Dangs Lab' }],
-  metadataBase: new URL('https://drdangslab.com'),
+  metadataBase: new URL('https://www.drdangslab.com'),
   alternates: {
     canonical: 'https://www.drdangslab.com/health-checkup-packages/Folic-Acid-Vitamin-B-9-Test.html'
   },
   openGraph: {
     title: 'Folic Acid (Vitamin B9) Test in Delhi NCR, Vitamin B9 Test in Gurgaon',
     description: 'Book Folic Acid (Vitamin B9) Test in Delhi & Gurgaon online at Dr Dangs Lab with home sample collection facility. Book your test today at Dr. Dangs Lab.',
-    url: 'https://drdangslab.com',
+    url: 'https://www.drdangslab.com',
     siteName: 'Dr. Dangs Lab',
     images: [
       {

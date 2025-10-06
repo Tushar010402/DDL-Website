@@ -5,14 +5,14 @@ export const metadata = {
   description: 'Erythrocyte Sedimentation Rate (ESR), is a blood test that can reveal inflammatory activity in your body. Dr.Dangs Lab offers ESR / SED RATE Test in Delhi & Gurgaon.',
   keywords: 'ESR test, SED rate test, erythrocyte sedimentation rate, blood test delhi, ESR test gurgaon, inflammation test',
   authors: [{ name: 'Dr. Dangs Lab' }],
-  metadataBase: new URL('https://drdangslab.com'),
+  metadataBase: new URL('https://www.drdangslab.com'),
   alternates: {
     canonical: 'https://www.drdangslab.com/health-checkup-packages/esr-sed-rate-test.html'
   },
   openGraph: {
     title: 'ESR / SED RATE Test in Delhi & Gurgaon, Erythrocyte Sedimentation Rate in Delhi NCR',
     description: 'Erythrocyte Sedimentation Rate (ESR), is a blood test that can reveal inflammatory activity in your body. Dr.Dangs Lab offers ESR / SED RATE Test in Delhi & Gurgaon.',
-    url: 'https://drdangslab.com',
+    url: 'https://www.drdangslab.com',
     siteName: 'Dr. Dangs Lab',
     images: [
       {

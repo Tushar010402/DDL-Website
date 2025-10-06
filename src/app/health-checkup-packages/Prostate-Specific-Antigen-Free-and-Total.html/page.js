@@ -5,14 +5,14 @@ export const metadata = {
   description: 'Book Prostate Specific Antigen (PSA) Total in Delhi & Gurgaon at Dr Dangs Lab get Free Sample Collection at Home',
   keywords: 'PSA test, prostate specific antigen test, free PSA test, total PSA test, PSA test delhi, prostate test gurgaon',
   authors: [{ name: 'Dr. Dangs Lab' }],
-  metadataBase: new URL('https://drdangslab.com'),
+  metadataBase: new URL('https://www.drdangslab.com'),
   alternates: {
     canonical: 'https://www.drdangslab.com/health-checkup-packages/Prostate-Specific-Antigen-Free-and-Total.html',
   },
   openGraph: {
     title: 'PSA Free Test in Delhi, Total PSA Test in Delhi NCR & Gurgaon',
     description: 'Book Prostate Specific Antigen (PSA) Total in Delhi & Gurgaon at Dr Dangs Lab get Free Sample Collection at Home',
-    url: 'https://drdangslab.com',
+    url: 'https://www.drdangslab.com',
     siteName: 'Dr. Dangs Lab',
     images: [
       {

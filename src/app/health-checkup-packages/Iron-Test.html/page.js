@@ -5,14 +5,14 @@ export const metadata = {
   description: 'Book Iron Studies Test in Delhi & Gurgaon online at Dr Dangs Lab with home sample collection facility.',
   keywords: 'iron test, iron studies test, iron deficiency test, serum iron test, iron test delhi, iron test gurgaon',
   authors: [{ name: 'Dr. Dangs Lab' }],
-  metadataBase: new URL('https://drdangslab.com'),
+  metadataBase: new URL('https://www.drdangslab.com'),
   alternates: {
     canonical: 'https://www.drdangslab.com/health-checkup-packages/Iron-Test.html'
   },
   openGraph: {
     title: 'Iron Test in Delhi & Gurgaon | Iron Test cost in Delhi NCR',
     description: 'Book Iron Studies Test in Delhi & Gurgaon online at Dr Dangs Lab with home sample collection facility.',
-    url: 'https://drdangslab.com',
+    url: 'https://www.drdangslab.com',
     siteName: 'Dr. Dangs Lab',
     images: [
       {

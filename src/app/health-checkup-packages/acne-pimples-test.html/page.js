@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Health Checkup Packages in Delhi & Gugraon | Full Body Checkup Prices',
     description: "Dr. Dang's Lab offers a variety of acne tests for men and women in Delhi & Gurugram Lab. Book your Pimples test today at Dr. Dangs Lab",
-    url: 'https://drdangslab.com/',
+    url: 'https://www.drdangslab.com/',
     siteName: "Dr. Dangs Lab",
     images: [
       {

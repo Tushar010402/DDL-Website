@@ -5,14 +5,14 @@ export const metadata = {
   description: 'Book HS-CRP: High Sensitivity C Reactive protein Test in Delhi & Gurgaon online at Dr Dangs Lab with home sample collection facility. Book your test today at Dr. Dangs Lab.',
   keywords: 'HS-CRP test, C reactive protein test, high sensitivity CRP, inflammation test, HS-CRP test delhi, CRP test gurgaon',
   authors: [{ name: 'Dr. Dangs Lab' }],
-  metadataBase: new URL('https://drdangslab.com'),
+  metadataBase: new URL('https://www.drdangslab.com'),
   alternates: {
     canonical: 'https://www.drdangslab.com/health-checkup-packages/HS-CRP-High-Sensitivity-C-Reactive-protein-test.html'
   },
   openGraph: {
     title: 'HS-CRP Test in Delhi: High Sensitivity C Reactive Protein Test in Gurgaon',
     description: 'Book HS-CRP: High Sensitivity C Reactive protein Test in Delhi & Gurgaon online at Dr Dangs Lab with home sample collection facility. Book your test today at Dr. Dangs Lab.',
-    url: 'https://drdangslab.com',
+    url: 'https://www.drdangslab.com',
     siteName: 'Dr. Dangs Lab',
     images: [
       {
