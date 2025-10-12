@@ -89,17 +89,30 @@
   }
   
   .NameOnTheNavBar {
-    position: relative;
-    margin-top: 25vh;
-  }
-  
+  position: relative;
+  margin-top: 25vh;
+}
+
+.NameOnTheNavBar img {
+  position: absolute;
+  top: 35%; /* slightly higher alignment */
+  left:15px;
+  width: 50px !important;   /* override next/image inline size */
+  height: auto !important;
+}
+
+@media (max-width: 768px) {
   .NameOnTheNavBar img {
-    position: absolute;
-    top: 35.3%;
-    left: 20px;
-    width: auto !important;
-    height: auto !important;
+    width: 120px !important;  /* responsive for tablets and mobile */
   }
+}
+
+@media (max-width: 480px) {
+  .NameOnTheNavBar img {
+    width: 180px !important;
+  }
+}
+
   
   .OptionsOnNavbar {
     position: fixed;

@@ -104,15 +104,16 @@ const Navbar = () => {
                      />
                  </Link>
              </div>
-             <div className={styles.NameOnTheNavBar}>
-                 <Image 
-                     src="/PhotosAndLogos/Drdangsname.JPG" 
-                     alt="Dr. Dangs Lab" 
-                     width={200} 
-                     height={60} 
-                     priority
-                 />
-             </div>
+            <div className={styles.NameOnTheNavBar}>
+  <Image 
+    src="/PhotosAndLogos/Drdangsname.JPG" 
+    alt="Dr. Dangs Lab" 
+    width={220}    // increased width
+    height={100}   // increased height
+    priority
+  />
+</div>
+
              <div
                  className={styles.OptionsOnNavbar}
                  onMouseEnter={() => setOptionsVisible(true)}
@@ -133,7 +134,7 @@ const Navbar = () => {
                                  placeholder="Search..."
                                  value={searchQuery}
                                  onChange={(e) => setSearchQuery(e.target.value)}
-                                 className={styles.searchInput}
+                                 className="text-black"
                              />
                              {filteredOptions.map((option, index) => (
                                  <li key={index}>

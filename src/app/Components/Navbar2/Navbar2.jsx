@@ -148,7 +148,12 @@ const Navbar2 = () => {
         { name: "Total IgE Test", href: "/health-checkup-packages/ige-test.html" },
         { name: "Thyroid Profile Test", href: "/health-checkup-packages/thyroid-profile-with-FT3,-FT4-test.html" },
         { name: "Covid-19 Test", href: "/CoronaVirus" },
-        { name: "Swine Flu(H1N1) Test", href: "/Swine-Flu-H1n1-Test.aspx" }
+        { name: "Swine Flu(H1N1) Test", href: "/Swine-Flu-H1n1-Test.aspx" },
+        { name: "Myositis Profile Test", href: "/myositis-profile-16-antigens-test-delhi-gurgaon" },
+        { name: "Type 1 Diabetes Autoantibody Test", href: "/type-1-diabetes-autoantibody-test-delhi-gurgaon" },
+        { name: "CMV DNA Viral Load RT PCR Test", href: "/cmv-dna-viral-load-rt-pcr-test-delhi-gurgaon" },
+        { name: "Urine Iodine (Spot) Test", href: "/urine-iodine-test-delhi-gurgaon" },
+        
     ];
 
     // Combine static and dynamic tests
