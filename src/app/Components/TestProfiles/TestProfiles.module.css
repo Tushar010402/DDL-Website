@@ -146,7 +146,7 @@ color: #000;
     padding: 40px;
     text-align: center;
     background-color: #ffffff;
-    margin-left: 6%;
+   
     padding-right: 4rem;
 }
 
@@ -154,19 +154,19 @@ color: #000;
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 20px;
-    color: black;
+    color: rgb(0, 0, 0);
 }
 
 .subtitle {
     font-size: 1.2rem;
     margin-bottom: 30px;
-    color: #000;
+    color: #060606;
 }
 
 .downloadButton {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #ff3e3e;
+    background-color: #dc3545;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
@@ -308,3 +308,622 @@ color: #000;
 }
 
 
+/* Existing styles - Add these to your current CSS */
+
+/* Comparison Hint */
+.comparisonHint {
+  text-align: center;
+  padding: 8px;
+  background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+  color: white;
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  animation: fadeIn 0.5s ease;
+}
+
+.hintIcon {
+  font-size: 1.5rem;
+}
+
+/* Card Selection Styles */
+.compareSection {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.compareCheckbox {
+  display: flex;
+  align-items:center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 8px 12px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.compareCheckbox:hover {
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.compareCheckbox input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #dc3545;
+}
+
+.checkboxLabel {
+  font-size: 0.9rem;
+  color: #555;
+  font-weight: 500;
+}
+
+.selectedCard {
+  border: 3px solid #dc3545 !important;
+  background: linear-gradient(to bottom, rgba(220, 53, 69, 0.05), transparent) !important;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(220, 53, 69, 0.3) !important;
+}
+
+.profileCard {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Floating Comparison Bar */
+.comparisonBar {
+  position: fixed;
+  bottom: 100px;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+  box-shadow: 0 -5px 30px rgba(0, 0, 0, 0.2);
+  z-index: 999999;
+  transition: bottom 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  /* 👇 Adjusted sizing */
+
+  min-height: 60px;   /* ensures content fits but looks slimmer */
+}
+
+.comparisonBar.slideIn {
+  bottom: 0;
+}
+
+.comparisonBarContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.selectedInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.selectedCount {
+  color: white;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.selectedPackages {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.selectedPackageName {
+  background: white;
+  color: #dc3545;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  animation: slideInLeft 0.3s ease;
+}
+
+.removeButton {
+  background: #ff4444;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  line-height: 1;
+  transition: background 0.2s ease;
+}
+
+.removeButton:hover {
+  background: #d92428;
+}
+
+.comparisonActions {
+  display: flex;
+  gap: 15px;
+}
+
+.clearButton, .compareButton {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.clearButton {
+  background: rgba(255,255,255,0.2);
+  color: white;
+  border: 2px solid white;
+}
+
+.clearButton:hover {
+  background: white;
+  color: #d92428;
+}
+
+.compareButton {
+  background: white;
+  color: #d92428;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.compareButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.compareButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* =========================
+   Comparison Modal (Responsive & Polished)
+   ========================= */
+.comparisonModal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000000;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Modal Container */
+.modalContent {
+  background: #fff;
+  border-radius: 20px;
+  width: 80%;           /* was 90% */
+  max-width: 1000px;    /* was 1200px */
+  max-height: 85vh;     /* was 90vh */
+  overflow-y: auto;
+  animation: slideUp 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  color: #000;
+}
+
+
+/* Modal Header */
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 30px;
+  background: linear-gradient(135deg, #d92428 0%, #d92428 100%);
+  color: #fff;
+  border-radius: 20px 20px 0 0;
+}
+
+.modalHeader h2 {
+  font-size: 1.6rem;
+  margin: 0;
+}
+
+.closeModal {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeModal:hover {
+  background: #fff;
+  color: #d92428;
+  transform: rotate(90deg);
+}
+
+/* =========================
+   Comparison Table
+   ========================= */
+.comparisonTable {
+  padding: 30px;
+  color: #000;
+}
+
+.comparisonRow {
+  display: grid;
+  grid-template-columns: 200px repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+  align-items: center;
+}
+
+.comparisonRow:last-child {
+  border-bottom: none;
+}
+
+.comparisonLabel {
+  font-weight: 600;
+  color: #000;
+  font-size: 1rem;
+}
+
+.comparisonCell {
+  text-align: center;
+}
+
+.comparisonCell h3 {
+  color: #000;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.priceTag {
+  font-size: 1.4rem;
+  color: #28a745;
+  font-weight: 700;
+}
+
+.testCount {
+  background: #f0f0f0;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-weight: 600;
+  color: #000;
+}
+
+/* =========================
+   Test Details Section
+   ========================= */
+.testDetailsSection {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 2px solid #eee;
+}
+
+.sectionHeader {
+  grid-column: 1 / -1;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.included {
+  color: #28a745;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.notIncluded {
+  color: #bbb;
+  font-size: 1.5rem;
+}
+
+/* =========================
+   Footer & Buttons
+   ========================= */
+.modalFooter {
+  padding: 20px 30px;
+  background: #f8f9fa;
+  border-radius: 0 0 20px 20px;
+  text-align: center;
+}
+
+.modalBookButton {
+  background: linear-gradient(135deg, #d92428 0%, #d92428 100%);
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.modalBookButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(220, 53, 69, 0.4);
+}
+
+.newComparisonButton {
+  background: #fff;
+  color: #d92428;
+  border: 2px solid #d92428;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.newComparisonButton:hover {
+  background: #d92428;
+  color: #fff;
+}
+
+/* =========================
+   Animations
+   ========================= */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* =========================
+   Responsive Design
+   ========================= */
+@media (max-width: 992px) {
+  .modalHeader {
+    padding: 20px;
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .comparisonRow {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .comparisonLabel {
+    font-weight: 700;
+    background: #f8f9fa;
+    padding: 8px;
+    border-radius: 5px;
+    text-align: center;
+  }
+
+  .comparisonCell {
+    padding: 10px;
+  }
+
+  .modalBookButton,
+  .newComparisonButton {
+    width: 100%;
+    max-width: 300px;
+    margin: 10px auto;
+    display: block;
+  }
+}
+
+@media (max-width: 600px) {
+  .modalContent {
+    width: 95%;
+    margin: 10px;
+    border-radius: 15px;
+  }
+
+  .modalHeader h2 {
+    font-size: 1.3rem;
+  }
+
+  .comparisonTable {
+    padding: 20px;
+  }
+
+  .comparisonRow {
+    font-size: 0.9rem;
+  }
+
+  .sectionHeader {
+    font-size: 1rem;
+  }
+}
+
+/* Table Wrapper */
+.tableWrapper {
+  overflow-x: auto;
+  margin: 20px 0;
+}
+
+.comparisonTable {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.comparisonTable th,
+.comparisonTable td {
+  padding: 12px 16px;
+  text-align: left;
+  border: 1px solid #e0e0e0;
+}
+
+.comparisonTable thead th {
+  background: linear-gradient(135deg, #d92428 0%, #d92428 100%);
+  color: white;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.featureColumn {
+  width: 30%;
+  min-width: 200px;
+}
+
+.packageColumn {
+  width: 23%;
+  text-align: center;
+}
+
+/* Row Styles */
+.highlightRow td {
+  background: #f8f9fa;
+  font-weight: 500;
+}
+
+.evenRow {
+  background: #ffffff;
+}
+
+.oddRow {
+  background: #f9fafb;
+}
+
+.sectionHeaderRow td {
+  background: #e9ecef;
+  font-size: 16px;
+  padding: 16px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.actionRow td {
+  background: #f8f9fa;
+  padding: 20px 16px;
+}
+
+/* Cell Styles */
+.featureCell {
+  font-weight: 500;
+  color: #333;
+}
+
+.priceCell {
+  text-align: center;
+}
+
+.priceTag {
+  font-size: 24px;
+  font-weight: 700;
+  color: #010207;
+}
+
+.countCell {
+  text-align: center;
+}
+
+.testCount {
+  background: #e7f3ff;
+  padding: 6px 12px;
+  border-radius: 20px;
+  color: #010c16;
+  font-weight: 600;
+}
+
+.testNameCell {
+  color: #555;
+}
+
+.checkCell {
+  text-align: center;
+  font-size: 20px;
+}
+
+.included {
+  color: #28a745;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.notIncluded {
+  color: #dc3545;
+  font-size: 24px;
+}
+
+.actionCell {
+  text-align: center;
+}
+
+.modalBookButton {
+  background: linear-gradient(135deg, #d92428 0%, #d92428 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.modalBookButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+/* View Detail Button for Vitamins and Minerals Profile */
+.viewDetailButton {
+  background-color: #fff;
+  color: #007bff;
+  border: 2px solid #007bff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.viewDetailButton:hover {
+  background-color: #007bff;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+.viewDetailButton:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0, 123, 255, 0.2);
+}

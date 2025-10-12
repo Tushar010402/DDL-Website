@@ -105,14 +105,13 @@ const DendriteDx = ({ pageTitle }) => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm mb-4">
             <div>
               <p className="text-gray-600 mb-2"><strong>Cognition specific:</strong> Ferritin, Homocysteine</p>
-              <p className="text-gray-600 mb-2"><strong>Hormonal:</strong><Link href="https://drdangslab.com/health-checkup-packages/thyroid-profile-with-FT3,-FT4-test.html" target="_blank" rel="noopener noreferrer" ><span className="text-blue-500   font-bold"   > Thyroid (TSH, Free T3, Free T4)</span></Link>, Cortisol, PTH, Calcium/Phosphate</p>
+              <p className="text-gray-600 mb-2"><strong>Hormonal:</strong><Link href="https://drdangslab.com/health-checkup-packages/thyroid-profile-with-FT3,-FT4-test.html" target="_blank" rel="noopener noreferrer" ><span className="text-blue-500   font-bold"   > Thyroid (TSH, Free T3, Free T4)</span></Link>, Cortisol, PTH</p>
               <p className="text-gray-600 mb-2"><strong>Inflammatory:</strong> hs-CRP, <Link href="https://drdangslab.com/health-checkup-packages/magnesium-test.html" target="_blank"rel="noopener noreferrer" ><span className="font-bold text-blue-500">Magnesium</span></Link></p>
             </div>
             <div>
               <p className="text-gray-600 mb-2"><strong>Metabolic:</strong> <Link href="https://drdangslab.com/health-checkup-packages/glycosylated-haemoglobin-HBA1c.html" target="_blank" rel="noopener noreferrer" className="text-blue-500 font-bold">HbA1c</Link>, Insulin, <Link href="https://drdangslab.com/health-checkup-packages/Lipid-Profile-Test.html" target="_blank"
-            rel="noopener noreferrer"className="font-bold text-blue-500">Lipid Profile (Apo B)</Link>, Uric Acid, LFTs</p>
-              <p className="text-gray-600 mb-2"><strong>Nutritional:</strong> <Link href="https://drdangslab.com/health-checkup-packages/Vitamin-B12-Test.html" target="_blank" rel="noopener noreferrer" className="text-blue-500 font-bold">Vitamin B12</Link>, Folate, <Link href="https://drdangslab.com/health-checkup-packages/Vitamin-D-test.html"target="_blank"rel="noopener noreferrer" className="font-bold text-blue-500">Vitamin D</Link>, Protein/Albumin</p>
-              <p className="text-gray-600 mb-2"><strong>Renal:</strong> Creatinine/eGFR</p>
+            rel="noopener noreferrer"className="font-bold text-blue-500">Lipid Profile</Link>, Uric Acid, LFT</p>
+              <p className="text-gray-600 mb-2"><strong>Nutritional:</strong> <Link href="https://drdangslab.com/health-checkup-packages/Vitamin-B12-Test.html" target="_blank" rel="noopener noreferrer" className="text-blue-500 font-bold">Vitamin B12</Link>, Folate, <Link href="https://drdangslab.com/health-checkup-packages/Vitamin-D-test.html"target="_blank"rel="noopener noreferrer" className="font-bold text-blue-500">Vitamin D</Link></p>
               <p className="text-gray-600 mb-2"><strong>General Health:</strong> <Link href="https://drdangslab.com/health-checkup-packages/complete-blood-count-test.html" target="_blank"rel="noopener noreferrer" className="font-bold text-blue-500">CBC</Link></p>
             </div>
           </div>
