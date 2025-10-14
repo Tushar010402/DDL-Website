@@ -3,15 +3,15 @@ import CMVDNAViralLoadTest from '../Components/CytomegalovirusTest/Cytomegalovir
 
 // ✅ Metadata for SEO (App Router)
 export const metadata = {
-  title: "CMV DNA Viral Load Test Delhi & Gurgaon – RT-PCR Quantitative",
+  title: "Accurate CMV DNA Viral Load RT-PCR Test – Delhi & Gurgaon",
   description: "Get an accurate CMV DNA Quantitative/Viral Load RT-PCR Test at Dr. Dangs Lab, Delhi/Gurgaon. Early detection & monitoring for transplant & immunocompromised patients.",
   keywords: "CMV DNA Viral Load Test, Cytomegalovirus RT-PCR Test Delhi, CMV PCR Test Gurgaon, CMV Quantitative Test Delhi NCR, CMV Infection Monitoring, CMV Viral Load Blood Test, CMV PCR Blood Test, Post-Transplant CMV Test, Congenital CMV Detection, Dr. Dangs Lab CMV Test",
   
   // Open Graph
   openGraph: {
-    title: "CMV DNA Viral Load Test Delhi & Gurgaon – RT-PCR Quantitative",
+    title: "Accurate CMV DNA Viral Load RT-PCR Test – Delhi & Gurgaon",
     description: "Get an accurate CMV DNA Quantitative/Viral Load RT-PCR Test at Dr. Dangs Lab, Delhi/Gurgaon. Early detection & monitoring for transplant & immunocompromised patients.",
-    url: "https://www.drdangslab.com/cmv-dna-viral-load-test-delhi-gurgaon",
+    url: "https://www.drdangslab.com/cmv-dna-viral-load-rt-pcr-test-delhi-gurgaon",
     siteName: "Dr. Dangs Lab",
     locale: "en_IN",
     type: "website",
@@ -20,8 +20,8 @@ export const metadata = {
   // Twitter
   twitter: {
     card: "summary_large_image",
-    title: "CMV DNA Viral Load Test Delhi & Gurgaon – RT-PCR Quantitative",
-    description: "Get accurate CMV DNA Quantitative Test at Dr. Dangs Lab. Early detection & monitoring. Cost: ₹9,900.",
+    title: "Accurate CMV DNA Viral Load RT-PCR Test – Delhi & Gurgaon",
+    description: "Get an accurate CMV DNA Quantitative/Viral Load RT-PCR Test at Dr. Dangs Lab, Delhi/Gurgaon. Early detection & monitoring for transplant & immunocompromised patients.",
     site: "@drdangslab",
   },
   
@@ -37,7 +37,7 @@ export const metadata = {
   
   // Canonical URL
   alternates: {
-    canonical: "https://www.drdangslab.com/cmv-dna-viral-load-test-delhi-gurgaon",
+    canonical: "https://www.drdangslab.com/cmv-dna-viral-load-rt-pcr-test-delhi-gurgaon",
   },
   
   // Author
@@ -50,7 +50,7 @@ export const metadata = {
 
 // ✅ Main Page Component
 export default function CMVDNAViralLoadTestPage() {
-  const pageTitle = "CMV DNA Viral Load Test Delhi & Gurgaon – RT-PCR Quantitative | Dr. Dangs Lab";
+  const pageTitle = "Accurate CMV DNA Viral Load RT-PCR Test – Delhi & Gurgaon";
   
   return <CMVDNAViralLoadTest pageTitle={pageTitle} />;
 }

@@ -15,7 +15,7 @@ const MyositisProfilePage = ({ pageTitle }) => {
       {/* Content Section */}
       <div className="p-8 mt-8">
         <h1 className="text-3xl font-bold mb-6 text-gray-800">
-          Myositis Profile (16 Antigens) – Comprehensive Diagnostic Test for Autoimmune Muscle Diseases
+          Myositis Profile Test in Delhi and Gurgaon – Comprehensive Autoimmune Muscle Diagnosis
         </h1>
         
         {/* Introduction */}
@@ -155,7 +155,7 @@ const MyositisProfilePage = ({ pageTitle }) => {
         {/* Cost */}
         <section className="mb-6">
           <h2 className="text-xl font-semibold text-gray-800 mb-4">
-            What is the Cost of Myositis Profile (16 Antigens) Test?
+            What is the Cost of Myositis Profile (16 Antigens) Test in Delhi?
           </h2>
           <p className="text-gray-600 text-base leading-relaxed mb-4">
             The Myositis Profile (16 Antigens) Test is priced at  <span className='font-bold'>₹15,900</span> at Dr. Dangs Lab.

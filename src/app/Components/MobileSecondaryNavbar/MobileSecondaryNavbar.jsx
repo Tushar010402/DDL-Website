@@ -80,6 +80,10 @@ const HorizontalNavbar2 = () => {
             name: "Tests", 
             isDropdown: true,
             options: [
+                { name: "Myositis Profile Test", href: "/myositis-profile-16-antigens-test-delhi-gurgaon" },
+                { name: "Type 1 Diabetes Autoantibody Test", href: "/type-1-diabetes-autoantibody-test-delhi-gurgaon" },
+                { name: "CMV DNA Viral Load RT PCR Test", href: "/cmv-dna-viral-load-rt-pcr-test-delhi-gurgaon" },
+                { name: "Urine Iodine (Spot) Test", href: "/urine-iodine-test-delhi-gurgaon" },
                 { name: "Bacteriophage Sensitivity Test", href: "/Bacteriophage-Sensitivity-Testing" },
                 { name: "Allergy & Intolerance Test", href: "/food-allergy-test" },
                 { name: "H3N2 Test", href: "/H3N2" },
@@ -116,7 +120,8 @@ const HorizontalNavbar2 = () => {
                 { name: "Total IgE Test", href: "/health-checkup-packages/ige-test.html" },
                 { name: "Thyroid Profile Test", href: "/health-checkup-packages/thyroid-profile-with-FT3,-FT4-test.html" },
                 { name: "Covid-19 Test", href: "/CoronaVirus" },
-                { name: "Swine Flu(H1N1) Test", href: "/Swine-Flu-H1n1-Test.aspx" }
+                { name: "Swine Flu(H1N1) Test", href: "/Swine-Flu-H1n1-Test.aspx" },
+                
             ]
         },
         { name: "Health Guide", href: "/Healthguide" },

@@ -27,7 +27,8 @@ export default async function Type1DiabetesAntibodyPage() {
       {/* Content Section */}
       <div className="p-8 mt-8">
         <h1 className="text-3xl font-bold mb-6 text-gray-800">
-          Type 1 Diabetes Autoantibody Panel – Early Detection for Better Care
+          Type 1 Diabetes Autoantibody Panel Test in Delhi and Gurgaon
+
         </h1>
         
         {/* Introduction */}

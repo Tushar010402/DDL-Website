@@ -3,14 +3,14 @@ import MyositisProfilePage from '../Components/MyositisProfile/MyositisProfile';
 
 // ✅ Metadata for SEO (App Router)
 export const metadata = {
-  title: "Myositis Profile Test Delhi and Gurgaon – Autoimmune Muscle Diagnosis",
-  description: "Get comprehensive Myositis Profile (16 Antigens) test at Dr. Dangs Lab Delhi NCR. Advanced diagnostic test for Dermatomyositis, Polymyositis & autoimmune muscle diseases. Home collection available. Cost: ₹15,900. Book now at 9999992020.",
+  title: "Myositis Profile Test in Delhi and Gurgaon – Autoimmune Muscle Diagnosis",
+  description: "Get an accurate Myositis Profile (16 Antigens) test at Dr. Dangs Lab Delhi/Gurgaon. Detect Dermatomyositis & Polymyositis early with trusted autoimmune testing.",
   keywords: "Myositis Profile Test, Myositis Autoantibody Test, Dermatomyositis Blood Test, Polymyositis Diagnosis Test, Autoimmune Muscle Disease Test Delhi, Myositis Test Gurgaon, Myositis Profile Lab Test Delhi NCR, Myositis Antibodies Test, Skeletal Muscle Autoimmune Test, Dr Dangs Lab, Myositis Test Cost, Myositis 16 Antigens Test, Muscle Disease Diagnosis, Inflammatory Muscle Disease Test, Myositis Screening Test Delhi, Myositis Test Price, Autoimmune Myositis Test, Muscle Weakness Test, Polymyositis Blood Test, Dermatomyositis Diagnosis, Myositis Panel Test",
   
   // Open Graph
   openGraph: {
-    title: "Myositis Profile (16 Antigens) Test in Delhi NCR | Dr. Dangs Lab",
-    description: "Get comprehensive Myositis Profile test for autoimmune muscle diseases. Home collection available. Cost: ₹15,900. Book now!",
+    title: "Myositis Profile Test in Delhi and Gurgaon – Autoimmune Muscle Diagnosis",
+    description: "Get an accurate Myositis Profile (16 Antigens) test at Dr. Dangs Lab Delhi/Gurgaon. Detect Dermatomyositis & Polymyositis early with trusted autoimmune testing.",
     url: "https://www.drdangslab.com/myositis-profile-16-antigens-test-delhi-gurgaon",
     siteName: "Dr. Dangs Lab",
     locale: "en_IN",
@@ -20,8 +20,8 @@ export const metadata = {
   // Twitter
   twitter: {
     card: "summary_large_image",
-    title: "Myositis Profile (16 Antigens) Test - Dr. Dangs Lab",
-    description: "Advanced diagnostic test for Dermatomyositis & Polymyositis. Book now at ₹15,900.",
+    title: "Myositis Profile Test in Delhi and Gurgaon – Autoimmune Muscle Diagnosis",
+    description: "Get an accurate Myositis Profile (16 Antigens) test at Dr. Dangs Lab Delhi/Gurgaon. Detect Dermatomyositis & Polymyositis early with trusted autoimmune testing.",
     site: "@drdangslab",
   },
   
@@ -50,7 +50,7 @@ export const metadata = {
 
 // ✅ Main Page Component
 export default function MyositisProfileTestPage() {
-  const pageTitle = "Myositis Profile (16 Antigens) Test in Delhi NCR | Autoimmune Muscle Disease Test - Dr. Dangs Lab";
+  const pageTitle = "Myositis Profile Test in Delhi and Gurgaon – Autoimmune Muscle Diagnosis";
   
   return <MyositisProfilePage pageTitle={pageTitle} />;
 }
