@@ -28,7 +28,7 @@ const TestProfiles = () => {
   const router = useRouter();
   const [showVitaminDetail, setShowVitaminDetail] = useState(false);
   const [showFeverDetail, setShowFeverDetail] = useState(false);
-  const [showAllerginiusDetail, setShowAllerginiusDetail] = useState(false); // Added state for Allerginius DX
+  const [showAllerginiusDetail, setShowAllerginiusDetail] = useState(false); // Added state for Allergynius DX
   const [showCardiacDetail, setShowCardiacDetail] = useState(false); // Add this with other states
   const [showMenopauseDetail, setShowMenopauseDetail] = useState(false);
   const [showBloatingDetail, setShowBloatingDetail] = useState(false);
@@ -38,13 +38,13 @@ const TestProfiles = () => {
   // Filter states
   const [showFilters, setShowFilters] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const [priceRange, setPriceRange] = useState({ min: 0, max: 30000 }); // Updated max to accommodate Allerginius prices
+  const [priceRange, setPriceRange] = useState({ min: 0, max: 30000 }); // Updated max to accommodate Allergynius prices
   const [selectedTests, setSelectedTests] = useState([]);
   const [testCountRange, setTestCountRange] = useState({ min: 0, max: 50 });
   const [requiresFasting, setRequiresFasting] = useState("all");
   const [selectedCategories, setSelectedCategories] = useState([]);
 
-  // Allerginius DX profiles data
+  // Allergynius DX profiles data
   const allerginiusProfiles = [
     {
       name: "Comprehensive Allergy Profile",
@@ -862,11 +862,11 @@ const TestProfiles = () => {
     },
     {
       id: 17,
-      package_name: "Allerginius Dx Test",
+      package_name: "Allergynius Dx Test",
       category: "Specialized",
       package_detail:
-        "The Allerginius Dx Test is a comprehensive diagnostic panel designed to identify specific allergens causing allergic reactions. It helps in detecting sensitivities to common environmental allergens such as pollen, dust mites, mold, pet dander, and certain food items. This test aids physicians in determining the root cause of allergic symptoms like sneezing, runny nose, skin rashes, itching, and respiratory difficulties, allowing for personalized treatment and preventive strategies.",
-      tests_details: ["Please refer to details Allerginius Dx panel."],
+        "The Allergynius Dx Test is a comprehensive diagnostic panel designed to identify specific allergens causing allergic reactions. It helps in detecting sensitivities to common environmental allergens such as pollen, dust mites, mold, pet dander, and certain food items. This test aids physicians in determining the root cause of allergic symptoms like sneezing, runny nose, skin rashes, itching, and respiratory difficulties, allowing for personalized treatment and preventive strategies.",
+      tests_details: ["Please refer to details Allergynius Dx panel."],
       notes_contents: [],
       link: "https://testprofiles.drdangslab.com/static/files/ALLERGYNIUS%20DX%20-%20ALLERGY%20(%20IGE%20BASED%20).pdf",
     },
@@ -996,7 +996,7 @@ const TestProfiles = () => {
     },
     {
       id: 23,
-      package_name: "Menopause Profile",
+      package_name: "Menopause Profiles",
       category: "Specialized",
       package_detail:
         "At Dr. Dangs Lab, we recognise that menopause is a profound biological transition, influencing hormonal balance, metabolic health, and overall well-being. Our Menopause Profiles are meticulously curated to provide clinicians and patients with a comprehensive, evidence-based assessment of this life stage. These profiles serve as powerful tools for early intervention, personalised treatment planning, and optimising quality of life during midlife and beyond.",
@@ -1007,7 +1007,7 @@ const TestProfiles = () => {
     },
     {
       id: 24,
-      package_name: "Bloating Profile",
+      package_name: "Bloating Profiles",
       category: "Specialized",
       package_detail:
         "At Dr. Dangs Lab, we understand that bloating is more than just an inconvenience—it can be a sign of underlying gastrointestinal, hormonal, or immune imbalances. Our Bloating Profiles are designed to pinpoint the cause through targeted, evidence-based testing, enabling precise diagnosis and personalised treatment strategies.",
@@ -1294,9 +1294,9 @@ const TestProfiles = () => {
         if (!matchesName && !matchesDetail && !matchesTests) return false;
       }
 
-      // Price filter - handle Allerginius DX as no price
+      // Price filter - handle Allergynius DX as no price
       if (profile.id !== 16) {
-        // Skip price filter for Allerginius DX
+        // Skip price filter for Allergynius DX
         const price = parseFloat(profile.package_rate);
         if (price < priceRange.min || price > priceRange.max) return false;
       }
@@ -1729,7 +1729,7 @@ const TestProfiles = () => {
 
                   {/* Price and Actions */}
                   <div className="flex items-center justify-between">
-                    {/* Hide price for Flu Panels (id 13) and Allerginius DX (id 16) */}
+                    {/* Hide price for Flu Panels (id 13) and Allergynius DX (id 16) */}
                     {profile.id !== 7 &&
                     profile.id !== 12 &&
                     profile.id !== 13 &&
@@ -1830,7 +1830,7 @@ const TestProfiles = () => {
                   </div>
                 </div>
 
-                {/* View Details buttons for Menopause, Bloating, Fitness, Allerginius, Cardiac, Fever, and Vitamins - Above Book button */}
+                {/* View Details buttons for Menopause, Bloating, Fitness, Allergynius, Cardiac, Fever, and Vitamins - Above Book button */}
                 {(profile.id === 7 || profile.id === 12 || profile.id === 23 || profile.id === 24 || profile.id === 31 || profile.id === 17 || profile.id === 19) && (
                   <div className="px-6 pb-3">
                     {profile.id === 7 && (
@@ -1838,7 +1838,7 @@ const TestProfiles = () => {
                         className="w-full px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors text-sm font-semibold"
                         onClick={() => setShowVitaminDetail(true)}
                       >
-                        View Vitamins & Minerals Profile In Detail For Price
+                        View Detailed Profiles & Pricing
                       </button>
                     )}
                     {profile.id === 12 && (
@@ -1846,7 +1846,7 @@ const TestProfiles = () => {
                         className="w-full px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors text-sm font-semibold"
                         onClick={() => setShowFeverDetail(true)}
                       >
-                        View Fever Profiles In Detail For Price
+                        View Detailed Profiles & Pricing
                       </button>
                     )}
                     {profile.id === 23 && (
@@ -1854,7 +1854,7 @@ const TestProfiles = () => {
                         className="w-full px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors text-sm font-semibold"
                         onClick={() => setShowMenopauseDetail(true)}
                       >
-                        View Menopause Profile In Detail For Price
+                        View Detailed Profiles & Pricing
                       </button>
                     )}
                     {profile.id === 24 && (
@@ -1862,7 +1862,7 @@ const TestProfiles = () => {
                         className="w-full px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors text-sm font-semibold"
                         onClick={() => setShowBloatingDetail(true)}
                       >
-                        View Bloating Profile In Detail For Price
+                        View Detailed Profiles & Pricing
                       </button>
                     )}
                     {profile.id === 31 && (
@@ -1870,7 +1870,7 @@ const TestProfiles = () => {
                         className="w-full px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors text-sm font-semibold"
                         onClick={() => setShowFitnessDetail(true)}
                       >
-                        View Fitness Profiles In Detail For Price
+                       View Detailed Profiles & Pricing
                       </button>
                     )}
                     {profile.id === 17 && (
@@ -1878,7 +1878,7 @@ const TestProfiles = () => {
                         className="w-full px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors text-sm font-semibold"
                         onClick={() => setShowAllerginiusDetail(true)}
                       >
-                        View Allerginius Dx In Detail For Price
+                        View Detailed Profiles & Pricing
                       </button>
                     )}
                     {profile.id === 19 && (
@@ -1886,7 +1886,7 @@ const TestProfiles = () => {
                         className="w-full px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors text-sm font-semibold"
                         onClick={() => setShowCardiacDetail(true)}
                       >
-                        View Cardiac Risk Profiles In Detail For Price
+                        View Detailed Profiles & Pricing
                       </button>
                     )}
                   </div>
@@ -1918,10 +1918,10 @@ const TestProfiles = () => {
                     </div>
                   ) : (
                     <button
-                      className="w-full px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors font-semibold"
+                      className="w-full px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors font-semibold"
                       onClick={() => handlePackageSelect(profile.package_name)}
                     >
-                      Book this package
+                      Book This Package
                     </button>
                   )}
                 </div>
@@ -2237,13 +2237,13 @@ const TestProfiles = () => {
         </div>
       )}
 
-      {/* Allerginius DX Detail Modal */}
+      {/* Allergynius DX Detail Modal */}
       {showAllerginiusDetail && (
         <div className="fixed inset-0 bg-black bg-opacity-50 z-[100000] flex items-center justify-center p-4">
           <div className="bg-white rounded-lg max-w-4xl w-full max-h-[80vh] overflow-hidden">
             <div className="p-4 border-b flex items-center justify-between">
               <h2 className="text-xl font-bold text-black">
-                Allerginius DX - Available Allergy Profiles
+                Allergynius DX - Available Allergy Profiles
               </h2>
               <button
                 className="p-2 hover:bg-gray-100 rounded-lg"

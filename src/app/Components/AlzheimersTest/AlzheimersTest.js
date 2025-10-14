@@ -84,21 +84,21 @@ const DendriteDx = ({ pageTitle }) => {
         <div className="bg-blue-50 p-6 rounded-lg mb-6">
           <h4 className="text-xl font-bold text-purple-700 mb-3">Basic – Dendrite Dx for Alzheimer's Test</h4>
           <ul className="list-disc pl-5 mb-4">
-            <li className="text-gray-600 mb-2"><strong>pTau-217</strong> – Highly specific Alzheimer's marker</li>
-            <li className="text-gray-600 mb-2"><strong>Amyloid Beta 1-42</strong> – Linked to amyloid plaque buildup</li>
-            <li className="text-gray-600 mb-2">Quick 15–20 min validated Digital Cognitive Assessment test</li>
-            <li className="text-gray-600 mb-2">Done through a simple CLEIA-based blood draw — fast, accurate, and patient-friendly</li>
+            <li className="text-gray-600 mb-2">Quick 15–20 min validated Digital Cognitive Assessment test.</li>
+            <li className="text-gray-600 mb-2">This blood test is non-invasive and measures the p-tau/beta Amyloid 1-42 ratio which is a new, US-FDA approved blood-based Biomarker and is linked to amyloid plaque deposition and tau related neurodegeneration.</li>
+            <li className="text-gray-600 mb-2">Done through a simple CLEIA-based blood draw - fast, accurate, and patient-friendly</li>
+            
           </ul>
-          <p className="text-blue-700 font-semibold">➡ Perfect for: Family history, early symptoms, or baseline brain health screening.</p>
+          
         </div>
 
         <div className="bg-green-50 p-6 rounded-lg mb-6">
           <h4 className="text-xl font-bold text-purple-700 mb-3">Advanced – Dendrite Dx for Alzheimer's Test</h4>
           <ul className="list-disc pl-5 mb-4">
-            <li className="text-gray-600 mb-2"><strong>pTau-217</strong> – Highly specific Alzheimer's marker</li>
-            <li className="text-gray-600 mb-2"><strong>Amyloid Beta 1-42</strong> – Linked to amyloid plaque buildup</li>
-            <li className="text-gray-600 mb-2"><strong>APO E</strong> – Shows your inherited risk of developing Alzheimer's disease but does not confirm whether you will get it</li>
-            <li className="text-gray-600 mb-2">Quick 15–20 min validated Digital Cognitive Assessment test</li>
+            <li className="text-gray-600 mb-2">Quick 15–20 min validated Digital Cognitive Assessment test.</li>
+            <li className="text-gray-600 mb-2">This blood test is non-invasive and measures the p-tau/beta Amyloid 1-42 ratio which is a new, US-FDA approved blood-based Biomarker and is linked to amyloid plaque deposition and tau related neurodegeneration.</li>
+
+            <li className="text-gray-600 mb-2">ApoE (Apolipoprotein E) for Genetic Predisposition: A simple genetic marker that helps identify individuals with an increased inherited risk of developing Alzheimer’s disease, especially those carrying the ApoE4 variant.</li>
           </ul>
           
           <h5 className="font-semibold text-purple-700 mb-2">Additional Cognitive & Health Markers:</h5>
@@ -109,8 +109,8 @@ const DendriteDx = ({ pageTitle }) => {
               <p className="text-gray-600 mb-2"><strong>Inflammatory:</strong> hs-CRP, <Link href="https://drdangslab.com/health-checkup-packages/magnesium-test.html" target="_blank"rel="noopener noreferrer" ><span className="font-bold text-blue-500">Magnesium</span></Link></p>
             </div>
             <div>
-              <p className="text-gray-600 mb-2"><strong>Metabolic:</strong> <Link href="https://drdangslab.com/health-checkup-packages/glycosylated-haemoglobin-HBA1c.html" target="_blank" rel="noopener noreferrer" className="text-blue-500 font-bold">HbA1c</Link>, Insulin, <Link href="https://drdangslab.com/health-checkup-packages/Lipid-Profile-Test.html" target="_blank"
-            rel="noopener noreferrer"className="font-bold text-blue-500">Lipid Profile</Link>, Uric Acid, LFT</p>
+              <p className="text-gray-600 mb-2"><strong>Metabolic:</strong> <Link href="https://drdangslab.com/health-checkup-packages/glycosylated-haemoglobin-HBA1c.html" target="_blank" rel="noopener noreferrer" className="text-blue-500 font-bold">HbA1c</Link>, Insulin(Fasting), <Link href="https://drdangslab.com/health-checkup-packages/Lipid-Profile-Test.html" target="_blank"
+               rel="noopener noreferrer"className="font-bold text-blue-500">Lipid Profile</Link>, Uric Acid, LFT</p>
               <p className="text-gray-600 mb-2"><strong>Nutritional:</strong> <Link href="https://drdangslab.com/health-checkup-packages/Vitamin-B12-Test.html" target="_blank" rel="noopener noreferrer" className="text-blue-500 font-bold">Vitamin B12</Link>, Folate, <Link href="https://drdangslab.com/health-checkup-packages/Vitamin-D-test.html"target="_blank"rel="noopener noreferrer" className="font-bold text-blue-500">Vitamin D</Link></p>
               <p className="text-gray-600 mb-2"><strong>General Health:</strong> <Link href="https://drdangslab.com/health-checkup-packages/complete-blood-count-test.html" target="_blank"rel="noopener noreferrer" className="font-bold text-blue-500">CBC</Link></p>
             </div>
