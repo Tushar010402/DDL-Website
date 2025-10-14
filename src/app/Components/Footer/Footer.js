@@ -157,24 +157,12 @@ const Footer = () => {
 
   // ------------------- NEW: Holiday Modal State & Data -----------------------
   const [showHolidaysModal, setShowHolidaysModal] = useState(false);
+  const [holidaysData, setHolidaysData] = useState([]);
 
-  // The holiday data from your question (unchanged)
-  const holidaysData = [
-    { name: "Diwali", date: "2024-10-31" },
-    { name: "Christmas", date: "2024-12-25" },
-    { name: "New Year", date: "2025-01-01" },
-    { name: "Republic Day", date: "2025-01-26" },
-    { name: "Holi", date: "2025-03-14" },
-    { name: "Independence Day", date: "2025-08-15" },
-    { name: "Dussehra", date: "2025-10-02" },
-    { name: "Diwali", date: "2025-10-21" },
-    { name: "Christmas", date: "2025-12-25" },
-    // { name: "New Year", date: "2026-01-01" },
-  ];
-
-  // 1) Filter out past dates, 2) format remaining holidays to dd, Month, yyyy
+  // 1) Filter by is_show flag and past dates, 2) sort by date, 3) format remaining holidays to dd, Month, yyyy
   const upcomingHolidays = holidaysData
-    .filter(holiday => new Date(holiday.date) >= new Date())
+    .filter(holiday => holiday.is_show && new Date(holiday.date) >= new Date())
+    .sort((a, b) => new Date(a.date) - new Date(b.date))
     .map(holiday => {
       const dateObj = new Date(holiday.date);
       const day = dateObj.getDate().toString().padStart(2, "0");
@@ -198,7 +186,17 @@ const Footer = () => {
       }
     };
 
+    const fetchHolidays = async () => {
+      try {
+        const response = await axios.get('https://backend.dangsccg.co.in/api/holidays/');
+        setHolidaysData(response.data);
+      } catch (error) {
+        console.error('Error fetching holidays:', error);
+      }
+    };
+
     fetchIp();
+    fetchHolidays();
     generateCaptcha();
   }, []);
 
