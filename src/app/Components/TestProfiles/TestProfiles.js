@@ -462,7 +462,7 @@ const TestProfiles = () => {
       package_name: "Smart Check Profile",
       category: "Basic Health",
       package_detail:
-        "This is a basic yet powerful package which gives a bird's eye view of your inner metabolism. It has Complete Blood Count which in itself provides a wealth of information regarding anemia (Hemoglobin), infections (TLC, DLC), blood cancers; lipids; blood sugar evaluation; kidney and liver evaluation; Magnesium - a key mineral, deficiency of which causes fatigue and a muscle marker CPK.",
+        "This is a basic yet powerful package which gives a bird's eye view of your inner metabolism. It has Complete Blood Count which in itself provides a wealth of information regarding anemia (Hemoglobin), infections (TLC, DLC), blood cancers, lipids, blood sugar evaluation, kidney and liver evaluation, Magnesium - a key mineral, deficiency of which causes fatigue and a muscle marker CPK.",
       package_rate: "3,500",
       tests_details: [
         "CBC with ESR",
@@ -565,7 +565,7 @@ const TestProfiles = () => {
       package_name: "Comprehensive Health Profile (CHP)",
       category: "Comprehensive",
       package_detail:
-        "An all inclusive package covering various tests scientifically proven to have a role in preventive health testing. This package is also extremely useful for the monitoring of patients with Hypertension, Diabetes, Cardiac, Kidney, Thyroid, Pancreas and Liver conditions; Vitamin deficiencies and Inflammation. CHP also has Cystatin C & Microalbuminuria, an early indicator of kidney disease; High Sensitivity CRP, a very sensitive marker of Inflammation/cardiac risk; total serum IgE as well as a detailed urine examination. This package is highly recommended to persons of any age group who are looking for comprehensive insights into their health via urine and blood tests.",
+        "An all inclusive package covering various tests scientifically proven to have a role in preventive health testing. This package is also extremely useful for the monitoring of patients with Hypertension, Diabetes, Cardiac, Kidney, Thyroid, Pancreas and Liver conditions, Vitamin deficiencies and Inflammation. CHP also has Cystatin C & Microalbuminuria, an early indicator of kidney disease, High Sensitivity CRP, a very sensitive marker of Inflammation/cardiac risk, total serum IgE as well as a detailed urine examination. This package is highly recommended to persons of any age group who are looking for comprehensive insights into their health via urine and blood tests.",
       package_rate: "15,000",
       tests_details: [
         "CBC with ESR",
@@ -601,7 +601,7 @@ const TestProfiles = () => {
       package_name: "Comprehensive Health Profile with PSA",
       category: "Comprehensive",
       package_detail:
-        "An all inclusive package covering various tests scientifically proven to have a role in preventive health testing. This package is also extremely useful for the monitoring of patients with Hypertension, Diabetes, Cardiac, Kidney, Thyroid, Pancreas and Liver conditions; Vitamin deficiencies and Inflammation. CHP also has Cystatin C & Microalbuminuria, an early indicator of kidney disease; High Sensitivity CRP, a very sensitive marker of Inflammation/cardiac risk; total serum IgE as well as a detailed urine examination. Prostate Specific Antigen (Total PSA, Free PSA along with the ratio), an established marker to screen for prostate cancers also forms a part of this package.",
+        "An all inclusive package covering various tests scientifically proven to have a role in preventive health testing. This package is also extremely useful for the monitoring of patients with Hypertension, Diabetes, Cardiac, Kidney, Thyroid, Pancreas and Liver conditions; Vitamin deficiencies and Inflammation. CHP also has Cystatin C & Microalbuminuria, an early indicator of kidney disease, High Sensitivity CRP, a very sensitive marker of Inflammation/cardiac risk; total serum IgE as well as a detailed urine examination. Prostate Specific Antigen (Total PSA, Free PSA along with the ratio), an established marker to screen for prostate cancers also forms a part of this package.",
       package_rate: "16,500",
       tests_details: [
         "CBC with ESR",
@@ -689,7 +689,7 @@ const TestProfiles = () => {
       package_name: "PCOD Profile",
       category: "Specialized",
       package_detail:
-        "Poly Cystic Ovary Disease (PCOD) is a commonly encountered condition associated with hormonal imbalance, ovarian cysts &/or irregular periods. The PCOD profile gives you an option of testing hormone levels along with conditions like diabetes and thyroid dysfunction that may be commonly associated with PCOD. These test results along with imaging techniques & a physician's guidance are required to reach a conclusive diagnosis.",
+        "Polycystic Ovary Disease (PCOD) is a commonly encountered condition associated with hormonal imbalance, ovarian cysts &/or irregular periods. The PCOD profile gives you an option of testing hormone levels along with conditions like diabetes and thyroid dysfunction that may be commonly associated with PCOD. These test results along with imaging techniques & a physician's guidance are required to reach a conclusive diagnosis.",
       package_rate: "9,000",
       tests_details: [
         "FSH",
@@ -1131,7 +1131,7 @@ const TestProfiles = () => {
       package_name: "Ultra Comprehensive Health Profile",
       category: "Comprehensive",
       package_detail:
-        "This is an all-inclusive health check profile that provides detailed insights into the overall health status of an individual. In addition to the Comprehensive Health Profile (CHP), Ultra CHP1 includes HOMA-IR, a test assessing insulin resistance; Vitamins A, C, E & Urinary Iodine; serum protein electrophoresis; tests for evaluating levels of basic female hormones; cardiac assessment in the way of testing for high-sensitivity Troponin T & Lp-PLA2.",
+        "This is an all-inclusive health check profile that provides detailed insights into the overall health status of an individual. In addition to the Comprehensive Health Profile (CHP), Ultra CHP1 includes HOMA-IR, a test assessing insulin resistance; Vitamins A, C, E & Urinary Iodine, serum protein electrophoresis, tests for evaluating levels of basic female hormones, cardiac assessment in the way of testing for high-sensitivity Troponin T & Lp-PLA2.",
       package_rate: "26,000",
       tests_details: [
         "CBC with ESR",
@@ -1179,12 +1179,12 @@ const TestProfiles = () => {
       package_name: "Ultra Comprehensive Health Profile with PSA",
       category: "Comprehensive",
       package_detail:
-        "This is an all inclusive health check profile that provides detailed insights on the overall health status of an individual. In addition to the Comprehensive Health Profile (CHP) with PSA, ultra CHP with PSA includes HOMA-IR; a test assessing insulin resistance, Vitamins A, C, E & Urinary Iodine, serum protein electrophoresis, tests for evaluating levels of basic hormones i.e. testosterone free & total, Cardiac assessment in the way of testing for high sensitivity Troponin T & Lp-PLA2. Also included is a urine test to check if your body has the iodine it needs for peak energy and metabolism.",
+        "This is an all inclusive health check profile that provides detailed insights on the overall health status of an individual. In addition to the Comprehensive Health Profile (CHP) with PSA, ultra CHP with PSA includes HOMA-IR, a test assessing insulin resistance, Vitamins A, C, E & Urinary Iodine, serum protein electrophoresis, tests for evaluating levels of basic hormones i.e. testosterone free & total, Cardiac assessment in the way of testing for high sensitivity Troponin T & Lp-PLA2. Also included is a urine test to check if your body has the iodine it needs for peak energy and metabolism.",
       package_rate: "27,500",
       tests_details: [
         "CBC with ESR",
         "Blood Glucose Fasting*",
-        "Blood Glucose PP**",
+        "Blood Glucose PP**", 
         "Lipid Profile*",
         "Kidney Function Test",
         "Liver Function Test",
@@ -1392,7 +1392,7 @@ const TestProfiles = () => {
         />
       </div>
 
-      <h1 className="text-5xl font-bold mb-4">Health Checkup Packages</h1>
+      <h1 className="text-5xl font-bold mb-4">Health Checkup Packages in Delhi/NCR</h1>
       <p className="text-xl">Delhi NCR | Home Collection Available</p>
     </div>
   </div>
@@ -1403,7 +1403,7 @@ const TestProfiles = () => {
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="bg-white rounded-lg shadow-md p-8 mb-8">
           <h2 className="text-3xl font-bold text-gray-800 mb-4 text-center">
-            Health Checkup Packages in Delhi / NCR
+            Health Checkup Packages in Delhi/NCR
           </h2>
           <p className="text-gray-600 mb-6 text-center">
             We provide home collection services in Delhi-NCR region including

@@ -1,21 +1,49 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
+
+// Add this handler after imports (uses window fallback for navigation)
+const handlePackageSelect = (packageName) => {
+  const encodedPackageName = encodeURIComponent(packageName);
+  if (typeof window !== "undefined") {
+    window.location.href = `/HomeCollection?package=${encodedPackageName}`;
+  }
+};
 
 const DendriteDx = ({ pageTitle }) => {
   return (
     <div className="relative bg-white">
       {/* Hero Section with Background Image */}
+
+      
       <div
         className="w-full h-[600px] mt-5 bg-center bg-no-repeat bg-cover relative flex justify-center items-center text-white overflow-hidden
                    bg-[url('/PhotosAndLogos/Alzheimer-Banner-Image.webp')]
                    md:max-lg:bg-[url('/PhotosAndLogos/Alzheimer-Tablet-Banner-Image.webp')]
                    max-md:bg-[url('/PhotosAndLogos/Alzheimer-Page-Mobile-Banner1.webp')]"
         role="img"
-        aria-label="Dendrite Dx – Advanced Alzheimer's Diagnosis in Delhi NCR"
+        aria-label="Dendrite Dx – Advanced Alzheimer's Diagnosis in Delhi NCR "
       >
       </div>
 
-
+      <div className="mt-4 justify-center flex gap-3">
+            <button
+              type="button"
+              onClick={() => handlePackageSelect(" Dendrite Dx for Alzheimer")}
+              className="bg-purple-600 text-white px-4 py-2 rounded"
+            >
+              Book Dendrite Dx
+            </button>
+            <a
+              href="https://testprofiles.drdangslab.com/static/files/Dendrite-Dx.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-gray-200 text-gray-800 px-4 py-2 rounded"
+            >
+              Download Brochure
+            </a>
+          </div>
 
       {/* Main Content Section */}
       <div className="p-8 mt-8">
@@ -87,8 +115,8 @@ const DendriteDx = ({ pageTitle }) => {
             <li className="text-gray-600 mb-2">Quick 15–20 min validated Digital Cognitive Assessment test.</li>
             <li className="text-gray-600 mb-2">This blood test is non-invasive and measures the p-tau/beta Amyloid 1-42 ratio which is a new, US-FDA approved blood-based Biomarker and is linked to amyloid plaque deposition and tau related neurodegeneration.</li>
             <li className="text-gray-600 mb-2">Done through a simple CLEIA-based blood draw - fast, accurate, and patient-friendly</li>
-            
           </ul>
+
           
         </div>
 
@@ -129,8 +157,11 @@ const DendriteDx = ({ pageTitle }) => {
             <li className="text-gray-600 mb-2">Detects Amyloid Beta & pTau-217 proteins linked to brain plaque buildup</li>
             <li className="text-gray-600 mb-2">Powered by mass spectrometry + AI-backed algorithm</li>
             <li className="text-gray-600 mb-2">Gives you an APS2 Score (your likelihood of Alzheimer's-linked brain changes)</li>
-            <li className="text-gray-600 mb-2">No painful spinal tap. No costly brain scans. Just 15 days.</li>
+            <li className="text-gray-600 mb-2">No painful spinal tap. No costly brain scans.</li>
           </ul>
+
+          {/* Book + Download buttons for PrecivityAD2 add-on */}
+          
         </div>
 
         <h2 className="text-lg font-semibold text-gray-800 mb-4">Why Alzheimer's Diagnosis Matters?</h2>

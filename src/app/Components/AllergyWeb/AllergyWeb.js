@@ -798,7 +798,8 @@ const AllergyWeb = () => {
                 <td>Up to 1 Week</td>
               </tr>
               <tr>
-                <td>Allergy (IgE Based) - Comprehensive Allergy Panel <br/>(67 Allergens)</td>
+                <td> Allergy (IgE Based) - Basic Allergy Panel
+(38 Allergens)</td>
                 <td>Up to 1 Week</td>
               </tr>
               <tr>
