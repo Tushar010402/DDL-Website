@@ -35,7 +35,7 @@ const videos = [
     id: 3,
     title: "Complete Guide to Cognitive Assessment",
     description: "Delhi  CEO of Dr Dangs Lab, Dr Arjun Dang says, There's a huge gap in Alzheimer's diagnosis in India.",
-    videoUrl: "PhotosAndLogos/videoplayback (1).mp4",
+    videoUrl: "PhotosAndLogos/videoplayback1.mp4",
     format: "shorts",
     platform: "YouTube Shorts",
     newsLink: "https://www.youtube.com/watch?app=desktop&feature=shared&v=syDuGB5cOVQ"
@@ -53,7 +53,7 @@ const videos = [
     id: 5,
     title: "Patient Success Stories",
     description: "Real stories from patients who benefited from early detection.",
-    videoUrl: "photosAndLogos/videoplayback.mp4",
+    videoUrl: "photosAndLogos/videoplayback2.mp4",
     format: "shorts",
     platform: "YouTube Shorts",
     newsLink: "https://www.youtube.com/shorts/vg7wkgCVkNY"

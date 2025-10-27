@@ -47,7 +47,7 @@ const DendriteDx = ({ pageTitle }) => {
               rel="noopener noreferrer"
               className="bg-red-600 text-white px-4 py-2 rounded-xl"
             >
-              Download Dendrite Basic Brochure
+              Download Dendrite Dx Basic Brochure
             </a>
           </div>
           <div className="justify-center flex mt-5  gap-3">
@@ -58,7 +58,7 @@ const DendriteDx = ({ pageTitle }) => {
                 rel="noopener noreferrer"
                 className="bg-red-600 text-white px-4 py-2 rounded-xl mt-2 "
               >
-                Download Dendrite Brain Brochure
+                Download Dendrite Dx Brain Brochure
               </a>
             </button>
           </div>
