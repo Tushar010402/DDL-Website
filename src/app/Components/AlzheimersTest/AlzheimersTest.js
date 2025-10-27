@@ -2,6 +2,8 @@
 
 import React from "react";
 import Link from "next/link";
+import Videonewsmarquee from "./Videonewsmarquee";
+
 
 // Add this handler after imports (uses window fallback for navigation)
 const handlePackageSelect = (packageName) => {
@@ -10,6 +12,10 @@ const handlePackageSelect = (packageName) => {
     window.location.href = `/HomeCollection?package=${encodedPackageName}`;
   }
 };
+
+
+
+
 
 const DendriteDx = ({ pageTitle }) => {
   return (
@@ -31,18 +37,30 @@ const DendriteDx = ({ pageTitle }) => {
             <button
               type="button"
               onClick={() => handlePackageSelect(" Dendrite Dx for Alzheimer")}
-              className="bg-purple-600 text-white px-4 py-2 rounded"
+              className="bg-purple-600 text-white px-4 py-2 rounded-xl"
             >
               Book Dendrite Dx
             </button>
             <a
-              href="https://testprofiles.drdangslab.com/static/files/Dendrite-Dx.pdf"
+              href="https://testprofiles.drdangslab.com/static/files/Dendrite-Basic-Brochure.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-gray-200 text-gray-800 px-4 py-2 rounded"
+              className="bg-red-600 text-white px-4 py-2 rounded-xl"
             >
-              Download Brochure
+              Download Dendrite Basic Brochure
             </a>
+          </div>
+          <div className="justify-center flex mt-5  gap-3">
+            <button >
+              <a
+                href="https://testprofiles.drdangslab.com/static/files/Dendrite-Brain-Brochure.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-red-600 text-white px-4 py-2 rounded-xl mt-2 "
+              >
+                Download Dendrite Brain Brochure
+              </a>
+            </button>
           </div>
 
       {/* Main Content Section */}
@@ -216,7 +234,12 @@ const DendriteDx = ({ pageTitle }) => {
           Dendrite Dx — Bridging the Gap in Alzheimer's Detection. Early, Accessible, Actionable.
         </p>
       </div>
+      <div>
+       <Videonewsmarquee />
     </div>
+    </div>
+
+    
   );
 };
 

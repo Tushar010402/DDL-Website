@@ -278,8 +278,8 @@ const TestProfiles = () => {
         "Homocysteine",
         "High Sensitivity Cardiac Troponin I test (hs Troponin I)",
         "Lp(PLA)2*",
-        "Extended Lipid Profile*",
-        "(Lipid profile with Lipoprotein (a), Apolipoprotein A & B, Homocysteine)",
+        "Extended Lipid Profile* (Lipid profile with Lipoprotein (a), Apolipoprotein A & B, Homocysteine)",
+        
       ],
       price: "7,500",
     },
@@ -292,8 +292,8 @@ const TestProfiles = () => {
         "Pro-B-type Natriuretic Peptide (Pro BNP)",
         "Leptin",
         "Lp(PLA)2*",
-        "Extended Lipid Profile*",
-        "(Lipid profile with Lipoprotein (a), Apolipoprotein A & B, Homocysteine)",
+        "Extended Lipid Profile* (Lipid profile with Lipoprotein (a), Apolipoprotein A & B, Homocysteine)",
+        
       ],
       price: "13,900",
     },
