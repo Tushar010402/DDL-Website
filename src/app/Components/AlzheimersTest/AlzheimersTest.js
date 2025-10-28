@@ -42,25 +42,16 @@ const DendriteDx = ({ pageTitle }) => {
               Book Dendrite Dx
             </button>
             <a
-              href="https://testprofiles.drdangslab.com/static/files/Dendrite-Basic-Brochure.pdf"
+              href="https://testprofiles.drdangslab.com/static/files/Dendrite-Dx-Brochure.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-red-600 text-white px-4 py-2 rounded-xl"
             >
-              Download Dendrite Dx Basic Brochure
+              Download Dendrite Dx Brochure
             </a>
           </div>
           <div className="justify-center flex mt-5  gap-3">
-            <button >
-              <a
-                href="https://testprofiles.drdangslab.com/static/files/Dendrite-Brain-Brochure.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-red-600 text-white px-4 py-2 rounded-xl mt-2 "
-              >
-                Download Dendrite Dx Brain Brochure
-              </a>
-            </button>
+            
           </div>
 
       {/* Main Content Section */}

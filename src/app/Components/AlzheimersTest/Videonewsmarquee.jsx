@@ -76,6 +76,15 @@ const videos = [
     platform: "News",
     newsLink: "https://www.hindustantimes.com/cities/delhi-news/delhi-lab-launches-non-invasive-alzheimer-s-diagnosis-101758480319190.html"
   },
+  {
+    id: 8,
+    title: "Non-invasive test to catch early signs of Alzheimer’s now in India. How it works, how much will it cost",
+    description: "The test, Dendrite Dx, launched by Dr Dangs Labs, includes a 15-minute FDA-cleared cognitive assessment, advanced blood biomarkers to detect key proteins suggesting the condition and a proprietary APS2 result through collaboration with a US-based diagnostic lab in patients with signs of cognitive impairment.",
+    thumbnail: "PhotosAndLogos/Alzheimers-Trees.jpg",
+    format: "news",
+    platform: "News",
+    newsLink: "https://theprint.in/health/non-invasive-test-to-catch-early-signs-of-alzheimers-now-in-india-how-it-works-how-much-will-it-cost/2748370/"
+  },
 ];
 
 const VideoCard = ({ 
@@ -271,7 +280,7 @@ const VideoCard = ({
             )}
 
             {/* Format-specific overlays */}
-            {isVertical && (isActive || isPlaying) && (
+            {isVertical && (isActive || isPlaying) && ( 
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent pt-12 pb-3 px-3">
                 <h3 className="text-white font-bold text-sm mb-1 line-clamp-2">{video.title}</h3>
                 <p className="text-white/90 text-xs line-clamp-2">{video.description}</p>
