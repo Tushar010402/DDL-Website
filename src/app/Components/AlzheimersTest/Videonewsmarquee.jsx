@@ -49,15 +49,7 @@ const videos = [
     platform: "News",
     newsLink: "https://x.com/ANI/status/1969605000453120271?t=X3TY4u28RGUJctjFJjvP3g&s=08"
   },
-  {
-    id: 5,
-    title: "Patient Success Stories",
-    description: "Real stories from patients who benefited from early detection.",
-    videoUrl: "photosAndLogos/videoplayback2.mp4",
-    format: "shorts",
-    platform: "YouTube Shorts",
-    newsLink: "https://www.youtube.com/shorts/vg7wkgCVkNY"
-  },
+  
   {
     id: 6,
     title: "New test for Alzheimer’s, non-invasive and FDA-approved, now available in India",
