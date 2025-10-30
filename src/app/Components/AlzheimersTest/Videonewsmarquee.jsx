@@ -454,7 +454,7 @@ export default function VideoNewsMarquee() {
       {/* Video Slider */}
       <div
         ref={scrollRef}
-        className="flex items-center gap-2 px-4 sm:px-16 overflow-x-auto scroll-smooth"
+        className="flex mt-7 mb-7  items-center gap-2 px-4 sm:px-16 overflow-x-auto scroll-smooth"
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', minHeight: '600px' }}
       >
         {videos.map((video, idx) => (
@@ -495,15 +495,7 @@ export default function VideoNewsMarquee() {
 
       
 
-      <style jsx>{`
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
-        @keyframes progress {
-          from { width: 0%; }
-          to { width: 100%; }
-        }
-      `}</style>
+      
     </div>
   );
 }

@@ -275,7 +275,6 @@ const TestProfiles = () => {
       name: "Advanced Cardiac Risk Profile*",
       tests: [
         "High Sensitivity C-Reactive Protein (hs CRP)",
-        "Homocysteine",
         "High Sensitivity Cardiac Troponin I test (hs Troponin I)",
         "Lp(PLA)2*",
         "Extended Lipid Profile* (Lipid profile with Lipoprotein (a), Apolipoprotein A & B, Homocysteine)",
