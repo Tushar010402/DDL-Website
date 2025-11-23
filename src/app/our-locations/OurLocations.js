@@ -61,6 +61,13 @@ const locations = [
     timing: 'Timing: 8:00am to 6:00pm <br />(Monday-Saturday)',
     mapUrl: "https://www.google.com/maps/place/Dr.+Dangs+Lab/@28.6790643,77.2055007,17z/data=!3m1!4b1!4m6!3m5!1s0x390cfd24aab41819:0xaf7820d0a7d74af9!8m2!3d28.6790643!4d77.2080756!16s%2Fg%2F11q3z91s4n?entry=ttu&g_ep=EgoyMDI1MDcyOS4wIKXMDSoASAFQAw%3D%3D"
   },
+  {
+    title: 'Noida',
+    address: 'Max Square (Lower Ground Floor), Jaypee Wishtown, Sector 129, Noida – 201304',
+    phone: ['+91-9220503545'],
+    timing: 'Timing: 8:00am to 6:00pm <br />(Monday-Saturday)',
+    mapUrl: "https://www.google.com/maps/place/Dr.+Dangs+Lab+-+Noida/@28.5094832,77.3859705,586m/data=!3m2!1e3!4b1!4m6!3m5!1s0x390ce9330765720f:0xe429b6fca95c8ede!8m2!3d28.5094832!4d77.3859705!16s%2Fg%2F11mm85bd4v!17m2!4m1!1e3!18m1!1e1?entry=ttu&g_ep=EgoyMDI1MTExNy4wIKXMDSoASAFQAw%3D%3D"
+  },
 ];
 
 const LocationCard = ({ title, address, phone, timing, mapUrl }) => (

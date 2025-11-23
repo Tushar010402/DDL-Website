@@ -27,14 +27,14 @@ const locations = [
     address: '12/13 G.F., Vasant Arcade, Nelson Mandela Marg, Vasant Kunj, New Delhi-110070',
     phone: ['+91-9910589234'],
     timing: 'Timing: 8:00am to 6:00pm <br />(Monday-Saturday)',
-    link: "/"
+    link: ""
   },
   {
     title: 'Greater Kailash',
     address: 'GF N36 GK1 <br /> New Delhi–110048',
     phone: ['+91-9910313567'],
     timing: 'Timing-8:00am to 4:00pm <br />(Monday-Saturday)',
-    link: "/"
+    link: ""
   },
   {
     title: 'Gurugram',
@@ -55,14 +55,21 @@ const locations = [
     address: 'D-851, Ground Floor, New Friends Colony, New Delhi-110025',
     phone: ['+91-9311225665'],
     timing: 'Timing: 8:00am to 6:00pm<br />(Monday-Saturday)',
-    link: "/"
+    link: ""
   },
   {
     title: 'Kamla Nagar',
     address: 'UA No-25, Ground Floor, Jawahar Nagar, Malka Ganj, New Delhi-110007',
     phone: ['+91-9289157434'],
     timing: 'Timing: 8:00am to 6:00pm <br />(Monday-Saturday)',
-    link: "/"
+    link: ""
+  },
+  {
+    title: 'Noida',
+    address: 'Max Square (Lower Ground Floor), Jaypee Wishtown, Sector 129, Noida – 201304',
+    phone: ['+91-9220503545'],
+    timing: 'Timing: 8:00am to 6:00pm <br />(Monday-Saturday)',
+    link: ""
   },
 
 ];
