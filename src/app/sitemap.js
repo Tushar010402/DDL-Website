@@ -160,6 +160,36 @@ export default async function sitemap() {
               lastModified: new Date(),
               changeFrequency: 'weekly',
               priority: 0.8
+          },
+          {
+              url: `${baseUrl}/importance-of-omega-3-omega-6-testing`,
+              lastModified: new Date(),
+              changeFrequency: 'monthly',
+              priority: 0.8
+          },
+          {
+              url: `${baseUrl}/importance-of-vitamin-b1-b2-b5-b6-testing`,
+              lastModified: new Date(),
+              changeFrequency: 'monthly',
+              priority: 0.8
+          },
+          {
+              url: `${baseUrl}/salivary-cortisol-testing-delhi`,
+              lastModified: new Date(),
+              changeFrequency: 'monthly',
+              priority: 0.8
+          },
+          {
+              url: `${baseUrl}/sperm-dna-fragmentation-test-delhi`,
+              lastModified: new Date(),
+              changeFrequency: 'monthly',
+              priority: 0.8
+          },
+          {
+              url: `${baseUrl}/sibo-test-delhi-ncr`,
+              lastModified: new Date(),
+              changeFrequency: 'monthly',
+              priority: 0.8
           }
       ];
 
