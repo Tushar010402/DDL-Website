@@ -232,7 +232,7 @@ const MEDICATIONS = [
 
 const COLLECTION_STEPS = [
   "Opening the collection tube",
-  "Removing the Salivette® without touching it",
+  "Removing the saliva swab without touching it",
   "Placing the swab in the mouth for 60–120 seconds",
   "Returning the saturated swab into the tube",
   "Sealing the tube securely",
@@ -270,7 +270,7 @@ const ADVANTAGES = [
 const WHY_DDL = [
   { Icon: FaCertificate, text: "Structured time-based sampling" },
   { Icon: FaUserMd, text: "Detailed patient guidance" },
-  { Icon: FaFlask, text: "Salivette® standardized collection devices" },
+  { Icon: FaFlask, text: "Standardized saliva collection devices" },
   { Icon: FaClock, text: "Emphasis on accurate circadian rhythm assessment" },
 ];
 
@@ -361,15 +361,13 @@ const SalivaryCortisol = () => {
               </a>
               , we offer specialized salivary cortisol testing packages designed
               to evaluate your body&apos;s stress response and daily cortisol rhythm
-              using the advanced{" "}
-              <strong className="font-bold text-[#d9242a]">Salivette®</strong>{" "}
-              saliva collection system.
+              using the advanced saliva collection system.
             </p>
 
             <div className="mb-7 flex flex-wrap gap-2.5">
               {[
                 "Non-invasive saliva test",
-                "Salivette® collection",
+                "Saliva collection",
                 "6-point cortisol panel",
               ].map((t) => (
                 <span
@@ -405,7 +403,7 @@ const SalivaryCortisol = () => {
               <span aria-hidden="true" className="h-1 w-1 rounded-full bg-[#f5d2d3]" />
               <span>NABL accredited</span>
               <span aria-hidden="true" className="h-1 w-1 rounded-full bg-[#f5d2d3]" />
-              <span>Salivette® collection</span>
+              <span>Saliva collection</span>
             </div>
           </div>
 
@@ -483,8 +481,7 @@ const SalivaryCortisol = () => {
             <a href="https://www.drdangslab.com/" className="font-semibold text-[#d9242a] underline underline-offset-2 hover:text-[#b81e23]">
               Dr. Dangs Lab
             </a>{" "}
-            we offer three specialised salivary cortisol testing packages using the advanced{" "}
-            <strong className="font-bold text-[#d9242a]">Salivette®</strong> saliva collection system.
+            we offer three specialised salivary cortisol testing packages using the advanced saliva collection system.
           </p>
 
           <div className="mt-6 grid gap-[18px] sm:grid-cols-2 lg:grid-cols-3">
@@ -575,8 +572,7 @@ const SalivaryCortisol = () => {
           </div>
 
           <p className="mt-6 text-[15px] leading-[1.82] text-[#5e5e5e]">
-            The test is completely non-invasive and can be performed conveniently from home using{" "}
-            <strong className="font-bold text-[#d9242a]">Salivette®</strong> collection devices.
+            The test is completely non-invasive and can be performed conveniently from home using saliva collection devices.
           </p>
         </section>
 
@@ -812,13 +808,13 @@ const SalivaryCortisol = () => {
 
         {/* COLLECTION PROCESS */}
         <section className="border-b border-[#f1ebeb] pb-3.5 pt-14 sm:pt-16">
-          <span className="mb-2.5 inline-block text-[11.5px] font-extrabold uppercase tracking-[2.5px] text-[#d9242a]">Salivette® process</span>
+          <span className="mb-2.5 inline-block text-[11.5px] font-extrabold uppercase tracking-[2.5px] text-[#d9242a]">Saliva process</span>
           <h2 className="relative mb-5 pl-[18px] text-[clamp(24px,3.4vw,33px)] font-extrabold leading-[1.24] tracking-[-0.4px]">
             <span aria-hidden="true" className="absolute left-0 top-[5px] bottom-[5px] w-[5px] rounded-[3px] bg-gradient-to-b from-[#d9242a] to-[#b81e23]" />
-            Salivette&reg; Collection Process
+            Saliva Collection Process
           </h2>
           <p className="mb-4 text-[15px] leading-[1.82] text-[#5e5e5e]">
-            The test uses the Salivette® collection device for hygienic and standardized saliva sampling.
+            The test uses a saliva collection device for hygienic and standardized saliva sampling.
           </p>
 
           <div className="mt-6 flex flex-col gap-3">
@@ -961,7 +957,7 @@ const SalivaryCortisol = () => {
             <ul className="m-0 flex list-none flex-col gap-3 p-0">
               <li className="flex items-center gap-3 text-[14px] font-medium text-[#555]">
                 <FaFlask aria-hidden="true" className="w-[18px] flex-shrink-0 text-[#d9242a]" />
-                Salivette® saliva collection
+                Saliva collection
               </li>
               <li className="flex items-center gap-3 text-[14px] font-medium text-[#555]">
                 <FaMapMarkerAlt aria-hidden="true" className="w-[18px] flex-shrink-0 text-[#d9242a]" />

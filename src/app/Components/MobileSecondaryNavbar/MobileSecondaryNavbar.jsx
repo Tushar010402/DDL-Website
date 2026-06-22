@@ -80,6 +80,15 @@ const HorizontalNavbar2 = () => {
             name: "Tests", 
             isDropdown: true,
             options: [
+                { name: "SIBO Breath Test", href: "/sibo-test-delhi-ncr" },
+                { name: "Sperm DNA Fragmentation (SDF)", href: "/sperm-dna-fragmentation-test-delhi" },
+                { name: "Salivary Cortisol Testing", href: "/salivary-cortisol-testing-delhi" },
+                { name: "Omega-3 & Omega-6", href: "/importance-of-omega-3-omega-6-testing" },
+                { name: "Vitamin B1, B2, B5 & B6", href: "/importance-of-vitamin-b1-b2-b5-b6-testing" },
+                { name: "Dendrite Dx – Alzheimer's Test", href: "/dendrite-dx-alzheimers-diagnosis-delhi" },
+                { name: "STD Testing", href: "/STD-Testing" },
+                { name: "Blood Tests for Cardiac Health", href: "/4-Key-Blood-Tests-for-Cardiac-Health" },
+                { name: "Vitamin C Blood Test", href: "/vitamin-c-blood-test-in-delhi-ncr" },
                 { name: "Myositis Profile Test", href: "/myositis-profile-16-antigens-test-delhi-gurgaon" },
                 { name: "Type 1 Diabetes Autoantibody Test", href: "/type-1-diabetes-autoantibody-test-delhi-gurgaon" },
                 { name: "CMV DNA Viral Load RT PCR Test", href: "/cmv-dna-viral-load-rt-pcr-test-delhi-gurgaon" },
@@ -124,7 +133,7 @@ const HorizontalNavbar2 = () => {
                 
             ]
         },
-        { name: "Health Guide", href: "/Healthguide" },
+        { name: "Blog", href: "/blog" },
         { name: "News", href: "/News" },
         { name: "Career", href: "/Career" },
     ];

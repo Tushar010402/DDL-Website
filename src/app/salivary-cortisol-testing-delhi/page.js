@@ -23,7 +23,7 @@ export const metadata = {
         'Burnout testing',
         'Chronic stress testing',
         'Cortisol imbalance symptoms',
-        'Salivette cortisol testing',
+        'Saliva cortisol testing',
         'Dr. Dangs Lab',
     ],
     authors: [{ name: 'Dr. Dangs Lab', url: ORG_URL }],
@@ -75,7 +75,7 @@ export const metadata = {
         ICBM: '28.5535, 77.1942',
         'article:section': 'Functional Medicine',
         'article:tag':
-            'Salivary Cortisol, Cortisol Awakening Response, CAR, Diurnal Cortisol, Stress Hormones, Adrenal Function, Salivette',
+            'Salivary Cortisol, Cortisol Awakening Response, CAR, Diurnal Cortisol, Stress Hormones, Adrenal Function, Saliva',
     },
 };
 
