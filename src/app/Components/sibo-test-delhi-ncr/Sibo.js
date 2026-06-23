@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -167,6 +167,19 @@ const FAQS = [
 
 const Sibo = () => {
   const [openFaq, setOpenFaq] = useState(0);
+  const [newsImages, setNewsImages] = useState({});
+  useEffect(() => {
+    NEWS_ITEMS.forEach((n) => {
+      const fetchUrl = n.ogUrl || n.url;
+      fetch(`https://api.microlink.io?url=${encodeURIComponent(fetchUrl)}`)
+        .then((r) => r.json())
+        .then((d) => {
+          const img = d?.data?.image?.url;
+          if (img) setNewsImages((prev) => ({ ...prev, [n.url]: img }));
+        })
+        .catch(() => {});
+    });
+  }, []);
 
   return (
     <div className={styles.page}>
@@ -685,8 +698,202 @@ const Sibo = () => {
           </div>
         </section>
       </div>
+
+      {/* ── In the News & Social Media ── */}
+      <div style={{ background: "#fafafa", borderTop: "1px solid #f0eaea", paddingTop: "56px", paddingBottom: "60px", overflow: "hidden" }}>
+
+        {/* Heading */}
+        <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px", marginBottom: "40px" }}>
+          <p style={{ fontSize: "11px", fontWeight: "800", textTransform: "uppercase", letterSpacing: "2.5px", color: "#d9242a", marginBottom: "6px" }}>
+            Media Coverage
+          </p>
+          <h2 style={{ fontSize: "clamp(22px, 3vw, 30px)", fontWeight: "800", color: "#1f1f1f", margin: 0 }}>
+            As Seen In
+          </h2>
+        </div>
+
+        {/* ── Instagram Reels ── */}
+        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 24px", marginBottom: "56px" }}>
+          <p style={{ fontSize: "12px", fontWeight: "700", textTransform: "uppercase", letterSpacing: "2px", color: "#888", marginBottom: "28px" }}>
+            Watch Our Reels
+          </p>
+          <div style={{ display: "flex", gap: "40px", overflowX: "auto", paddingBottom: "16px", alignItems: "flex-start" }}>
+            {REEL_ITEMS.map((r) => (
+              <div key={r.id} style={{ flexShrink: 0, position: "relative" }}>
+                {/* Side buttons */}
+                <div style={{ position: "absolute", left: "-5px", top: "110px", width: "5px", height: "34px", background: "#2a2a2a", borderRadius: "2px 0 0 2px" }}/>
+                <div style={{ position: "absolute", left: "-5px", top: "156px", width: "5px", height: "34px", background: "#2a2a2a", borderRadius: "2px 0 0 2px" }}/>
+                <div style={{ position: "absolute", right: "-5px", top: "136px", width: "5px", height: "68px", background: "#2a2a2a", borderRadius: "0 2px 2px 0" }}/>
+
+                {/* Phone shell */}
+                <div style={{ width: "320px", background: "#111", borderRadius: "52px", border: "10px solid #222", boxShadow: "0 0 0 1.5px #444", overflow: "hidden", display: "flex", flexDirection: "column" }}>
+
+                  {/* Status bar */}
+                  <div style={{ height: "48px", background: "#000", display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 24px", flexShrink: 0, position: "relative" }}>
+                    <span style={{ color: "#fff", fontSize: "13px", fontWeight: "700" }}>9:41</span>
+                    <div style={{ position: "absolute", top: "11px", left: "50%", transform: "translateX(-50%)", width: "90px", height: "26px", background: "#111", borderRadius: "14px" }}/>
+                    <div style={{ display: "flex", gap: "5px", alignItems: "center" }}>
+                      <svg width="16" height="12" viewBox="0 0 15 11" fill="white"><rect x="0" y="7" width="3" height="4" rx="0.6"/><rect x="4" y="5" width="3" height="6" rx="0.6"/><rect x="8" y="2.5" width="3" height="8.5" rx="0.6"/><rect x="12" y="0" width="3" height="11" rx="0.6"/></svg>
+                      <svg width="15" height="11" viewBox="0 0 13 10" fill="none"><circle cx="6.5" cy="9" r="1.1" fill="white"/><path d="M4 6.5a3.5 3.5 0 0 1 5 0" stroke="white" strokeWidth="1.2" strokeLinecap="round"/><path d="M1.5 4a6 6 0 0 1 10 0" stroke="white" strokeWidth="1.2" strokeLinecap="round"/></svg>
+                      <div style={{ display: "flex", alignItems: "center" }}>
+                        <div style={{ width: "22px", height: "11px", border: "1.3px solid rgba(255,255,255,0.6)", borderRadius: "3px", padding: "1.5px" }}>
+                          <div style={{ width: "70%", height: "100%", background: "white", borderRadius: "1.5px" }}/>
+                        </div>
+                        <div style={{ width: "2px", height: "5px", background: "rgba(255,255,255,0.4)", borderRadius: "0 1px 1px 0" }}/>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* iframe — sandbox blocks parent navigation so "Watch on Instagram" can't redirect */}
+                  <div style={{ position: "relative" }}>
+                    <iframe
+                      src={`https://www.instagram.com/reel/${r.id}/embed/`}
+                      width="300"
+                      height="580"
+                      frameBorder="0"
+                      scrolling="no"
+                      allowTransparency="true"
+                      style={{ display: "block", border: "none" }}
+                      title={`Instagram Reel ${r.id}`}
+                    />
+                    {/* Blocks the "Watch on Instagram" header link area */}
+                    <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "52px", zIndex: 10 }} />
+                  </div>
+
+                  {/* Home indicator */}
+                  <div style={{ height: "22px", background: "#000", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                    <div style={{ width: "100px", height: "4px", background: "rgba(255,255,255,0.2)", borderRadius: "2px" }}/>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* ── News articles marquee (scrolls left) ── */}
+        <div>
+          <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px", marginBottom: "20px" }}>
+            <p style={{ fontSize: "12px", fontWeight: "700", textTransform: "uppercase", letterSpacing: "2px", color: "#888", margin: 0 }}>
+              In the News
+            </p>
+          </div>
+          <div style={{ overflow: "hidden" }}>
+            <div className="sibo-news-track" style={{ display: "flex", gap: "20px", animation: "siboMarqueeLeft 40s linear infinite", width: "max-content", paddingLeft: "24px" }}>
+              {[...NEWS_ITEMS, ...NEWS_ITEMS].map((n, i) => (
+                <a
+                  key={i}
+                  href={n.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    flexShrink: 0,
+                    width: "clamp(300px, 28vw, 420px)",
+                    background: "#fff",
+                    border: "1.5px solid #f0eaea",
+                    borderRadius: "18px",
+                    textDecoration: "none",
+                    display: "flex",
+                    flexDirection: "column",
+                    overflow: "hidden",
+                    boxShadow: "0 2px 16px rgba(0,0,0,0.06)",
+                  }}
+                >
+                  {/* OG image or color fallback */}
+                  <div style={{ width: "100%", height: "168px", overflow: "hidden", background: n.color + "18", flexShrink: 0, position: "relative" }}>
+                    {newsImages[n.url] ? (
+                      <img
+                        src={newsImages[n.url]}
+                        alt={n.title}
+                        style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                      />
+                    ) : (
+                      <div style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                        <svg width="36" height="36" fill="none" viewBox="0 0 24 24" stroke={n.color} strokeWidth="1.5" opacity="0.4">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h3l2-2h4l2 2h3a2 2 0 012 2v12a2 2 0 01-2 2z"/>
+                          <circle cx="12" cy="13" r="3" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </div>
+                    )}
+                    {/* Source pill over image */}
+                    <span style={{
+                      position: "absolute",
+                      top: "10px",
+                      left: "10px",
+                      background: n.color,
+                      color: "#fff",
+                      borderRadius: "20px",
+                      padding: "3px 10px",
+                      fontSize: "10px",
+                      fontWeight: "800",
+                      textTransform: "uppercase",
+                      letterSpacing: "0.7px",
+                    }}>
+                      {n.source}
+                    </span>
+                  </div>
+                  {/* Text content */}
+                  <div style={{ padding: "16px 18px 18px", display: "flex", flexDirection: "column", gap: "10px", flex: 1 }}>
+                    <p style={{ fontSize: "13.5px", fontWeight: "700", color: "#1f1f1f", margin: 0, lineHeight: 1.5, display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
+                      {n.title}
+                    </p>
+                    <span style={{ fontSize: "12px", fontWeight: "700", color: "#d9242a", display: "flex", alignItems: "center", gap: "4px", marginTop: "auto" }}>
+                      Read article
+                      <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
+                    </span>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <style>{`
+        @keyframes siboMarqueeLeft {
+          0%   { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .sibo-news-track:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
+
     </div>
   );
 };
+
+const NEWS_ITEMS = [
+  {
+    source: "ANI News",
+    title: "Dr. Dangs Lab Launches Breath Lab for Gut Disorders on World Digestive Health Day",
+    url: "https://aninews.in/news/national/general-news/dr-dangs-lab-launches-breath-lab-for-gut-disorders-on-world-digestive-health-day20260529070741/",
+    ogUrl: "https://www.malaysiasun.com/news/279088646/dr-dang-lab-launches-breath-lab-for-gut-disorders-on-world-digestive-health-day",
+    color: "#0066cc",
+  },
+  {
+    source: "The CSR Journal",
+    title: "Dr. Dangs Lab Launches Advanced Gut Health Testing Portfolio on World Digestive Health Day",
+    url: "https://thecsrjournal.in/dr-dangs-lab-launches-advanced-gut-health-testing-portfolio-on-world-digestive-health-day/",
+    color: "#1a7a30",
+  },
+  {
+    source: "Malaysia Sun",
+    title: "Dr. Dangs Lab Launches Breath Lab for Gut Disorders on World Digestive Health Day",
+    url: "https://www.malaysiasun.com/news/279088646/dr-dang-lab-launches-breath-lab-for-gut-disorders-on-world-digestive-health-day",
+    color: "#c45e00",
+  },
+  {
+    source: "Mugglehead",
+    title: "Dr. Dangs Lab Expands Breath Testing for Gut Disorders",
+    url: "https://mugglehead.com/dr-dangs-lab-expands-breath-testing-for-gut-disorders/",
+    color: "#6d28d9",
+  },
+];
+
+const REEL_ITEMS = [
+  { id: "DY5r6KOTwZV", url: "https://www.instagram.com/reel/DY5r6KOTwZV/", videoSrc: "/reels/DY5r6KOTwZV.mp4" },
+  { id: "DZG9sefhXG7", url: "https://www.instagram.com/reel/DZG9sefhXG7/", videoSrc: "/reels/DZG9sefhXG7.mp4" },
+  { id: "DZMdGVqBvRf", url: "https://www.instagram.com/reel/DZMdGVqBvRf/", videoSrc: "/reels/DZMdGVqBvRf.mp4" },
+];
 
 export default Sibo;
