@@ -26,13 +26,13 @@ export default async function HealthguidePage() {
     return (
         <>
             <Head>
-                <title>Health Guide - Read Latest Health Blogs/ Articles</title>
-                <meta name="description" content="Discover the latest health blogs and articles on Dr. Dangs Lab Health Guide. Stay informed on health trends, tips, and insights." />
+                <title>Blog - Read Latest Health Blogs & Articles | Dr. Dangs Lab</title>
+                <meta name="description" content="Discover the latest health blogs and articles by Dr. Dangs Lab specialists. Stay informed on health trends, diagnostic tips, and expert insights." />
             </Head>
 
             {/* SEO Content */}
             <div className="seo-content">
-                <h1>Health Guide - Dr. Dangs Lab</h1>
+                <h1>Blog - Dr. Dangs Lab</h1>
                 <section>
                     <h2>Latest Blogs</h2>
                     {blogs.map(blog => (

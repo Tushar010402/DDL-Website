@@ -26,12 +26,17 @@ const HorizontalNavbar = () => {
         { name: "Recognition", href: "/Recognition" },
         { name: "Careers", href: "/Career" },
         { name: "News", href: "/News" },
-        { name: "Health Guide", href: "/Healthguide" },
+        { name: "Blog", href: "/blog" },
         { name: "Feedback", href: "/Feedback" },
         { name: "Corona Virus", href: "/CoronaVirus" },
         { name: "Swine Flu(H1N1) Test", href: "/Swine-Flu-H1n1-Test.aspx" },
       
         // -- New Test Pages --
+        { name: "SIBO Breath Test", href: "/sibo-test-delhi-ncr" },
+        { name: "Sperm DNA Fragmentation (SDF)", href: "/sperm-dna-fragmentation-test-delhi" },
+        { name: "Salivary Cortisol Testing", href: "/salivary-cortisol-testing-delhi" },
+        { name: "Omega-3 & Omega-6", href: "/importance-of-omega-3-omega-6-testing" },
+        { name: "Vitamin B1, B2, B5 & B6", href: "/importance-of-vitamin-b1-b2-b5-b6-testing" },
         { name: "STD Testing", href: "/STD-Testing" },
          { name: "Dendrite Dx – Alzheimer’s Test", href: "/dendrite-dx-alzheimers-diagnosis-delhi" },
         { name: "Blood Tests for Cardiac Health", href: "/4-Key-Blood-Tests-for-Cardiac-Health" },

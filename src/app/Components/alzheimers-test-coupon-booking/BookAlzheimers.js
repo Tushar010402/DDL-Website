@@ -36,6 +36,22 @@ const genderOptions = ['Male', 'Female', 'Other'];
 const DETAIL_URL = 'https://www.drdangslab.com/dendrite-dx-alzheimers-diagnosis-delhi';
 
 // ----- Content data -----
+const TERMS = [
+  'Only prerequisite is overnight 10–12 hours fasting. Plain water is permitted in the morning.',
+  'Sample type is EDTA plasma (blood sample).',
+  'Prior appointment/booking is recommended before sample collection.',
+  'The voucher is valid for 2 months from the date of issue and is non-transferable.',
+  'Test reporting timelines are subject to sample acceptance and quality checks. The final report will be released as per Dr. Dangs Lab reporting protocol.',
+  'This voucher is valid only for the two tests/parameters specifically mentioned on the voucher. Any additional tests requested by the patient or prescribing Healthcare Professional (HCP) will be charged separately as per applicable rates.',
+  'For any additional tests conducted beyond those covered under this voucher, DDL will issue a separate laboratory report. Communication, coordination, and reporting for such additional tests shall be managed independently from the tests covered under this voucher.',
+  'This voucher is valid only when accompanied by a valid prescription issued by a registered Healthcare Professional (HCP).',
+  'This voucher cannot be combined, exchanged, or used in conjunction with any other coupon, discount, certificate, promotional offer, or voucher unless otherwise specified by DDL in writing.',
+  'The services provided under this voucher are not part of any health insurance benefit, reimbursement program, or cashless claim facility.',
+  'By availing services under this voucher, the patient confirms that they have read, understood, and agreed to comply with the terms and conditions stated herein.',
+  'DDL reserves the right to modify, withdraw, or terminate the voucher program or its terms and conditions at its sole discretion without prior notice.',
+  'This voucher is strictly non-duplicable. Any attempt to reproduce, duplicate, or counterfeit the voucher is illegal.',
+];
+
 const WHY_MATTERS = [
   { Icon: FaHeartbeat, text: 'Earlier diagnosis — better outcomes' },
   { Icon: FaUsers, text: 'Expanded access — reach underserved communities with a simple test' },
@@ -860,6 +876,24 @@ const BookAlzheimers = () => {
             >
               Read More <FaArrowRight aria-hidden="true" />
             </a>
+          </section>
+
+          {/* General Terms & Conditions */}
+          <section className="rounded-[22px] border border-[#f0eaea] bg-white p-6 shadow-[0_18px_44px_rgba(217,36,42,0.08)] sm:p-9">
+            <div className="mb-6 border-b border-[#f1ebeb] pb-4">
+              <span className="mb-1 inline-block text-[11.5px] font-extrabold uppercase tracking-[2.5px] text-[#d9242a]">
+                Voucher
+              </span>
+              <h2 className="text-[20px] font-extrabold tracking-[-0.3px]">General Terms &amp; Conditions</h2>
+            </div>
+            <ul className="space-y-3">
+              {TERMS.map((term, i) => (
+                <li key={i} className="flex items-start gap-3 text-[14px] leading-[1.65] text-[#3f3f3f]">
+                  <FaCheckCircle aria-hidden="true" className="mt-[3px] flex-shrink-0 text-[13px] text-[#d9242a]" />
+                  <span>{term}</span>
+                </li>
+              ))}
+            </ul>
           </section>
         </div>
       </div>
