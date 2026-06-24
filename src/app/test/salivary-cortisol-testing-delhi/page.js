@@ -205,7 +205,7 @@ const articleJsonLd = {
     headline:
         'Salivary Cortisol Testing: Understanding Your Body’s Stress Rhythm',
     description:
-        'Advanced, non-invasive salivary cortisol testing that maps the body’s cortisol rhythm across the day — evaluating CAR, diurnal patterns, stress physiology, sleep and adrenal function.',
+        'Advanced, non-invasive salivary cortisol testing that maps the body’s cortisol rhythm across the day, evaluating CAR, diurnal patterns, stress physiology, sleep and adrenal function.',
     url: PAGE_URL,
     mainEntityOfPage: PAGE_URL,
     image: [HERO_IMAGE],

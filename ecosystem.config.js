@@ -5,8 +5,10 @@ module.exports = {
     script: 'node_modules/next/dist/bin/next',
     args: 'start -H 127.0.0.1 -p 3002',
     interpreter: '/usr/bin/node',
-    exec_mode: 'fork',
-    instances: 1,
+    // Cluster mode with 2 instances enables gapless rolling reloads
+    // (one instance keeps serving while the other reloads). Both share port 3002.
+    exec_mode: 'cluster',
+    instances: 2,
     env: {
       NODE_ENV: 'production',
     },

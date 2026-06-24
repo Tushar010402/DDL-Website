@@ -179,9 +179,9 @@ const SAMPLE_TIMELINE = {
     ["0 Minutes", "Morning", "0 Minutes"],
     ["30 Minutes", "Afternoon", "30 Minutes"],
     ["60 Minutes", "Evening", "60 Minutes / Morning"],
-    ["—", "Late Night", "Afternoon"],
-    ["—", "—", "Evening"],
-    ["—", "—", "Late Night"],
+    ["-", "Late Night", "Afternoon"],
+    ["-", "-", "Evening"],
+    ["-", "-", "Late Night"],
   ],
 };
 
@@ -423,7 +423,7 @@ const SalivaryCortisol = () => {
             >
               <Image
                 src="/PhotosAndLogos/Salivary-Cortisol-Testing.webp"
-                alt="Salivary Cortisol Testing — understanding your body's stress rhythm at Dr. Dangs Lab"
+                alt="Salivary Cortisol Testing, understanding your body's stress rhythm at Dr. Dangs Lab"
                 fill
                 sizes="(max-width: 1024px) 100vw, 640px"
                 className="object-cover"
@@ -647,7 +647,7 @@ const SalivaryCortisol = () => {
             <strong className="font-bold text-[#d9242a]">
               biologically active cortisol
             </strong>{" "}
-            — the fraction available for use by the body.
+            which is the fraction available for use by the body.
           </p>
           <p className="mb-4 text-[15px] leading-[1.82] text-[#5e5e5e]">
             This makes salivary cortisol assessment especially useful for
@@ -835,7 +835,7 @@ const SalivaryCortisol = () => {
                       <td
                         key={ci}
                         className={`border-t border-[#f0eaea] px-5 py-3.5 text-[14px] leading-[1.5] ${
-                          cell === "—"
+                          cell === "-"
                             ? "text-[#c4bcbc]"
                             : "font-medium text-[#3f3f3f]"
                         }`}
@@ -1158,8 +1158,8 @@ const SalivaryCortisol = () => {
               </h2>
               <p className="m-0 text-[14.5px] leading-[1.72] text-white/90">
                 Skip the guesswork. A salivary cortisol panel from Dr. Dangs Lab
-                gives you a clear, time-mapped picture of your stress physiology
-                — so you can act on the right thing.
+                gives you a clear, time-mapped picture of your stress physiology,
+                so you can act on the right thing.
               </p>
             </div>
             <Link
@@ -1178,7 +1178,7 @@ const SalivaryCortisol = () => {
               aria-hidden="true"
               className="absolute left-0 top-[5px] bottom-[5px] w-[5px] rounded-[3px] bg-gradient-to-b from-[#d9242a] to-[#b81e23]"
             />
-            Conclusion
+            Summary
           </h2>
           <p className="mb-4 text-[15px] leading-[1.82] text-[#5e5e5e]">
             Stress affects every system in the body, but its effects are not

@@ -1,5 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    // Build output dir. Override via NEXT_DIST_DIR for zero-downtime deploys
+    // (build into a temp dir, then atomically swap into place). Defaults to .next.
+    distDir: process.env.NEXT_DIST_DIR || '.next',
+
     // Add transpilePackages for et-line
     transpilePackages: ['et-line'],
     
