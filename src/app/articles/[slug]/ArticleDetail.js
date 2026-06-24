@@ -3,6 +3,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useParams, useSearchParams } from 'next/navigation';
+import { sanitizeHTML } from '../../../utils/sanitize';
 import axios from 'axios';
 import styles from './ArticleDetail.module.css';
 
@@ -148,7 +149,7 @@ const ArticleDetail = ({ initialArticle = null }) => {
             <article className={styles.articleDetailContainer}>
                 <div 
                     className={styles.articleContent}
-                    dangerouslySetInnerHTML={{ __html: article.articles_content }}
+                    dangerouslySetInnerHTML={{ __html: sanitizeHTML(article.articles_content) }}
                 />
             </article>
         </>

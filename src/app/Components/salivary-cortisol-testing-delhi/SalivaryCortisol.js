@@ -939,7 +939,7 @@ const SalivaryCortisol = () => {
         <section className="border-b border-[#f1ebeb] pb-3.5 pt-14 sm:pt-16">
           <h2 className="relative mb-5 pl-[18px] text-[clamp(24px,3.4vw,33px)] font-extrabold leading-[1.24] tracking-[-0.4px]">
             <span aria-hidden="true" className="absolute left-0 top-[5px] bottom-[5px] w-[5px] rounded-[3px] bg-gradient-to-b from-[#d9242a] to-[#b81e23]" />
-            Conclusion
+            Summary
           </h2>
           <p className="mb-4 text-[15px] leading-[1.82] text-[#5e5e5e]">
             Stress affects every system in the body, but its effects are not always visible through routine testing. Salivary cortisol testing offers a deeper understanding of how your body responds to stress throughout the day.

@@ -1,5 +1,5 @@
 // app/test/layout.jsx
-export async function generateMetadata({ params, searchParams }) {
+export async function generateMetadata() {
     return {
       metadataBase: new URL('https://drdangs.com'),
       title: 'Medical Tests & Diagnostics | Dr Dangs Lab',

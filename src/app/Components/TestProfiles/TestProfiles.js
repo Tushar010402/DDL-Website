@@ -1375,24 +1375,24 @@ const TestProfiles = () => {
     <div className="min-h-screen bg-gray-50">
       {/* Header Section */}
       
-      <div className="relative h-96 bg-[#da262a] overflow-hidden">
+      <div className="relative min-h-[350px] sm:min-h-[380px] md:min-h-[420px] bg-[#da262a] overflow-visible pt-16 sm:pt-20">
   <div className="absolute inset-0 opacity-30"></div>
-  <div className="relative z-10 h-full flex items-center justify-center text-white text-center px-4">
-    <div>
+  <div className="relative z-10 h-full flex items-center justify-center text-white text-center px-4 py-8">
+    <div className="w-full max-w-4xl">
       {/* ✅ Logo placed above the title */}
       <div className="flex justify-center mb-6">
         <Image
           src="/PhotosAndLogos/ddl-white-logo.svg"
           alt="Dr. Dangs Lab"
-          width={100}
-          height={50}
-          className="object-cover"
+          width={150}
+          height={75}
+          className="object-contain"
           priority
         />
       </div>
 
-      <h1 className="text-5xl font-bold mb-4">Health Checkup Packages in Delhi/NCR</h1>
-      <p className="text-xl">Delhi NCR | Home Collection Available</p>
+      <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 px-2">Health Checkup Packages in Delhi/NCR</h1>
+      <p className="text-lg sm:text-xl">Delhi NCR | Home Collection Available</p>
     </div>
   </div>
 </div>

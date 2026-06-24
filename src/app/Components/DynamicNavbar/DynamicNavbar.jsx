@@ -10,6 +10,7 @@ import MobileSecondaryNavbar from '../MobileSecondaryNavbar/MobileSecondaryNavba
 
 const DynamicNavbar = () => {
     const pathname = usePathname();
+    const [mounted, setMounted] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
 
     // Routes that need the secondary navbar
@@ -45,9 +46,8 @@ const DynamicNavbar = () => {
             setIsMobile(window.innerWidth <= 821);
         };
 
-        // Initial check
         handleResize();
-
+        setMounted(true); // unlock responsive rendering after hydration is done
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);
@@ -66,6 +66,17 @@ const DynamicNavbar = () => {
         }
     }, [isMobile]);
 
+
+    // Pre-mount: return desktop tree — identical to SSR output, prevents hydration mismatch
+    if (!mounted) {
+        return (
+            <>
+                <HorizontalNavbar />
+                <Navbar2 />
+                {needsSecondaryNavbar && <Navbar />}
+            </>
+        );
+    }
 
     return (
         <>

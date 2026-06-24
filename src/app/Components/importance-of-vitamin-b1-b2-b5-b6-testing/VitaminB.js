@@ -867,7 +867,7 @@ const VitaminB = () => {
                 {/* CONCLUSION */}
                 <section className={styles.section}>
                     <span className={`${styles.kicker} ${styles.reveal}`} data-reveal>In summary</span>
-                    <h2 className={`${styles.sectionTitle} ${styles.reveal}`} data-reveal>Conclusion</h2>
+                    <h2 className={`${styles.sectionTitle} ${styles.reveal}`} data-reveal>Summary</h2>
                     <p className={`${styles.body} ${styles.reveal}`} data-reveal>
                         The Importance of Vitamin B1, B2, B5 and B6 Testing lies in detecting hidden
                         deficiencies that can affect energy, nerve health, mood, and metabolism. If

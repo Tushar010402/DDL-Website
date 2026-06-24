@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useSearchParams } from 'next/navigation';
 import Head from 'next/head';
+import { sanitizeHTML } from '../../../utils/sanitize';
 import axios from 'axios';
 import styles from './TestDetail.module.css';
 
@@ -191,7 +192,7 @@ const TestDetail = ({ initialTest = null }) => {
                     <div 
                         className={styles.testContent}
                         itemProp="description"
-                        dangerouslySetInnerHTML={{ __html: test.test_description }}
+                        dangerouslySetInnerHTML={{ __html: sanitizeHTML(test.test_description) }}
                     />
 
                     <div className={styles.testMetadata}>

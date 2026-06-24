@@ -6,6 +6,7 @@ import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { useRouter, useSearchParams } from 'next/navigation';
 import axios from 'axios';
+import { getBookingRecaptchaToken } from '@/app/utils/bookingRecaptcha';
 import DatePicker from 'react-datepicker';
 
 const Select = dynamic(() => import('react-select'), { ssr: false });
@@ -33,7 +34,7 @@ const customStyles = {
 };
 
 
-const stateOptions = [
+const fallbackStateOptions = [
   { value: 'Haryana', label: 'Haryana' },
   { value: 'Uttar Pradesh', label: 'Uttar Pradesh' },
   { value: 'Delhi', label: 'Delhi' },
@@ -85,6 +86,10 @@ const HomeCollection = () => {
   const [holidays, setHolidays] = useState([]);
   const [availableTimeSlots, setAvailableTimeSlots] = useState([]);
   const [selectedStateOption, setSelectedStateOption] = useState(null);
+  const [allCityStateData, setAllCityStateData] = useState([]);
+  const [stateOptions, setStateOptions] = useState(fallbackStateOptions);
+  const [cityOptions, setCityOptions] = useState([]);
+  const [selectedCityOption, setSelectedCityOption] = useState(null);
   const [isUpdateMode, setIsUpdateMode] = useState(false);
   const [errors, setErrors] = useState({});
   const [showThankYou, setShowThankYou] = useState(false);
@@ -346,6 +351,67 @@ const HomeCollection = () => {
   }, []);
 
   // Handle Form Input Changes
+  // Pincode lookup — auto-fill state & city
+  const handlePincodeChange = useCallback(
+    async (e) => {
+      const pincode = e.target.value.replace(/\D/g, '').slice(0, 6);
+      setFormData((prev) => ({ ...prev, pincode }));
+
+      if (pincode.length === 6) {
+        try {
+          const response = await axios.get(`https://api.postalpincode.in/pincode/${pincode}`);
+          const data = response.data;
+          if (data && data[0] && data[0].Status === 'Success' && data[0].PostOffice?.length > 0) {
+            const po = data[0].PostOffice[0];
+            const stateName = po.State;
+            const district = po.District;
+
+            // Set state
+            const stateOpt = stateOptions.find(s => s.value.toLowerCase() === stateName.toLowerCase());
+            if (stateOpt) {
+              setSelectedStateOption(stateOpt);
+              setFormData((prev) => ({ ...prev, state: stateOpt.value, pincode }));
+
+              // Derive city options for this state
+              const stateData = allCityStateData.find(s => s.name === stateOpt.value);
+              const cities = stateData
+                ? stateData.cities.map(c => ({ value: c.name, label: c.name }))
+                : [];
+              setCityOptions(cities);
+
+              // Try to match city from district
+              const matchedCity = cities.find(c => c.value.toLowerCase() === district.toLowerCase());
+              if (matchedCity) {
+                setSelectedCityOption(matchedCity);
+                setFormData((prev) => ({ ...prev, city: matchedCity.value, state: stateOpt.value, pincode }));
+              } else {
+                // Use district as city even if not in list
+                const cityOpt = { value: district, label: district };
+                setCityOptions((prev) => {
+                  const exists = prev.some(c => c.value.toLowerCase() === district.toLowerCase());
+                  return exists ? prev : [...prev, cityOpt];
+                });
+                setSelectedCityOption(cityOpt);
+                setFormData((prev) => ({ ...prev, city: district, state: stateOpt.value, pincode }));
+              }
+            } else {
+              // State not in list, set as-is
+              const newStateOpt = { value: stateName, label: stateName };
+              setSelectedStateOption(newStateOpt);
+              const cityOpt = { value: district, label: district };
+              setCityOptions([cityOpt]);
+              setSelectedCityOption(cityOpt);
+              setFormData((prev) => ({ ...prev, state: stateName, city: district, pincode }));
+            }
+          }
+        } catch (error) {
+          console.error('Pincode lookup failed:', error);
+        }
+      }
+    },
+    [stateOptions, allCityStateData]
+  );
+
   const handleChange = useCallback(
     (e) => {
       const { name, value, type } = e.target;
@@ -545,6 +611,7 @@ const HomeCollection = () => {
         });
 
         formDataToSend.append('Unique_id', uniqueID);
+        formDataToSend.append('recaptcha_token', await getBookingRecaptchaToken('home_collection_booking'));
 
         // Submit form
         await axios.post('https://backend.dangsccg.co.in/api/api/bookings/', formDataToSend, {
@@ -620,6 +687,47 @@ const HomeCollection = () => {
     fetchUserIp();
     generateCaptcha();
   }, [fetchUserIp, generateCaptcha]);
+
+  // Fetch city/state master data from API (NCR only for website)
+  const NCR_STATES = ['Delhi', 'Haryana', 'Uttar Pradesh'];
+  // Top NCR cities shown first in dropdown (most used for home collection)
+  const TOP_CITIES = [
+    'New Delhi', 'South Delhi', 'North Delhi', 'East Delhi', 'West Delhi',
+    'Gurugram', 'Noida', 'Faridabad', 'Ghaziabad', 'Greater Noida',
+  ];
+  useEffect(() => {
+    const fetchCityState = async () => {
+      try {
+        const response = await axios.get('https://backend.dangsccg.co.in/api/api/city-state/');
+        if (response.data && response.data.length > 0) {
+          // Filter to NCR states only
+          const ncrData = response.data.filter(s => NCR_STATES.includes(s.name));
+          setAllCityStateData(ncrData);
+          setStateOptions(ncrData.map(s => ({ value: s.name, label: s.name })));
+          // Build flat city list with state info for city-first selection
+          const allCities = [];
+          ncrData.forEach(s => {
+            s.cities.forEach(c => {
+              allCities.push({ value: c.name, label: `${c.name} (${s.name})`, cityName: c.name, stateName: s.name, pincode: c.pincode || '' });
+            });
+          });
+          // Sort: top NCR cities first (in defined order), then rest alphabetically
+          allCities.sort((a, b) => {
+            const aTop = TOP_CITIES.indexOf(a.cityName);
+            const bTop = TOP_CITIES.indexOf(b.cityName);
+            if (aTop !== -1 && bTop !== -1) return aTop - bTop;
+            if (aTop !== -1) return -1;
+            if (bTop !== -1) return 1;
+            return a.cityName.localeCompare(b.cityName);
+          });
+          setCityOptions(allCities);
+        }
+      } catch (error) {
+        console.error('Error fetching city/state data:', error);
+      }
+    };
+    fetchCityState();
+  }, []);
 
   // Fetch holidays
   useEffect(() => {
@@ -858,12 +966,39 @@ const HomeCollection = () => {
 
               <div className={styles.inputFeild}>
                 <label>City</label>
-                <input
-                  type="text"
+                <Select
                   name="city"
-                  value={formData.city}
-                  onChange={handleChange}
-                  placeholder="Enter city"
+                  options={cityOptions}
+                  value={selectedCityOption}
+                  onChange={(option) => {
+                    setSelectedCityOption(option);
+                    if (option && option.stateName) {
+                      // Auto-fill state and pincode from city selection
+                      const stateOpt = stateOptions.find(s => s.value === option.stateName);
+                      if (stateOpt) {
+                        setSelectedStateOption(stateOpt);
+                        setFormData((prev) => ({
+                          ...prev,
+                          city: option.cityName,
+                          state: stateOpt.value,
+                          pincode: option.pincode || prev.pincode,
+                        }));
+                      } else {
+                        setFormData((prev) => ({ ...prev, city: option.cityName, pincode: option.pincode || prev.pincode }));
+                      }
+                    } else {
+                      setFormData((prev) => ({
+                        ...prev,
+                        city: option ? option.value : '',
+                        pincode: '',
+                      }));
+                    }
+                  }}
+                  isSearchable
+                  isClearable
+                  placeholder="Select city"
+                  className={styles.select}
+                  styles={customStyles}
                 />
               </div>
             </div>
@@ -878,17 +1013,51 @@ const HomeCollection = () => {
                   value={selectedStateOption}
                   onChange={(option) => {
                     setSelectedStateOption(option);
+                    setSelectedCityOption(null);
                     setFormData((prev) => ({
                       ...prev,
                       state: option ? option.value : '',
+                      city: '',
                     }));
+                    // Re-build city list filtered to this state
+                    if (option && allCityStateData.length > 0) {
+                      const stateData = allCityStateData.find(s => s.name === option.value);
+                      const cities = stateData
+                        ? stateData.cities.map(c => ({ value: c.name, label: c.name, cityName: c.name, stateName: option.value, pincode: c.pincode || '' }))
+                        : [];
+                      cities.sort((a, b) => {
+                        const aTop = TOP_CITIES.indexOf(a.cityName);
+                        const bTop = TOP_CITIES.indexOf(b.cityName);
+                        if (aTop !== -1 && bTop !== -1) return aTop - bTop;
+                        if (aTop !== -1) return -1;
+                        if (bTop !== -1) return 1;
+                        return a.cityName.localeCompare(b.cityName);
+                      });
+                      setCityOptions(cities);
+                    } else {
+                      // Reset to all NCR cities
+                      const allCities = [];
+                      allCityStateData.forEach(s => {
+                        s.cities.forEach(c => {
+                          allCities.push({ value: c.name, label: `${c.name} (${s.name})`, cityName: c.name, stateName: s.name, pincode: c.pincode || '' });
+                        });
+                      });
+                      allCities.sort((a, b) => {
+                        const aTop = TOP_CITIES.indexOf(a.cityName);
+                        const bTop = TOP_CITIES.indexOf(b.cityName);
+                        if (aTop !== -1 && bTop !== -1) return aTop - bTop;
+                        if (aTop !== -1) return -1;
+                        if (bTop !== -1) return 1;
+                        return a.cityName.localeCompare(b.cityName);
+                      });
+                      setCityOptions(allCities);
+                    }
                   }}
                   isSearchable
                   isClearable
-                  placeholder="Select state"
+                  placeholder="Auto-filled from city"
                   className={styles.select}
-                  styles={customStyles} // Apply custom styles
-
+                  styles={customStyles}
                 />
               </div>
 
@@ -898,8 +1067,9 @@ const HomeCollection = () => {
                   type="text"
                   name="pincode"
                   value={formData.pincode}
-                  onChange={handleChange}
+                  onChange={handlePincodeChange}
                   placeholder="Enter pincode"
+                  maxLength="6"
                 />
               </div>
             </div>

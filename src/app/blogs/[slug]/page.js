@@ -1,122 +1,90 @@
 // src/app/blogs/[slug]/page.js
+import { Suspense } from 'react';
 import BlogClientComponent from '@/app/Components/Healthguide/BlogDetail';
 import axios from 'axios';
 
 async function getBlogData(slug) {
-    console.log('🔍 Attempting to fetch blog data for slug:', slug);
-    
     try {
         const apiUrl = `https://backend.dangsccg.co.in/api/get_blog/${slug}/`;
-        console.log('📡 Making API request to:', apiUrl);
-        
         const response = await axios.get(apiUrl, {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             }
         });
-        
-        console.log('✅ API Response Status:', response.status);
-        console.log('📦 API Response Headers:', response.headers);
-        
+
         if (!response.data) {
             throw new Error('No data received from API');
         }
-        
-        console.log('📝 Blog data structure:', {
-            hasHeading: Boolean(response.data.blog_heading),
-            hasContent: Boolean(response.data.blogs_content),
-            hasImages: {
-                image1: Boolean(response.data.blog_image1),
-                image2: Boolean(response.data.blog_image2),
-                image3: Boolean(response.data.blog_image3),
-                image4: Boolean(response.data.blog_image4)
-            }
-        });
-        
+
         return response.data;
     } catch (error) {
-        console.error('❌ Error fetching blog:', {
-            message: error.message,
-            status: error.response?.status,
-            statusText: error.response?.statusText,
-            data: error.response?.data,
-            config: {
-                url: error.config?.url,
-                method: error.config?.method,
-                headers: error.config?.headers
-            }
-        });
+        console.error('Error fetching blog:', error.message);
         return null;
     }
 }
 
 export async function generateMetadata({ params }) {
-    console.log('🎯 Generating metadata for slug:', params.slug);
-    
     const blog = await getBlogData(params.slug);
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.drdangslab.com';
-    
-    console.log('🏷️ Generated metadata:', {
-        hasTitle: Boolean(blog?.blog_heading),
-        hasDescription: Boolean(blog?.meta_description),
-        hasImage: Boolean(blog?.blog_thumbnail_image)
-    });
-    
+
+    const title = blog?.meta_title || (blog ? `${blog.blog_heading} - Dr. Dangs Lab` : 'Blog - Dr. Dangs Lab');
+    const description = blog?.meta_description || 'Read detailed blog posts about health and diagnostic insights.';
+    const ogTitle = blog?.og_title || blog?.meta_title || blog?.blog_heading || 'Blog - Dr. Dangs Lab';
+    const ogDescription = blog?.og_description || description;
+    const ogImage = blog?.og_image
+        ? `https://backend.dangsccg.co.in${blog.og_image}`
+        : (blog?.blog_thumbnail_image ? `https://backend.dangsccg.co.in${blog.blog_thumbnail_image}` : undefined);
+    const canonicalUrl = blog?.canonical_url || `${baseUrl}/blogs/${params.slug}`;
+    const keywords = blog?.meta_keywords ? blog.meta_keywords.split(',').map(k => k.trim()) : undefined;
+
     return {
-        title: blog ? `${blog.blog_heading} - Dr. Dangs Lab` : 'Blog - Dr. Dangs Lab',
-        description: blog?.meta_description || 'Read detailed blog posts about health and diagnostic insights.',
+        title,
+        description,
+        keywords,
         alternates: {
-            canonical: `${baseUrl}/blogs/${params.slug}`,
+            canonical: canonicalUrl,
         },
         openGraph: blog ? {
-            title: blog.blog_heading,
-            description: blog.meta_description || 'Read detailed blog posts about health and diagnostic insights.',
+            title: ogTitle,
+            description: ogDescription,
             type: 'article',
             url: `${baseUrl}/blogs/${params.slug}`,
             publishedTime: blog.release_date,
-            images: [
+            authors: [blog.author_name || 'Dr. Dangs Lab'],
+            images: ogImage ? [
                 {
-                    url: `https://backend.dangsccg.co.in${blog.blog_thumbnail_image}`,
-                    width: 800,
-                    height: 600,
-                    alt: blog.thumbnail_alt_text,
+                    url: ogImage,
+                    width: 1200,
+                    height: 630,
+                    alt: blog.thumbnail_alt_text || blog.blog_heading,
                 }
-            ],
+            ] : [],
             siteName: "Dr. Dangs Lab",
         } : null,
         twitter: blog ? {
             card: 'summary_large_image',
-            title: blog.blog_heading,
-            description: blog.meta_description,
-            images: [`https://backend.dangsccg.co.in${blog.blog_thumbnail_image}`],
+            title: ogTitle,
+            description: ogDescription,
+            images: ogImage ? [ogImage] : [],
         } : null,
     };
 }
 
 export default async function BlogPage({ params }) {
-    console.log('🚀 BlogPage: Starting render with params:', params);
-    
     const blog = await getBlogData(params.slug);
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.drdangslab.com';
 
     if (!blog) {
-        console.log('⚠️ BlogPage: No blog data returned, rendering null');
         return null;
     }
 
-    console.log('✨ BlogPage: Rendering with blog data:', {
-        heading: blog.blog_heading,
-        hasContent: Boolean(blog.blogs_content),
-        contentLength: blog.blogs_content?.length,
-        hasImages: {
-            thumbnail: Boolean(blog.blog_thumbnail_image),
-            image1: Boolean(blog.blog_image1),
-            image2: Boolean(blog.blog_image2),
-            image3: Boolean(blog.blog_image3),
-            image4: Boolean(blog.blog_image4)
-        }
-    });
+    const schemaType = blog.schema_type || 'BlogPosting';
+    const authorName = blog.author_name || 'Dr. Dangs Lab';
+    const canonicalUrl = blog.canonical_url || `${baseUrl}/blogs/${params.slug}`;
+    const ogImage = blog.og_image
+        ? `https://backend.dangsccg.co.in${blog.og_image}`
+        : (blog.blog_thumbnail_image ? `https://backend.dangsccg.co.in${blog.blog_thumbnail_image}` : undefined);
 
     return (
         <>
@@ -137,23 +105,22 @@ export default async function BlogPage({ params }) {
                 dangerouslySetInnerHTML={{
                     __html: JSON.stringify({
                         "@context": "https://schema.org",
-                        "@type": "BlogPosting",
+                        "@type": schemaType,
                         "headline": blog.blog_heading,
+                        "description": blog.meta_description || undefined,
                         "datePublished": blog.release_date,
                         "dateModified": blog.release_date,
                         "mainEntityOfPage": {
                             "@type": "WebPage",
-                            "@id": `${baseUrl}/blogs/${params.slug}`
+                            "@id": canonicalUrl
                         },
-                        "url": `${baseUrl}/blogs/${params.slug}`,
-                        "image": {
+                        "url": canonicalUrl,
+                        "image": ogImage ? {
                             "@type": "ImageObject",
-                            "url": blog.blog_thumbnail_image ? 
-                                `https://backend.dangsccg.co.in${blog.blog_thumbnail_image}` : 
-                                undefined,
-                            "width": 800,
-                            "height": 600
-                        },
+                            "url": ogImage,
+                            "width": 1200,
+                            "height": 630
+                        } : undefined,
                         "publisher": {
                             "@type": "Organization",
                             "name": "Dr. Dangs Lab",
@@ -166,16 +133,18 @@ export default async function BlogPage({ params }) {
                             }
                         },
                         "author": {
-                            "@type": "Organization",
-                            "name": "Dr. Dangs Lab"
+                            "@type": authorName === 'Dr. Dangs Lab' ? "Organization" : "Person",
+                            "name": authorName
                         },
-                        "description": blog.meta_description
+                        "keywords": blog.meta_keywords || undefined
                     })
                 }}
             />
 
             {/* Client Component */}
-            <BlogClientComponent initialBlog={blog} />
+            <Suspense fallback={<div style={{ padding: '2rem', textAlign: 'center' }}>Loading...</div>}>
+                <BlogClientComponent initialBlog={blog} />
+            </Suspense>
         </>
     );
 }

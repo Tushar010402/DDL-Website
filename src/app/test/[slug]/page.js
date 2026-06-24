@@ -4,7 +4,8 @@ import TestDetail from '@/app/Components/TestDetail/TestDetail';
 export const dynamic = 'force-dynamic';
 export const dynamicParams = true;
 
-export async function generateMetadata({ params: { slug } }) {
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
   try {
     const response = await fetch(`https://backend.dangsccg.co.in/api/api/test/${slug}`, {
       cache: 'no-store'
@@ -22,6 +23,9 @@ export async function generateMetadata({ params: { slug } }) {
     return {
       title: test.meta_title || `${test.test_heading} | Dr Dangs Lab`,
       description: test.meta_description || test.test_description?.replace(/<[^>]*>/g, '').slice(0, 160) || '',
+      alternates: {
+        canonical: `https://www.drdangslab.com/test/${test.url_name}`
+      },
       openGraph: {
         title: test.og_title || test.meta_title || `${test.test_heading} | Dr Dangs Lab`,
         description: test.og_description || test.meta_description || test.test_description?.replace(/<[^>]*>/g, '').slice(0, 160) || '',
@@ -45,7 +49,8 @@ export async function generateMetadata({ params: { slug } }) {
   }
 }
 
-export default async function Page({ params: { slug } }) {
+export default async function Page({ params }) {
+  const { slug } = await params;
   try {
     const response = await fetch(`https://backend.dangsccg.co.in/api/api/test/${slug}`, {
       cache: 'no-store'

@@ -6,6 +6,7 @@ import Image from 'next/image';
 import DatePicker from 'react-datepicker';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import axios from 'axios';
+import { getBookingRecaptchaToken } from '@/app/utils/bookingRecaptcha';
 import { useRouter } from 'next/navigation';
 import styles from './Discover-Your-Allergies-Early-with-Allergynius-Dx.module.css';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -313,6 +314,7 @@ const AllergyniusDx = () => {
             });
 
             formDataToSend.append('Unique_id', uniqueID);
+            formDataToSend.append('recaptcha_token', await getBookingRecaptchaToken('allergynius_booking'));
 
             // Submit booking
             await axios.post('https://backend.dangsccg.co.in/api/api/bookings/', formDataToSend);

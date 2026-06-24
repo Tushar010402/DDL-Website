@@ -3,6 +3,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useParams, useSearchParams } from 'next/navigation';
+import { sanitizeHTML } from '../../../utils/sanitize';
 import axios from 'axios';
 import styles from './BlogDetail.module.css';
 import Image from 'next/image';
@@ -125,11 +126,16 @@ const BlogDetail = ({ initialBlog = null }) => {
                 .replace('{{{Image4}}}', imageComponents.Image4);
 
             content = content
+                .replace(/<h2/g, `<h2 class="${styles.blogHeading2}"`)
+                .replace(/<h3/g, `<h3 class="${styles.blogHeading3}"`)
                 .replace(/<h4/g, `<h4 class="${styles.blogHeading4}"`)
                 .replace(/<h5/g, `<h5 class="${styles.blogHeading5}"`)
+                .replace(/<h6/g, `<h6 class="${styles.blogHeading6}"`)
                 .replace(/<p/g, `<p class="${styles.blogParagraph}"`)
                 .replace(/<ul/g, `<ul class="${styles.blogList}"`)
-                .replace(/<li/g, `<li class="${styles.blogListItem}"`);
+                .replace(/<ol/g, `<ol class="${styles.blogList}"`)
+                .replace(/<li/g, `<li class="${styles.blogListItem}"`)
+                .replace(/<table/g, `<table class="${styles.blogTable}"`);
 
             console.log('✅ Content processing complete:', {
                 contentLength: content.length,
@@ -351,7 +357,7 @@ const BlogDetail = ({ initialBlog = null }) => {
                 <div 
                     className={`${styles.blogContent} prose max-w-none`}
                     itemProp="articleBody"
-                    dangerouslySetInnerHTML={{ __html: blog.blogs_content }}
+                    dangerouslySetInnerHTML={{ __html: sanitizeHTML(blog.blogs_content) }}
                 />
                 
                 {/* Development-only error boundary */}

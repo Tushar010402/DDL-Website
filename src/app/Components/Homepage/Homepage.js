@@ -83,7 +83,7 @@ const HomePage = () => {
 
                 <div className="text-center p-6">
                   <h2 className="text-3xl font-bold" id={styles.NableforDark}>
-                    {showCounter ? <Counter target={41} /> : 0}
+                    {showCounter ? <Counter target={43} /> : 0}
                   </h2>
                   <p id={styles.NableforDark1}>Years of Service</p>
                 </div>

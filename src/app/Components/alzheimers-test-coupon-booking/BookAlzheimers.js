@@ -4,6 +4,7 @@ import React, { useState, useEffect, useCallback, useRef } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
+import { getBookingRecaptchaToken } from '@/app/utils/bookingRecaptcha';
 import DatePicker from 'react-datepicker';
 import { format } from 'date-fns';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -23,7 +24,10 @@ import {
   FaHome,
   FaArrowRight,
   FaTimesCircle,
+  FaQuestionCircle,
+  FaChevronDown,
 } from 'react-icons/fa';
+import AlzheimersQueryForm from '../AlzheimersQuery/AlzheimersQueryForm';
 
 const TEST_PACKAGE = 'Alzheimer’s test as per coupon / doctor’s advise';
 
@@ -92,6 +96,12 @@ const BookAlzheimers = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showThankYou, setShowThankYou] = useState(false);
   const [countdown, setCountdown] = useState(10);
+  const [bookingId, setBookingId] = useState('');
+  const [submitError, setSubmitError] = useState('');
+  const [showQueryForm, setShowQueryForm] = useState(false);
+  const [scanProgress, setScanProgress] = useState({ front: null, back: null });
+  // Honeypot: hidden field real users never fill; bots that do are dropped silently
+  const [website, setWebsite] = useState('');
 
   const nameRef = useRef(null);
   const mobileRef = useRef(null);
@@ -195,8 +205,8 @@ const BookAlzheimers = () => {
     setErrors((prev) => ({ ...prev, [name]: '' }));
   }, []);
 
-  // ----- Coupon uploads -----
-  const handleCouponChange = useCallback((side) => (e) => {
+  // ----- Coupon uploads (client checks + server-side malware pre-scan) -----
+  const handleCouponChange = useCallback((side) => async (e) => {
     const file = e.target.files[0];
     const setFile = side === 'front' ? setCouponFront : setCouponBack;
     const setPreview = side === 'front' ? setCouponFrontPreview : setCouponBackPreview;
@@ -208,9 +218,9 @@ const BookAlzheimers = () => {
       return;
     }
 
-    const validTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'application/pdf'];
+    const validTypes = ['image/jpeg', 'image/jpg', 'image/png', 'application/pdf'];
     if (!validTypes.includes(file.type)) {
-      setErrors((prev) => ({ ...prev, [key]: 'Only JPG, PNG, GIF or PDF allowed.' }));
+      setErrors((prev) => ({ ...prev, [key]: 'Only JPG, PNG or PDF allowed.' }));
       return;
     }
     if (file.size > 5 * 1024 * 1024) {
@@ -218,9 +228,33 @@ const BookAlzheimers = () => {
       return;
     }
 
-    setErrors((prev) => ({ ...prev, [key]: '' }));
-    setFile(file);
-    setPreview(file.type === 'application/pdf' ? 'pdf' : URL.createObjectURL(file));
+    try {
+      setScanProgress((prev) => ({ ...prev, [side]: 0 }));
+      const scanData = new FormData();
+      scanData.append('file', file);
+      const res = await axios.post(
+        'https://backend.dangsccg.co.in/api/api/file-scan/',
+        scanData,
+        {
+          headers: { 'Content-Type': 'multipart/form-data' },
+          onUploadProgress: (progressEvent) => {
+            const pct = Math.round((progressEvent.loaded * 100) / progressEvent.total);
+            setScanProgress((prev) => ({ ...prev, [side]: pct }));
+          },
+        }
+      );
+      if (res.data.status !== 'safe') {
+        setErrors((prev) => ({ ...prev, [key]: 'The file is potentially harmful and cannot be uploaded.' }));
+        return;
+      }
+      setErrors((prev) => ({ ...prev, [key]: '' }));
+      setFile(file);
+      setPreview(file.type === 'application/pdf' ? 'pdf' : URL.createObjectURL(file));
+    } catch (err) {
+      setErrors((prev) => ({ ...prev, [key]: 'Could not verify the file. Please try again.' }));
+    } finally {
+      setScanProgress((prev) => ({ ...prev, [side]: null }));
+    }
   }, []);
 
   // ----- Validation -----
@@ -240,46 +274,20 @@ const BookAlzheimers = () => {
     return e;
   }, [formData]);
 
-  const generateUniqueID = useCallback(async () => {
-    try {
-      const res = await axios.get('https://backend.dangsccg.co.in/api/api/generateUniqueID/');
-      return res.status === 200 ? res.data.Unique_id : null;
-    } catch (err) {
-      return null;
-    }
-  }, []);
-
-  const sendEmails = useCallback(async (data, uniqueId) => {
-    const emailData = {
-      date: format(new Date(), 'dd/MM/yyyy'),
-      client_ip: data.user_ip,
-      name: data.patient_name,
-      age: data.age,
-      gender: data.gender,
-      address: data.address,
-      city: '',
-      state: '',
-      pincode: '',
-      country: 'India',
-      mobile_number: data.mobile_number,
-      whatsapp_number: '',
-      email_id: data.patient_email,
-      preferred_date: format(data.date_for_collection, 'dd/MM/yyyy'),
-      preferred_time_slot: data.preferred_time,
-      test_type: data.test_package_name,
-      prescription: couponFront || couponBack ? 'Yes' : 'No',
-      remarks: 'Alzheimer’s (Dendrite Dx) booking',
-      Unique_id: uniqueId,
-    };
-    await Promise.allSettled([
-      axios.post('https://backend.dangsccg.co.in/api/orange-send-confirmation-email/', {
-        patientName: data.patient_name,
-        patient_email: data.patient_email,
-        Unique_id: uniqueId,
-      }),
-      axios.post('https://backend.dangsccg.co.in/api/Home-collection-send-email-to-info/', emailData),
-    ]);
-  }, [couponFront, couponBack]);
+  // Turn DRF error payloads ({field: [msgs]} or {message: '...'}) into a readable line
+  const serverErrorMessage = (err) => {
+    const data = err?.response?.data;
+    if (!data) return 'An error occurred while submitting the form. Please try again.';
+    if (typeof data === 'string') return data;
+    if (data.message) return data.message;
+    if (data.error) return data.error;
+    const parts = [];
+    Object.entries(data).forEach(([field, msgs]) => {
+      const msg = Array.isArray(msgs) ? msgs.join(' ') : String(msgs);
+      parts.push(field === 'non_field_errors' ? msg : `${field.replace(/_/g, ' ')}: ${msg}`);
+    });
+    return parts.length ? parts.join(' | ') : 'An error occurred while submitting the form. Please try again.';
+  };
 
   const handleSubmit = useCallback(
     async (e) => {
@@ -308,11 +316,15 @@ const BookAlzheimers = () => {
         return;
       }
 
-      setIsSubmitting(true);
-      try {
-        const uniqueID = await generateUniqueID();
-        if (!uniqueID) throw new Error('Failed to generate Unique ID.');
+      // Honeypot filled => almost certainly a bot; pretend success, send nothing
+      if (website) {
+        setShowThankYou(true);
+        return;
+      }
 
+      setIsSubmitting(true);
+      setSubmitError('');
+      try {
         const payload = new FormData();
         // Core booking fields (mirrors Home Collection backend)
         payload.append('patient_name', formData.patient_name);
@@ -330,19 +342,23 @@ const BookAlzheimers = () => {
         payload.append('test_package_name', formData.test_package_name);
         payload.append('remark', 'Alzheimer’s (Dendrite Dx) booking');
         payload.append('user_ip', formData.user_ip);
-        payload.append('Unique_id', uniqueID);
+        // Source tag: backend whitelists this value, fires acknowledgement
+        // emails server-side and flags the booking in the CRM
+        payload.append('source', 'alzheimers');
         // Coupon uploads (front & back)
         if (couponFront) payload.append('coupon_front', couponFront);
         if (couponBack) payload.append('coupon_back', couponBack);
+        payload.append('recaptcha_token', await getBookingRecaptchaToken('alzheimers_booking'));
 
-        await axios.post('https://backend.dangsccg.co.in/api/api/bookings/', payload, {
+        // The server generates the authoritative booking ID and sends the
+        // acknowledgement + internal emails itself
+        const res = await axios.post('https://backend.dangsccg.co.in/api/api/bookings/', payload, {
           headers: { 'Content-Type': 'multipart/form-data' },
         });
 
+        setBookingId(res.data?.Unique_id || '');
         setShowThankYou(true);
         window.scrollTo({ top: 0, behavior: 'smooth' });
-
-        await sendEmails(formData, uniqueID);
 
         const timer = setInterval(() => {
           setCountdown((prev) => {
@@ -360,7 +376,8 @@ const BookAlzheimers = () => {
         setCouponFrontPreview('');
         setCouponBackPreview('');
       } catch (err) {
-        alert('An error occurred while submitting the form. Please try again.');
+        setSubmitError(serverErrorMessage(err));
+        generateCaptcha();
       } finally {
         setIsSubmitting(false);
       }
@@ -371,11 +388,10 @@ const BookAlzheimers = () => {
       userCaptcha,
       captcha,
       generateCaptcha,
-      generateUniqueID,
       formData,
       couponFront,
       couponBack,
-      sendEmails,
+      website,
       router,
       initialFormState,
     ]
@@ -400,6 +416,14 @@ const BookAlzheimers = () => {
           <h2 className="mb-2 text-[24px] font-extrabold text-[#1f1f1f]">Thank You!</h2>
           <p className="text-[15px] text-[#5e5e5e]">
             Your Alzheimer’s test booking has been submitted successfully.
+          </p>
+          {bookingId && (
+            <p className="mt-3 rounded-[12px] border border-[#f5d2d3] bg-[#fff4f4] px-4 py-3 text-[14px] font-bold text-[#7a3438]">
+              Booking ID: <span className="text-[#d9242a]">#{bookingId}</span>
+            </p>
+          )}
+          <p className="mt-2 text-[14px] text-[#5e5e5e]">
+            A confirmation email is on its way to your inbox.
           </p>
           <p className="mt-3 text-[13.5px] font-semibold text-[#d9242a]">
             Redirecting in {countdown} seconds…
@@ -432,6 +456,18 @@ const BookAlzheimers = () => {
           encType="multipart/form-data"
           className="rounded-[22px] border border-[#f0eaea] bg-white p-6 shadow-[0_18px_44px_rgba(217,36,42,0.10)] sm:p-9"
         >
+          {/* Honeypot: invisible to humans, bots tend to fill it */}
+          <input
+            type="text"
+            name="website"
+            value={website}
+            onChange={(e) => setWebsite(e.target.value)}
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+            className="absolute -left-[9999px] h-0 w-0 opacity-0"
+          />
+
           <div className="mb-7 border-b border-[#f1ebeb] pb-5">
             <span className="mb-2 inline-block text-[11.5px] font-extrabold uppercase tracking-[2.5px] text-[#d9242a]">
               Booking details
@@ -599,7 +635,12 @@ const BookAlzheimers = () => {
                 <div key={c.side}>
                   <label className={labelCls}>{c.label}</label>
                   <label className="flex cursor-pointer flex-col items-center justify-center gap-2 rounded-[14px] border-2 border-dashed border-[#f0d8d9] bg-[#fffafa] px-4 py-6 text-center transition hover:border-[#d9242a] hover:bg-[#fff4f4]">
-                    {c.preview && c.preview !== 'pdf' ? (
+                    {scanProgress[c.side] !== null ? (
+                      <span className="flex items-center gap-2 text-[13px] font-semibold text-[#d9242a]">
+                        <FaSyncAlt aria-hidden="true" className="animate-spin" />
+                        Checking file… {scanProgress[c.side]}%
+                      </span>
+                    ) : c.preview && c.preview !== 'pdf' ? (
                       <img src={c.preview} alt={`${c.label} preview`} className="h-24 w-auto rounded-md object-contain" />
                     ) : c.preview === 'pdf' ? (
                       <span className="flex items-center gap-2 text-[13px] font-semibold text-[#d9242a]">
@@ -609,12 +650,12 @@ const BookAlzheimers = () => {
                       <>
                         <FaUpload aria-hidden="true" className="text-[20px] text-[#d9242a]" />
                         <span className="text-[13px] font-semibold text-[#7a3438]">Click to upload</span>
-                        <span className="text-[11.5px] text-[#9a8b8b]">JPG, PNG, GIF or PDF · max 5 MB</span>
+                        <span className="text-[11.5px] text-[#9a8b8b]">JPG, PNG or PDF · max 5 MB</span>
                       </>
                     )}
                     <input
                       type="file"
-                      accept=".jpg,.jpeg,.png,.gif,.pdf"
+                      accept=".jpg,.jpeg,.png,.pdf"
                       onChange={handleCouponChange(c.side)}
                       className="hidden"
                     />
@@ -661,6 +702,12 @@ const BookAlzheimers = () => {
           </div>
 
           {/* ===== Submit ===== */}
+          {submitError && (
+            <div className="mt-6 flex items-start gap-2.5 rounded-[12px] border border-[#d9242a] bg-[#fff4f4] px-4 py-3 text-[13.5px] font-semibold text-[#b81e23]">
+              <FaTimesCircle aria-hidden="true" className="mt-0.5 flex-shrink-0" />
+              <span>{submitError}</span>
+            </div>
+          )}
           <button
             type="submit"
             disabled={isSubmitting}
@@ -669,6 +716,30 @@ const BookAlzheimers = () => {
             {isSubmitting ? 'Booking…' : (<><FaCalendarCheck aria-hidden="true" /> Book</>)}
           </button>
         </form>
+
+        {/* ===== Have a question instead? ===== */}
+        <div className="mt-8">
+          <button
+            type="button"
+            onClick={() => setShowQueryForm((v) => !v)}
+            aria-expanded={showQueryForm}
+            className="flex w-full items-center justify-between rounded-[18px] border border-[#f0eaea] bg-white px-6 py-4 text-left shadow-[0_4px_14px_rgba(0,0,0,0.04)] transition hover:border-[#f5d2d3]"
+          >
+            <span className="flex items-center gap-2.5 text-[15.5px] font-bold text-[#1f1f1f]">
+              <FaQuestionCircle aria-hidden="true" className="text-[#d9242a]" />
+              Have a question instead? Ask us about the Alzheimer&rsquo;s test
+            </span>
+            <FaChevronDown
+              aria-hidden="true"
+              className={`text-[#d9242a] transition-transform ${showQueryForm ? 'rotate-180' : ''}`}
+            />
+          </button>
+          {showQueryForm && (
+            <div className="mt-4">
+              <AlzheimersQueryForm compact />
+            </div>
+          )}
+        </div>
 
         {/* ===== CONTENT BELOW FORM ===== */}
         <div className="mt-16 space-y-14">

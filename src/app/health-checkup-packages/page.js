@@ -1,6 +1,5 @@
-// src/app/TestProfiles/page.js
-import TestProfiles from '../Components/TestProfiles/TestProfiles';
-import { TestPackageProvider } from '../Components/TestProfiles/TestPackageContext';
+// src/app/health-checkup-packages/page.js
+import TestProfilesPage from './_components/TestProfilesPage';
 
 export const metadata = {
   title: 'Health Checkup Packages in Delhi & Gurgaon | Full Body Checkup Prices',
@@ -65,10 +64,6 @@ export const metadata = {
   },
 };
 
-export default function TestProfilesPage() {
-  return (
-    <TestPackageProvider>
-      <TestProfiles />
-    </TestPackageProvider>
-  );
+export default function HealthCheckupPackagesPage() {
+  return <TestProfilesPage />;
 }

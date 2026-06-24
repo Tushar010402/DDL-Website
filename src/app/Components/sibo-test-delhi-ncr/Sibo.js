@@ -583,7 +583,7 @@ const Sibo = () => {
         {/* CONCLUSION */}
         <section className={styles.section}>
           <h2 className={`${styles.sectionTitle} ${styles.reveal}`} data-reveal>
-            Conclusion
+            Summary
           </h2>
           <p className={`${styles.body} ${styles.reveal}`} data-reveal>
             SIBO is more common than most people realise, and often goes

@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import ArticleClientComponent from '@/app/Components/Healthguide/ArticleDetail';
 import axios from 'axios';
 
@@ -14,27 +15,46 @@ async function getArticleData(slug) {
 export async function generateMetadata({ params }) {
     const article = await getArticleData(params.slug);
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.drdangslab.com';
-    
+
+    const title = article?.meta_title || (article ? `${article.article_heading} - Dr. Dangs Lab` : 'Article - Dr. Dangs Lab');
+    const description = article?.meta_description || 'Read detailed health and diagnostic articles.';
+    const ogTitle = article?.og_title || article?.meta_title || article?.article_heading || 'Article - Dr. Dangs Lab';
+    const ogDescription = article?.og_description || description;
+    const ogImage = article?.og_image
+        ? `https://backend.dangsccg.co.in${article.og_image}`
+        : (article?.article_thumbnail_image ? `https://backend.dangsccg.co.in${article.article_thumbnail_image}` : undefined);
+    const canonicalUrl = article?.canonical_url || `${baseUrl}/articles/${params.slug}`;
+    const keywords = article?.meta_keywords ? article.meta_keywords.split(',').map(k => k.trim()) : undefined;
+
     return {
-        title: article ? `${article.article_heading} - Dr. Dangs Lab` : 'Article - Dr. Dangs Lab',
-        description: article?.meta_description || 'Read detailed health and diagnostic articles.',
+        title,
+        description,
+        keywords,
         alternates: {
-            canonical: `${baseUrl}/articles/${params.slug}`,
+            canonical: canonicalUrl,
         },
         openGraph: article ? {
-            title: article.article_heading,
-            description: article.meta_description || 'Read detailed articles about health and diagnostic insights.',
+            title: ogTitle,
+            description: ogDescription,
             type: 'article',
             publishedTime: article.release_date,
-            url: `${baseUrl}/articles/${params.slug}`, // Add OpenGraph URL
-            images: [
+            authors: [article.author_name || 'Dr. Dangs Lab'],
+            url: `${baseUrl}/articles/${params.slug}`,
+            images: ogImage ? [
                 {
-                    url: `https://backend.dangsccg.co.in${article.article_thumbnail_image}`,
-                    width: 800,
-                    height: 600,
-                    alt: article.thumbnail_alt_text,
+                    url: ogImage,
+                    width: 1200,
+                    height: 630,
+                    alt: article.thumbnail_alt_text || article.article_heading,
                 }
-            ],
+            ] : [],
+            siteName: "Dr. Dangs Lab",
+        } : null,
+        twitter: article ? {
+            card: 'summary_large_image',
+            title: ogTitle,
+            description: ogDescription,
+            images: ogImage ? [ogImage] : [],
         } : null,
     };
 }
@@ -47,6 +67,12 @@ export default async function ArticlePage({ params }) {
     }
 
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.drdangslab.com';
+    const schemaType = article.schema_type || 'Article';
+    const authorName = article.author_name || 'Dr. Dangs Lab';
+    const canonicalUrl = article.canonical_url || `${baseUrl}/articles/${params.slug}`;
+    const ogImage = article.og_image
+        ? `https://backend.dangsccg.co.in${article.og_image}`
+        : (article.article_thumbnail_image ? `https://backend.dangsccg.co.in${article.article_thumbnail_image}` : undefined);
 
     return (
         <>
@@ -66,23 +92,45 @@ export default async function ArticlePage({ params }) {
                 dangerouslySetInnerHTML={{
                     __html: JSON.stringify({
                         "@context": "https://schema.org",
-                        "@type": "Article",
+                        "@type": schemaType,
                         "headline": article.article_heading,
+                        "description": article.meta_description || undefined,
                         "datePublished": article.release_date,
-                        "url": `${baseUrl}/articles/${params.slug}`, // Add URL to schema
-                        "image": article.article_thumbnail_image ? 
-                            `https://backend.dangsccg.co.in${article.article_thumbnail_image}` : 
-                            undefined,
+                        "dateModified": article.release_date,
+                        "mainEntityOfPage": {
+                            "@type": "WebPage",
+                            "@id": canonicalUrl
+                        },
+                        "url": canonicalUrl,
+                        "image": ogImage ? {
+                            "@type": "ImageObject",
+                            "url": ogImage,
+                            "width": 1200,
+                            "height": 630
+                        } : undefined,
                         "publisher": {
                             "@type": "Organization",
                             "name": "Dr. Dangs Lab",
-                            "url": baseUrl
-                        }
+                            "url": baseUrl,
+                            "logo": {
+                                "@type": "ImageObject",
+                                "url": `${baseUrl}/DrdangsRedIcon.png`,
+                                "width": 112,
+                                "height": 112
+                            }
+                        },
+                        "author": {
+                            "@type": authorName === 'Dr. Dangs Lab' ? "Organization" : "Person",
+                            "name": authorName
+                        },
+                        "keywords": article.meta_keywords || undefined
                     })
                 }}
             />
 
-            <ArticleClientComponent initialArticle={article} />
+            <Suspense fallback={<div style={{ padding: '2rem', textAlign: 'center' }}>Loading...</div>}>
+                <ArticleClientComponent initialArticle={article} />
+            </Suspense>
         </>
     );
 }

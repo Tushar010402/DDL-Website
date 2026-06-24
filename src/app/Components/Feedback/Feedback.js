@@ -7,6 +7,7 @@ import { Check, RefreshCw, AlertCircle, Calendar, MapPin, Star, Mail, Phone } fr
 import 'react-datepicker/dist/react-datepicker.css';
 import styles from './Feedback.module.css';
 import axios from 'axios';
+import { getFeedbackLocations, FALLBACK_LOCATIONS } from '@/lib/locations';
 
 const StarRating = ({ value, onChange }) => {
     return (
@@ -24,16 +25,10 @@ const StarRating = ({ value, onChange }) => {
     );
 };
 
-const locations = [
-    "SDA",
-    "Gurugram",
-    "Punjabi Bagh",
-    "New Friends Colony",
-    "Vasant Kunj",
-    "Kamla Nagar",
-    "Greater Kailash",
-    "Vasant Vihar"
-];
+// Fallback locations for feedback dropdown
+const fallbackFeedbackLocations = FALLBACK_LOCATIONS
+    .filter(loc => loc.show_in_feedback)
+    .map(loc => loc.title);
 
 const ratingCategories = [
     { key: 'sample_collection', label: 'Sample Collection Service' },
@@ -71,10 +66,24 @@ const Feedback = () => {
     const [captcha, setCaptcha] = useState({ question: '', answer: '' });
     const [userCaptcha, setUserCaptcha] = useState('');
 
+    // Locations for dropdown - fetched from API with fallback
+    const [locations, setLocations] = useState(fallbackFeedbackLocations);
+
     useEffect(() => {
         generateCaptcha();
         fetchUserIp();
+        fetchLocationsData();
     }, []);
+
+    const fetchLocationsData = async () => {
+        try {
+            const data = await getFeedbackLocations();
+            setLocations(data.map(loc => loc.title));
+        } catch (error) {
+            console.error('Error fetching locations:', error);
+            // Fallback is already set as initial state
+        }
+    };
 
     useEffect(() => {
         if (isSubmitted) {

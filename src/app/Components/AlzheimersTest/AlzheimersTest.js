@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Videonewsmarquee from "./Videonewsmarquee";
+import AlzheimersQueryForm from "../AlzheimersQuery/AlzheimersQueryForm";
 
 // Add this handler after imports (uses window fallback for navigation)
 const handlePackageSelect = (packageName) => {
@@ -524,6 +525,11 @@ const DendriteDx = ({ pageTitle }) => {
           Dendrite Dx — Bridging the Gap in Alzheimer's Detection. Early,
           Accessible, Actionable.
         </p>
+
+        {/* Ask a question about the Alzheimer's test */}
+        <div className="mt-10">
+          <AlzheimersQueryForm />
+        </div>
       </div>
       <div>
         <Videonewsmarquee />

@@ -1,10 +1,23 @@
+// Helper function to encode URL for XML sitemap
+function encodeUrlForXml(url) {
+  return encodeURI(url)
+    .replace(/&/g, '&amp;')
+    .replace(/'/g, '&apos;')
+    .replace(/"/g, '&quot;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
+
 export default async function sitemap() {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.drdangslab.com';
-  
+
   try {
-      const [blogsRes, articlesRes] = await Promise.all([
+      const [blogsRes, articlesRes, testsRes] = await Promise.all([
           fetch('https://backend.dangsccg.co.in/api/get_blogs/'),
-          fetch('https://backend.dangsccg.co.in/api/get_articles/')
+          fetch('https://backend.dangsccg.co.in/api/get_articles/'),
+          fetch('https://backend.dangsccg.co.in/api/api/get_tests/', {
+              headers: { 'Origin': 'https://www.drdangslab.com' }
+          })
       ]);
 
       const [blogs, articles] = await Promise.all([
@@ -12,188 +25,182 @@ export default async function sitemap() {
           articlesRes.json()
       ]);
 
-      // Dynamic URLs from API
+      let tests = [];
+      try {
+          if (testsRes.ok) {
+              tests = await testsRes.json();
+          }
+      } catch (e) {
+          console.log('Tests API not available');
+      }
+
       const blogUrls = blogs.map((blog) => ({
-          url: `${baseUrl}/blogs/${blog.url_name}`,
+          url: encodeUrlForXml(`${baseUrl}/blogs/${blog.url_name}`),
           lastModified: blog.release_date,
           changeFrequency: 'weekly',
           priority: 0.7
       }));
 
       const articleUrls = articles.map((article) => ({
-          url: `${baseUrl}/articles/${article.url_name}`,
+          url: encodeUrlForXml(`${baseUrl}/articles/${article.url_name}`),
           lastModified: article.release_date,
           changeFrequency: 'weekly',
           priority: 0.7
       }));
 
-      // Static Main Pages
-      const mainPages = [
-          {
-              url: baseUrl,
-              lastModified: new Date(),
-              changeFrequency: 'daily',
-              priority: 1.0
-          },
-          {
-              url: `${baseUrl}/HomeCollection`,
-              lastModified: new Date(),
-              changeFrequency: 'weekly',
-              priority: 0.8
-          },
-          {
-              url: `${baseUrl}/Bacteriophage-Sensitivity-Testing`,
-              lastModified: new Date(),
-              changeFrequency: 'monthly',
-              priority: 0.8
-          },
-          {
-              url: `${baseUrl}/Legacy`,
-              lastModified: new Date(),
-              changeFrequency: 'monthly',
-              priority: 0.7
-          },
-          {
-              url: `${baseUrl}/QualityAssurance`,
-              lastModified: new Date(),
-              changeFrequency: 'monthly',
-              priority: 0.7
-          },
-          {
-              url: `${baseUrl}/ResearchAndTrials`,
-              lastModified: new Date(),
-              changeFrequency: 'monthly',
-              priority: 0.7
-          },
-          {
-              url: `${baseUrl}/Services`,
-              lastModified: new Date(),
-              changeFrequency: 'weekly',
-              priority: 0.8
-          },
-          {
-              url: `${baseUrl}/ClinicalPathology`,
-              lastModified: new Date(),
-              changeFrequency: 'monthly',
-              priority: 0.7
-          },
-          {
-              url: `${baseUrl}/Healthguide`,
-              lastModified: new Date(),
-              changeFrequency: 'weekly',
-              priority: 0.8
-          },
-          {
-              url: `${baseUrl}/TermAndConditions`,
-              lastModified: new Date(),
-              changeFrequency: 'yearly',
-              priority: 0.5
-          },
-          {
-              url: `${baseUrl}/food-allergy-test`,
-              lastModified: new Date(),
-              changeFrequency: 'monthly',
-              priority: 0.7
-          },
-          {
-              url: `${baseUrl}/News`,
-              lastModified: new Date(),
-              changeFrequency: 'daily',
-              priority: 0.8
-          },
-          {
-              url: `${baseUrl}/MolecularBiology`,
-              lastModified: new Date(),
-              changeFrequency: 'monthly',
-              priority: 0.7
-          },
-          {
-              url: `${baseUrl}/Histocytopathology`,
-              lastModified: new Date(),
-              changeFrequency: 'monthly',
-              priority: 0.7
-          },
-          {
-              url: `${baseUrl}/CoronaVirus`,
-              lastModified: new Date(),
-              changeFrequency: 'weekly',
-              priority: 0.8
-          },
-          {
-              url: `${baseUrl}/VirtualTour`,
-              lastModified: new Date(),
-              changeFrequency: 'monthly',
-              priority: 0.6
-          },
-          {
-              url: `${baseUrl}/SwineFlue`,
-              lastModified: new Date(),
-              changeFrequency: 'weekly',
-              priority: 0.7
-          },
-          {
-              url: `${baseUrl}/Feedback`,
-              lastModified: new Date(),
-              changeFrequency: 'monthly',
-              priority: 0.6
-          },
-          {
-              url: `${baseUrl}/Career`,
-              lastModified: new Date(),
-              changeFrequency: 'weekly',
-              priority: 0.7
-          },
-          {
-              url: `${baseUrl}/Recognition`,
-              lastModified: new Date(),
-              changeFrequency: 'monthly',
-              priority: 0.7
-          },
-          {
-              url: `${baseUrl}/TestProfiles`,
-              lastModified: new Date(),
-              changeFrequency: 'weekly',
-              priority: 0.8
-          },
-          {
-              url: `${baseUrl}/H3N2Tests`,
-              lastModified: new Date(),
-              changeFrequency: 'weekly',
-              priority: 0.8
-          },
-          {
-              url: `${baseUrl}/importance-of-omega-3-omega-6-testing`,
-              lastModified: new Date(),
-              changeFrequency: 'monthly',
-              priority: 0.8
-          },
-          {
-              url: `${baseUrl}/importance-of-vitamin-b1-b2-b5-b6-testing`,
-              lastModified: new Date(),
-              changeFrequency: 'monthly',
-              priority: 0.8
-          },
-          {
-              url: `${baseUrl}/salivary-cortisol-testing-delhi`,
-              lastModified: new Date(),
-              changeFrequency: 'monthly',
-              priority: 0.8
-          },
-          {
-              url: `${baseUrl}/sperm-dna-fragmentation-test-delhi`,
-              lastModified: new Date(),
-              changeFrequency: 'monthly',
-              priority: 0.8
-          },
-          {
-              url: `${baseUrl}/sibo-test-delhi-ncr`,
-              lastModified: new Date(),
-              changeFrequency: 'monthly',
-              priority: 0.8
-          }
-      ];
+      const testUrls = tests.map((test) => ({
+          url: encodeUrlForXml(`${baseUrl}/test/${test.url_name}`),
+          lastModified: new Date(),
+          changeFrequency: 'weekly',
+          priority: 0.8
+      }));
 
-      // Health Checkup Package Pages
+      const homePage = [{
+          url: baseUrl,
+          lastModified: new Date(),
+          changeFrequency: 'daily',
+          priority: 1.0
+      }];
+
+      const servicePages = [
+          'HomeCollection',
+          'Services',
+          'TestProfiles',
+          'Healthguide',
+          'News',
+          'Career',
+          'Feedback',
+          'our-locations'
+      ].map(page => ({
+          url: `${baseUrl}/${page}`,
+          lastModified: new Date(),
+          changeFrequency: 'weekly',
+          priority: 0.9
+      }));
+
+      const departmentPages = [
+          'ClinicalPathology',
+          'Biochemistry',
+          'Haematology',
+          'Microbiology',
+          'MolecularBiology',
+          'Histocytopathology',
+          'FlowCytometry',
+          'SpecializedTesting',
+          'FunctionalMedicine'
+      ].map(page => ({
+          url: `${baseUrl}/${page}`,
+          lastModified: new Date(),
+          changeFrequency: 'monthly',
+          priority: 0.7
+      }));
+
+      const aboutPages = [
+          'Legacy',
+          'QualityAssurance',
+          'ResearchAndTrials',
+          'Recognition',
+          'VirtualTour',
+          'TermAndConditions'
+      ].map(page => ({
+          url: `${baseUrl}/${page}`,
+          lastModified: new Date(),
+          changeFrequency: 'monthly',
+          priority: 0.6
+      }));
+
+      const locationPages = [
+          'pathology-labs-in-punjabi-bagh',
+          'DiagnosticInPunjabibagh',
+          'DiagnosticsInGurgaon'
+      ].map(page => ({
+          url: `${baseUrl}/${page}`,
+          lastModified: new Date(),
+          changeFrequency: 'monthly',
+          priority: 0.7
+      }));
+
+      const diseasePages = [
+          'CoronaVirus',
+          'H3N2Tests',
+          'H3N2',
+          'SwineFlue',
+          'Bacteriophage-Sensitivity-Testing',
+          'Bacteriophage',
+          'CBNAAT',
+          'CBNAATCOVID',
+          'STD-Testing',
+          'AllergyWeb',
+          'food-allergy-test',
+          'Discover-Your-Allergies-Early-with-Allergynius-Dx'
+      ].map(page => ({
+          url: `${baseUrl}/${page}`,
+          lastModified: new Date(),
+          changeFrequency: 'weekly',
+          priority: 0.8
+      }));
+
+      const staticTestPages = [
+          'VitaminD',
+          'VitaminB12',
+          'VitaminB9',
+          'vitamin-c-blood-test-in-delhi-ncr',
+          'ThyroidProfile',
+          'LipidProfile',
+          'LiverFunctionTest',
+          'KidneyFunctionTest',
+          'CBCTest',
+          'HBA1cTest',
+          'BloodGlucoseTest',
+          'CalciumTest',
+          'IronTest',
+          'ZincTest',
+          'MagnesiumTest',
+          'PhosphorusTest',
+          'HSCRP',
+          'ESRSEDRate',
+          'TotalIgETest',
+          'HelicobacterPylori',
+          'MicroalbuminuriaTest',
+          'ProstateSpecificAntigenFreeandTotal',
+          'RT3Test',
+          'TuberculosisTest',
+          'Urineroutine',
+          'BioFire',
+          'BiofireRespiratory'
+      ].map(page => ({
+          url: `${baseUrl}/${page}`,
+          lastModified: new Date(),
+          changeFrequency: 'monthly',
+          priority: 0.8
+      }));
+
+      const landingPages = [
+          'dendrite-dx-alzheimers-diagnosis-delhi',
+          'cmv-dna-viral-load-rt-pcr-test-delhi-gurgaon',
+          'myositis-profile-16-antigens-test-delhi-gurgaon',
+          'type-1-diabetes-autoantibody-test-delhi-gurgaon',
+          'urine-iodine-test-delhi-gurgaon',
+          '4-Key-Blood-Tests-for-Cardiac-Health',
+          'test/importance-of-omega-3-omega-6-testing',
+          'test/importance-of-vitamin-b1-b2-b5-b6-testing',
+          'test/salivary-cortisol-testing-delhi',
+          'test/sperm-dna-fragmentation-test-delhi',
+          'test/sibo-test-delhi-ncr'
+      ].map(page => ({
+          url: `${baseUrl}/${page}`,
+          lastModified: new Date(),
+          changeFrequency: 'monthly',
+          priority: 0.8
+      }));
+
+      const healthCheckupIndex = [{
+          url: `${baseUrl}/health-checkup-packages`,
+          lastModified: new Date(),
+          changeFrequency: 'weekly',
+          priority: 0.9
+      }];
+
       const healthCheckupPages = [
           'diagnostic-centre-and-pathology-lab-gurgaon',
           'glycosylated-haemoglobin-HBA1c',
@@ -209,7 +216,7 @@ export default async function sitemap() {
           'Prostate-Specific-Antigen-Free-and-Total',
           'Microalbuminuria',
           'esr-sed-rate-test',
-          'helicobacter-pylorit-test',
+          'helicobacter-pylori-test',
           'Folic-Acid-Vitamin-B-9-Test',
           'Phosphorus-test',
           'dengue-fever-test',
@@ -227,25 +234,33 @@ export default async function sitemap() {
           'CBNAAT',
           'CBNAAT-COVID19-Test',
           'ige-test',
-          'thyroid-profile-with-FT3,-FT4-test'
+          'thyroid-profile-with-FT3,-FT4-test',
+          'H3N2-Test'
       ].map(slug => ({
-          url: `${baseUrl}/health-checkup-packages/${slug}.html`,
+          url: encodeUrlForXml(`${baseUrl}/health-checkup-packages/${slug}.html`),
           lastModified: new Date(),
           changeFrequency: 'weekly',
           priority: 0.8
       }));
 
-      // Combine all URLs
       return [
-          ...mainPages,
+          ...homePage,
+          ...servicePages,
+          ...departmentPages,
+          ...aboutPages,
+          ...locationPages,
+          ...diseasePages,
+          ...staticTestPages,
+          ...landingPages,
+          ...healthCheckupIndex,
           ...healthCheckupPages,
+          ...testUrls,
           ...blogUrls,
           ...articleUrls
       ];
 
   } catch (error) {
       console.error('Error generating sitemap:', error);
-      // Fallback returns all static pages if API fails
       return [
           {
               url: baseUrl,
@@ -259,7 +274,6 @@ export default async function sitemap() {
               changeFrequency: 'weekly',
               priority: 0.8
           }
-          // Add other static pages here as fallback
       ];
   }
 }

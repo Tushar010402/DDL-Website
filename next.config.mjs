@@ -72,6 +72,14 @@ const nextConfig = {
 	    {source: '/DiagnosticsInGurgaon', destination: '/health-checkup-packages/diagnostic-centre-and-pathology-lab-gurgaon.html', permanent:true},
 	    {source: '/health-checkup-packages/helicobacter-pylorit-test.html', destination: '/health-checkup-packages/helicobacter-pylori-test.html', permanent:true},
 
+            // Old landing page URLs redirect to /test/ canonical URLs
+            { source: '/test/SIBO-Test.html', destination: '/test/sibo-test-delhi-ncr', permanent: true },
+            { source: '/sibo-test-delhi-ncr', destination: '/test/sibo-test-delhi-ncr', permanent: true },
+            { source: '/importance-of-omega-3-omega-6-testing', destination: '/test/importance-of-omega-3-omega-6-testing', permanent: true },
+            { source: '/importance-of-vitamin-b1-b2-b5-b6-testing', destination: '/test/importance-of-vitamin-b1-b2-b5-b6-testing', permanent: true },
+            { source: '/salivary-cortisol-testing-delhi', destination: '/test/salivary-cortisol-testing-delhi', permanent: true },
+            { source: '/sperm-dna-fragmentation-test-delhi', destination: '/test/sperm-dna-fragmentation-test-delhi', permanent: true },
+
 
 
 

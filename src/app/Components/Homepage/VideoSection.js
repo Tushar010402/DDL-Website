@@ -356,17 +356,21 @@ const VideoSection = () => {
             backgroundImage: `url(/PhotosAndLogos/SHouldKnowBackground.JPG)`,
           }}
         >
+          {/* Dark overlay for better play button visibility */}
+          <div className="absolute inset-0 bg-black/40" />
           <button
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 flex flex-col items-center gap-2 group"
             onClick={handleVideoToggle}
             aria-label="Play video"
           >
             <Image
               src="/PhotosAndLogos/icon-play.png"
               alt="Play Video"
-              width={50}
-              height={50}
+              width={80}
+              height={80}
+              className="group-hover:scale-110 transition-transform duration-300"
             />
+            <span className="text-white text-lg font-semibold tracking-wide">Play Video</span>
           </button>
 
           {videoVisible && (
@@ -404,13 +408,15 @@ const VideoSection = () => {
                   rel="noopener noreferrer"
                   aria-label={`Learn more about ${card.title}`}
                 >
-                  <Image
-                    src={card.image}
-                    alt={card.title}
-                    width={380}
-                    height={180}
-                    className="w-full h-48 object-cover"
-                  />
+                  <div className="relative w-full h-48">
+                    <Image
+                      src={card.image}
+                      alt={card.title}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                  </div>
                 </Link>
                 <div className="p-4 flex flex-col flex-grow">
                   <h3 className="font-semibold text-lg mb-2 text-black">{card.title}</h3>

@@ -6,6 +6,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import DatePicker from 'react-datepicker';
 import axios from 'axios';
+import { getBookingRecaptchaToken } from '@/app/utils/bookingRecaptcha';
 import { useRouter } from 'next/navigation';
 import styles from './AllergyWeb.module.css';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -350,6 +351,7 @@ const AllergyWeb = () => {
       });
 
       formDataToSend.append('Unique_id', uniqueID);
+      formDataToSend.append('recaptcha_token', await getBookingRecaptchaToken('allergy_booking'));
 
       // Submit booking
       await axios.post('https://backend.dangsccg.co.in/api/api/bookings/', formDataToSend);

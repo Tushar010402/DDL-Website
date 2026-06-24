@@ -3,76 +3,21 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { sanitizeHTML } from '../../../utils/sanitize';
 import axios from 'axios';
 import styles from './Footer.module.css';
+import { getLocations, FALLBACK_LOCATIONS } from '@/lib/locations';
 
-const locations = [
-  {
-    title: 'SDA',
-    address: 'C2/1, SDA Aurobindo Marg, Next to Aurobindo Market, New Delhi-110016',
-    phone: ['011-45004200', '+91-9999992020'],
-    timing: 'Timing: 7:30am to 7:00pm <br /> (Monday-Saturday)',
-    link: "/ "
-    
-  },
-  {
-    title: 'Punjabi Bagh',
-    address: '1/51, Ground Floor, Opposite Central Market, West Punjabi Bagh, New Delhi– 110026',
-    phone: ['+91-9810678165'],
-    timing: 'Timing: 8:00am to 6:00pm <br />(Monday-Saturday)',
-    link: "/pathology-labs-in-punjabi-bagh"
-  },
-  {
-    title: 'Vasant Kunj',
-    address: '12/13 G.F., Vasant Arcade, Nelson Mandela Marg, Vasant Kunj, New Delhi-110070',
-    phone: ['+91-9910589234'],
-    timing: 'Timing: 8:00am to 6:00pm <br />(Monday-Saturday)',
-    link: ""
-  },
-  {
-    title: 'Greater Kailash',
-    address: 'GF N36 GK1 <br /> New Delhi–110048',
-    phone: ['+91-9910313567'],
-    timing: 'Timing-8:00am to 4:00pm <br />(Monday-Saturday)',
-    link: ""
-  },
-  {
-    title: 'Gurugram',
-    address: 'Palm Springs Plaza, Golf Course Road Sector-53, Gurugram-122001',
-    phone: ['+91-9818881065'],
-    timing: 'Timing: 8:00am to 6:00pm <br />(Monday-Saturday)',
-    link: "/health-checkup-packages/diagnostic-centre-and-pathology-lab-gurgaon.html"
-  },
-  {
-    title: 'Gurugram Sector 66',
-    address: 'G-42, Block B, Spaze Business Park, Badshahpur, Sector 66, Gurugram, Haryana 122102',
-    phone: ['+91-9220503540'],
-    timing: 'Timing: 8:00am to 6:00pm <br />(Monday-Saturday)',
-    link: "/health-checkup-packages/diagnostic-centre-and-pathology-lab-gurgaon.html"
-  },
-  {
-    title: 'New Friends Colony',
-    address: 'D-851, Ground Floor, New Friends Colony, New Delhi-110025',
-    phone: ['+91-9311225665'],
-    timing: 'Timing: 8:00am to 6:00pm<br />(Monday-Saturday)',
-    link: ""
-  },
-  {
-    title: 'Kamla Nagar',
-    address: 'UA No-25, Ground Floor, Jawahar Nagar, Malka Ganj, New Delhi-110007',
-    phone: ['+91-9289157434'],
-    timing: 'Timing: 8:00am to 6:00pm <br />(Monday-Saturday)',
-    link: ""
-  },
-  {
-    title: 'Noida',
-    address: 'Max Square (Lower Ground Floor), Jaypee Wishtown, Sector 129, Noida – 201304',
-    phone: ['+91-9220503545'],
-    timing: 'Timing: 8:00am to 6:00pm <br />(Monday-Saturday)',
-    link: ""
-  },
-
-];
+// Transform API locations for Footer display
+const transformForFooter = (locations) => {
+  return locations.map(loc => ({
+    title: loc.title,
+    address: loc.address,
+    phone: loc.phones,
+    timing: loc.timing,
+    link: loc.page_link || ''
+  }));
+};
 
 const socialLinks = [ 
   {
@@ -127,7 +72,7 @@ const LocationItem = ({ title, address, phone, timing, link }) => (
         <h3 className={styles.locationTitle}>
           {title}
         </h3>
-        <p dangerouslySetInnerHTML={{ __html: address }} />
+        <p dangerouslySetInnerHTML={{ __html: sanitizeHTML(address) }} />
         <p>
           {phone.map((num, index) => (
             <React.Fragment key={num}>
@@ -141,7 +86,7 @@ const LocationItem = ({ title, address, phone, timing, link }) => (
             </React.Fragment>
           ))}
         </p>
-        <p dangerouslySetInnerHTML={{ __html: timing }} />
+        <p dangerouslySetInnerHTML={{ __html: sanitizeHTML(timing) }} />
       </div>
     </div>
   </Link>
@@ -161,6 +106,9 @@ const Footer = () => {
   const [userCaptcha, setUserCaptcha] = useState('');
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Locations state - fetched from API with fallback
+  const [locations, setLocations] = useState(transformForFooter(FALLBACK_LOCATIONS));
 
   // ------------------- NEW: Holiday Modal State & Data -----------------------
   const [showHolidaysModal, setShowHolidaysModal] = useState(false);
@@ -202,8 +150,19 @@ const Footer = () => {
       }
     };
 
+    const fetchLocationsData = async () => {
+      try {
+        const data = await getLocations();
+        setLocations(transformForFooter(data));
+      } catch (error) {
+        console.error('Error fetching locations:', error);
+        // Fallback is already set as initial state
+      }
+    };
+
     fetchIp();
     fetchHolidays();
+    fetchLocationsData();
     generateCaptcha();
   }, []);
 
@@ -339,13 +298,13 @@ const Footer = () => {
           <p className={styles.closedText}>(Sundays closed)</p>
           <div className={styles.LocationsFooterMainDiv}>
             <div className={styles.FirstRowInFooterLocations}>
-              {locations.slice(0, 4).map((location, index) => (
+              {locations.slice(0, 5).map((location, index) => (
                 <LocationItem key={index} {...location} />
               ))}
             </div>
             <div className={styles.SecondRowInFooterLocations}>
-              {locations.slice(4).map((location, index) => (
-                <LocationItem key={index + 4} {...location} />
+              {locations.slice(5).map((location, index) => (
+                <LocationItem key={index + 5} {...location} />
               ))}
             </div>
           </div>

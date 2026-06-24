@@ -3,6 +3,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useParams, useSearchParams } from 'next/navigation';
+import { sanitizeHTML } from '../../../utils/sanitize';
 import axios from 'axios';
 import styles from './ArticleDetail.module.css';
 
@@ -67,11 +68,16 @@ const ArticleDetail = ({ initialArticle = null }) => {
             .replace('{{{Image4}}}', imageComponents.Image4);
 
         content = content
+            .replace(/<h2/g, `<h2 class="${styles.articleHeading2}"`)
+            .replace(/<h3/g, `<h3 class="${styles.articleHeading3}"`)
             .replace(/<h4/g, `<h4 class="${styles.articleHeading4}"`)
             .replace(/<h5/g, `<h5 class="${styles.articleHeading5}"`)
+            .replace(/<h6/g, `<h6 class="${styles.articleHeading6}"`)
             .replace(/<p/g, `<p class="${styles.articleParagraph}"`)
             .replace(/<ul/g, `<ul class="${styles.articleList}"`)
-            .replace(/<li/g, `<li class="${styles.articleListItem}"`);
+            .replace(/<ol/g, `<ol class="${styles.articleList}"`)
+            .replace(/<li/g, `<li class="${styles.articleListItem}"`)
+            .replace(/<table/g, `<table class="${styles.articleTable}"`);
 
         return content;
     };
@@ -148,7 +154,7 @@ const ArticleDetail = ({ initialArticle = null }) => {
                 </header>
                 <div 
                     className={styles.articleContent}
-                    dangerouslySetInnerHTML={{ __html: article.articles_content }}
+                    dangerouslySetInnerHTML={{ __html: sanitizeHTML(article.articles_content) }}
                 />
             </article>
         </main>
